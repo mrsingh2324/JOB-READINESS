@@ -1,13 +1,36 @@
 const API = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
-async function req(path, opts = {}) {
-  const res = await fetch(`${API}${path}`, {
-    headers: { 'Content-Type': 'application/json', ...(opts.headers || {}) },
-    ...opts,
-  });
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.error || `Request failed (${res.status})`);
-  return data;
+// Render free-tier instances spin down after inactivity. The first request
+// after sleep hits Render's edge with no server, returning a CORS-less 404.
+// We retry transient failures so the user just sees a slow-but-successful load.
+async function req(path, opts = {}, attempt = 0) {
+  try {
+    const res = await fetch(`${API}${path}`, {
+      headers: { 'Content-Type': 'application/json', ...(opts.headers || {}) },
+      ...opts,
+    });
+    // Distinguish cold-start gateway 404 (plain-text "Not Found" from Render edge)
+    // from legitimate app 404s (JSON body with error field).
+    const ct = res.headers.get('content-type') || '';
+    if (res.status === 404 && !ct.includes('application/json') && attempt < 6) {
+      await new Promise((r) => setTimeout(r, 5000));
+      return req(path, opts, attempt + 1);
+    }
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error || `Request failed (${res.status})`);
+    return data;
+  } catch (err) {
+    const isNetworkErr = err instanceof TypeError || /failed to fetch|network/i.test(err.message || '');
+    if (isNetworkErr && attempt < 6) {
+      await new Promise((r) => setTimeout(r, 5000));
+      return req(path, opts, attempt + 1);
+    }
+    throw err;
+  }
+}
+
+export function isWaking(err) {
+  return err && /failed to fetch|network/i.test(err.message || '');
 }
 
 export const api = {

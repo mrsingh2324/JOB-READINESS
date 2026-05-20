@@ -25,6 +25,7 @@ export default function StudentLogin({ onSubmit, error, loading }) {
             autoFocus
           />
           {error && <div className="error">{error}</div>}
+          {loading && <div className="muted" style={{ marginTop: 8, fontSize: 13 }}>Loading… first request after idle can take up to 50s.</div>}
           <div style={{ marginTop: 14 }}>
             <button type="submit" disabled={loading}>
               {loading ? 'Loading…' : 'View My Results →'}

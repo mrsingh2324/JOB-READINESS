@@ -23,9 +23,12 @@ export default function Admin() {
   const [err, setErr] = useState('');
   const [busy, setBusy] = useState(false);
 
+  const [waking, setWaking] = useState(false);
+
   async function login(e) {
     e?.preventDefault?.();
     setAuthError('');
+    setWaking(true);
     try {
       const { sheetUrl } = await api.admin.getSheetUrl(adminKey);
       setSheetUrl(sheetUrl || '');
@@ -34,6 +37,8 @@ export default function Admin() {
       loadStudents();
     } catch (e) {
       setAuthError(e.message || 'Invalid admin key');
+    } finally {
+      setWaking(false);
     }
   }
 
@@ -96,8 +101,9 @@ export default function Admin() {
           <form onSubmit={login}>
             <input type="password" value={adminKey} onChange={(e) => setAdminKey(e.target.value)} autoFocus />
             {authError && <div className="error">{authError}</div>}
+            {waking && <div className="muted" style={{ marginTop: 8, fontSize: 13 }}>Waking up the backend… (first request after idle can take up to 50s on free tier)</div>}
             <div style={{ marginTop: 14 }}>
-              <button type="submit">Sign in</button>
+              <button type="submit" disabled={waking}>{waking ? 'Signing in…' : 'Sign in'}</button>
             </div>
           </form>
         </div>

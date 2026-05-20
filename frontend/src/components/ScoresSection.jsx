@@ -15,7 +15,8 @@ const SECTIONS = [
 
 export default function ScoresSection({ student }) {
   const offline = student.offlineExam || {};
-  if (offline.status === 'pending' && offline.codingScore == null) return null;
+  const hasAnyScore = SECTIONS.some((s) => offline[s.scoreField] != null);
+  if (!hasAnyScore) return null;
 
   const cleared = SECTIONS.filter((s) => Number(offline[s.scoreField] ?? 0) >= s.cutoff).length;
 

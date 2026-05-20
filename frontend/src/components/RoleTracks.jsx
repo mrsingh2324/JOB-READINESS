@@ -3,7 +3,7 @@ import { ROLE_TRACKS, evaluateTrack } from '../roleTracks.js';
 
 export default function RoleTracks({ student }) {
   const offline = student.offlineExam || {};
-  if (offline.status === 'pending' && offline.codingScore == null) return null;
+  if (offline.codingScore == null && offline.aptitudeScore == null && offline.dsaMcqScore == null) return null;
 
   const evaluated = ROLE_TRACKS.map((t) => ({ track: t, ...evaluateTrack(t, offline) }));
 

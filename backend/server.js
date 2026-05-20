@@ -198,12 +198,39 @@ function normKey(k) {
   return String(k || '')
     .trim()
     .toLowerCase()
-    .replace(/[\s\-]+/g, '_');
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_|_$/g, '');
 }
 
 function toBool(v) {
   const s = String(v ?? '').trim().toLowerCase();
   return ['yes', 'y', 'true', '1'].includes(s);
+}
+
+// Map various representations to qualified|not_qualified|pending
+function toQualStatus(v) {
+  const s = String(v ?? '').trim().toLowerCase();
+  if (!s) return 'pending';
+  if (['y', 'yes', 'qualified', 'true', '1', 'pass', 'passed'].includes(s)) return 'qualified';
+  if (['n', 'no', 'not_qualified', 'notqualified', 'false', '0', 'fail', 'failed'].includes(s)) return 'not_qualified';
+  return s;
+}
+
+// Map various representations to cleared|not_cleared|pending
+function toClearStatus(v) {
+  const s = String(v ?? '').trim().toLowerCase();
+  if (!s) return 'pending';
+  if (['y', 'yes', 'cleared', 'true', '1', 'pass', 'passed'].includes(s)) return 'cleared';
+  if (['n', 'no', 'not_cleared', 'notcleared', 'false', '0', 'fail', 'failed'].includes(s)) return 'not_cleared';
+  return s;
+}
+
+function pick(row, ...keys) {
+  for (const k of keys) {
+    const v = row[k];
+    if (v !== undefined && v !== '') return v;
+  }
+  return undefined;
 }
 
 function toNum(v) {
@@ -224,61 +251,69 @@ function rowToStudent(rowRaw) {
   const row = {};
   for (const k of Object.keys(rowRaw)) row[normKey(k)] = rowRaw[k];
 
-  const uid = String(row.uid || '').trim();
+  const uid = String(pick(row, 'uid', 'student_uid', 'studentuid', 'student_id') || '').trim();
   if (!uid) return null;
+
+  const name = String(pick(row, 'name', 'student_name', 'full_name') || `Student ${uid}`).trim();
+
+  const onlineStatus = toQualStatus(pick(row, 'online_status', 'online_qualified', 'online'));
+  const offlineStatus = toQualStatus(pick(row, 'offline_status', 'offline_qualified', 'offline'));
+
+  const tr1StatusRaw = pick(row, 'tr1_status', 'tr1_qualified_not', 'tr1_qualified', 'tr1');
+  const tr2StatusRaw = pick(row, 'tr2_status', 'tr2_qualified_not', 'tr2_qualified', 'tr2');
 
   return {
     uid,
-    name: String(row.name || '').trim(),
+    name,
     onlineAssessment: {
-      status: row.online_status || 'pending',
-      score: toNum(row.online_score),
-      maxScore: toNum(row.online_max) ?? 100,
+      status: onlineStatus,
+      score: toNum(pick(row, 'online_score')),
+      maxScore: toNum(pick(row, 'online_max')) ?? 100,
     },
     offlineExam: {
-      status: row.offline_status || 'pending',
-      codingScore: toNum(row.coding_score),
-      codingMax: toNum(row.coding_max) ?? 120,
-      dsaMcqScore: toNum(row.dsa_mcq_score),
-      dsaMcqMax: toNum(row.dsa_mcq_max) ?? 10,
-      technicalMcqScore: toNum(row.technical_mcq_score),
-      technicalMcqMax: toNum(row.technical_mcq_max) ?? 30,
-      aptitudeScore: toNum(row.aptitude_score),
-      aptitudeMax: toNum(row.aptitude_max) ?? 30,
-      coreCSScore: toNum(row.core_cs_score),
-      coreCSMax: toNum(row.core_cs_max) ?? 40,
-      totalSectionsCleared: toNum(row.sections_cleared),
-      examDate: row.exam_date || '',
+      status: offlineStatus,
+      codingScore: toNum(pick(row, 'coding_score')),
+      codingMax: toNum(pick(row, 'coding_max')) ?? 120,
+      dsaMcqScore: toNum(pick(row, 'dsa_mcq_score')),
+      dsaMcqMax: toNum(pick(row, 'dsa_mcq_max')) ?? 10,
+      technicalMcqScore: toNum(pick(row, 'technical_mcq_score')),
+      technicalMcqMax: toNum(pick(row, 'technical_mcq_max')) ?? 30,
+      aptitudeScore: toNum(pick(row, 'aptitude_score')),
+      aptitudeMax: toNum(pick(row, 'aptitude_max')) ?? 30,
+      coreCSScore: toNum(pick(row, 'core_cs_score')),
+      coreCSMax: toNum(pick(row, 'core_cs_max')) ?? 40,
+      totalSectionsCleared: toNum(pick(row, 'sections_cleared')),
+      examDate: pick(row, 'exam_date') || '',
     },
     roleTrack: {
-      mapped: toBool(row.role_mapped),
-      assignedRole: row.assigned_role || '',
+      mapped: toBool(pick(row, 'role_mapped')),
+      assignedRole: pick(row, 'assigned_role') || '',
     },
     tr1: {
-      attempted: toBool(row.tr1_attempted),
-      status: row.tr1_status || 'pending',
-      score: toNum(row.tr1_score),
-      maxScore: toNum(row.tr1_max) ?? 100,
-      feedback: row.tr1_feedback || '',
-      areasOfImprovement: toList(row.tr1_areas),
-      date: row.tr1_date || '',
+      attempted: tr1StatusRaw != null && String(tr1StatusRaw).trim() !== '' ? true : toBool(pick(row, 'tr1_attempted')),
+      status: toClearStatus(tr1StatusRaw),
+      score: toNum(pick(row, 'tr1_score')),
+      maxScore: toNum(pick(row, 'tr1_max')) ?? 100,
+      feedback: pick(row, 'tr1_feedback', 'tr1_feedback_remarks', 'tr1_remarks') || '',
+      areasOfImprovement: toList(pick(row, 'tr1_areas', 'areas_of_improvement_after_tr1', 'tr1_improvement')),
+      date: pick(row, 'tr1_date') || '',
     },
     tr2: {
-      attempted: toBool(row.tr2_attempted),
-      status: row.tr2_status || 'pending',
-      score: toNum(row.tr2_score),
-      maxScore: toNum(row.tr2_max) ?? 100,
-      feedback: row.tr2_feedback || '',
-      areasOfImprovement: toList(row.tr2_areas),
-      date: row.tr2_date || '',
+      attempted: tr2StatusRaw != null && String(tr2StatusRaw).trim() !== '' ? true : toBool(pick(row, 'tr2_attempted')),
+      status: toClearStatus(tr2StatusRaw),
+      score: toNum(pick(row, 'tr2_score')),
+      maxScore: toNum(pick(row, 'tr2_max')) ?? 100,
+      feedback: pick(row, 'tr2_feedback', 'tr2_feedback_remarks', 'tr2_remarks') || '',
+      areasOfImprovement: toList(pick(row, 'tr2_areas', 'areas_of_improvement_after_tr2', 'tr2_improvement')),
+      date: pick(row, 'tr2_date') || '',
     },
     finalReport: {
-      generated: toBool(row.final_report),
-      outcome: row.final_outcome || 'pending',
-      summary: row.final_summary || '',
-      whatWentWell: toList(row.what_went_well),
-      whatWentWrong: toList(row.what_went_wrong),
-      recommendations: toList(row.recommendations),
+      generated: toBool(pick(row, 'final_report')),
+      outcome: pick(row, 'final_outcome') || 'pending',
+      summary: pick(row, 'final_summary') || '',
+      whatWentWell: toList(pick(row, 'what_went_well')),
+      whatWentWrong: toList(pick(row, 'what_went_wrong')),
+      recommendations: toList(pick(row, 'recommendations')),
     },
   };
 }
@@ -319,7 +354,7 @@ app.get('/api/student/:uid', async (req, res) => {
 
 app.get('/api/config/sheet-url', requireAdmin, async (_req, res) => {
   const sheetUrl = await store.getConfig('sheetUrl');
-  res.json({ sheetUrl: sheetUrl || '' });
+  res.json({ sheetUrl: sheetUrl || process.env.DEFAULT_SHEET_URL || '' });
 });
 
 app.post('/api/config/sheet-url', requireAdmin, async (req, res) => {

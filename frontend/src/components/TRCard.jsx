@@ -3,6 +3,7 @@ import React from 'react';
 export default function TRCard({ title, round }) {
   if (!round || !round.attempted) return null;
   const status = round.status || 'pending';
+  const hasScore = round.score != null && round.score !== '';
   const score = Number(round.score ?? 0);
   const max = Number(round.maxScore ?? 100);
   const pct = Math.min(100, (score / max) * 100);
@@ -23,13 +24,17 @@ export default function TRCard({ title, round }) {
         </div>
       </div>
 
-      <div className="score-head" style={{ marginTop: 6 }}>
-        <div className="score-name">Score</div>
-        <div className="score-val">{score}<span style={{ color: '#999', fontWeight: 500 }}>/{max}</span></div>
-      </div>
-      <div className="bar-wrap">
-        <div className={`bar-fill ${cleared ? '' : 'bad'}`} style={{ width: `${pct}%` }} />
-      </div>
+      {hasScore && (
+        <>
+          <div className="score-head" style={{ marginTop: 6 }}>
+            <div className="score-name">Score</div>
+            <div className="score-val">{score}<span style={{ color: '#999', fontWeight: 500 }}>/{max}</span></div>
+          </div>
+          <div className="bar-wrap">
+            <div className={`bar-fill ${cleared ? '' : 'bad'}`} style={{ width: `${pct}%` }} />
+          </div>
+        </>
+      )}
 
       {round.feedback && (
         <div className="tr-feedback">{round.feedback}</div>

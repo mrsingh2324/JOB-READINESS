@@ -18,6 +18,9 @@ export default function Admin() {
   const [sheetUrl, setSheetUrl] = useState('');
   const [preview, setPreview] = useState(null);
   const [syncResult, setSyncResult] = useState(null);
+  const [bucketsSheetUrl, setBucketsSheetUrl] = useState('');
+  const [bucketsPreview, setBucketsPreview] = useState(null);
+  const [bucketsSync, setBucketsSync] = useState(null);
   const [students, setStudents] = useState([]);
   const [msg, setMsg] = useState('');
   const [err, setErr] = useState('');
@@ -32,6 +35,8 @@ export default function Admin() {
     try {
       const { sheetUrl } = await api.admin.getSheetUrl(adminKey);
       setSheetUrl(sheetUrl || '');
+      const b = await api.admin.getBucketsSheetUrl(adminKey).catch(() => ({ sheetUrl: '' }));
+      setBucketsSheetUrl(b.sheetUrl || '');
       localStorage.setItem('adminKey', adminKey);
       setAuthed(true);
       loadStudents();
@@ -79,6 +84,32 @@ export default function Admin() {
     try {
       const data = await api.admin.sync(adminKey, sheetUrl);
       setSyncResult(data);
+      await loadStudents();
+    } catch (e) { setErr(e.message); }
+    setBusy(false);
+  }
+
+  async function saveBucketsUrl() {
+    setMsg(''); setErr(''); setBusy(true);
+    try {
+      await api.admin.setBucketsSheetUrl(adminKey, bucketsSheetUrl);
+      setMsg('Buckets sheet URL saved.');
+    } catch (e) { setErr(e.message); }
+    setBusy(false);
+  }
+  async function previewBuckets() {
+    setMsg(''); setErr(''); setBucketsPreview(null); setBusy(true);
+    try {
+      const data = await api.admin.previewBuckets(adminKey, bucketsSheetUrl);
+      setBucketsPreview(data);
+    } catch (e) { setErr(e.message); }
+    setBusy(false);
+  }
+  async function syncBuckets() {
+    setMsg(''); setErr(''); setBucketsSync(null); setBusy(true);
+    try {
+      const data = await api.admin.syncBuckets(adminKey, bucketsSheetUrl);
+      setBucketsSync(data);
       await loadStudents();
     } catch (e) { setErr(e.message); }
     setBusy(false);
@@ -176,6 +207,44 @@ export default function Admin() {
               {syncResult.failed > 0 && <span className="pill red">{syncResult.failed} failed</span>}
             </div>
           )}
+
+          <div style={{ height: 28 }} />
+          <div className="section-label">Buckets Sheet (optional)</div>
+          <h2 className="section-title">Performance Buckets</h2>
+          <p className="muted">
+            Second sheet that assigns each student to a bucket (A/B/C/D). The most recent "Upgraded Bucket" column wins; falls back to the base Bucket column. UIDs must match the User ID column in this sheet to your students' UIDs.
+          </p>
+
+          <div className="row-input">
+            <input type="text" value={bucketsSheetUrl} onChange={(e) => setBucketsSheetUrl(e.target.value)} placeholder="https://docs.google.com/spreadsheets/d/..." />
+          </div>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            <button onClick={saveBucketsUrl} disabled={busy}>Save URL</button>
+            <button className="secondary" onClick={previewBuckets} disabled={busy || !bucketsSheetUrl}>Preview Buckets</button>
+            <button onClick={syncBuckets} disabled={busy || !bucketsSheetUrl}>Sync Buckets</button>
+          </div>
+
+          {bucketsPreview && (
+            <div style={{ marginTop: 16 }}>
+              <p className="muted">{bucketsPreview.total} rows · {bucketsPreview.columns.length} columns · {bucketsPreview.parsed.length} parsed sample</p>
+              <table>
+                <thead><tr><th>UID</th><th>Bucket</th><th>Source</th></tr></thead>
+                <tbody>
+                  {bucketsPreview.parsed.map((p, i) => (
+                    <tr key={i}><td>{p.uid}</td><td><span className="pill blue">{p.bucket}</span></td><td className="muted">{p.bucketAssignedAt}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {bucketsSync && (
+            <div style={{ marginTop: 14, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+              <span className="pill green">✓ {bucketsSync.updated} updated</span>
+              {bucketsSync.created > 0 && <span className="pill blue">{bucketsSync.created} created</span>}
+              {bucketsSync.failed > 0 && <span className="pill red">{bucketsSync.failed} failed</span>}
+            </div>
+          )}
         </div>
       )}
 
@@ -189,7 +258,7 @@ export default function Admin() {
             <table>
               <thead>
                 <tr>
-                  <th>UID</th><th>Name</th><th>Online</th><th>Offline</th><th>Role</th><th>TR1</th><th>TR2</th><th>Final</th><th>Feedback</th><th>Updated</th><th></th>
+                  <th>UID</th><th>Name</th><th>Bucket</th><th>Online</th><th>Offline</th><th>Role</th><th>TR1</th><th>TR2</th><th>Final</th><th>Feedback</th><th>Updated</th><th></th>
                 </tr>
               </thead>
               <tbody>
@@ -197,6 +266,7 @@ export default function Admin() {
                   <tr key={s.uid}>
                     <td><strong>{s.uid}</strong></td>
                     <td>{s.name}</td>
+                    <td>{s.bucket ? <span className="pill blue">{s.bucket}</span> : <span className="muted">—</span>}</td>
                     <td><StatusBadge value={s.onlineStatus} type="online" /></td>
                     <td><StatusBadge value={s.offlineStatus} type="offline" /></td>
                     <td>{s.roleMapped ? <span className="pill blue">mapped</span> : <span className="pill gray">no</span>}</td>
@@ -209,7 +279,7 @@ export default function Admin() {
                   </tr>
                 ))}
                 {!students.length && (
-                  <tr><td colSpan="11" className="muted" style={{ textAlign: 'center', padding: 24 }}>No students yet. Sync from a Google Sheet.</td></tr>
+                  <tr><td colSpan="12" className="muted" style={{ textAlign: 'center', padding: 24 }}>No students yet. Sync from a Google Sheet.</td></tr>
                 )}
               </tbody>
             </table>

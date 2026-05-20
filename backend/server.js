@@ -73,6 +73,8 @@ const studentSchema = new mongoose.Schema(
       recommendations: [String],
     },
     overallActions: [String],
+    bucket: String,
+    bucketAssignedAt: String,
     feedbacks: [
       {
         rating: { type: Number, min: 1, max: 5 },
@@ -326,15 +328,65 @@ function rowToStudent(rowRaw) {
   };
 }
 
-async function fetchSheetRows(sheetUrl) {
-  const csvUrl = sheetCsvUrl(sheetUrl);
+function sheetCsvUrlWithGid(url) {
+  const id = sheetIdFromUrl(url);
+  if (!id) return null;
+  // Detect gid from URL fragment or query (#gid=… or ?gid=…); default 0.
+  const m = String(url || '').match(/[?#&]gid=(\d+)/);
+  const gid = m ? m[1] : '0';
+  return `https://docs.google.com/spreadsheets/d/${id}/export?format=csv&gid=${gid}`;
+}
+
+async function fetchSheetRows(sheetUrl, { headerRow = 0 } = {}) {
+  const csvUrl = sheetCsvUrlWithGid(sheetUrl);
   if (!csvUrl) throw new Error('Invalid Google Sheet URL — could not extract sheet ID.');
   const res = await fetch(csvUrl);
   if (!res.ok) throw new Error(`Failed to fetch sheet (${res.status}). Make sure the sheet is shared publicly.`);
   const text = await res.text();
+  if (headerRow > 0) {
+    // Parse without auto-header, drop the leading rows, then re-parse from the chosen header row.
+    const arr = Papa.parse(text, { skipEmptyLines: false }).data || [];
+    if (arr.length <= headerRow) return [];
+    const headers = arr[headerRow].map((h) => String(h ?? '').trim());
+    const dataRows = arr.slice(headerRow + 1);
+    return dataRows
+      .filter((r) => r.some((c) => String(c ?? '').trim() !== ''))
+      .map((r) => Object.fromEntries(headers.map((h, i) => [h, r[i] ?? ''])));
+  }
   const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
   if (parsed.errors?.length) console.warn('[sheet] CSV parse warnings:', parsed.errors.slice(0, 3));
   return parsed.data || [];
+}
+
+function extractBucketLabel(v) {
+  if (v == null) return null;
+  const m = String(v).match(/\b([A-D])\b/i);
+  return m ? m[1].toUpperCase() : null;
+}
+
+function rowToBucketAssignment(rowRaw) {
+  const row = {};
+  for (const k of Object.keys(rowRaw)) row[normKey(k)] = rowRaw[k];
+  const uid = String(pick(row, 'user_id', 'uid', 'student_uid', 'student_id') || '').trim();
+  if (!uid) return null;
+
+  // Walk upgraded buckets from most recent to oldest; fall back to the base column.
+  const upgradedKeys = Object.keys(row)
+    .filter((k) => k.startsWith('upgraded_bucket'))
+    .sort()
+    .reverse();
+  let bucket = null;
+  let source = null;
+  for (const k of upgradedKeys) {
+    const b = extractBucketLabel(row[k]);
+    if (b) { bucket = b; source = k; break; }
+  }
+  if (!bucket) {
+    bucket = extractBucketLabel(row.bucket);
+    if (bucket) source = 'bucket';
+  }
+  if (!bucket) return null;
+  return { uid, bucket, bucketAssignedAt: source ? source.replace(/_/g, ' ') : '' };
 }
 
 // ---------- Express app ----------
@@ -422,6 +474,63 @@ app.post('/api/sheet/sync', requireAdmin, async (req, res) => {
   }
 });
 
+app.get('/api/config/buckets-sheet-url', requireAdmin, async (_req, res) => {
+  const v = await store.getConfig('bucketsSheetUrl');
+  res.json({ sheetUrl: v || process.env.DEFAULT_BUCKETS_SHEET_URL || '' });
+});
+
+app.post('/api/config/buckets-sheet-url', requireAdmin, async (req, res) => {
+  await store.setConfig('bucketsSheetUrl', req.body?.sheetUrl || '');
+  res.json({ ok: true });
+});
+
+app.post('/api/sheet/buckets/preview', requireAdmin, async (req, res) => {
+  try {
+    const rows = await fetchSheetRows(req.body.sheetUrl, { headerRow: 1 });
+    const columns = rows.length ? Object.keys(rows[0]) : [];
+    const parsed = rows.slice(0, 5).map((r) => rowToBucketAssignment(r)).filter(Boolean);
+    res.json({ columns, sample: rows.slice(0, 3), parsed, total: rows.length });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+app.post('/api/sheet/buckets/sync', requireAdmin, async (req, res) => {
+  try {
+    const rows = await fetchSheetRows(req.body.sheetUrl, { headerRow: 1 });
+    let updated = 0;
+    let created = 0;
+    const errors = [];
+    for (const raw of rows) {
+      const assignment = rowToBucketAssignment(raw);
+      if (!assignment) continue;
+      // Capture student name from the buckets sheet if present (column "Student Name")
+      const normRow = {};
+      for (const k of Object.keys(raw)) normRow[normKey(k)] = raw[k];
+      const name = String(pick(normRow, 'student_name', 'name') || '').trim();
+      try {
+        const existing = await store.getStudent(assignment.uid);
+        const patch = {
+          bucket: assignment.bucket,
+          bucketAssignedAt: assignment.bucketAssignedAt,
+        };
+        if (!existing) {
+          patch.name = name || `Student ${assignment.uid}`;
+          created += 1;
+        } else {
+          updated += 1;
+        }
+        await store.upsertStudent(assignment.uid, patch);
+      } catch (e) {
+        errors.push({ uid: assignment.uid, error: e.message });
+      }
+    }
+    res.json({ updated, created, failed: errors.length, errors: errors.slice(0, 10) });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 app.get('/api/admin/students', requireAdmin, async (_req, res) => {
   const list = await store.listStudents();
   res.json(
@@ -431,6 +540,7 @@ app.get('/api/admin/students', requireAdmin, async (_req, res) => {
       return {
         uid: s.uid,
         name: s.name,
+        bucket: s.bucket || null,
         onlineStatus: s.onlineAssessment?.status || 'pending',
         offlineStatus: s.offlineExam?.status || 'pending',
         roleMapped: !!s.roleTrack?.mapped,

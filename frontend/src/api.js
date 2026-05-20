@@ -48,5 +48,12 @@ export const api = {
     list: (adminKey) => req(`/api/admin/students?adminKey=${encodeURIComponent(adminKey)}`),
     remove: (adminKey, uid) =>
       req(`/api/admin/student/${encodeURIComponent(uid)}?adminKey=${encodeURIComponent(adminKey)}`, { method: 'DELETE' }),
+    getBucketsSheetUrl: (adminKey) => req(`/api/config/buckets-sheet-url?adminKey=${encodeURIComponent(adminKey)}`),
+    setBucketsSheetUrl: (adminKey, sheetUrl) =>
+      req(`/api/config/buckets-sheet-url`, { method: 'POST', body: JSON.stringify({ adminKey, sheetUrl }) }),
+    previewBuckets: (adminKey, sheetUrl) =>
+      req(`/api/sheet/buckets/preview`, { method: 'POST', body: JSON.stringify({ adminKey, sheetUrl }) }),
+    syncBuckets: (adminKey, sheetUrl) =>
+      req(`/api/sheet/buckets/sync`, { method: 'POST', body: JSON.stringify({ adminKey, sheetUrl }) }),
   },
 };

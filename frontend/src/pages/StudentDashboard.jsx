@@ -5,6 +5,7 @@ import ScoresSection from '../components/ScoresSection.jsx';
 import RoleTracks from '../components/RoleTracks.jsx';
 import TRCard from '../components/TRCard.jsx';
 import FinalReport from '../components/FinalReport.jsx';
+import ActionItems from '../components/ActionItems.jsx';
 
 export default function StudentDashboard({ student, onBack }) {
   return (
@@ -20,6 +21,7 @@ export default function StudentDashboard({ student, onBack }) {
       <TRCard title="Technical Round 1" round={student.tr1} />
       <TRCard title="Technical Round 2" round={student.tr2} />
       <FinalReport report={student.finalReport} />
+      <ActionItems items={student.overallActions} />
       <div className="quote">"You've cleared the bar most students never reach. What's left is execution."</div>
     </div>
   );

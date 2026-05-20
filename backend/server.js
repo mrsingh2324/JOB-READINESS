@@ -72,6 +72,7 @@ const studentSchema = new mongoose.Schema(
       whatWentWrong: [String],
       recommendations: [String],
     },
+    overallActions: [String],
     lastUpdated: Date,
   },
   { timestamps: true }
@@ -242,7 +243,7 @@ function toNum(v) {
 function toList(v) {
   if (!v) return [];
   return String(v)
-    .split(';')
+    .split(/[;\n]+/)
     .map((x) => x.trim())
     .filter(Boolean);
 }
@@ -315,6 +316,7 @@ function rowToStudent(rowRaw) {
       whatWentWrong: toList(pick(row, 'what_went_wrong')),
       recommendations: toList(pick(row, 'recommendations')),
     },
+    overallActions: toList(pick(row, 'overall', 'overall_actions', 'action_items', 'next_steps')),
   };
 }
 

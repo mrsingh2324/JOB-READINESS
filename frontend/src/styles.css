@@ -195,6 +195,33 @@ body {
 .track-req.gap .val { color: var(--amber); font-weight: 700; }
 .track-foot { font-size: 12px; color: #666; margin-top: 12px; line-height: 1.4; }
 
+/* Action items */
+.actions-list { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fafaf6;
+  transition: background 0.12s ease;
+}
+.action-row:hover { background: #f3f2ec; }
+.action-icon {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.action-body { flex: 1; }
+.action-title { font-weight: 600; font-size: 14px; line-height: 1.45; }
+.action-sub { font-size: 13px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
+.action-chev { color: #bbb; font-size: 22px; line-height: 1; }
+
 /* Footer quote */
 .quote { text-align: center; font-style: italic; font-family: Georgia, serif; color: #555; padding: 24px; background: #fffbf0; border: 1px solid #f1e4c0; border-radius: 14px; }
 

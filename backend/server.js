@@ -73,6 +73,12 @@ const studentSchema = new mongoose.Schema(
       recommendations: [String],
     },
     overallActions: [String],
+    feedbacks: [
+      {
+        rating: { type: Number, min: 1, max: 5 },
+        at: { type: Date, default: Date.now },
+      },
+    ],
     lastUpdated: Date,
   },
   { timestamps: true }
@@ -354,6 +360,23 @@ app.get('/api/student/:uid', async (req, res) => {
   }
 });
 
+app.post('/api/student/:uid/feedback', async (req, res) => {
+  try {
+    const uid = req.params.uid.trim();
+    const rating = Number(req.body?.rating);
+    if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
+      return res.status(400).json({ error: 'rating must be 1-5' });
+    }
+    const existing = await store.getStudent(uid);
+    if (!existing) return res.status(404).json({ error: 'Student not found' });
+    const feedbacks = [...(existing.feedbacks || []), { rating, at: new Date() }];
+    await store.upsertStudent(uid, { feedbacks });
+    res.json({ ok: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.get('/api/config/sheet-url', requireAdmin, async (_req, res) => {
   const sheetUrl = await store.getConfig('sheetUrl');
   res.json({ sheetUrl: sheetUrl || process.env.DEFAULT_SHEET_URL || '' });
@@ -402,17 +425,23 @@ app.post('/api/sheet/sync', requireAdmin, async (req, res) => {
 app.get('/api/admin/students', requireAdmin, async (_req, res) => {
   const list = await store.listStudents();
   res.json(
-    list.map((s) => ({
-      uid: s.uid,
-      name: s.name,
-      onlineStatus: s.onlineAssessment?.status || 'pending',
-      offlineStatus: s.offlineExam?.status || 'pending',
-      roleMapped: !!s.roleTrack?.mapped,
-      tr1Status: s.tr1?.status || 'pending',
-      tr2Status: s.tr2?.status || 'pending',
-      finalOutcome: s.finalReport?.outcome || 'pending',
-      lastUpdated: s.lastUpdated,
-    }))
+    list.map((s) => {
+      const fbs = s.feedbacks || [];
+      const lastFb = fbs.length ? fbs[fbs.length - 1] : null;
+      return {
+        uid: s.uid,
+        name: s.name,
+        onlineStatus: s.onlineAssessment?.status || 'pending',
+        offlineStatus: s.offlineExam?.status || 'pending',
+        roleMapped: !!s.roleTrack?.mapped,
+        tr1Status: s.tr1?.status || 'pending',
+        tr2Status: s.tr2?.status || 'pending',
+        finalOutcome: s.finalReport?.outcome || 'pending',
+        feedbackRating: lastFb?.rating || null,
+        feedbackCount: fbs.length,
+        lastUpdated: s.lastUpdated,
+      };
+    })
   );
 });
 

@@ -208,6 +208,8 @@ body {
   transition: background 0.12s ease;
 }
 .action-row:hover { background: #f3f2ec; }
+.action-row--featured { border-color: #c5d2f5; background: #f4f6ff; }
+.action-row--featured:hover { background: #eaeefe; }
 .action-icon {
   width: 36px; height: 36px;
   display: flex; align-items: center; justify-content: center;
@@ -221,6 +223,34 @@ body {
 .action-title { font-weight: 600; font-size: 14px; line-height: 1.45; }
 .action-sub { font-size: 13px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
 .action-chev { color: #bbb; font-size: 22px; line-height: 1; }
+
+/* Feedback widget */
+.feedback-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.feedback-opt {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 500;
+  transition: transform 0.1s ease, background 0.12s ease, border-color 0.12s ease;
+}
+.feedback-opt:hover { background: #fafaf6; transform: translateY(-1px); }
+.feedback-opt:disabled { opacity: 0.6; cursor: default; transform: none; }
+.feedback-opt--selected { border-color: var(--ink); background: #fafaf6; }
+.feedback-emoji { font-size: 26px; line-height: 1; }
+.feedback-label { font-size: 13px; color: #444; }
+
+@media (max-width: 540px) {
+  .feedback-row { grid-template-columns: repeat(5, 1fr); gap: 6px; }
+  .feedback-opt { padding: 10px 4px; }
+  .feedback-label { font-size: 11px; }
+}
 
 /* Footer quote */
 .quote { text-align: center; font-style: italic; font-family: Georgia, serif; color: #555; padding: 24px; background: #fffbf0; border: 1px solid #f1e4c0; border-radius: 14px; }

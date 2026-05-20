@@ -189,7 +189,7 @@ export default function Admin() {
             <table>
               <thead>
                 <tr>
-                  <th>UID</th><th>Name</th><th>Online</th><th>Offline</th><th>Role</th><th>TR1</th><th>TR2</th><th>Final</th><th>Updated</th><th></th>
+                  <th>UID</th><th>Name</th><th>Online</th><th>Offline</th><th>Role</th><th>TR1</th><th>TR2</th><th>Final</th><th>Feedback</th><th>Updated</th><th></th>
                 </tr>
               </thead>
               <tbody>
@@ -203,12 +203,13 @@ export default function Admin() {
                     <td><StatusBadge value={s.tr1Status} type="tr" /></td>
                     <td><StatusBadge value={s.tr2Status} type="tr" /></td>
                     <td><StatusBadge value={s.finalOutcome} type="final" /></td>
+                    <td>{s.feedbackRating ? <span title={`${s.feedbackCount} submission${s.feedbackCount > 1 ? 's' : ''}`}>{['😞','🙁','😐','🙂','😄'][s.feedbackRating - 1]} {s.feedbackRating}/5</span> : <span className="muted">—</span>}</td>
                     <td className="muted">{s.lastUpdated ? new Date(s.lastUpdated).toLocaleDateString() : '—'}</td>
                     <td><button className="danger" onClick={() => doDelete(s.uid)}>Delete</button></td>
                   </tr>
                 ))}
                 {!students.length && (
-                  <tr><td colSpan="10" className="muted" style={{ textAlign: 'center', padding: 24 }}>No students yet. Sync from a Google Sheet.</td></tr>
+                  <tr><td colSpan="11" className="muted" style={{ textAlign: 'center', padding: 24 }}>No students yet. Sync from a Google Sheet.</td></tr>
                 )}
               </tbody>
             </table>

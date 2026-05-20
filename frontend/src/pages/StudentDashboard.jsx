@@ -6,6 +6,7 @@ import RoleTracks from '../components/RoleTracks.jsx';
 import TRCard from '../components/TRCard.jsx';
 import FinalReport from '../components/FinalReport.jsx';
 import ActionItems from '../components/ActionItems.jsx';
+import FeedbackWidget from '../components/FeedbackWidget.jsx';
 
 export default function StudentDashboard({ student, onBack }) {
   return (
@@ -23,6 +24,7 @@ export default function StudentDashboard({ student, onBack }) {
       <FinalReport report={student.finalReport} />
       <ActionItems items={student.overallActions} />
       <div className="quote">"You've cleared the bar most students never reach. What's left is execution."</div>
+      <FeedbackWidget uid={student.uid} />
     </div>
   );
 }

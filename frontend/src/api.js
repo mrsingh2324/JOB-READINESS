@@ -35,6 +35,8 @@ export function isWaking(err) {
 
 export const api = {
   getStudent: (uid) => req(`/api/student/${encodeURIComponent(uid)}`),
+  submitFeedback: (uid, rating) =>
+    req(`/api/student/${encodeURIComponent(uid)}/feedback`, { method: 'POST', body: JSON.stringify({ rating }) }),
   admin: {
     getSheetUrl: (adminKey) => req(`/api/config/sheet-url?adminKey=${encodeURIComponent(adminKey)}`),
     setSheetUrl: (adminKey, sheetUrl) =>

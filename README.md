@@ -1,7 +1,7 @@
 # Placement App — Job Readiness Tracker
 
 Full-stack student placement tracker per the [PRD](../PRD.txt). Two interfaces:
-- `/` — student portal (enter UID, view journey + scores + feedback)
+- `/` — student portal (enter mobile number, view report/status)
 - `/admin` — password-protected admin (Google Sheet sync to DB)
 
 ## Quick start (local)
@@ -37,7 +37,7 @@ Open `http://localhost:5173`. Admin is at `http://localhost:5173/admin` (or `/?a
    - **Preview Sheet** to verify columns
    - **Push to MongoDB** to sync
 
-Try UID `NW2024001` on the student portal to see a fully-qualified student. Other sample UIDs (`NW2024002`–`NW2024005`) cover offered, rejected, partial, and pending states.
+Try mobile number `6281702728` on the student portal to view a hosted interview report.
 
 ## Showing HTML interview reports
 
@@ -55,7 +55,7 @@ Their UID/mobile mapping is stored in:
 backend/reports.json
 ```
 
-The backend serves those files at `/reports/<file>.html`, and the student login accepts either a mobile number or a Student UID. A mobile number that exists in `backend/reports.json` opens the HTML report directly inside the app.
+The backend serves those files at `/reports/<file>.html`, and the student login accepts a mobile number. A mobile number that exists in `backend/reports.json` opens the HTML report directly inside the app.
 
 For production, use the same model: either deploy `backend/public/reports` with the backend, or upload the HTML files to a storage/CDN service and store those HTTPS URLs in the manifest/database. Do not use `file://` links in production.
 

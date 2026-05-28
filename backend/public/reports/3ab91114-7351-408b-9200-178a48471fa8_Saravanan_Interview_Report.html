@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Saravanan — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f4f1eb;
+    --card-bg: #faf8f4;
+    --primary: #1a3a52;
+    --accent: #c8873f;
+    --green: #1a5c3a;
+    --green-bg: #e6f4ed;
+    --amber: #7a4f10;
+    --amber-bg: #fef3d8;
+    --red: #8b1c1c;
+    --red-bg: #fde8e8;
+    --border: #d8d0c4;
+    --blue-mid: #1e5a9e;
+    --blue-bg: #f0f7ff;
+    --blue-border: #c0d8f0;
+    --text: #2c2c2c;
+    --muted: #6b6560;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.65; }
+
+  .report-header { background: var(--primary); color: #fff; padding: 52px 40px 44px; text-align: center; }
+  .report-header .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+  .report-header h1 { font-family: 'DM Serif Display', serif; font-size: 42px; font-weight: 400; letter-spacing: -.5px; color: #fff; margin-bottom: 8px; }
+  .report-header .subtitle { font-size: 14px; color: rgba(255,255,255,.6); font-weight: 300; }
+
+  .body-wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
+
+  .section-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
+  .info-cell { background: var(--card-bg); padding: 18px 22px; }
+  .info-cell .label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .info-cell .value { font-weight: 600; font-size: 15px; color: var(--primary); }
+  .info-cell.full { grid-column: 1 / -1; }
+
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; letter-spacing: .04em; }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-red   { background: var(--red-bg);   color: var(--red); }
+
+  .journey { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; }
+  .journey-row { display: flex; align-items: flex-start; gap: 20px; position: relative; padding-bottom: 28px; }
+  .journey-row:last-child { padding-bottom: 0; }
+  .journey-col-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 16px; }
+  .journey-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; border: 3px solid; box-shadow: 0 0 0 3px var(--bg); }
+  .dot-green { background: var(--green); border-color: var(--green); }
+  .dot-amber { background: var(--amber); border-color: var(--amber); }
+  .dot-red   { background: #c0392b; border-color: #c0392b; }
+  .journey-line { width: 2px; flex: 1; background: var(--border); min-height: 30px; margin-top: 4px; }
+  .journey-content { flex: 1; }
+  .journey-stage { font-weight: 700; font-size: 14px; color: var(--primary); margin-bottom: 3px; }
+  .journey-result { font-size: 12.5px; font-weight: 600; margin-bottom: 3px; }
+  .journey-result.green { color: var(--green); }
+  .journey-result.amber { color: var(--amber); }
+  .journey-result.red   { color: var(--red); }
+  .journey-detail { font-size: 12.5px; color: var(--muted); font-family: 'DM Mono', monospace; }
+  .journey-detail a { color: var(--accent); text-decoration: none; }
+  .journey-detail a:hover { text-decoration: underline; }
+
+  .round-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .round-header { background: var(--primary); color: #fff; padding: 22px 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .round-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .icon-red   { background: var(--red-bg); }
+  .round-title-group { flex: 1; }
+  .round-name { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; color: #fff; margin-bottom: 3px; }
+  .round-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,.55); }
+  .round-meta a { color: var(--accent); text-decoration: none; }
+  .round-meta a:hover { text-decoration: underline; }
+  .round-score-box { text-align: right; flex-shrink: 0; }
+  .round-score-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: #fff; line-height: 1; }
+  .round-score-label { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .1em; }
+  .round-body { padding: 28px; }
+
+  .score-breakdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+  .score-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .score-cell .snum { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1; margin-bottom: 4px; }
+  .score-cell .slabel { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .snum-green { color: var(--green); }
+  .snum-amber { color: var(--amber); }
+  .snum-red   { color: var(--red); }
+
+  .qa-block { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .qa-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .qa-block-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--primary); font-weight: 500; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+  .qa-item { margin-bottom: 18px; }
+  .qa-item:last-child { margin-bottom: 0; }
+  .qa-q { font-weight: 600; color: var(--primary); margin-bottom: 7px; font-size: 14px; }
+  .qa-a { color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 9px; }
+  .qa-a span { display: block; padding-left: 12px; position: relative; }
+  .qa-a span::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
+  .qa-verdict { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; }
+  .verdict-good { background: var(--green-bg); color: var(--green); }
+  .verdict-mid  { background: var(--amber-bg); color: var(--amber); }
+  .verdict-bad  { background: var(--red-bg);   color: var(--red); }
+
+  .model-answer { background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 8px; padding: 14px 18px; margin-top: 10px; font-size: 13px; line-height: 1.65; }
+  .model-answer .model-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-mid); font-weight: 500; margin-bottom: 7px; }
+  .model-answer span { display: block; padding-left: 14px; position: relative; color: #1a3a6e; }
+  .model-answer span::before { content: '→'; position: absolute; left: 0; color: var(--blue-mid); }
+
+  .round-remarks { background: var(--amber-bg); border-top: 1px solid var(--border); padding: 18px 28px; font-style: italic; font-size: 13.5px; color: var(--amber); }
+  .round-remarks strong { font-style: normal; font-weight: 600; color: var(--primary); }
+
+  .overall-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .overall-block { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .overall-block:last-child { border-bottom: none; }
+  .overall-block p { font-size: 14.5px; line-height: 1.75; color: var(--text); }
+  .title-green { color: var(--green); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-red   { color: var(--red);   font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-blue  { color: var(--blue-mid); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 16px; }
+  .strength-list, .improve-list { list-style: none; }
+  .strength-list li, .improve-list li { padding: 8px 0 8px 14px; border-bottom: 1px dashed var(--border); position: relative; font-size: 14px; color: var(--text); }
+  .strength-list li:last-child, .improve-list li:last-child { border-bottom: none; }
+  .strength-list li::before { content: '·'; position: absolute; left: 0; color: var(--green); font-size: 18px; line-height: 1; top: 8px; }
+  .improve-list li::before  { content: '·'; position: absolute; left: 0; color: var(--red);   font-size: 18px; line-height: 1; top: 8px; }
+
+  .week-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .week-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg); }
+  .week-card-header { background: var(--primary); padding: 12px 16px; }
+  .week-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .week-title { font-family: 'DM Serif Display', serif; font-size: 16px; color: #fff; font-weight: 400; }
+  .week-card-body { padding: 14px 16px; }
+  .week-card-body ul { list-style: none; }
+  .week-card-body li { font-size: 13px; color: var(--text); padding: 4px 0 4px 18px; position: relative; line-height: 1.5; }
+  .week-card-body li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 6px; }
+
+  .report-footer { border-top: 1px solid var(--border); padding: 18px 24px; text-align: center; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); max-width: 860px; margin: 0 auto; }
+  a { color: var(--accent); }
+  code { font-family: 'DM Mono', monospace; font-size: 12.5px; background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Saravanan</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 — CANDIDATE INFO ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="label">Candidate Name</div>
+      <div class="value">Saravanan</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Year of Graduation</div>
+      <div class="value">2026</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Offline Assessment Date</div>
+      <div class="value">8 February 2026 · Cycle 1</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Email</div>
+      <div class="value">saravanansus2004@gmail.com</div>
+    </div>
+    <div class="info-cell full">
+      <div class="label">Final Status</div>
+      <div class="value" style="margin-top:6px;">
+        <span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 02 — JOURNEY ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared</div>
+        <div class="journey-detail">8 Feb 2026 · Cycle 1</div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result red">✗ Not Qualified · Score 10 / 100 · Low Hire</div>
+        <div class="journey-detail">12 Feb 2026 · Score: 10 · <a href="https://drive.google.com/file/d/1AETGvspZvgKL0aRYX8XrOtYtAEaP8QTB/view?usp=sharing" target="_blank">Recording ↗</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ SECTION 03 — TR-1 ══ -->
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-red">🔴</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">12 Feb 2026 · <a href="https://drive.google.com/file/d/1AETGvspZvgKL0aRYX8XrOtYtAEaP8QTB/view?usp=sharing" target="_blank">View Recording ↗</a></div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f09090;">10</div>
+        <div class="round-score-label">/ 100 · Low Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-red" style="font-size:11px;">✗ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Score Breakdown -->
+      <div class="score-breakdown">
+        <div class="score-cell">
+          <div class="snum snum-green">4/5</div>
+          <div class="slabel">Communication</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-red">1/5</div>
+          <div class="slabel">DSA Theory</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-red">0/5</div>
+          <div class="slabel">Core CS</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-red">0/5</div>
+          <div class="slabel">Avg Problem Solving</div>
+        </div>
+      </div>
+
+      <!-- Introduction & Background -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>Undergraduate student at Annamalai Engineering College, Chennai — Information Technology stream, 2026 batch</span>
+            <span>Frontend development focus: built static websites, dynamic websites, and responsive web applications using HTML, CSS, JavaScript, NodeJS, and SQLite</span>
+            <span>Participated in coding competitions at Whale Tech College (Nori) and Savitha College (Tundalam), Chennai — won contests</span>
+            <span>Key self-disclosure during interview: "I am not doing any problems in 3 months. I only know the topics." — candid and honest about the preparation gap</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Decent Introduction — Frontend exposure noted; however self-acknowledged 3-month gap in DSA practice is a significant concern</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: How would you implement a Queue using only a Stack data structure?</div>
+          <div class="qa-a">
+            <span>Correctly identified LIFO (stack) and FIFO (queue) principles — conceptual understanding of both data structures is present</span>
+            <span>Proposed maintaining "top and bottom pointers" to simulate queue behaviour — this bypasses the Stack's structural constraint and is not a valid approach</span>
+            <span>When the interviewer clarified that you cannot bypass LIFO and must pop from the top, attempted pointer arithmetic: <code>top - length of array = first element</code> — still incorrect; you cannot skip stack elements</span>
+            <span>Could not arrive at the correct two-stack solution even after extended discussion and hints; the concept of using a second stack to reverse order was never surfaced</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — LIFO/FIFO understood conceptually; two-stack implementation approach not known (Rating: 1/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Use two stacks: <code>stack1</code> (for enqueue) and <code>stack2</code> (for dequeue).</span>
+            <span><strong>Enqueue:</strong> push to <code>stack1</code>. <strong>Dequeue:</strong> if <code>stack2</code> is empty, pop all elements from <code>stack1</code> into <code>stack2</code> (this reverses order); then pop from <code>stack2</code>.</span>
+            <span>This gives amortised O(1) for both operations. The key insight: reversing via a second stack converts LIFO to FIFO. This is a classic must-know interview problem.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: How can you merge multiple sorted data streams?</div>
+          <div class="qa-a">
+            <span>Immediately responded: "I have no idea about data streams" — did not attempt the question at all</span>
+            <span>No partial approach or alternate framing offered</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Answered — No knowledge of data streams or merge strategies (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Use a Min-Heap (Priority Queue). Insert the first element of each stream into the heap along with its stream index and element index.</span>
+            <span>Repeatedly extract the minimum, add it to the result, and insert the next element from that stream. Repeat until all streams are exhausted.</span>
+            <span>Time: O(N log K) where N = total elements, K = number of streams. Space: O(K) for the heap. This is the optimal merge strategy for K sorted streams.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/max-chunks-to-make-sorted/" target="_blank">Max Chunks To Make Sorted ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood the problem: split a permutation array into the maximum number of chunks such that sorting each chunk independently and concatenating gives the fully sorted array</span>
+            <span>Correctly identified the key constraint from the examples: <code>[4,3,2,1,0]</code> can only be 1 chunk (fully reversed); <code>[1,0,2,3,4]</code> can be split into 4 chunks</span>
+            <span>Proposed brute force: for each possible split size (1 to N), check if sorting each chunk and joining gives the sorted array — O(N²) approach</span>
+            <span>Could not progress to the O(N) greedy insight: a valid chunk boundary exists at index <code>i</code> if and only if <code>max(arr[0..i]) == i</code></span>
+            <span>Interviewer gave additional examples (e.g., <code>[1,0,3,2,4]</code>) to help generalise — candidate kept fixating on the given examples rather than forming a generalised rule</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Brute Force Only — Problem understood correctly; O(N) greedy insight not reached despite extended hints (Rating: 1/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Greedy O(N): iterate through the array tracking <code>max_so_far</code>. At each index <code>i</code>, if <code>max_so_far == i</code>, a valid chunk boundary exists — increment chunk count.</span>
+            <span>Why it works: if the maximum element seen so far equals the current index, all elements in this chunk are a permutation of <code>[0..i]</code> and can be sorted in place without affecting elements outside. Time: O(N), Space: O(1).</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Attempted to implement the brute force approach in an online GDB (C-style) — spent the majority of the remaining interview time on this</span>
+            <span>Code was incomplete — could not produce a working solution before the interview ended</span>
+            <span>Interviewer noted the candidate lacked a "sense of urgency" — was writing code casually without awareness of the remaining time</span>
+            <span>Interview ended before any submission could be made</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incomplete — Brute force attempted but not completed; no submission made (Rating: 1/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/binary-tree-level-order-traversal-ii/" target="_blank">Binary Tree Level Order Traversal II ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Read and understood the problem: print nodes level by level from the bottom-most level up to the root (reverse BFS order)</span>
+            <span>Correctly identified the output structure: leaf nodes first, then intermediate nodes, then root — shown through the examples</span>
+            <span>Immediately acknowledged: "I haven't studied Trees in 3 months" and chose to return to Problem 1 rather than attempt an approach</span>
+            <span>No approach attempted — not even a verbal brute force description was offered</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Attempted — Problem understood; no approach offered due to self-acknowledged gap in Tree knowledge (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Use BFS with a queue. Process the tree level by level, storing each level's nodes in a list. After BFS completes, reverse the collected list of levels.</span>
+            <span>Alternatively: perform standard BFS, then call <code>result.reverse()</code> at the end. Time: O(N), Space: O(N) for the queue and result. This is a direct extension of standard level-order traversal — the only addition is reversing the final result.</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- round-body -->
+
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Clearly, the candidate has a long way to go and needs to prepare a lot to be interview ready. At this stage, he doesn't even know difficult topics like Trees, Graphs, Recursion and DP." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 4/5 — Communicated thoughts clearly and was easy to follow; however, lacked a sense of time urgency during the coding phase and tended to fixate on given examples rather than generalising.
+    </div>
+  </div><!-- end TR-1 round card -->
+
+  <!-- ══ SECTION 04 — OVERALL COMMENTS & ACTION PLAN ══ -->
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <!-- Summary -->
+    <div class="overall-block">
+      <p>You communicated well and showed you can understand problem statements — both coding questions were correctly read and their outputs understood. However, your TR-1 score of 10 reflects a critical gap: you had not practised DSA for 3 months before the interview, and entire topic areas — Trees, Graphs, Recursion, DP, Stacks, Priority Queues — are either unknown or untouched. You could not solve either rapid fire question, did not complete any coding problem, and gave up on Problem 2 the moment Trees were mentioned. Your frontend skills and project participation show you have the ability to learn and build — now you need to apply that same energy to DSA with daily structured practice. The 1-month plan below is designed to build you from the ground up, covering every topic area that appeared in this interview and more.</p>
+    </div>
+
+    <!-- Strengths -->
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Communication:</strong> Rated 4/5 — you articulated your thoughts clearly, engaged with the interviewer's questions, and were honest about your gaps rather than attempting to bluff. This is a real asset.</li>
+        <li><strong>Problem Comprehension:</strong> You correctly read and understood both coding problems — the chunk problem and the tree traversal problem — demonstrating solid reading and reasoning ability.</li>
+        <li><strong>Conceptual Awareness:</strong> You know LIFO and FIFO principles and understand what a queue and stack are. The conceptual base exists; the implementation knowledge needs to be built on top of it.</li>
+        <li><strong>Frontend &amp; Project Experience:</strong> Your HTML, CSS, JS, NodeJS, and SQLite background and competition participation show you are capable of building and learning — qualities that transfer directly to DSA with consistent practice.</li>
+      </ul>
+    </div>
+
+    <!-- Areas for Improvement -->
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Daily Practice Consistency:</strong> A 3-month gap from DSA is the single biggest reason for this result. You must solve problems every day without exception — even 2–3 problems a day compounds significantly over a month.</li>
+        <li><strong>Stack &amp; Queue Implementations:</strong> You could not implement a Queue using two Stacks — a foundational interview question. You must know this and similar implementation problems cold before any re-attempt.</li>
+        <li><strong>Trees &amp; Graphs:</strong> Both topics were completely unattempted. BFS, DFS, level-order traversal, and tree recursion are heavily tested in TR-1 — these must be covered from scratch.</li>
+        <li><strong>Greedy &amp; Pattern Recognition:</strong> You could not identify the greedy O(N) insight for Max Chunks even with hints. You need to practice spotting patterns like "max so far equals index" through varied problem sets.</li>
+        <li><strong>Interview Time Management:</strong> You spent the majority of the session on an incomplete brute force without a working submission. You must practise time-boxing: 5 min to understand, 5 min to plan approach, 15 min to code, 5 min to debug.</li>
+        <li><strong>Generalising from Examples:</strong> You repeatedly fixated on the specific examples given rather than forming a general rule. Practice deriving the general case by testing your approach on edge cases you create yourself.</li>
+      </ul>
+    </div>
+
+    <!-- 1-Month Action Plan -->
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 01</div>
+            <div class="week-title">Arrays, Strings &amp; Stack/Queue</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Implement Stack and Queue from scratch in your preferred language — understand every operation</li>
+              <li>Master Queue using two Stacks — implement both enqueue and dequeue, understand the amortised O(1) argument</li>
+              <li>Solve 10 array easy problems: Two Sum, Maximum Subarray, Best Time to Buy and Sell Stock, Move Zeroes, Rotate Array</li>
+              <li>Solve 5 stack problems: Valid Parentheses, Min Stack, Daily Temperatures, Next Greater Element</li>
+              <li>Time yourself strictly — 20 minutes per easy problem; if stuck after 20 min, read the solution and re-implement from memory</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 02</div>
+            <div class="week-title">Linked Lists &amp; Trees Fundamentals</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study linked list operations: insert, delete, reverse, detect cycle (Floyd's algorithm), find middle (slow-fast pointer)</li>
+              <li>Solve: Reverse Linked List, Linked List Cycle, Merge Two Sorted Lists, Middle of Linked List</li>
+              <li>Start Trees from scratch: understand nodes, root, leaf, height, depth; implement BFS (level-order) and DFS (pre/in/post-order)</li>
+              <li>Solve: Binary Tree Level Order Traversal, Maximum Depth of Binary Tree, Invert Binary Tree, Symmetric Tree</li>
+              <li>Re-attempt the Level Order Traversal II problem from this interview — solve it completely and submit on LeetCode</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 03</div>
+            <div class="week-title">Greedy, Sorting &amp; Hashmaps</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study greedy pattern: understand "make locally optimal choices" — practice Assign Cookies, Jump Game, Max Chunks to Make Sorted</li>
+              <li>Re-attempt Max Chunks To Make Sorted — implement the O(N) greedy solution cleanly and submit</li>
+              <li>Study hashmap patterns: frequency maps, two-sum, first unique character, group anagrams</li>
+              <li>Solve 8 medium problems mixing greedy + hashmap — time yourself at 25 minutes each</li>
+              <li>Practice generating your own test cases for every problem — especially edge cases (empty input, single element, all-same values, reverse sorted)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 04</div>
+            <div class="week-title">Recursion, Priority Queue &amp; Mocks</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study recursion: factorial, Fibonacci, power function, subsets, permutations — understand base case and recurrence before touching DP</li>
+              <li>Study Priority Queue (Min-Heap): understand insertion and extraction; solve Merge K Sorted Lists, Kth Largest Element, Top K Frequent</li>
+              <li>Start 1D DP: Climbing Stairs, House Robber, Coin Change — identify state and transition before coding</li>
+              <li>Take 2 full timed mock interviews (60 min each) — strict time-boxing, camera on, simulate TR-1 exactly</li>
+              <li>Review all 4 weeks: list topics you are still weakest in and solve 5 additional problems in each before your re-attempt</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end overall-card -->
+
+</div><!-- body-wrap -->
+
+<div class="report-footer">
+  Report generated by NxtWave Interview Evaluation System · Cycle 1 · 12 February 2026
+</div>
+
+</body>
+</html>

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 export default function StudentLogin({ onSubmit, error, loading }) {
-  const [uid, setUid] = useState('');
+  const [identifier, setIdentifier] = useState('');
 
   function handle(e) {
     e.preventDefault();
-    if (!uid.trim()) return;
-    onSubmit(uid);
+    if (!identifier.trim()) return;
+    onSubmit(identifier);
   }
 
   return (
@@ -14,14 +14,15 @@ export default function StudentLogin({ onSubmit, error, loading }) {
       <div className="card login-card">
         <p className="brand">Job Readiness</p>
         <p className="brand-sub">
-          Enter your Student UID to view your placement status, scores, and feedback.
+          Enter your mobile number to view your placement status, scores, and feedback.
         </p>
         <form onSubmit={handle}>
           <input
             type="text"
-            placeholder="e.g. NW2024001"
-            value={uid}
-            onChange={(e) => setUid(e.target.value)}
+            inputMode="numeric"
+            placeholder="e.g. 6281702728"
+            value={identifier}
+            onChange={(e) => setIdentifier(e.target.value)}
             autoFocus
           />
           {error && <div className="error">{error}</div>}

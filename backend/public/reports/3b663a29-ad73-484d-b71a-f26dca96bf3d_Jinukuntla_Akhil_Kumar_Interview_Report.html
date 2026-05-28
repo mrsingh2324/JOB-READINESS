@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jinukuntla Akhil Kumar — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:40px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-green{background:var(--green-bg);color:var(--green);}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-red{background:var(--red-bg);color:var(--red);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-red{background:#c0392b;border-color:#c0392b;}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.red{color:var(--red);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .journey-detail a{color:var(--accent);text-decoration:none;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--red-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-meta a{color:var(--accent);text-decoration:none;}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Jinukuntla Akhil Kumar</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Jinukuntla Akhil Kumar</div></div>
+    <div class="info-cell"><div class="label">Year of Graduation</div><div class="value">2026</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">19 April 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">ramya.gundeboina@nxtwave.co.in</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">19 Apr 2026</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">NxtMock — AI Interview</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">Cleared prior to TR-1</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result red">✗ Not Qualified · Score 10 / 100</div>
+        <div class="journey-detail">6 May 2026 · Score: 10 </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🔴</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">6 May 2026 </div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f09090;">10</div>
+        <div class="round-score-label">/ 100</div>
+        <div style="margin-top:6px;"><span class="badge badge-red" style="font-size:11px;">✗ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">DSA Theory</div></div>
+        <div class="score-cell"><div class="snum snum-red">1/5</div><div class="slabel">Core CS</div></div>
+        <div class="score-cell"><div class="snum snum-red">1/5</div><div class="slabel">Avg Problem Solving</div></div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>Final year BTech student in Artificial Intelligence and Data Science — 2026 batch</span>
+            <span>Strong experience in machine learning; built a telecom customer churn reduction model — data science project with real-world business application</span>
+            <span>Technical skills: Python, SQL, PowerBI, React, Redux CL</span>
+            <span>NxtMock cleared prior to TR-1; however, has never used LeetCode — practiced DSA exclusively on the NxtWave platform</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Decent Introduction — ML project shows technical initiative; however, exclusive NxtWave platform practice without LeetCode exposure is a significant preparation gap for TR-1</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA &amp; Core CS Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Count the trailing zeros in the factorial of N. What is the optimal approach?</div>
+          <div class="qa-a">
+            <span>Initial approach: calculate the factorial of N, then use modulo operations to count trailing zeros — correct intuition but not feasible for large N</span>
+            <span>Interviewer correctly pointed out: factorial of N for large values (100, 1000, 100000) cannot be stored in any standard data type (int, long, etc.) — overflow makes this approach impossible</span>
+            <span>Could not arrive at the mathematical insight: trailing zeros come only from factors of 10 = 2 × 5; since factors of 2 always exceed factors of 5 in a factorial, counting factors of 5 gives the answer</span>
+            <span>Proposed recursion for computing factorial — further from the optimal, not closer</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Intuition correct but infeasible for large N; optimal O(log N) formula not reached (Rating: 2/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Trailing zeros in N! = count of pairs (2 × 5) in the factorial. Since factors of 2 always exceed factors of 5, count only factors of 5.</span>
+            <span>Formula: <code>count = floor(N/5) + floor(N/25) + floor(N/125) + ...</code> until N/5^k = 0. Each term counts multiples of 5, 25, 125 etc. (25 contributes two factors of 5, 125 contributes three, etc.). Time: O(log N), Space: O(1). Never compute the factorial itself.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Check if a number is a power of 2. What is the most optimal approach?</div>
+          <div class="qa-a">
+            <span>Brute force: start from 2, multiply by 2 in a loop, compare with N — O(log N). Correct but not optimal</span>
+            <span>Second approach: continuously mod by 2, check if remainder is 0 — same O(log N) complexity, just a different framing of the same idea</span>
+            <span>Could not identify the O(1) bit manipulation trick — interviewer confirmed the optimal solution takes O(1) time</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Brute Force Only — O(log N) approach identified; O(1) bit manipulation solution not known (Rating: 1/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A power of 2 in binary has exactly one bit set: 2=10, 4=100, 8=1000. Subtracting 1 flips all lower bits: 8-1=7=0111. Therefore <code>(n &amp; (n-1)) == 0</code> and <code>n &gt; 0</code> iff n is a power of 2.</span>
+            <span>Time: O(1), Space: O(1). This is one of the most important bit manipulation patterns — also handles edge case n=0 (0 &amp; -1 = 0 but 0 is not a power of 2, hence the n &gt; 0 check). Must-know for interviews.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/unique-paths-ii/description/" target="_blank">Unique Paths II ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood the problem: count unique paths from (0,0) to (m-1, n-1) in a grid, moving only right or down, with obstacles blocking certain cells</span>
+            <span>Initial approach: DFS with a visited array — correct direction but suboptimal O(2^(M+N)) in worst case</span>
+            <span>When prompted for a better approach: identified dynamic programming with two nested loops O(M×N) — correct direction</span>
+            <span>Described: initialise DP array, two loops over rows and columns, if obstacle set dp[i][j] = 0, else dp[i][j] = dp[i-1][j] + dp[i][j-1]</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — DP approach correctly identified after DFS suggestion; transition formula mostly correct (Rating: 1/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>DP: <code>dp[i][j] = dp[i-1][j] + dp[i][j-1]</code> if no obstacle; <code>dp[i][j] = 0</code> if obstacle. Base case: <code>dp[0][0] = 1</code> if no obstacle at start. Handle first row and first column separately (only one direction possible). Time: O(M×N), Space: O(M×N) or O(N) with space optimisation.</span>
+            <span>Key edge cases: obstacle at start returns 0; obstacle anywhere in first row/column blocks all paths beyond it. Practice tracing through the DP table manually on a small example before coding.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>This was Akhil's first time using LeetCode — had to create an account during the interview, causing significant time loss</span>
+            <span>Attempted to implement the DP solution in C++ — initialised dp array, wrote two nested loops, included obstacle check</span>
+            <span>Code had errors and could not be successfully run or submitted within the time available</span>
+            <span>The combination of an unfamiliar platform and incomplete DP implementation understanding made this particularly difficult</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Submitted — DP attempted in C++; errors prevented successful execution; first-time LeetCode usage added significant friction (Rating: 1/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/" target="_blank">Best Time to Buy and Sell Stock II ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood the problem: given daily stock prices, maximise profit by buying and selling any number of times (no holding, must sell before buying again)</span>
+            <span>Initial greedy approach: for loop from index 1 to n-1; if <code>prices[i] &gt; prices[i-1]</code>, add the difference to profit — this is actually the correct optimal O(N) greedy approach</span>
+            <span>However, could not explain <em>why</em> this works — when interviewer asked for reasoning, gave vague justifications ("to get the highest price possible")</span>
+            <span>Changed approach mid-discussion to backward traversal with max tracking — incorrect and more complex; confused himself and the interviewer</span>
+            <span>Should have stayed with the first greedy approach — the initial instinct was right</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Self-Abandoned Correct Approach — Initial greedy was correct; changed to wrong approach due to inability to explain the reasoning (Rating: 1/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Greedy O(N): add every positive price difference. <code>if prices[i] &gt; prices[i-1]: profit += prices[i] - prices[i-1]</code></span>
+            <span><strong>Why it works:</strong> any upward slope in prices contributes to profit. Capturing every consecutive upward step is equivalent to buying at every local minimum and selling at every local maximum. Time: O(N), Space: O(1). The key is understanding this equivalence — which is why the interviewer kept asking "why". Always be able to justify your greedy choice.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Attempted to implement but used <code>prices[i]</code> outside the loop scope — undefined variable error</span>
+            <span>Could not debug or fix the scoping issue in the remaining time</span>
+            <span>Session ended without a working submission</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Submitted — Scoping error with loop variable; session ended before fix (Rating: 1/5)</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Very weak candidate." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 2/5 — Needs improvement; struggled to articulate algorithm reasoning clearly; often described implementation steps without explaining the underlying logic. Interviewer's closing advice: start LeetCode from very basic problems (palindrome, etc.), build up gradually; forgetting logic after solving means insufficient depth — consistent daily implementation practice is the only fix.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>There is one important positive to note: your very first instinct for Stock II was the correct greedy approach — you identified "add each day's gain if prices[i] > prices[i-1]" before the interviewer explained anything. That shows real problem-solving intuition. The problem is what came next: you could not explain why that approach works, lost confidence, and switched to a wrong one. This pattern repeated across the interview — you had some directional understanding but could not back it up with reasoning or working code. The absence of LeetCode practice is a critical gap; the platform is the industry standard for interview preparation and you need to start using it from today. The good news is that you have a strong technical foundation (AI/ML, Python, data projects) and NxtMock cleared — the DSA gap is bridgeable with structured daily practice over the next month.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Correct Initial Instinct (Stock II):</strong> Your first approach for Best Time to Buy and Sell Stock II was the correct O(N) greedy solution — before any hints. This shows genuine problem intuition that needs to be developed further, not replaced.</li>
+        <li><strong>DP Direction Identified:</strong> You identified that Unique Paths II requires dynamic programming rather than brute force DFS — showing awareness of when to apply DP, even if the implementation was incomplete.</li>
+        <li><strong>Strong Technical Foundation:</strong> ML project (telecom churn model), Python/SQL expertise, and NxtMock cleared show a capable learner who can apply technology — the same capacity needs to be directed at DSA.</li>
+        <li><strong>NxtMock Cleared:</strong> Demonstrates you can perform in structured assessments; carry that same preparation rigor into LeetCode practice.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Start LeetCode — Immediately:</strong> Practicing only on NxtWave without LeetCode is a critical gap. Every company interview uses LeetCode-style problems; you need to be comfortable with the platform, the submission flow, and the problem format before TR-1.</li>
+        <li><strong>Explain Your "Why" — Not Just Your "What":</strong> You described what to do in Stock II but not why it works. In interviews, the reasoning is evaluated as much as the answer. For every algorithm you use, practise a 2-sentence explanation of why it is correct.</li>
+        <li><strong>Bit Manipulation Basics:</strong> Power of 2 check with O(1) bit manipulation — <code>(n &amp; (n-1)) == 0</code> — is a must-know pattern. Study XOR, AND, OR, NOT operations and their common interview applications.</li>
+        <li><strong>Trailing Zeros (Mathematical Insight):</strong> The factorial trailing zeros formula <code>floor(N/5) + floor(N/25) + ...</code> is a classic number theory result that appears frequently. Study and memorise it with full understanding of why only factors of 5 are counted.</li>
+        <li><strong>Trust Your First Instinct:</strong> You had the right approach for Stock II but abandoned it. Build confidence in your reasoning — when your first instinct is directionally right, develop it rather than replace it under pressure.</li>
+        <li><strong>Variable Scoping in Code:</strong> Using a loop variable outside its scope is a basic syntax error that must be eliminated. Practice writing clean, compilable code on paper before running it — build the habit of checking scope before submission.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">LeetCode Setup &amp; Easy Foundations</div></div>
+          <div class="week-card-body"><ul>
+            <li>Create a LeetCode account today and solve your first 10 easy problems — palindrome, reverse string, two sum, valid parentheses, maximum subarray</li>
+            <li>Get familiar with the LeetCode interface: reading constraints, using the code editor, running test cases, submitting</li>
+            <li>Study bit manipulation: XOR (single number), AND (power of 2 check), bit count, set/clear/toggle bits</li>
+            <li>Re-implement Best Time to Buy and Sell Stock II correctly and submit — write a 2-sentence explanation of why the greedy approach works before coding</li>
+            <li>Study the trailing zeros formula — implement it and submit Factorial Trailing Zeroes (LeetCode 172)</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">Arrays, Greedy &amp; DP Basics</div></div>
+          <div class="week-card-body"><ul>
+            <li>Re-implement Unique Paths II — trace the DP table on a 3×3 grid by hand first, then code; handle first row/column edge cases explicitly</li>
+            <li>Study greedy pattern: Jump Game, Assign Cookies, Partition Labels — for each, write why the greedy choice is optimal</li>
+            <li>Study 1D DP: Climbing Stairs, House Robber, Coin Change — state + transition before touching code</li>
+            <li>Solve 10 easy-medium array problems — time each at 20 minutes; do not look at solutions until time expires</li>
+            <li>Daily habit: after each solution, write one sentence explaining "why this approach works" before moving to the next problem</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Hashmaps, Sorting &amp; Two Pointers</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study hashmap patterns: Two Sum (O(N)), First Unique Character, Group Anagrams, Majority Element</li>
+            <li>Study sorting as preprocessing: Merge Intervals, Meeting Rooms, 3Sum — ask "should I sort first?" before every array problem</li>
+            <li>Study two-pointer pattern: Valid Palindrome, Container With Most Water, Remove Duplicates from Sorted Array</li>
+            <li>Solve 10 medium problems across hashmaps and two pointers — time each at 25 minutes</li>
+            <li>Take one timed mock interview (45 min) with a peer — explain every step out loud</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Linked Lists, Trees &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study linked list basics: reverse, detect cycle (Floyd's), find middle, merge two sorted lists</li>
+            <li>Study tree BFS/DFS: level order traversal, maximum depth, symmetric tree, path sum</li>
+            <li>Solve 12 problems across all topics studied in Weeks 1–3 — no topic labels, random order</li>
+            <li>Take 2 full timed mock interviews (60 min each) — camera on, LeetCode, rapid fire + 2 coding questions</li>
+            <li>After each mock: specifically check — could you explain WHY each algorithm works? Fix any gap before re-attempt</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 6 May 2026</div>
+</body>
+</html>

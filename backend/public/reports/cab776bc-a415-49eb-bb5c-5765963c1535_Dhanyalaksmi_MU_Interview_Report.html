@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dhanyalaksmi M U — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:40px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-red{background:var(--red-bg);color:var(--red);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--amber-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Dhanyalaksmi M U</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Dhanyalaksmi M U</div></div>
+    <div class="info-cell"><div class="label">Year of Graduation</div><div class="value">2026</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">15 March 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">dhanyaamu0103@gmail.com</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">15 Mar 2026</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">NxtMock — AI Interview</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">Cleared prior to TR-1</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result amber">~ Not Qualified · Score 25 / 100</div>
+        <div class="journey-detail">11 Apr 2026 · Score: 25</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">11 Apr 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">25</div>
+        <div class="round-score-label">/ 100</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">3/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-green">4/5</div><div class="slabel">DSA Theory</div></div>
+        <div class="score-cell"><div class="snum snum-green">4/5</div><div class="slabel">Core CS</div></div>
+        <div class="score-cell"><div class="snum snum-red">1/5</div><div class="slabel">Avg Problem Solving</div></div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>BSc Computer Science with AI/DS specialisation — undergoing NxtWave fullstack development training</span>
+            <span>Projects: AI-powered web app developer, database anomaly detection system (REST APIs + authentication)</span>
+            <span>Python internship at Bent Technology — hands-on project work across multiple assignments</span>
+            <span>Technical stack: ReactJS, NodeJS, Python; NxtMock cleared prior to TR-1</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Strong Introduction — Meaningful projects with API/authentication work, Python internship, and NxtMock cleared; solid foundation to build on</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA &amp; Core CS Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Given a sorted array where every element appears exactly twice except one, find that single element in O(log N) time.</div>
+          <div class="qa-a">
+            <span>Correctly identified the index-parity pattern: in a sorted array with all pairs, pairs occupy (even, odd) index positions; the single element breaks this pattern</span>
+            <span>Correctly described the binary search logic: if mid index is even and equals the next element → single is on the right; if mid is odd and equals the previous element → single is on the right; otherwise single is at mid or on the left</span>
+            <span>Reduction of search space explained correctly — the full O(log N) binary search approach was clearly articulated</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Excellent — Full binary search with index parity logic correctly and clearly explained (Rating: 4/5)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Given a paragraph of text, count the frequency of each word.</div>
+          <div class="qa-a">
+            <span>Correctly proposed: split the text by spaces using a split method, then use a hashmap to track word-to-count mappings</span>
+            <span>Correctly described the iteration: if word already exists in map, increment count; if new, add with count 1</span>
+            <span>Correctly traced the example: "Dhanyalaksmi" appears twice → output 2; "is" appears twice → output 2</span>
+            <span>Complete O(N) solution clearly explained with correct trace</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — O(N) hashmap word frequency solution fully and correctly explained (Rating: 4/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/max-chunks-to-make-sorted/description/" target="_blank">Max Chunks To Make Sorted ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Took extended time to understand the problem — interviewer had to guide through both examples multiple times</span>
+            <span>Eventually correctly explained Example 1: array [4,3,2,1,0] is fully reversed → any partial split cannot produce a sorted result → only one chunk (the whole array)</span>
+            <span>Eventually correctly explained Example 2: [1,0,2,3,4] → splits into [1,0], [2], [3], [4] → sort each → [0,1], [2], [3], [4] → concatenate → [0,1,2,3,4] ✓ → 4 chunks</span>
+            <span>Approach proposed: split, sort each chunk, merge — brute force O(N log N) direction; time complexity stated as O(N) which was incorrect</span>
+            <span>Did not identify the O(N) greedy insight: a chunk boundary exists at index i when <code>max(arr[0..i]) == i</code></span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Problem understood after extended guidance; brute force approach stated; O(N) greedy not reached (Rating: 1/5 PS)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Greedy O(N): iterate tracking <code>max_so_far</code>. At each index i: if <code>max_so_far == i</code>, all elements in [0..i] are a permutation of [0..i] and can be independently sorted → increment chunk count.</span>
+            <span>Why it works: if the max seen so far equals the current index, no element from this range will need to cross into any other chunk. Time: O(N), Space: O(1). Study this alongside other "max-so-far" greedy patterns.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Attempted to implement the split-sort-merge approach</span>
+            <span>Second example passed but first example failed — outputting 4 instead of the correct 1</span>
+            <span>The brute force implementation was incomplete and did not handle the fully-reversed case correctly</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Partial Submission — 6/250 test cases passed; fully-reversed case failed; greedy not implemented (Rating: 1/5 Code)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/minimum-additions-to-make-valid-string/description/" target="_blank">Minimum Additions to Make Valid String ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood: the string must be decomposable into complete "abc" groups; find the minimum number of characters to add to make this possible</span>
+            <span>Correctly traced specific examples: single "a" needs "bc" added (2 additions); "aaa" needs 2 additions per group = 6 total; "abc" needs 0 additions</span>
+            <span>Proposed: condition-based approach — check which letter is given and handle each case separately — not generalised</span>
+            <span>Could not reach the greedy pointer approach: iterate through the string maintaining a pointer into "abc", advance both when characters match, count a new group when the string pointer does not match</span>
+            <span>Time complexity stated as O(2) — interviewer correctly explained O(2) = O(1) = constant; then corrected to acknowledge a loop is needed</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Problem and examples correctly understood; generalised greedy pointer approach not reached (Rating: 2/5 PS)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Greedy pointer: maintain index j into "abc" (0=a, 1=b, 2=c). For each character in the input: if it matches <code>"abc"[j]</code>, advance j. If j reaches 3, a complete group is formed — reset j=0. Count additions = (number of complete groups × 3) - len(string) + (2-j if j &gt; 0 else 0).</span>
+            <span>Equivalently: iterate through string with a pointer in "abc". When the current character breaks the expected sequence, it starts a new group. Additions = (groups × 3) - len(string). Time: O(N), Space: O(1).</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Wrote condition-based code handling specific single-character cases ("a", "b", "c")</span>
+            <span>Interviewer correctly noted the code would not handle multi-character strings or all combinations</span>
+            <span>Could not generalise the conditions into a loop-based greedy; session ended</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incomplete — Condition-based code for specific cases only; general solution not reached (Rating: 1/5 Code)</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Candidates need to practice a lot. She tried to cheat during the first question even after multiple warnings." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 3/5 — Can improve; explanations are often fragmented and require multiple rounds of prompting; the theory questions (4/5 each) show the knowledge exists — the challenge is communicating it under time pressure during coding problems.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>Your performance in this interview tells two different stories. In the rapid fire round, you were excellent — correctly explaining binary search with index parity (4/5) and the hashmap word frequency approach (4/5). These are non-trivial answers and show genuine algorithmic understanding. But in the coding round, that same understanding did not translate into working solutions. The Max Chunks problem took extended discussion before the problem statement was fully understood, and neither coding problem reached a generalised solution. The gap is in generalisation and implementation depth — you can explain specific examples correctly but struggle to form a general algorithm and convert it to correct, running code. One focused month of practice closing this gap will significantly improve your re-attempt performance.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Binary Search with Index Parity (4/5):</strong> You correctly explained the parity-based binary search for sorted array single element — including the full decision logic for left vs right. This is a non-trivial algorithm and you explained it completely.</li>
+        <li><strong>Hashmap Word Frequency (4/5):</strong> Complete O(N) solution correctly described — split, iterate, increment/add — with a correct example trace. This shows real hashmap fluency.</li>
+        <li><strong>Problem Comprehension (eventually):</strong> You correctly explained both Max Chunks examples and traced Minimum Additions accurately for specific inputs — the reasoning ability is present.</li>
+        <li><strong>Strong Background:</strong> AI/DS projects with REST APIs, Python internship, NxtMock cleared, and full stack training make for a well-rounded profile.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Greedy Pattern Recognition:</strong> Both coding problems required greedy thinking — max-so-far vs index (Max Chunks) and pointer-in-"abc" (Minimum Additions). Neither was reached independently. Dedicate a week to greedy problems to build this instinct.</li>
+        <li><strong>Generalising from Examples:</strong> You correctly traced specific examples but couldn't form a general rule. After tracing 2–3 examples, always ask: "what is the pattern that works for all cases?" — this is the algorithm.</li>
+        <li><strong>Time Complexity Analysis:</strong> Stating O(N) for a split-sort-merge approach, and O(2) for a loop-based problem, shows complexity analysis needs work. For every approach: count the loops, identify the dominant term, and state it correctly before coding.</li>
+        <li><strong>Problem Reading Speed:</strong> Extended time spent understanding Max Chunks cut significantly into the coding time. Practice reading and understanding 5 problems per day — improve the speed at which you move from reading to approach.</li>
+        <li><strong>Condition-Based Code → Loop-Based Code:</strong> For Minimum Additions you wrote specific if-conditions instead of a generalised loop. Any time you find yourself writing repeated conditions for a, b, c separately — that's a signal to find the loop instead.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">Greedy Patterns &amp; Generalisation</div></div>
+          <div class="week-card-body"><ul>
+            <li>Re-implement Max Chunks to Make Sorted — O(N) greedy with max-so-far tracking; submit and verify all test cases pass</li>
+            <li>Re-implement Minimum Additions to Make Valid String — greedy pointer through "abc"; no separate if-conditions</li>
+            <li>Study greedy pattern: Jump Game, Assign Cookies, Partition Labels, Non-overlapping Intervals</li>
+            <li>After tracing 2 examples of any problem: write one sentence stating the general rule — this is your algorithm</li>
+            <li>Solve 8 greedy problems at easy-medium level — time each at 25 minutes</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">Complexity Analysis &amp; Sorting</div></div>
+          <div class="week-card-body"><ul>
+            <li>Practice time complexity analysis daily: for every solution, count the loops and state Big-O before submitting</li>
+            <li>Common rules: one loop = O(N); two nested loops = O(N²); binary search = O(log N); sort = O(N log N)</li>
+            <li>Study sorting-based problems: Merge Intervals, Meeting Rooms, 3Sum, Sort Colors, Kth Largest Element</li>
+            <li>Re-attempt the binary search single element problem — implement fully and submit; your explanation was correct, now make the code match</li>
+            <li>Solve 10 easy-medium problems — after every solution, state time and space complexity before moving on</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Two Pointers, Stacks &amp; Hashmaps</div></div>
+          <div class="week-card-body"><ul>
+            <li>Deepen hashmap fluency: Two Sum (O(N)), Subarray Sum Equals K, Longest Consecutive Sequence, Group Anagrams</li>
+            <li>Study two-pointer patterns: Valid Palindrome, Container With Most Water, 3Sum, Remove Duplicates</li>
+            <li>Study monotonic stack: Daily Temperatures, Next Greater Element — push indices, pop on condition</li>
+            <li>Problem reading practice: read 5 problems per day — just read, understand, and trace examples without solving; build reading speed</li>
+            <li>Solve 10 medium problems across these patterns — time each at 25 minutes</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Mixed Problems &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Solve 15 medium problems randomly — no topic filters; identify the pattern category within 5 minutes of reading</li>
+            <li>Study 1D DP basics: Climbing Stairs, House Robber, Coin Change — state, transition, base case</li>
+            <li>Review weeks 1–3: specifically re-implement Max Chunks greedy and Minimum Additions from memory — both appeared in your interview and will likely appear in similar form again</li>
+            <li>Take 2 full timed mock interviews (60 min each) — camera on, rapid fire + 2 coding problems, strict timing</li>
+            <li>After each mock: could you generalise from examples to a universal rule quickly? This is the core skill to verify before re-attempt</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 11 April 2026</div>
+</body>
+</html>

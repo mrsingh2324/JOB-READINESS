@@ -1,4 +1,4 @@
-const API = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API = import.meta.env.VITE_API_URL ?? 'http://localhost:3001';
 
 // Render free-tier instances spin down after inactivity. The first request
 // after sleep hits Render's edge with no server, returning a CORS-less 404.
@@ -34,6 +34,8 @@ export function isWaking(err) {
 }
 
 export const api = {
+  reportUrl: (path) => `${API}${path}`,
+  lookup: (identifier) => req(`/api/lookup/${encodeURIComponent(identifier)}`),
   getStudent: (uid) => req(`/api/student/${encodeURIComponent(uid)}`),
   submitFeedback: (uid, rating) =>
     req(`/api/student/${encodeURIComponent(uid)}/feedback`, { method: 'POST', body: JSON.stringify({ rating }) }),

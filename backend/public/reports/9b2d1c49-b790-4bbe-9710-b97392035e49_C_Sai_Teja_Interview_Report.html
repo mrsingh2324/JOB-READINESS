@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>C Sai Teja — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--amber-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>C Sai Teja</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">C Sai Teja</div></div>
+    <div class="info-cell"><div class="label">Year of Graduation</div><div class="value">2026</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">22 March 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">saitejachilukuri2003@gmail.com</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">22 Mar 2026</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">NxtMock — AI Interview</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">Cleared prior to TR-1</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result amber">~ Not Qualified · NxtWave Score 38 / 100</div>
+        <div class="journey-detail">28 Apr 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">28 Apr 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">38</div>
+        <div class="round-score-label">/ 100 · NxtWave Score</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">3/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-green">4/5</div><div class="slabel">DSA Theory</div></div>
+        <div class="score-cell"><div class="snum snum-green">4/5</div><div class="slabel">Core CS</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">Avg Problem Solving</div></div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>Final year BTech student at AC Engineering College — 2026 batch</span>
+            <span>Web development stack: ReactJS, NodeJS, JavaScript, HTML, CSS</span>
+            <span>Projects: Quick Blog — CRUD blog application with an AI-powered blog description generator; Next Range — ecommerce platform with product search and purchase functionality</span>
+            <span>NxtMock cleared prior to TR-1</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Decent Introduction — Two meaningful full-stack projects show real building experience; rapid fire performance (4/5 on both) confirms strong foundational knowledge that needs to translate into coding round performance</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA &amp; Core CS Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Return the majority element — appearing more than ⌊N/2⌋ times — in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Correctly identified Boyer-Moore Voting: maintain a candidate variable and a count; iterate the array</span>
+            <span>If current element equals candidate → increment count</span>
+            <span>Small detail off: said "else count = 1 and reassign candidate" — Boyer-Moore decrements count on mismatch and only resets candidate when count reaches 0; the distinction is minor but important for correctness</span>
+            <span>Overall approach is clearly Boyer-Moore — correctly identified the O(1) space solution</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Mostly Correct — Boyer-Moore correctly identified; minor detail: decrement on mismatch, reset candidate only when count hits 0 (Rating: 4/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 The One Detail to Fix</div>
+            <span>On mismatch: <code>count -= 1</code> (not count = 1). Only when <code>count == 0</code> do you reset candidate to the current element and set <code>count = 1</code>. This distinction matters: the algorithm cancels minority votes one at a time; if you reset to 1 on every mismatch, you lose the "survivor" property that makes it correct.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Every number appears exactly twice except one. Find that number in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Correctly identified XOR: "XOR operation cancels same elements to zero; the remaining variable is the single element"</span>
+            <span>Correctly stated: <code>a ^ a = 0</code> — all pairs cancel, unique element survives</span>
+            <span>Correct: O(N) time, O(1) space</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — XOR solution with clear reasoning (Rating: 4/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — Majority Element in Subarrays</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Understood the problem: for each subarray, determine whether an element appears more than half the subarray's length</span>
+            <span>Proposed: prefix sum over the array + two nested loops; check if <code>prefix[j] - prefix[i] &gt; (j - i) / 2</code> — this is an O(N²) approach; self-acknowledged when asked for complexity</span>
+            <span>Could not improve beyond O(N²) despite being prompted</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — O(N²) prefix sum approach identified; O(N) optimisation not reached (Rating: 3/5 PS)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Attempted to implement the O(N²) prefix sum solution</span>
+            <span>Code produced wrong answer on the sample test case — had a logic bug in the majority condition</span>
+            <span>Could not independently identify and fix the bug; shared code in chat at interviewer's request</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — O(N²) solution attempted; logic bug prevented correct output; debugging not completed (Rating: 2/5 Code)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/maximum-subarray-with-one-deletion/description/" target="_blank">Maximum Subarray Sum with One Deletion ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Understood: find the maximum subarray sum where you may delete at most one element from the subarray</span>
+            <span>Initial approach: in every subarray, find the minimum element, remove it, sum the rest — O(N³) and logically wrong; the element to delete for maximum sum is not necessarily the minimum</span>
+            <span>Interviewer correctly pointed this out — "the minimum element may not be in the subarray giving the maximum sum"</span>
+            <span>With hint "use Kadane's + deletion logic": acknowledged Kadane's but could not combine the deletion case</span>
+            <span>With further hint "calculate based on delete or not delete": proposed using prefix sum to remove an element by index — not a coherent algorithm; the idea of a forward Kadane and backward Kadane is what was needed</span>
+            <span>No code produced</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Problem understood; wrong initial approach (delete minimum); Kadane's known but deletion variant not formulated (Rating: 2/5 PS)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Forward + Backward Kadane:</strong> build <code>fwd[i]</code> = max subarray sum ending at index i (standard Kadane's). Build <code>bwd[i]</code> = max subarray sum starting at index i (Kadane's from right). Answer without deletion = max of fwd. Answer with deletion at index i = <code>fwd[i-1] + bwd[i+1]</code>.</span>
+            <span>Iterate over all possible deletion indices to find the maximum. Time: O(N), Space: O(N). The key insight from the hint "delete or not delete": if you delete index i, you join the best subarray ending just before i with the best subarray starting just after i — this is exactly fwd[i-1] + bwd[i+1].</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> Communication 3/5 — Can improve. &nbsp;·&nbsp; You are one of the stronger profiles in the rapid fire round — Boyer-Moore and XOR both at 4/5. The coding round gap is specific: debugging your own code and combining known algorithms (Kadane's + deletion) into a novel solution. Both are skills that come directly from more extensive problem-solving practice.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>With a NxtWave score of 38 and 4/5 on both rapid fire questions, you are one of the stronger profiles from this round. Boyer-Moore and XOR correctly explained — with reasoning, not just recall. The gap is squarely in the coding round: you attempted the O(N²) solution for Problem 1 but had a logic bug you couldn't debug, and for Problem 2 you knew Kadane's but couldn't apply it with a deletion variant. These are not knowledge gaps — they are application and debugging gaps. One focused month closing the distance between "I know Kadane's" and "I can extend Kadane's to a new problem" will put you in a strong position for your re-attempt. The Boyer-Moore detail (decrement on mismatch, don't reset to 1) is also worth correcting before re-attempt.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Boyer-Moore (4/5):</strong> Correctly identified and largely correctly explained — candidate variable, count, increment on match. Only the decrement-vs-reset detail needs fixing. This is the highest rapid fire theory score in the set.</li>
+        <li><strong>XOR (4/5):</strong> Correctly explained with reasoning — <code>a ^ a = 0</code>, pairs cancel, single element survives. Solid foundational understanding.</li>
+        <li><strong>Kadane's Algorithm Known:</strong> You recognised Kadane's when the interviewer mentioned it — this is the core component of Problem 2's solution. The gap is in applying it with a deletion variant, not in not knowing it.</li>
+        <li><strong>Full-Stack Projects:</strong> Quick Blog with AI description generation and Next Range ecommerce show real building experience — strong profile outside DSA.</li>
+        <li><strong>NxtWave Score 38:</strong> The highest NxtWave score among TR-1 not-qualified candidates — you are the closest to the passing threshold; a targeted re-attempt is the clearest path forward.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Boyer-Moore — Fix the One Detail:</strong> On mismatch, <code>count -= 1</code>. Only when <code>count == 0</code> do you reassign the candidate. The reset-to-1-on-every-mismatch version is incorrect — fix this before re-attempt so it is fully correct.</li>
+        <li><strong>Debugging Your Own Code:</strong> The Problem 1 code had a logic bug you could not identify. Build the habit of dry-running every solution on the smallest example before submitting — if the output doesn't match, trace line by line until the divergence point is found.</li>
+        <li><strong>Kadane's + Deletion — The Key Extension:</strong> You know Kadane's. The deletion extension is: <code>fwd[i-1] + bwd[i+1]</code> for deleting index i. Study this pattern: "what is the best ending just before i?" and "what is the best starting just after i?" — connect these two standard Kadane runs.</li>
+        <li><strong>"Delete Minimum" is Wrong:</strong> For max-sum problems, the element to delete is not the minimum — it's the one that, when removed, maximises the joined sum. Never assume delete-minimum for sum problems; instead think: delete-optimal using DP.</li>
+        <li><strong>O(N²) to O(N) Optimisation:</strong> For Problem 1, you correctly identified O(N²) but could not improve. Practice this: after finding any O(N²) solution, ask "what information from the previous step can I reuse?" — this is how prefix sums, sliding windows, and Kadane's all reduce complexity.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">Fix Boyer-Moore &amp; Kadane's Variants</div></div>
+          <div class="week-card-body"><ul>
+            <li>Correct Boyer-Moore: implement with decrement-on-mismatch (not reset-to-1); submit Majority Element (LeetCode 169) and verify; then solve Majority Element II (LeetCode 229) which needs two candidates</li>
+            <li>Study Kadane's algorithm deeply: Maximum Subarray (LeetCode 53) — implement and trace on paper</li>
+            <li>Implement Maximum Subarray with One Deletion (LeetCode 1186): build forward and backward Kadane arrays; iterate deletion index; submit and verify</li>
+            <li>Dry-run habit: for every solution, trace on paper with example 1 before submitting — this is how you catch the logic bug that failed Problem 1</li>
+            <li>Solve Maximum Product Subarray and Maximum Sum Circular Subarray — Kadane's variants to deepen the pattern</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">DP — State Design &amp; Extensions</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study 1D DP state design: Climbing Stairs, House Robber, Coin Change — identify state, transition, and base case explicitly before coding each</li>
+            <li>Study 2-state DP: problems with "delete at most one" or "at most k operations" are classic 2-state DP — dp[i][0] = no deletion used, dp[i][1] = deletion used</li>
+            <li>Implement Maximum Number of Jumps to Reach Last Index (LeetCode 2770) — O(N²) DP with jump condition</li>
+            <li>Practice O(N²) → O(N) optimisation: after every O(N²) solution, identify what information repeats and how to carry it forward</li>
+            <li>Solve 8 DP problems at medium level — trace DP table for each</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Stacks, Prefix Sums &amp; Sliding Window</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study monotonic stack: Daily Temperatures, Next Greater Element I &amp; II, Car Fleet — push indices, pop on condition</li>
+            <li>Deepen prefix sum patterns: Subarray Sum Equals K (O(N) with hashmap), Range Sum Query, Product of Array Except Self</li>
+            <li>Study sliding window: Longest Substring Without Repeating Characters, Minimum Window Substring, Fruit Into Baskets</li>
+            <li>Solve 10 medium problems across these three patterns — time each at 25 minutes</li>
+            <li>After every solution: state the O(N²) brute force and the O(N) optimised approach — build the habit of always knowing both</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Mixed Practice &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Solve 15 medium problems randomly — no topic filters; identify pattern and state both brute force and optimal approaches before coding</li>
+            <li>Study binary search on answer: Koko Eating Bananas, Capacity to Ship Packages — pattern to add to your toolkit</li>
+            <li>Review: re-implement Maximum Subarray with One Deletion and Boyer-Moore from memory — both are from this interview and will likely appear again</li>
+            <li>Take 2 full timed mock interviews (60 min each) — rapid fire + 2 coding questions; camera on, no hints; dry-run every solution before submitting</li>
+            <li>Your NxtWave score is 38 — the closest to passing in this group. The re-attempt is a refinement, not a rebuild. Treat it that way.</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 28 April 2026</div>
+</body>
+</html>

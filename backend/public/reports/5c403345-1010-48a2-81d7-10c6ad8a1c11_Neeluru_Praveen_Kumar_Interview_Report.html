@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neeluru Praveen Kumar — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:40px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-green{background:var(--green-bg);color:var(--green);}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-red{background:var(--red-bg);color:var(--red);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .journey-detail a{color:var(--accent);text-decoration:none;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--amber-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-meta a{color:var(--accent);text-decoration:none;}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Neeluru Praveen Kumar</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+<div class="body-wrap">
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Neeluru Praveen Kumar</div></div>
+    <div class="info-cell"><div class="label">Year of Graduation</div><div class="value">2027</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">10 May 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">neelurupraveenkumarreddy@gmail.com</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">10 May 2026</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">NxtMock — AI Interview</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">Cleared prior to TR-1</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result amber">~ Not Qualified · NxtWave Score 45 / 100 · Low Hire</div>
+        <div class="journey-detail">18 May 2026 · <a href="https://drive.google.com/file/d/1edwFmx9psioMR9pkx2g-HRSeci3mstRa/view?usp=drivesdk" target="_blank">Recording ↗</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">18 May 2026 · <a href="https://drive.google.com/file/d/1edwFmx9psioMR9pkx2g-HRSeci3mstRa/view?usp=drivesdk" target="_blank">View Recording ↗</a></div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">45</div>
+        <div class="round-score-label">/ 100 · Low Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Qualified</span></div>
+      </div>
+    </div>
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">3/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-green">5/5</div><div class="slabel">DSA Theory</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">Core CS</div></div>
+        <div class="score-cell"><div class="snum snum-amber">3/5</div><div class="slabel">Avg Problem Solving</div></div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>Completed BTech in Computer Science Engineering from J&amp;J College of Engineering, Narsapur — 2027 batch</span>
+            <span>Project 1: Exam Seating Arrangement System — fully automated fullstack web application to simplify college exam logistics</span>
+            <span>Project 2: Blogging Platform — fullstack virtual platform where users share content on topics of their choice</span>
+            <span>Strong foundations in CS fundamentals and full stack development; NxtMock cleared prior to TR-1</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Decent Introduction — Two practical fullstack projects; NxtMock cleared; solid base to build upon</span>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA &amp; Core CS Theory</div>
+        <div class="qa-item">
+          <div class="qa-q">Q1: Detect a cycle in a linked list. Explain with a dry run and give the time complexity.</div>
+          <div class="qa-a">
+            <span>Immediately and correctly identified Floyd's Cycle Detection — slow pointer moves 1 step, fast pointer moves 2 steps; they meet if and only if a cycle exists</span>
+            <span>Accurately dry-ran a 7-node example with a cycle: traced both pointers through each iteration and correctly identified their meeting point at node 6</span>
+            <span>Correctly stated: if pointers never meet, the list has no cycle</span>
+            <span>Time complexity stated as O(N + K) where K is nodes in the cycle — a sound derivation; standard answer is O(N) since K ≤ N</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Excellent — Floyd's algorithm explained correctly, dry-run accurate, time complexity well-derived (Rating: 5/5)</span>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Q2: What is an LRU Cache? How do you find the median from a stream of integers?</div>
+          <div class="qa-a">
+            <span>LRU Cache: unfamiliar with the term but correctly described cache fundamentals — fast, volatile, expensive memory that reduces CPU access time</span>
+            <span>Cache eviction: did not know formal LRU algorithm but correctly intuited "keep frequently/recently accessed data in cache" — directionally sound</span>
+            <span>Median from Stream: correctly understood the dynamic nature — elements added one by one, median must update each time</span>
+            <span>Proposed heap/priority queue to maintain sorted order — correct direction; mentioned min-heap and max-heap in C++</span>
+            <span>Did not reach the two-heap design (max-heap for lower half + min-heap for upper half) which gives O(log N) insert and O(1) median</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Cache intuition correct; median approach pointed toward heaps correctly but full two-heap design not completed (Rating: 2/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>LRU Cache:</strong> evict the Least Recently Used element when capacity is exceeded. Implementation: HashMap (O(1) lookup) + Doubly Linked List (O(1) insertion/deletion). Most recently used at head, least recently used at tail. In Python: <code>collections.OrderedDict</code>. Time: O(1) for both get and put.</span>
+            <span><strong>Median from Stream:</strong> maintain two heaps — a max-heap for the lower half and a min-heap for the upper half. Keep sizes balanced (differ by at most 1). Median = top of max-heap (odd count) or average of both tops (even count). Insert: O(log N), Find median: O(1).</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 (Attempted) — <a href="https://leetcode.com/problems/continuous-subarrays/description/" target="_blank">Continuous Subarrays ↗</a></div>
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood: count all contiguous subarrays where the absolute difference between any two elements is at most 2</span>
+            <span>Initial approach: recursive "take or not take" — this generates subsets (non-contiguous), not subarrays (contiguous); fundamentally incorrect for this problem</span>
+            <span>After sliding window hint from interviewer: understood the concept of an expanding window but could not formulate the correct max-min constraint check within the window</span>
+            <span>Interviewer switched to a different problem — this question was not completed</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — Subsets vs subarrays confused; sliding window pattern not independently identified (Rating: 1/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Use a sliding window with two monotonic deques — one tracking the window maximum, one tracking the minimum. Expand right pointer; when <code>max - min &gt; 2</code>, shrink from the left.</span>
+            <span>Count of valid subarrays ending at index right = <code>right - left + 1</code>. Time: O(N), Space: O(N). This combines sliding window + monotonic deque — a pattern worth dedicating study time to.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/jump-game-iii/description/" target="_blank">Jump Game III ↗</a></div>
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood: from index i, jump to i + arr[i] or i - arr[i]; return true if any index with value 0 is reachable from start</span>
+            <span>Proposed recursion with backtracking — correct direction for this graph reachability problem</span>
+            <span>Correctly identified base cases: index out of bounds, index already visited (to prevent infinite loops)</span>
+            <span>Initially used a "depth" counter as termination — incorrect; self-corrected to a visited boolean array after interviewer guidance</span>
+            <span>Final recursive logic: if arr[index] == 0 return True; else mark visited; recurse on index + arr[index] and index - arr[index]</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Good Approach — Recursion + visited array is correct; self-corrected with hint; logic structurally sound (Rating: 3/5)</span>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented the recursive DFS solution with a visited array — logic was directionally correct and matched the approach discussed</span>
+            <span>Solution hit a stack overflow error on large test inputs — deep recursion chains exceeded the call stack limit</span>
+            <span>Correctly self-diagnosed: "stack overflow — maximum recursion depth exceeded"</span>
+            <span>In the final two minutes, identified the fix direction: "avoid iterating over repeated values" — pointing toward memoisation or iterative BFS</span>
+            <span>Did not complete the fix before time ran out; session ended</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct logic implemented; stack overflow on large inputs; fix correctly identified but not completed in time (Rating: 3/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Iterative BFS (avoids stack overflow):</strong> use a queue. Start: enqueue the start index, mark visited. For each dequeued index: if arr[index] == 0 → return True. Else enqueue arr[index] ± index if in bounds and not visited. If queue empty → return False.</span>
+            <span><strong>Why BFS over recursive DFS:</strong> recursive DFS can exceed Python's default recursion limit (~1000) for large N. Iterative BFS uses a heap-allocated queue with no depth limit. Both are O(N) time and O(N) space. Rule of thumb: for graph/tree problems with N &gt; 10⁴, prefer iterative traversal.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "The candidate needs work on DSA, he is decent with problem solving but struggles with implementation." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 3/5 — Decent; kept thinking out loud and engaged consistently with the interviewer; explanations could be more precise, especially for the median stream problem.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+    <div class="overall-block">
+      <p>You are closer to the passing bar than most candidates at this stage. Your Floyd's cycle detection answer was excellent — correctly explained, dry-run accurately, and time complexity well-derived. You correctly diagnosed a stack overflow in your own code and pointed toward the right fix. Your recursive Jump Game III had correct structure — right base cases, right recursive calls, right termination. The gap is implementation-to-completion: you can reason about algorithms but struggle to convert that reasoning into submission-ready code under time pressure. The stack overflow fix (BFS) is a one-concept change that would have solved Problem 2. Similarly, the two-heap pattern for median and LRU Cache are learnable, self-contained topics. With focused practice over the next month, you have a genuine chance to clear TR-1.</p>
+    </div>
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Floyd's Cycle Detection — Mastered:</strong> 5/5 — correctly explained the algorithm, dry-ran a 7-node example accurately, and derived time complexity. This is the standard every answer should reach.</li>
+        <li><strong>Self-Diagnosis:</strong> You independently identified the stack overflow as the root cause and pointed toward the correct solution direction — this problem-solving instinct under pressure is a genuine strength.</li>
+        <li><strong>Correct Recursive Structure:</strong> Your Jump Game III approach had correct base cases, correct recursive calls (±arr[i]), and correct cycle prevention (visited array) — the logic was sound.</li>
+        <li><strong>NxtMock Cleared:</strong> Demonstrates ability to perform in structured assessment environments — bring the same preparation depth to TR-1.</li>
+      </ul>
+    </div>
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Recursion → Iterative BFS:</strong> Any recursive DFS that risks deep recursion on large N must be converted to iterative BFS. This is a one-concept fix that would have saved Problem 2 — learn and practise it immediately.</li>
+        <li><strong>Two-Heap Pattern for Running Median:</strong> You correctly identified heaps as the right tool but didn't reach the two-heap design. Max-heap (lower half) + min-heap (upper half) is a standard pattern — implement it from scratch.</li>
+        <li><strong>LRU Cache:</strong> You didn't know the term or implementation. HashMap + Doubly Linked List for O(1) get/put is a must-know interview topic — study it before your re-attempt.</li>
+        <li><strong>Subarrays vs Subsets:</strong> You used "take or not take" recursion (subsets) for a subarrays problem. These are fundamentally different — subarrays use two index pointers; subsets use inclusion/exclusion recursion.</li>
+        <li><strong>Sliding Window + Monotonic Deque:</strong> The Continuous Subarrays problem requires this combined pattern. You recognised sliding window after a hint but couldn't apply it — dedicate a full week to this pattern.</li>
+      </ul>
+    </div>
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">BFS/DFS &amp; Graph Traversal</div></div>
+          <div class="week-card-body"><ul>
+            <li>Re-implement Jump Game III using iterative BFS — submit on LeetCode, verify no stack overflow on large inputs</li>
+            <li>Study when to choose BFS over recursive DFS: if N &gt; 10⁴ and recursion depth could equal N, always use iterative</li>
+            <li>Implement DFS iteratively using an explicit stack — removes recursion limits entirely</li>
+            <li>Solve: Number of Islands, Clone Graph, Word Ladder, Pacific Atlantic Water Flow</li>
+            <li>Solve 8 graph traversal problems at easy-medium level — mix BFS and DFS iterative versions</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">Heaps, LRU Cache &amp; Design</div></div>
+          <div class="week-card-body"><ul>
+            <li>Implement two-heap running median from scratch: max-heap for lower half, min-heap for upper half — balance sizes on each insert</li>
+            <li>Implement LRU Cache using HashMap + Doubly Linked List — O(1) get and put; understand why DLL enables O(1) removal</li>
+            <li>Study heap operations: insert, extract-min/max, heapify — implement a min-heap without library functions</li>
+            <li>Solve: Kth Largest Element, Top K Frequent Elements, Merge K Sorted Lists, Find Median from Data Stream (LeetCode 295)</li>
+            <li>Implement LRU Cache (LeetCode 146) — submit and pass</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Sliding Window &amp; Monotonic Structures</div></div>
+          <div class="week-card-body"><ul>
+            <li>Clarify subarrays vs subsets: subarrays = two index pointers (O(N²) brute force); subsets = take/not-take recursion (O(2ᴺ))</li>
+            <li>Master sliding window: Longest Substring Without Repeating Characters, Minimum Window Substring, Max Sum Subarray of Size K</li>
+            <li>Study monotonic deque: Sliding Window Maximum, Continuous Subarrays — implement and understand O(1) min/max maintenance</li>
+            <li>Re-attempt Continuous Subarrays from this interview — implement sliding window + deque and submit</li>
+            <li>Solve 8 sliding window problems — time each at 25 minutes maximum</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Mixed Mediums &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Solve 15 medium problems randomly across BFS/DFS, heaps, and sliding window — no topic labels, simulate real interview</li>
+            <li>For every recursive solution written: also implement the iterative equivalent using a stack or queue</li>
+            <li>Study DP basics: Jump Game I &amp; II (DP approach), Coin Change, House Robber — build state + transition intuition</li>
+            <li>Take 2 full timed mock interviews (60 min each) — rapid fire + 2 coding questions, camera on, strict timing</li>
+            <li>After each mock: focus specifically on whether your implementation matched your stated approach — fix any gap before re-attempt</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 18 May 2026</div>
+</body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Krishnavamsi — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f4f1eb; --card-bg: #faf8f4; --primary: #1a3a52; --accent: #c8873f;
+    --green: #1a5c3a; --green-bg: #e6f4ed; --amber: #7a4f10; --amber-bg: #fef3d8;
+    --red: #8b1c1c; --red-bg: #fde8e8; --border: #d8d0c4;
+    --blue-mid: #1e5a9e; --blue-bg: #f0f7ff; --blue-border: #c0d8f0;
+    --text: #2c2c2c; --muted: #6b6560;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.65; }
+  .report-header { background: var(--primary); color: #fff; padding: 52px 40px 44px; text-align: center; }
+  .report-header .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+  .report-header h1 { font-family: 'DM Serif Display', serif; font-size: 42px; font-weight: 400; letter-spacing: -.5px; color: #fff; margin-bottom: 8px; }
+  .report-header .subtitle { font-size: 14px; color: rgba(255,255,255,.6); font-weight: 300; }
+  .body-wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
+  .info-cell { background: var(--card-bg); padding: 18px 22px; }
+  .info-cell .label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .info-cell .value { font-weight: 600; font-size: 15px; color: var(--primary); }
+  .info-cell.full { grid-column: 1 / -1; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; letter-spacing: .04em; }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-red   { background: var(--red-bg); color: var(--red); }
+  .journey { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; }
+  .journey-row { display: flex; align-items: flex-start; gap: 20px; padding-bottom: 28px; }
+  .journey-row:last-child { padding-bottom: 0; }
+  .journey-col-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 16px; }
+  .journey-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; border: 3px solid; box-shadow: 0 0 0 3px var(--bg); }
+  .dot-green { background: var(--green); border-color: var(--green); }
+  .dot-amber { background: var(--amber); border-color: var(--amber); }
+  .dot-red   { background: #c0392b; border-color: #c0392b; }
+  .journey-line { width: 2px; flex: 1; background: var(--border); min-height: 30px; margin-top: 4px; }
+  .journey-content { flex: 1; }
+  .journey-stage { font-weight: 700; font-size: 14px; color: var(--primary); margin-bottom: 3px; }
+  .journey-result { font-size: 12.5px; font-weight: 600; margin-bottom: 3px; }
+  .journey-result.green { color: var(--green); }
+  .journey-result.amber { color: var(--amber); }
+  .journey-result.red   { color: var(--red); }
+  .journey-detail { font-size: 12.5px; color: var(--muted); font-family: 'DM Mono', monospace; }
+  .round-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .round-header { background: var(--primary); color: #fff; padding: 22px 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .round-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .icon-green { background: var(--green-bg); }
+  .icon-amber { background: var(--amber-bg); }
+  .round-title-group { flex: 1; }
+  .round-name { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; color: #fff; margin-bottom: 3px; }
+  .round-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,.55); }
+  .round-score-box { text-align: right; flex-shrink: 0; }
+  .round-score-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: #fff; line-height: 1; }
+  .round-score-label { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .1em; }
+  .round-body { padding: 28px; }
+  .score-breakdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+  .score-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .score-cell .snum { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1; margin-bottom: 4px; }
+  .score-cell .slabel { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .snum-green { color: var(--green); }
+  .snum-amber { color: var(--amber); }
+  .snum-red   { color: var(--red); }
+  .qa-block { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .qa-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .qa-block-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--primary); font-weight: 500; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+  .qa-item { margin-bottom: 18px; }
+  .qa-item:last-child { margin-bottom: 0; }
+  .qa-q { font-weight: 600; color: var(--primary); margin-bottom: 7px; font-size: 14px; }
+  .qa-a { color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 9px; }
+  .qa-a span { display: block; padding-left: 12px; position: relative; }
+  .qa-a span::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
+  .qa-verdict { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; }
+  .verdict-good { background: var(--green-bg); color: var(--green); }
+  .verdict-mid  { background: var(--amber-bg); color: var(--amber); }
+  .verdict-bad  { background: var(--red-bg); color: var(--red); }
+  .model-answer { background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 8px; padding: 14px 18px; margin-top: 10px; font-size: 13px; line-height: 1.65; }
+  .model-answer .model-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-mid); font-weight: 500; margin-bottom: 7px; }
+  .model-answer span { display: block; padding-left: 14px; position: relative; color: #1a3a6e; }
+  .model-answer span::before { content: '→'; position: absolute; left: 0; color: var(--blue-mid); }
+  /* integrity warning box */
+  .integrity-box { background: #fff8f0; border: 1px solid #e8c080; border-left: 4px solid var(--accent); border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+  .integrity-box .int-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 8px; }
+  .integrity-box p { font-size: 13.5px; color: #5a3a00; line-height: 1.65; }
+  .audit-box { background: var(--red-bg); border: 1px solid #f0c0c0; border-radius: 10px; padding: 20px 24px; margin-bottom: 28px; }
+  .audit-box .audit-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 10px; }
+  .audit-box span { display: block; padding-left: 14px; position: relative; color: #5a1515; font-size: 14px; margin-top: 6px; }
+  .audit-box span::before { content: '·'; position: absolute; left: 0; color: var(--red); font-size: 18px; line-height: 1; top: 1px; }
+  .round-remarks { background: var(--amber-bg); border-top: 1px solid var(--border); padding: 18px 28px; font-style: italic; font-size: 13.5px; color: var(--amber); }
+  .round-remarks strong { font-style: normal; font-weight: 600; color: var(--primary); }
+  .overall-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .overall-block { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .overall-block:last-child { border-bottom: none; }
+  .overall-block p { font-size: 14.5px; line-height: 1.75; color: var(--text); }
+  .title-green { color: var(--green); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-red   { color: var(--red);   font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-blue  { color: var(--blue-mid); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 16px; }
+  .strength-list, .improve-list { list-style: none; }
+  .strength-list li, .improve-list li { padding: 8px 0 8px 14px; border-bottom: 1px dashed var(--border); position: relative; font-size: 14px; color: var(--text); }
+  .strength-list li:last-child, .improve-list li:last-child { border-bottom: none; }
+  .strength-list li::before { content: '·'; position: absolute; left: 0; color: var(--green); font-size: 18px; line-height: 1; top: 8px; }
+  .improve-list li::before  { content: '·'; position: absolute; left: 0; color: var(--red);   font-size: 18px; line-height: 1; top: 8px; }
+  .week-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .week-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg); }
+  .week-card-header { background: var(--primary); padding: 12px 16px; }
+  .week-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .week-title { font-family: 'DM Serif Display', serif; font-size: 16px; color: #fff; font-weight: 400; }
+  .week-card-body { padding: 14px 16px; }
+  .week-card-body ul { list-style: none; }
+  .week-card-body li { font-size: 13px; color: var(--text); padding: 4px 0 4px 18px; position: relative; line-height: 1.5; }
+  .week-card-body li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 6px; }
+  .report-footer { border-top: 1px solid var(--border); padding: 18px 24px; text-align: center; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); max-width: 860px; margin: 0 auto; }
+  a { color: var(--accent); } code { font-family: 'DM Mono', monospace; font-size: 12.5px; background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <h1>Krishnavamsi</h1>
+  <div class="subtitle">Software Development — DSA &amp; Full Stack Placement Track · Cycle 1 / Cycle 5</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="label">Candidate Name</div>
+      <div class="value">Krishnavamsi</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Offline Assessment Date</div>
+      <div class="value">5 April 2026 · Cycle 1 → Cycle 5</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Placement Bucket</div>
+      <div class="value">Bucket B → Upgraded to Bucket A</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Email</div>
+      <div class="value">guntupallikrishnavamsi@gmail.com</div>
+    </div>
+    <div class="info-cell full">
+      <div class="label">Final Placement Status</div>
+      <div class="value" style="margin-top:6px;">
+        <span class="badge badge-amber">⚠ Not Cleared — Re-attempt Required</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 02 ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared — Bucket B → Upgraded to Bucket A · NxtMock Cleared</div>
+        <div class="journey-detail">5 Apr 2026 · Cycle 1 / Cycle 5</div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result green">✓ Cleared · Score 90 / 100 · Strong Hire</div>
+        <div class="journey-detail">20 Apr 2026 · 10:30 AM · Both problems AC on LeetCode · Integrity flag on P2</div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 2 (TR-2) — Full Stack Interview</div>
+        <div class="journey-result amber">~ Not Cleared · Score 36 / 100</div>
+        <div class="journey-detail">12 May 2026 · 3:45 PM · DSA questions asked instead of full stack · Frontend 25 · Backend 10</div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Final Outcome</div>
+        <div class="journey-result red">✗ Not Cleared</div>
+        <div class="journey-detail">19 May 2026 · Full stack knowledge below bar; DSA-focused profile; TR-2 did not cover full stack topics</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ SECTION 03 — TR-1 ══ -->
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-green">🟢</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">20 Apr 2026 · 10:30 AM</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#6ee09e;">90</div>
+        <div class="round-score-label">/ 100 · Strong Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Integrity flag -->
+      <div class="integrity-box">
+        <div class="int-label">⚠ Integrity Note — Flagged by Interviewer</div>
+        <p>The interviewer noted that the solution submitted for Problem 2 (Check Knight Tour Configuration) is closely similar to a known LeetCode editorial approach. This was flagged as a possible integrity concern and noted in the evaluation record. The score was recorded as given by the interviewer; however, this flag is part of the permanent evaluation record.</p>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Find the single non-duplicate element in an array (all others appear exactly twice)</div>
+          <div class="qa-a">
+            <span>First mentioned hashmap approach — O(n) time and space</span>
+            <span>When pushed for better: correctly identified XOR approach — same elements cancel to zero, unique element remains</span>
+            <span>Time O(n), Space O(1) — stated correctly</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — XOR approach with optimal complexity (Rating: 5/5)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Check if a number is a power of 2 — most efficient approach</div>
+          <div class="qa-a">
+            <span>Attempted: AND operation with n-1 or n+1 — direction was correct (bit manipulation) but equation was uncertain</span>
+            <span>Could not state the precise formula: <code>n &gt; 0 and (n &amp; (n-1)) == 0</code></span>
+            <span>Attempted even/odd reasoning but did not arrive at the correct answer</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ No correct answer — bit manipulation direction noted but formula not known (Rating: 1/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A power of 2 in binary has exactly one set bit (e.g., 8 = 1000). The trick: <code>n &gt; 0 and (n &amp; (n-1)) == 0</code>. Why: <code>n-1</code> flips all bits from the rightmost set bit onwards; ANDing with n gives 0 only if there was exactly one set bit. Time O(1), Space O(1).</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/remove-all-occurrences-of-a-substring/description/" target="_blank">Remove All Occurrences of a Substring ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Used a stack-based approach: iterate through the string, add characters to the stack; after each addition, check if the last k characters of the stack equal the substring; if so, remove those k characters</span>
+            <span>Correctly identified this as the optimal approach — avoids repeated string scans</span>
+            <span>Time complexity: O(n × k); Space complexity: O(n) — both correctly stated</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — Optimal stack-based approach explained clearly (Rating: 5/5)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented the stack approach correctly — submitted on LeetCode and received AC</span>
+            <span>All test cases passed</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — All test cases passed (AC) (Rating: 5/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/check-knight-tour-configuration/description/" target="_blank">Check Knight Tour Configuration ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood: given an n×n grid with move numbers 0 to n²-1, verify that consecutive moves form valid knight jumps</span>
+            <span>Approach: build a position lookup array storing (row, col) for each move number; for each consecutive step, check that the absolute difference in row and column is either (1,2) or (2,1)</span>
+            <span>Also correctly identified: the knight must start at grid[0][0] = 0</span>
+            <span>No recursive approach used — direct simulation/iteration</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct approach — Position lookup + valid knight move verification (Rating: 5/5)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented using a position array of size n×n; traversed the grid to populate positions</span>
+            <span>For each step i from 1 to n²-1: computed (x1, y1) = pos[i-1] and (x2, y2) = pos[i]; verified absolute differences are (1,2) or (2,1)</span>
+            <span>Time O(n²), Space O(n²) — correctly stated</span>
+            <span>Submitted on LeetCode and received AC</span>
+            <span><strong>Note:</strong> Interviewer flagged this solution as closely matching a known LeetCode editorial approach — integrity concern recorded</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — AC on LeetCode; integrity flag noted in evaluation record (Rating: 5/5)</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Candidate is good with thinking and problem solving but needs more hands-on in advanced topics like graphs, trees etc. However, his second solution is quite similar to a known LeetCode editorial. Integrity concern noted." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 4/5 — Good, clear verbal explanations. Honest about uncertainty (power of 2, trees/graphs).
+    </div>
+  </div><!-- end TR-1 -->
+
+
+  <!-- ══ SECTION 04 — TR-2 ══ -->
+  <div class="section-label">04 · Technical Round 2 — Full Stack Interview</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-amber">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 2 — Full Stack Interview</div>
+        <div class="round-meta">12 May 2026 · 3:45 PM · Note: DSA questions asked instead of full stack questions</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">36</div>
+        <div class="round-score-label">/ 100</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <div style="background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-bottom:24px;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:6px;">ℹ Round Format Note</div>
+        <p style="font-size:13.5px;color:#1a3a6e;">This TR-2 session was conducted with DSA questions instead of full stack questions. Despite this, the full stack evaluation scores were recorded based on available evidence from the session and project portfolio review. The candidate's full stack knowledge remains largely untested in a dedicated session.</p>
+      </div>
+
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-green">100</div><div class="slabel">Soft Skills &amp; Comm.</div></div>
+        <div class="score-cell"><div class="snum snum-red">10</div><div class="slabel">Projects</div></div>
+        <div class="score-cell"><div class="snum snum-red">25</div><div class="slabel">Frontend Score</div></div>
+        <div class="score-cell"><div class="snum snum-red">10</div><div class="slabel">Backend Score</div></div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="qa-block">
+        <div class="qa-block-label">Soft Skills &amp; Communication</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Presentability: Highly professional and well-groomed — noted explicitly</span>
+            <span>Communication: Confident and fluent — rated 100/100</span>
+            <span>Introduced projects, internship, and extracurricular (IET chapter chairperson, hackathon organiser) confidently</span>
+            <span>Asked for improvement feedback at the end — shows growth mindset</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Exceptional — 100/100 communication; highly professional</span>
+        </div>
+      </div>
+
+      <!-- Projects & Internship -->
+      <div class="qa-block">
+        <div class="qa-block-label">Projects &amp; Internship (Score: 10 / 100)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Internship — Kana.io, Front-End Developer Intern</div>
+          <div class="qa-a">
+            <span>Worked on a website that automates CAD file costing and manufacturing estimation</span>
+            <span>Could not explain what he specifically built, which components he owned, or what technical challenges he solved</span>
+            <span>Description was surface-level and vague — "helped in building their website"</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Vague — Internship experience stated but not technically explained (Very vague explanations)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Projects — AI Personalised Learning Path Generator &amp; Project Cost Management</div>
+          <div class="qa-a">
+            <span>Named two projects: AI personalised learning path generator and project cost management system</span>
+            <span>Could not explain the architecture, technology stack, or implementation of either project clearly</span>
+            <span>Project cost management: mentioned including a database — could not go further</span>
+            <span>The interviewer did not probe deeply as DSA questions dominated the session</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Unable to explain — Project details not articulated; scenario approach not demonstrated (Unable to Approach or Explain the Scenario)</span>
+        </div>
+      </div>
+
+      <!-- DSA in TR-2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">DSA Questions Asked in TR-2 (Full Stack Session)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Rapid Fire — Majority Element (Boyer-Moore approach)</div>
+          <div class="qa-a">
+            <span>Attempted hashmap approach — O(n) space, not O(1)</span>
+            <span>Attempted two-pointer comparison counting — incorrect for non-contiguous majority elements</span>
+            <span>Could not arrive at Boyer-Moore Voting Algorithm</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — Boyer-Moore optimal approach unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Boyer-Moore Voting: initialise <code>candidate = None, count = 0</code>. For each element: if <code>count == 0</code>, set candidate. If equal to candidate, increment; else decrement. Return candidate. Time O(n), Space O(1). Works because the majority element always out-votes all others combined.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">DSA Q1 — Car Fleet (LeetCode approach)</div>
+          <div class="qa-a">
+            <span>Understood the problem: cars travel at different speeds; slower car blocks faster one; groups forming at destination count as fleets</span>
+            <span>Attempted: calculate time for each car to reach target; identify which cars catch up before the target</span>
+            <span>Could not formalise the stack-based approach: sort by position descending, compare arrival times</span>
+            <span>Admitted not confident enough to code it</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Could not approach — Arrival time intuition partially correct; stack solution not known</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Sort cars by position descending. Compute arrival time for each: <code>time = (target - pos) / speed</code>. Use a stack: for each car (from closest to farthest from target), if its time ≤ stack top's time, it joins that fleet (don't push). Else push new fleet time. Stack size at end = number of fleets. Time O(n log n), Space O(n).</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">DSA Q2 — Maximum Number of Jumps / DP problem</div>
+          <div class="qa-a">
+            <span>Understood: given array, jump from index i to j if abs(nums[j] - nums[i]) &lt;= target; find maximum number of jumps</span>
+            <span>Initial two-pointer attempt was incorrect — two pointers cannot explore all paths</span>
+            <span>Correctly identified the problem requires DP after prompting</span>
+            <span>Could not implement DP due to self-admitted unfamiliarity with the topic</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Could not implement — DP identification correct; implementation not attempted</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>DP: <code>dp[i]</code> = maximum jumps to reach index i. Initialise all as -1 (unreachable). <code>dp[0] = 0</code>. For each j from 1 to n-1: for each i from 0 to j-1: if <code>dp[i] != -1</code> and <code>abs(nums[j] - nums[i]) &lt;= target</code>: <code>dp[j] = max(dp[j], dp[i] + 1)</code>. Return <code>dp[n-1]</code>. Time O(n²), Space O(n).</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">DSA Q3 — Find Maximum Number of Fish in a Grid (DFS approach)</div>
+          <div class="qa-a">
+            <span>Correctly understood: fisherman starts at any water cell (value &gt; 0); collect fish by moving to adjacent water cells; find the maximum fish collectable</span>
+            <span>Correctly identified brute force is exponential — time limit exceeded</span>
+            <span>Correctly identified DFS approach: for each water cell, run DFS to collect all connected water cells; mark visited cells as 0 to prevent re-visit; track maximum sum</span>
+            <span>Correct and optimal approach — could not code in the remaining time</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — DFS approach correctly identified with visited-marking; no code attempted due to time</span>
+        </div>
+      </div><!-- end DSA in TR-2 -->
+
+      <!-- Full Stack assessment from project review -->
+      <div class="qa-block">
+        <div class="qa-block-label">Full Stack Assessment — Based on Project &amp; Resume Review</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Frontend declared: React, HTML, CSS — however, no HTML/CSS/JS theory questions were asked in TR-2 to verify depth</span>
+            <span>Backend declared: Node.js, Express.js — no backend questions were asked in TR-2</span>
+            <span>Database declared: SQL — no SQL questions were asked in TR-2</span>
+            <span>Internship at Kana.io as front-end developer — could not explain tasks or contributions technically</span>
+            <span>Frontend score (25/100) and backend score (10/100) are based on vague project explanations and inability to explain internship tasks</span>
+            <span>Full stack knowledge remains untested — a dedicated full-stack TR-2 session was not conducted</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Untested — Full stack session not conducted; scores reflect project explanation quality only</span>
+        </div>
+      </div>
+
+    </div><!-- round-body -->
+    <div class="round-remarks">
+      <strong>TR-2 Overall Remarks:</strong> "Weak candidate." Note: DSA questions were asked in this session instead of full stack questions. Communication was exceptional (100/100). Project and internship explanations were vague. Full stack depth remains unverified. Overall score: 36/100.
+    </div>
+  </div><!-- end TR-2 -->
+
+
+  <!-- ══ SECTION 05 — OVERALL ══ -->
+  <div class="section-label">05 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+    <div class="round-header" style="background:#2c3e50;">
+      <div class="round-icon" style="background:var(--amber-bg);">📋</div>
+      <div class="round-title-group">
+        <div class="round-name">Overall Assessment — Full Journey</div>
+        <div class="round-meta">Cycle 1/5 · TR-1 90/100 Strong Hire · TR-2 36/100 Not Cleared</div>
+      </div>
+    </div>
+
+    <div class="overall-block">
+      <p>
+        Your placement journey is defined by a sharp contrast between TR-1 and TR-2. In TR-1, you scored 90/100 with a Strong Hire verdict — both problems were accepted on LeetCode, the stack-based solution for substring removal was optimal and well-explained, and the XOR approach for single element detection was correctly identified. However, the interviewer raised an integrity flag on Problem 2 as the solution closely matched a published LeetCode editorial — this is part of your permanent evaluation record and must be taken seriously. In TR-2, despite exceptional communication (100/100), the session did not assess full stack knowledge at all — DSA questions were asked instead. The low score (36/100) reflects your inability to explain your internship and projects technically rather than a fair assessment of full stack ability. What is clear from both rounds is that your DSA foundation needs to extend into advanced topics (graphs, trees, DP, backtracking) and that your full stack project knowledge must be deepened so you can explain every line of code you have written independently.
+      </p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Communication (Exceptional):</strong> 100/100 in TR-2, 4/5 in TR-1 — confident, fluent, professional across both rounds. A strong career asset.</li>
+        <li><strong>Stack-Based Problem Solving:</strong> Remove All Occurrences of a Substring — optimal stack approach identified and implemented independently, accepted on LeetCode with full marks.</li>
+        <li><strong>XOR DSA Theory:</strong> Correctly identified XOR as the optimal approach for the single non-duplicate element problem — correct reasoning about binary cancellation.</li>
+        <li><strong>DFS Conceptual Awareness:</strong> Correctly identified DFS with visited-cell marking as the optimal approach for the maximum fish grid problem — sound algorithmic reasoning.</li>
+        <li><strong>Leadership &amp; Initiative:</strong> IET chapter chairperson, hackathon organiser — shows strong initiative and soft skills beyond technical work.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Academic Integrity (Critical):</strong> The TR-1 interviewer flagged Problem 2 as potentially copied from a LeetCode editorial. You must solve problems independently during interviews. Using published solutions without understanding them is a serious professional risk.</li>
+        <li><strong>Advanced DSA — Trees, Graphs, DP, Backtracking (Critical):</strong> Car Fleet (stack), maximum jumps (DP), DFS/BFS — all encountered gaps. These are essential for any software engineering role. Must practise systematically.</li>
+        <li><strong>Boyer-Moore Voting Algorithm:</strong> Majority element was not answered in TR-2. This is one of the most commonly asked rapid-fire DSA questions — must be memorised.</li>
+        <li><strong>Power of 2 — Bit Manipulation:</strong> The exact formula <code>n &gt; 0 and (n &amp; (n-1)) == 0</code> was not recalled. Must be memorised with the reasoning.</li>
+        <li><strong>Project &amp; Internship Articulation:</strong> You could not explain what you built at Kana.io or describe your projects technically. Before any re-attempt, practise a 2-minute technical walkthrough of every project you list on your resume.</li>
+        <li><strong>Full Stack Depth:</strong> Frontend and backend scores are based on vague explanations. You must build and be able to explain at least one full-stack project end-to-end — architecture, API design, database schema, deployment.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">✦ 1-Month Action Plan</div>
+      <div class="week-grid">
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 01</div>
+            <div class="week-title">DSA — Trees &amp; Graphs</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study binary trees — traversals (inorder, preorder, postorder), height, LCA</li>
+              <li>Study graph basics — BFS, DFS, adjacency list, visited array</li>
+              <li>Solve 10 tree problems: LeetCode 104, 226, 572, 236, 543</li>
+              <li>Solve 10 graph problems: LeetCode 200, 695, 994, 2658 (max fish), 207</li>
+              <li>Memorise Boyer-Moore majority vote and power-of-2 bit trick cold</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 02</div>
+            <div class="week-title">DSA — DP &amp; Stack Problems</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study DP foundations: 1D DP → Kadane's → jump game → max jumps</li>
+              <li>Solve LeetCode 2770 (max jumps with target) from scratch — no editorials</li>
+              <li>Solve Car Fleet (LeetCode 853) using sort + stack approach</li>
+              <li>Solve 8 stack problems: LeetCode 20, 739, 394, 856, 1209</li>
+              <li>Study backtracking: N-Queens, permutations, combinations — 5 problems</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 03</div>
+            <div class="week-title">Full Stack — Build &amp; Explain</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Rebuild your best project entirely on your own — document every decision</li>
+              <li>Practise a 2-minute technical walkthrough: architecture → APIs → database → deployment</li>
+              <li>Write down 5 technical questions someone could ask about your project — answer them all</li>
+              <li>Prepare a 2-minute explanation of your Kana.io internship: what you built, tech used, challenges faced</li>
+              <li>Deploy the project on Vercel + Render — get a public URL</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 04</div>
+            <div class="week-title">Integrity, Independent Solving &amp; Mocks</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Solve all future problems without looking at editorials or solutions first</li>
+              <li>For every solved problem: explain the approach out loud before and after coding</li>
+              <li>Do 2 timed mock interviews — one DSA (focus on trees/graphs/DP), one full stack</li>
+              <li>Practise Knight Tour problem from scratch — reproduce your TR-1 solution independently</li>
+              <li>Revisit all model answers from TR-1 and TR-2 — answer each cold without notes</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end overall card -->
+
+</div><!-- body-wrap -->
+
+<div class="report-footer">
+  Report generated by NxtWave Interview Evaluation System · Cycle 1/5 · May 2026
+</div>
+
+</body>
+</html>

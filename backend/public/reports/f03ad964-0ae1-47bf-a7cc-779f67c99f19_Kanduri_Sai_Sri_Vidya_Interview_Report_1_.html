@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanduri Sai Sri Vidya — Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1923; --ink-soft: #3d4f5e; --ink-mute: #8a9baa;
+    --bg: #f4f1eb; --bg-card: #faf8f4;
+    --blue-deep: #1a3a52; --blue-mid: #2e6da4; --blue-light: #d6e9f7;
+    --green: #1a5c3a; --green-bg: #e6f4ed;
+    --amber: #7a4f10; --amber-bg: #fef3d8;
+    --red: #8b1c1c; --red-bg: #fde8e8;
+    --accent: #c8873f; --rule: #d8d0c4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: 'Outfit', sans-serif; font-size: 15px; line-height: 1.65; min-height: 100vh; }
+  .report-header { background: var(--blue-deep); padding: 56px 64px 48px; position: relative; overflow: hidden; }
+  .report-header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 320px; height: 320px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.07); }
+  .report-header::after { content: ''; position: absolute; bottom: -80px; left: 40px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.05); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .header-title { font-family: 'DM Serif Display', serif; font-size: 42px; color: #fff; line-height: 1.1; margin-bottom: 8px; }
+  .header-sub { color: rgba(255,255,255,0.5); font-size: 14px; font-weight: 300; letter-spacing: 0.04em; }
+  .report-body { max-width: 860px; margin: 0 auto; padding: 48px 32px 80px; }
+  .section { margin-bottom: 48px; animation: fadeUp 0.5s ease both; }
+  .section:nth-child(1){animation-delay:0.05s;} .section:nth-child(2){animation-delay:0.08s;}
+  .section:nth-child(3){animation-delay:0.11s;} .section:nth-child(4){animation-delay:0.14s;}
+  .section:nth-child(5){animation-delay:0.17s;}
+  @keyframes fadeUp { from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:translateY(0);} }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--blue-deep); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1.5px solid var(--rule); }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+  .info-cell { background: var(--bg-card); padding: 14px 20px; }
+  .info-cell.full { grid-column: 1 / -1; }
+  .info-key { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 3px; }
+  .info-val { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-red { background: var(--red-bg); color: var(--red); }
+  .journey { display: flex; flex-direction: column; gap: 0; }
+  .journey-row { display: grid; grid-template-columns: 180px 1fr; gap: 0; position: relative; }
+  .journey-row:not(:last-child)::after { content: ''; position: absolute; left: 173px; top: 34px; bottom: -10px; width: 1px; background: var(--rule); }
+  .journey-stage { padding: 16px 20px 16px 0; display: flex; align-items: flex-start; gap: 12px; }
+  .journey-dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
+  .dot-green { background: var(--green); } .dot-amber { background: #e09a2b; } .dot-red { background: #c0392b; }
+  .journey-stage-name { font-size: 12px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  .journey-content { padding: 12px 0 16px 20px; border-left: 1px solid var(--rule); }
+  .journey-result { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+  .journey-detail { font-size: 13px; color: var(--ink-soft); }
+  .round-card { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+  .round-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid var(--rule); }
+  .round-header-left { display: flex; align-items: center; gap: 14px; }
+  .round-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .round-icon-amber { background: var(--amber-bg); } .round-icon-red { background: var(--red-bg); } .round-icon-green { background: var(--green-bg); }
+  .round-name { font-family: 'DM Serif Display', serif; font-size: 17px; color: var(--blue-deep); }
+  .round-meta { font-size: 12px; color: var(--ink-mute); margin-top: 1px; }
+  .round-body { padding: 20px 24px; display: flex; flex-direction: column; gap: 18px; }
+  .qa-block {}
+  .qa-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .qa-item { margin-bottom: 14px; }
+  .qa-item:last-child { margin-bottom: 0; }
+  .qa-q { font-size: 13px; font-weight: 600; color: var(--blue-deep); margin-bottom: 5px; }
+  .qa-a { font-size: 13px; color: var(--ink-soft); line-height: 1.7; padding-left: 14px; border-left: 2px solid var(--rule); }
+  .qa-verdict { display: inline-block; margin-top: 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 4px; }
+  .verdict-good { background: var(--green-bg); color: var(--green); }
+  .verdict-mid { background: var(--amber-bg); color: var(--amber); }
+  .verdict-bad { background: var(--red-bg); color: var(--red); }
+  .divider { height: 1px; background: var(--rule); }
+  .round-remarks { padding: 16px 24px; background: #f0ede6; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-soft); font-style: italic; }
+  .round-remarks strong { color: var(--ink); font-style: normal; }
+  .score-box { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .score-cell { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 22px; text-align: center; }
+  .score-cell-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 8px; }
+  .score-big { font-family: 'DM Serif Display', serif; font-size: 36px; line-height: 1; }
+  .score-big span { font-size: 16px; color: var(--ink-mute); }
+  .overall-card { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+  .overall-summary { padding: 24px 28px; border-bottom: 1px solid var(--rule); font-size: 14px; color: var(--ink-soft); line-height: 1.8; }
+  .overall-block { padding: 20px 28px; border-bottom: 1px solid var(--rule); }
+  .overall-block:last-child { border-bottom: none; }
+  .overall-block-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 14px; }
+  .title-green { color: var(--green); } .title-red { color: var(--red); } .title-blue { color: var(--blue-mid); }
+  .bullet-list { display: flex; flex-direction: column; gap: 10px; }
+  .bullet-item { display: flex; gap: 12px; align-items: flex-start; font-size: 13.5px; }
+  .bullet-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+  .bdot-green { background: var(--green); } .bdot-red { background: var(--red); } .bdot-blue { background: var(--blue-mid); }
+  .bullet-label { font-weight: 700; color: var(--ink); }
+  .bullet-text { color: var(--ink-soft); }
+  .report-footer { text-align: center; padding: 24px; font-size: 11px; color: var(--ink-mute); font-family: 'DM Mono', monospace; letter-spacing: 0.06em; border-top: 1px solid var(--rule); }
+  code { font-family: 'DM Mono', monospace; font-size: 12px; background: #e8e4dc; padding: 1px 5px; border-radius: 3px; }
+  @media (max-width: 600px) {
+    .report-header { padding: 36px 24px 32px; } .header-title { font-size: 28px; }
+    .info-grid, .score-box { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <div class="header-eyebrow">NxtWave Placement Process &middot; Full Journey Report</div>
+  <div class="header-title">Kanduri Sai Sri Vidya</div>
+  <div class="header-sub">Candidate Interview Evaluation Report &nbsp;&middot;&nbsp; Full Stack Developer Role</div>
+</header>
+
+<main class="report-body">
+
+  <!-- 1. CANDIDATE INFORMATION -->
+  <section class="section">
+    <div class="section-label">Section 01</div>
+    <div class="section-title">Candidate Information</div>
+    <div class="info-grid">
+      <div class="info-cell">
+        <div class="info-key">Candidate Name</div>
+        <div class="info-val">Kanduri Sai Sri Vidya</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-key">Year of Graduation</div>
+        <div class="info-val">2026</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-key">Offline Assessment Date</div>
+        <div class="info-val">February 8, 2026</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-key">Email</div>
+        <div class="info-val" style="font-size:13px;">saisrividya.kanduri@gmail.com</div>
+      </div>
+      <div class="info-cell full">
+        <div class="info-key">Final Status</div>
+        <div class="info-val"><span class="badge badge-red">Rejected &mdash; After Audit</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PLACEMENT JOURNEY -->
+  <section class="section">
+    <div class="section-label">Section 02</div>
+    <div class="section-title">Placement Journey Overview</div>
+    <div class="journey">
+      <div class="journey-row">
+        <div class="journey-stage">
+          <div class="journey-dot dot-green"></div>
+          <div class="journey-stage-name">Offline Assessment</div>
+        </div>
+        <div class="journey-content">
+          <div class="journey-result" style="color:var(--green);">Cleared &mdash; Bucket A</div>
+          <div class="journey-detail">February 8, 2026 &middot; Cycle 1</div>
+        </div>
+      </div>
+      <div class="journey-row">
+        <div class="journey-stage">
+          <div class="journey-dot dot-green"></div>
+          <div class="journey-stage-name">TR-1</div>
+        </div>
+        <div class="journey-content">
+          <div class="journey-result" style="color:var(--green);">Strong Hire</div>
+          <div class="journey-detail">February 12, 2026 &middot; Interviewer: Upendra Singh &middot; Score: 65 / 100 &middot; Correct approaches on both problems; implementation needs work. Moved to TR-2.</div>
+        </div>
+      </div>
+      <div class="journey-row">
+        <div class="journey-stage">
+          <div class="journey-dot dot-amber"></div>
+          <div class="journey-stage-name">TR-2</div>
+        </div>
+        <div class="journey-content">
+          <div class="journey-result" style="color:var(--amber);">Low Hire</div>
+          <div class="journey-detail">February 20, 2026 &middot; Interviewer: Abhishek Sharma &middot; Score: 52 / 100 &middot; No exposure to React or Node.js; currently learning JavaScript. Strong CS fundamentals and internship experience.</div>
+        </div>
+      </div>
+      <div class="journey-row">
+        <div class="journey-stage">
+          <div class="journey-dot dot-red"></div>
+          <div class="journey-stage-name">Audit</div>
+        </div>
+        <div class="journey-content">
+          <div class="journey-result" style="color:var(--red);">Rejected</div>
+          <div class="journey-detail">February 25, 2026 &middot; Not currently ready for frontend, backend, or full-stack roles. Knowledge of frontend technologies not yet started.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TR-1 -->
+  <section class="section">
+    <div class="section-label">Section 03</div>
+    <div class="section-title">Technical Round 1 (TR-1)</div>
+    <div class="round-card">
+      <div class="round-header">
+        <div class="round-header-left">
+          <div class="round-icon round-icon-green">&#9889;</div>
+          <div>
+            <div class="round-name">TR-1 &mdash; DSA &amp; Problem Solving</div>
+            <div class="round-meta">Interviewer: Upendra Singh &nbsp;&middot;&nbsp; February 12, 2026, 5:00 PM &nbsp;&middot;&nbsp; <a href="https://drive.google.com/file/d/1leWslllsktP-kdcCz5h5getPB1BeA36s/view?usp=sharing" target="_blank" style="color:var(--blue-mid);text-decoration:none;border-bottom:1px solid var(--blue-light);">Recording &#8599;</a> &nbsp;&middot;&nbsp; Result: <span style="color:var(--green);font-weight:600;">Strong Hire</span></div>
+          </div>
+        </div>
+        <span class="badge badge-green">65 / 100</span>
+      </div>
+      <div class="round-body">
+
+        <div class="qa-block">
+          <div class="qa-label">Rapid Fire</div>
+          <div class="qa-item">
+            <div class="qa-q">Find the minimum in a sorted rotated array.</div>
+            <div class="qa-a">
+              &middot; Initially suggested min() of array &mdash; valid brute force, O(n) not O(n&sup2;)<br>
+              &middot; When asked to optimise, proposed reversing the array to get original order then picking first element &mdash; not a valid general approach<br>
+              &middot; Also suggested min-heap: insert all elements, take the top &mdash; correct output but O(n log n) &mdash; not an improvement<br>
+              &middot; Did not arrive at the optimal O(log n) binary search approach independently
+              <span class="qa-verdict verdict-mid">~ Min found correctly; optimal binary search approach not known &mdash; 2 / 5</span>
+            </div>
+          </div>
+          <div class="qa-item">
+            <div class="qa-q">Detect a cycle in a linked list.</div>
+            <div class="qa-a">
+              &middot; Described Floyd&rsquo;s slow-and-fast pointer algorithm correctly<br>
+              &middot; Correctly explained why the two pointers will meet: the fast pointer gets trapped in the cycle and the slow pointer eventually catches up<br>
+              &middot; Time complexity O(n); correct reasoning
+              <span class="qa-verdict verdict-good">&#10003; Correct &mdash; 5 / 5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">Coding Problem 1 &mdash; <a href="https://leetcode.com/problems/deepest-leaves-sum/description/" target="_blank" style="color:var(--blue-mid);text-decoration:none;border-bottom:1px solid var(--blue-light);">Deepest Leaves Sum &#8599;</a></div>
+          <div class="qa-item">
+            <div class="qa-a">
+              &middot; Correctly understood: traverse the tree, identify the deepest level, sum all leaf nodes at that level<br>
+              &middot; Proposed tracking each node&rsquo;s level in a dictionary (node &#8594; level), then finding the maximum level, then summing values at that maximum level<br>
+              &middot; Dry-ran the approach correctly through the example tree<br>
+              &middot; Attempted implementation but code was not correctly implemented &mdash; issues with index/traversal logic<br>
+              &middot; Interviewer noted approach was right, implementation needed work
+              <span class="qa-verdict verdict-mid">~ Correct approach; implementation incomplete &mdash; Approach 3/5 &middot; Implementation 2/5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">Coding Problem 2 &mdash; Count Valid Pairs in String (Custom Problem)</div>
+          <div class="qa-item">
+            <div class="qa-a">
+              &middot; Understood the problem: given a dictionary of strings and a target string, count valid prefix-suffix split pairs<br>
+              &middot; Proposed brute-force O(n&sup2;) approach first &mdash; check every pair<br>
+              &middot; Optimised to hashmap approach: store strings with their frequency as keys, traverse the target and check for matching prefix/suffix combinations in O(n)<br>
+              &middot; Identified the bug: direct key-value storage fails on duplicates (same string, multiple indices)<br>
+              &middot; Arrived at the fix: store frequency of each string, multiply frequencies when a valid pair is found<br>
+              &middot; Solution passed on LeetCode but was not fully optimised
+              <span class="qa-verdict verdict-good">&#10003; Correct approach with fix &mdash; Approach 5/5 &middot; Implementation 4/5</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="round-remarks">
+        <strong>TR-1 Feedback:</strong> You are decent but you give up a little too early on implementation. Your intuitions are correct but you need to work through edge cases more carefully. Interviewer recommended: participate in contests to overcome the fear of new problems. Communication rated 4/5 &mdash; decent. Overall: needs more DSA practice.
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TR-2 -->
+  <section class="section">
+    <div class="section-label">Section 04</div>
+    <div class="section-title">Technical Round 2 (TR-2)</div>
+    <div class="round-card">
+      <div class="round-header">
+        <div class="round-header-left">
+          <div class="round-icon round-icon-red">&#128308;</div>
+          <div>
+            <div class="round-name">TR-2 &mdash; Full Stack Deep Dive</div>
+            <div class="round-meta">Interviewer: Abhishek Sharma &nbsp;&middot;&nbsp; February 20, 2026, 1:00 PM &nbsp;&middot;&nbsp; <a href="https://drive.google.com/file/d/1GJZoQeg6TaOTSvJxDHgkGCHJvZqQS6dJ/view?usp=drive_web" target="_blank" style="color:var(--blue-mid);text-decoration:none;border-bottom:1px solid var(--blue-light);">Recording &#8599;</a> &nbsp;&middot;&nbsp; Result: <span style="color:var(--red);font-weight:600;">Low Hire</span></div>
+          </div>
+        </div>
+        <span class="badge badge-red">52 / 100</span>
+      </div>
+      <div class="round-body">
+
+        <div class="qa-block">
+          <div class="qa-label">Soft Skills &amp; Communication</div>
+          <div class="qa-item">
+            <div class="qa-a">
+              &middot; Presentability: well-groomed, looks native<br>
+              &middot; Communication: confident and fluent &mdash; strongest area in TR-2<br>
+              &middot; Communication &amp; project rating: 85 / 100
+              <span class="qa-verdict verdict-good">&#10003; Communication is a genuine strength &mdash; 85 / 100</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">Projects</div>
+          <div class="qa-item">
+            <div class="qa-q">Influencer &amp; Sponsorship Coordination Platform and K Bots &mdash; two academic full-stack projects.</div>
+            <div class="qa-a">
+              &middot; Understands the overall flow of both projects<br>
+              &middot; Misses key implementation details when probed deeply<br>
+              &middot; Project type: Fullstack &mdash; rating 50 / 100
+              <span class="qa-verdict verdict-mid">~ Flow understood; depth of implementation details missing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">Frontend &mdash; HTML/CSS/JS &amp; React</div>
+          <div class="qa-item">
+            <div class="qa-a">
+              &middot; Basic HTML, CSS, JS theory: basic awareness but confused explanation<br>
+              &middot; React advanced and frontend architecture: basic awareness but confused explanation<br>
+              &middot; JavaScript/React coding task: understood the question but unable to explain or attempt the approach<br>
+              &middot; Root cause: currently learning JavaScript, has not yet started React or Node.js &mdash; no practical frontend exposure<br>
+              &middot; Frontend score: 20 / 100
+              <span class="qa-verdict verdict-bad">&#10007; Critical gap &mdash; React and Node.js not yet started. Frontend score 20 / 100</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">Backend &mdash; Node.js, MongoDB &amp; Architecture</div>
+          <div class="qa-item">
+            <div class="qa-a">
+              &middot; Node.js &amp; Express: basic awareness, weak explanation<br>
+              &middot; MongoDB theory and queries: basic awareness, weak explanation; struggled with database concepts, particularly transactions<br>
+              &middot; Backend architecture: good understanding with clear integration explanation<br>
+              &middot; Backend endpoint: able to solve 50% of the task<br>
+              &middot; Backend score: 52 / 100
+              <span class="qa-verdict verdict-mid">~ Architecture concept understood; Node.js and MongoDB depth insufficient &mdash; Backend 52 / 100</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">Internship &amp; Practical Experience</div>
+          <div class="qa-item">
+            <div class="qa-a">
+              &middot; Independently handled tasks during internship<br>
+              &middot; Worked with Apache Kafka and AWS during internship<br>
+              &middot; Average understanding of these technologies &mdash; knowledge is limited and not in-depth<br>
+              &middot; Able to explain internship tasks clearly with some detail<br>
+              &middot; Good certificates with some learning; internship score: 55.4 / 100
+              <span class="qa-verdict verdict-mid">~ Practical exposure exists (Kafka, AWS); depth is average &mdash; Internship 55.4 / 100</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">CS Fundamentals &amp; Full Stack Integration</div>
+          <div class="qa-item">
+            <div class="qa-a">
+              &middot; CS fundamentals: good understanding with clear integration explanation<br>
+              &middot; Scenario-based full stack questions: good understanding<br>
+              &middot; AI tools: basic understanding
+              <span class="qa-verdict verdict-good">&#10003; CS fundamentals and integration understanding are strong</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="round-remarks">
+        <strong>TR-2 Feedback:</strong> You were able to explain internships and projects well. Worked on Kafka and AWS during internship &mdash; average understanding. In full-stack development, you are currently learning JavaScript and have not yet started React or Node.js. You were not able to answer related frontend questions and struggled with database concepts including transactions. Overall: not currently ready for frontend, backend, or full-stack roles.
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. OVERALL -->
+  <section class="section">
+    <div class="section-label">Section 05</div>
+    <div class="section-title">Overall Comments &amp; 1-Month Action Plan</div>
+
+    <div class="score-box">
+      <div class="score-cell">
+        <div class="score-cell-label">TR-1 Score</div>
+        <div class="score-big" style="color:var(--green);">65<span> / 100</span></div>
+      </div>
+      <div class="score-cell">
+        <div class="score-cell-label">TR-2 Score</div>
+        <div class="score-big" style="color:var(--red);">52<span> / 100</span></div>
+      </div>
+    </div>
+
+    <div class="overall-card">
+      <div class="overall-summary">
+        You cleared TR-1 with a Strong Hire verdict, showing that your DSA intuition and problem-solving instincts are solid. However, TR-2 revealed a fundamental gap: you have not yet started React or Node.js, and your JavaScript knowledge is still in progress. This is the root cause of the rejection &mdash; the full-stack role requires practical fluency in the MERN stack, and you are at the beginning of that journey. The good news: your CS fundamentals, communication, and internship experience (Kafka, AWS) are genuine strengths to build on.
+      </div>
+
+      <div class="overall-block">
+        <div class="overall-block-title title-green">Strengths</div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-green"></div>
+            <div><span class="bullet-label">Communication: </span><span class="bullet-text">Confident and fluent &mdash; rated 85/100 in TR-2. Your strongest area across both rounds.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-green"></div>
+            <div><span class="bullet-label">DSA Intuition: </span><span class="bullet-text">Correct approaches on both TR-1 problems. Floyd&rsquo;s cycle detection explained accurately with reasoning. Problem-solving instinct is right &mdash; implementation needs to catch up.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-green"></div>
+            <div><span class="bullet-label">CS Fundamentals: </span><span class="bullet-text">Clear understanding of full-stack integration scenarios. CS theory is a strong base.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-green"></div>
+            <div><span class="bullet-label">Internship Exposure: </span><span class="bullet-text">Independently handled tasks; worked with Apache Kafka and AWS. Practical industry exposure is a genuine differentiator.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overall-block">
+        <div class="overall-block-title title-red">Areas for Improvement</div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">JavaScript (Priority 1): </span><span class="bullet-text">You are currently learning JS &mdash; you need to complete it. var/let/const, closures, async/await, DOM manipulation, array methods &mdash; all must be fluent before React.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">React (Priority 2): </span><span class="bullet-text">Not yet started. You need to build functional components, use hooks (useState, useEffect, useReducer), handle API calls with loading/error states, and understand routing.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">Node.js &amp; Express (Priority 3): </span><span class="bullet-text">Not yet started. You need to build CRUD APIs, understand middleware chaining, implement JWT auth, and know how to fix CORS.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">MongoDB &amp; Databases: </span><span class="bullet-text">Transactions and MongoDB operators are weak. You need to understand $all, $lookup, aggregation pipelines, and ACID transaction concepts.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">DSA Implementation: </span><span class="bullet-text">Approaches are correct but you give up on implementation too early. You need to practise writing and debugging solutions under time pressure &mdash; participate in contests.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">Binary Search on Rotated Array: </span><span class="bullet-text">O(log n) approach for finding minimum in a sorted rotated array was not known &mdash; a common interview topic that must be covered.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overall-block">
+        <div class="overall-block-title title-blue">Your 1-Month Action Plan</div>
+        <div style="font-size:13px;color:var(--ink-soft);margin-bottom:18px;">Your communication and CS fundamentals are already interview-ready. These 4 weeks are about building the full-stack foundation from scratch &mdash; in the right order.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+
+          <div style="background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;">
+            <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Week 01</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:16px;color:var(--blue-deep);margin-bottom:10px;">JavaScript Core &mdash; Complete It</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Master var / let / const &mdash; scope, hoisting, temporal dead zone</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Closures, pure functions, event loop, async/await with proper try/catch</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Array methods: map, filter, reduce &mdash; write examples for each</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>DSA: binary search on rotated array (O(log n) &mdash; the TR-1 rapid fire you missed)</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Solve 2 LeetCode problems daily &mdash; do not give up at the implementation stage</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;">
+            <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Week 02</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:16px;color:var(--blue-deep);margin-bottom:10px;">React &mdash; Start and Build</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Understand functional components, JSX, props vs state</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Master useState and useEffect &mdash; dependency array, cleanup, async data fetching</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Implement loading / error / success states for every API call</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Understand React Router &mdash; dynamic routes, protected routes, useParams</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Build a small project: list page with search/filter using hooks &mdash; complete it end to end</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;">
+            <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Week 03</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:16px;color:var(--blue-deep);margin-bottom:10px;">Node.js, Express &amp; MongoDB</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Build 5 Express CRUD APIs from scratch &mdash; GET, POST, PUT, DELETE with input validation</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Understand middleware chaining &mdash; write logger, auth guard, error handler with next()</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Fix CORS using the <code>cors</code> npm package &mdash; understand Access-Control-Allow-Origin</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>MongoDB operators: $all, $in, $match, $lookup, aggregation pipeline &mdash; write one query for each</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Understand ACID transactions &mdash; the database concept you struggled with in TR-2</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;">
+            <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Week 04</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:16px;color:var(--blue-deep);margin-bottom:10px;">DSA, Full Build &amp; Mock Interviews</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Revisit and complete the Deepest Leaves Sum problem &mdash; implement the dictionary-based level tracking solution correctly</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Build a complete full-stack mini-project: React frontend + Express backend + MongoDB &mdash; no copying</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Participate in at least one LeetCode contest to build problem-solving speed and confidence</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Run 2 mock interviews &mdash; practice staying with implementation even when stuck; do not give up early</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">&#8594;</span>Your communication is already strong &mdash; leverage it. Prepare a 90-second project pitch covering your influencer platform and internship (Kafka, AWS).</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="report-footer">
+  Report generated by NxtWave Interview Evaluation System &nbsp;&middot;&nbsp; Cycle 1 &nbsp;&middot;&nbsp; Final Status: Rejected &middot; February 25, 2026
+</footer>
+
+</body>
+</html>

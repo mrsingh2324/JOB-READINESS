@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Veera Manikandan — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f4f1eb;
+    --card-bg: #faf8f4;
+    --primary: #1a3a52;
+    --accent: #c8873f;
+    --green: #1a5c3a;
+    --green-bg: #e6f4ed;
+    --amber: #7a4f10;
+    --amber-bg: #fef3d8;
+    --red: #8b1c1c;
+    --red-bg: #fde8e8;
+    --border: #d8d0c4;
+    --blue-mid: #1e5a9e;
+    --blue-bg: #f0f7ff;
+    --blue-border: #c0d8f0;
+    --text: #2c2c2c;
+    --muted: #6b6560;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.65; }
+
+  .report-header { background: var(--primary); color: #fff; padding: 52px 40px 44px; text-align: center; }
+  .report-header .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+  .report-header h1 { font-family: 'DM Serif Display', serif; font-size: 42px; font-weight: 400; letter-spacing: -.5px; color: #fff; margin-bottom: 8px; }
+  .report-header .subtitle { font-size: 14px; color: rgba(255,255,255,.6); font-weight: 300; }
+
+  .body-wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
+
+  .section-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
+  .info-cell { background: var(--card-bg); padding: 18px 22px; }
+  .info-cell .label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .info-cell .value { font-weight: 600; font-size: 15px; color: var(--primary); }
+  .info-cell.full { grid-column: 1 / -1; }
+
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; letter-spacing: .04em; }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-red   { background: var(--red-bg);   color: var(--red); }
+
+  .journey { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; }
+  .journey-row { display: flex; align-items: flex-start; gap: 20px; padding-bottom: 28px; }
+  .journey-row:last-child { padding-bottom: 0; }
+  .journey-col-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 16px; }
+  .journey-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; border: 3px solid; box-shadow: 0 0 0 3px var(--bg); }
+  .dot-green { background: var(--green); border-color: var(--green); }
+  .dot-amber { background: var(--amber); border-color: var(--amber); }
+  .journey-line { width: 2px; flex: 1; background: var(--border); min-height: 30px; margin-top: 4px; }
+  .journey-content { flex: 1; }
+  .journey-stage { font-weight: 700; font-size: 14px; color: var(--primary); margin-bottom: 3px; }
+  .journey-result { font-size: 12.5px; font-weight: 600; margin-bottom: 3px; }
+  .journey-result.green { color: var(--green); }
+  .journey-result.amber { color: var(--amber); }
+  .journey-detail { font-size: 12.5px; color: var(--muted); font-family: 'DM Mono', monospace; }
+  .journey-detail a { color: var(--accent); text-decoration: none; }
+  .journey-detail a:hover { text-decoration: underline; }
+
+  .round-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .round-header { background: var(--primary); color: #fff; padding: 22px 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .round-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .icon-green { background: var(--green-bg); }
+  .icon-amber { background: var(--amber-bg); }
+  .round-title-group { flex: 1; }
+  .round-name { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; color: #fff; margin-bottom: 3px; }
+  .round-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,.55); }
+  .round-meta a { color: var(--accent); text-decoration: none; }
+  .round-score-box { text-align: right; flex-shrink: 0; }
+  .round-score-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: #fff; line-height: 1; }
+  .round-score-label { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .1em; }
+  .round-body { padding: 28px; }
+
+  .score-breakdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+  .score-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .score-cell .snum { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1; margin-bottom: 4px; }
+  .score-cell .slabel { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .snum-green { color: var(--green); }
+  .snum-amber { color: var(--amber); }
+  .snum-red   { color: var(--red); }
+
+  .qa-block { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .qa-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .qa-block-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--primary); font-weight: 500; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+  .qa-item { margin-bottom: 18px; }
+  .qa-item:last-child { margin-bottom: 0; }
+  .qa-q { font-weight: 600; color: var(--primary); margin-bottom: 7px; font-size: 14px; }
+  .qa-a { color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 9px; }
+  .qa-a span { display: block; padding-left: 12px; position: relative; }
+  .qa-a span::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
+  .qa-verdict { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; }
+  .verdict-good { background: var(--green-bg); color: var(--green); }
+  .verdict-mid  { background: var(--amber-bg); color: var(--amber); }
+  .verdict-bad  { background: var(--red-bg);   color: var(--red); }
+
+  .model-answer { background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 8px; padding: 14px 18px; margin-top: 10px; font-size: 13px; line-height: 1.65; }
+  .model-answer .model-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-mid); font-weight: 500; margin-bottom: 7px; }
+  .model-answer span { display: block; padding-left: 14px; position: relative; color: #1a3a6e; }
+  .model-answer span::before { content: '→'; position: absolute; left: 0; color: var(--blue-mid); }
+
+  .round-remarks { background: var(--amber-bg); border-top: 1px solid var(--border); padding: 18px 28px; font-style: italic; font-size: 13.5px; color: var(--amber); }
+  .round-remarks strong { font-style: normal; font-weight: 600; color: var(--primary); }
+
+  .overall-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .overall-block { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .overall-block:last-child { border-bottom: none; }
+  .overall-block p { font-size: 14.5px; line-height: 1.75; color: var(--text); }
+  .title-green { color: var(--green); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-red   { color: var(--red);   font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-blue  { color: var(--blue-mid); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 16px; }
+  .strength-list, .improve-list { list-style: none; }
+  .strength-list li, .improve-list li { padding: 8px 0 8px 14px; border-bottom: 1px dashed var(--border); position: relative; font-size: 14px; color: var(--text); }
+  .strength-list li:last-child, .improve-list li:last-child { border-bottom: none; }
+  .strength-list li::before { content: '·'; position: absolute; left: 0; color: var(--green); font-size: 18px; line-height: 1; top: 8px; }
+  .improve-list li::before  { content: '·'; position: absolute; left: 0; color: var(--red);   font-size: 18px; line-height: 1; top: 8px; }
+
+  .week-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .week-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg); }
+  .week-card-header { background: var(--primary); padding: 12px 16px; }
+  .week-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .week-title { font-family: 'DM Serif Display', serif; font-size: 16px; color: #fff; font-weight: 400; }
+  .week-card-body { padding: 14px 16px; }
+  .week-card-body ul { list-style: none; }
+  .week-card-body li { font-size: 13px; color: var(--text); padding: 4px 0 4px 18px; position: relative; line-height: 1.5; }
+  .week-card-body li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 6px; }
+
+  .report-footer { border-top: 1px solid var(--border); padding: 18px 24px; text-align: center; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); max-width: 860px; margin: 0 auto; }
+  a { color: var(--accent); }
+  code { font-family: 'DM Mono', monospace; font-size: 12.5px; background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <h1>Veera Manikandan V</h1>
+  <div class="subtitle">Software Development — DSA &amp; Full Stack Placement Track · Cycle 4</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 — CANDIDATE INFO ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="label">Candidate Name</div>
+      <div class="value">Veera Manikandan V</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Year of Graduation</div>
+      <div class="value">2027 (B.Tech — Danakmish University)</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Offline Assessment Date</div>
+      <div class="value">15 March 2026 · Cycle 4</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Placement Bucket</div>
+      <div class="value">Bucket A &nbsp;<span class="badge badge-green" style="font-size:11px;">Offline Qualified</span></div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Resume</div>
+      <div class="value"><a href="https://docs.google.com/document/d/1Gy4Hxfz72ZamdAYyyCLn8U3RT7g4A3T-4XiF9ugun_E/edit?usp=sharing" target="_blank">View Resume ↗</a></div>
+    </div>
+    <div class="info-cell">
+      <div class="label">NxtMock Status</div>
+      <div class="value"><span class="badge badge-green" style="font-size:11px;">✓ Cleared</span></div>
+    </div>
+    <div class="info-cell full">
+      <div class="label">Final Placement Status</div>
+      <div class="value" style="margin-top:6px;">
+        <span class="badge badge-amber">⚠ Not Cleared — Re-attempt Required</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 02 — JOURNEY ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared — Bucket A</div>
+        <div class="journey-detail">15 Mar 2026 · Cycle 4 · NxtMock also cleared</div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result green">✓ Cleared · Medium Hire</div>
+        <div class="journey-detail">12 Apr 2026 · 9:00 AM · Panelist: Isha Rawat ·
+          <a href="https://drive.google.com/file/d/1cXdnwqiz5ulIs_S0JJyvUnaMhAwI-_1Q/view?usp=drivesdk" target="_blank">Recording ↗</a>
+          &nbsp;· Problem Solving strong; implementation gaps in P2
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 2 (TR-2) — Full Stack Interview</div>
+        <div class="journey-result amber">~ Not Cleared · Score 36 / 100 · Low Hire</div>
+        <div class="journey-detail">23 Apr 2026 · 10:30 AM · Panelist: Keerthi ·
+          <a href="https://drive.google.com/file/d/1n9ey8hu93H2ltvRWUdzERC35SfFaJGT-/view?usp=drivesdk" target="_blank">Recording ↗</a>
+          &nbsp;· Frontend 35 · Backend 20 · Internship 24
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ SECTION 03 — TR-1 ══ -->
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-green">🟢</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">Panelist: Isha Rawat &nbsp;·&nbsp; 12 Apr 2026 · 9:00 AM &nbsp;·&nbsp;
+          <a href="https://drive.google.com/file/d/1cXdnwqiz5ulIs_S0JJyvUnaMhAwI-_1Q/view?usp=drivesdk" target="_blank">Recording ↗</a>
+        </div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#6ee09e;">✓</div>
+        <div class="round-score-label">Medium Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Find the majority element in an array (appears more than n/2 times) — most efficient approach</div>
+          <div class="qa-a">
+            <span>Initial approach: count frequency for each element — O(n²) or O(n) with a dictionary — functionally correct</span>
+            <span>When prompted for O(1) space, moved toward Boyer-Moore Voting Algorithm concept: maintain count and candidate, reset when count reaches zero</span>
+            <span>Could not articulate the Boyer-Moore approach cleanly by name but demonstrated the core intuition</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Frequency approach correct; O(1) space Boyer-Moore reached only partially (Rating: 4/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Boyer-Moore Voting Algorithm: initialise <code>candidate = None, count = 0</code>. For each element: if <code>count == 0</code>, set <code>candidate = num</code>. If <code>num == candidate</code>, <code>count += 1</code>, else <code>count -= 1</code>. The final candidate is the majority element. Time O(n), Space O(1). Works because majority element always out-votes all others combined.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Detect a cycle in a linked list</div>
+          <div class="qa-a">
+            <span>Approach given: traverse the list and store visited nodes in a set; if a node is already in the set, a cycle exists</span>
+            <span>Correct O(n) time, O(n) space approach — valid but not the most space-efficient</span>
+            <span>Did not mention Floyd's Cycle Detection (slow/fast pointers) which achieves O(1) space</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — HashSet approach correct; Floyd's O(1) space approach not mentioned (Rating: 3/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Floyd's Cycle Detection (Tortoise &amp; Hare): use two pointers — <code>slow</code> (moves 1 step) and <code>fast</code> (moves 2 steps). If they meet, a cycle exists. If <code>fast</code> or <code>fast.next</code> becomes <code>None</code>, no cycle. Time O(n), Space O(1) — optimal. HashSet approach is also valid (O(n) space) and worth mentioning as the simpler alternative.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/array-with-elements-not-equal-to-average-of-neighbors/description" target="_blank">Array With Elements Not Equal to Average of Neighbors ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly identified the approach: sort the array first, then swap adjacent pairs (even-odd indices) to break the average relationship</span>
+            <span>Explained: swapping pairs ensures no element equals the average of its neighbours — correct reasoning</span>
+            <span>Identified step size of 2 in the swap loop — correct</span>
+            <span>Verified with example: array [1, 2, 3, 5] → after sort and swap becomes a valid wiggle-like arrangement</span>
+            <span>Time complexity: O(n log n) due to sort — stated correctly; initially confused log n with the iteration step of 2</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct approach — Sort + adjacent swap strategy correctly explained (Rating: 5/5)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation &amp; Complexity</div>
+          <div class="qa-a">
+            <span>Implemented the sort + swap approach correctly — passed all test cases on LeetCode</span>
+            <span>Sorted using Python's built-in <code>sort()</code>, then iterated with step 2 swapping adjacent pairs</span>
+            <span>Time complexity: O(n log n) — correctly attributed to sorting step</span>
+            <span>Space complexity: initially stated O(n), corrected to O(1) since sort is in-place</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct code — All test cases passed; complexity identified with minor correction (Rating: 5/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/" target="_blank">Find K Pairs with Smallest Sums ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly identified Min Heap as the optimal approach for finding K pairs with smallest sums</span>
+            <span>Initialised heap with all (nums1[i], nums2[0]) pairs as starting candidates — correct seeding strategy</span>
+            <span>Described the expand step: after popping (i, j), push (i, j+1) to explore the next element from nums2 for the same nums1[i]</span>
+            <span>Correctly used boundary check: <code>if j + 1 &lt; len(nums2)</code> to prevent index out of range</span>
+            <span>Explained heap logic clearly when prompted by the interviewer</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Approach directionally correct; expansion logic had a gap (only explored j+1, missed i+1 pairs) (Rating: 4/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Initialise min-heap with <code>(nums1[i] + nums2[0], i, 0)</code> for all i in range(min(k, len(nums1))). Pop min, add pair to result. Push <code>(nums1[i] + nums2[j+1], i, j+1)</code> if <code>j+1 &lt; len(nums2)</code>. This correctly explores the next best pair from each nums1 row. Repeat k times. Time: O(k log k), Space: O(k). The interviewer noted: you need to also consider whether the next smallest could come from advancing i — but since all nums1[i]+nums2[0] are seeded initially, advancing j from each i is sufficient.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented the heap-based solution — major structural logic was correct</span>
+            <span>Had a flaw: only pushed <code>(i, j+1)</code> without considering that both i and j dimensions need exploration</span>
+            <span>Engaged actively with the interviewer's dry-run feedback — understood the gap conceptually but could not fix it in time</span>
+            <span>Implementation was a good attempt with one systematic exploration gap</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Heap implementation attempted; exploration logic had one systematic gap; could not fix within time (Rating: 2/5)</span>
+        </div>
+      </div>
+
+    </div><!-- round-body -->
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "His problem solving is good like for thinking the solution but implementation wise he needs to improve. Seems like he has knowledge of concepts but lacks in practice." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 3/5 — Adequate; needs improvement in structured verbal explanation under pressure.
+    </div>
+  </div><!-- end TR-1 -->
+
+
+  <!-- ══ SECTION 04 — TR-2 ══ -->
+  <div class="section-label">04 · Technical Round 2 — Full Stack Interview</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-amber">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 2 — Full Stack Interview</div>
+        <div class="round-meta">Panelist: Keerthi &nbsp;·&nbsp; 23 Apr 2026 · 10:30 AM &nbsp;·&nbsp;
+          <a href="https://drive.google.com/file/d/1n9ey8hu93H2ltvRWUdzERC35SfFaJGT-/view?usp=drivesdk" target="_blank">Recording ↗</a>
+        </div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">36</div>
+        <div class="round-score-label">/ 100 · Low Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Score breakdown -->
+      <div class="score-breakdown">
+        <div class="score-cell">
+          <div class="snum snum-amber">40</div>
+          <div class="slabel">Soft Skills &amp; Comm.</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-amber">50</div>
+          <div class="slabel">Projects</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-red">35</div>
+          <div class="slabel">Frontend Score</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-red">20</div>
+          <div class="slabel">Backend Score</div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="qa-block">
+        <div class="qa-block-label">Soft Skills &amp; Communication</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Presentability: Professional appearance but not well-groomed — minor note from interviewer</span>
+            <span>Communication: Understanding shown but not very confident; minor grammar mistakes throughout</span>
+            <span>Audio issues and connectivity problems caused interruptions — handled with patience</span>
+            <span>Proactively admitted knowledge gaps ("No idea", "I don't know about that") rather than bluffing — positive trait</span>
+            <span>Rated 40/100 — needs more confidence and structured communication under interview conditions</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Honest and patient; confidence and fluency need strengthening (40/100)</span>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="qa-block">
+        <div class="qa-block-label">Projects</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Gym Management System — Node.js, Express, SQLite (Internship Project)</div>
+          <div class="qa-a">
+            <span>Built user registration + login forms with Express routing and JWT authentication</span>
+            <span>JWT flow correctly explained: user logs in → receives token → token stored in localStorage → sent in query parameters for every request → server validates</span>
+            <span>Password handling: described hashing/encryption for stored passwords — directionally correct</span>
+            <span>SQLite used due to internship deadline constraints — honest and reasonable justification</span>
+            <span>Later deployed with Firebase and Supabase — shows awareness of production-grade databases</span>
+            <span>Gaps: No role-based access control implemented (members-only portal); unaware of SQL injection, XSS, CSRF security concepts</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — JWT and routing explained well; RBAC and security concepts (SQL injection, XSS) not implemented or known (Score: 50/100)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>SQL Injection</strong>: attacker injects SQL code via input fields (e.g., <code>' OR '1'='1</code>) to bypass authentication. Fix: use parameterised queries / prepared statements — never string-concatenate user input into SQL. <strong>XSS</strong>: attacker injects malicious JS into web pages viewed by others. Fix: sanitise/escape all user-generated content. <strong>CSRF</strong>: forces authenticated users to execute unwanted actions. Fix: CSRF tokens or SameSite cookie policy. <strong>RBAC</strong>: assign roles (admin/member) to users; middleware checks <code>req.user.role</code> before authorising an action.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Privacy &amp; Consent Application — with email notification via Make.com</div>
+          <div class="qa-a">
+            <span>Consent management: explained as a security/privacy assurance system for applications — partially correct in spirit</span>
+            <span>Email automation: generated a webhook URL from Make.com, pasted it into server.js, triggered on user registration and login — correct practical integration</span>
+            <span>Two triggers described: registration success → welcome email; login → login alert email</span>
+            <span>Could not explain GDPR compliance design ("No idea") — honest admission</span>
+            <span>Session vs token-based auth: described both as stored in localStorage — partially correct but missed key distinctions</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Practical email automation integration well explained; GDPR and session vs token distinction gaps</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Session-based auth</strong>: server stores session data; client gets a session ID cookie. Stateful — server must maintain session store (Redis). <strong>Token-based (JWT)</strong>: server issues a signed token; client stores it and sends it on every request. Stateless — server validates the signature without maintaining state. JWT should be stored in httpOnly cookies (not localStorage) for security — localStorage is vulnerable to XSS. <strong>GDPR</strong>: gives EU users rights over their data — consent must be explicit, users can request data deletion, data processing must be logged.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Frontend — HTML, CSS, JavaScript &amp; React (Score: 35 / 100)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">What does responsive design mean? How do you optimize page load time?</div>
+          <div class="qa-a">
+            <span>Responsive design: correctly defined as making UI compatible across mobile, laptop, and tablet — conceptually right</span>
+            <span>Page load time optimization: stated "I haven't done anything about that in this project" — honest but no knowledge demonstrated</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Responsive definition correct; no page load optimization knowledge</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Page load time optimizations: (1) Lazy loading images and components. (2) Code splitting with dynamic imports. (3) Minifying CSS/JS files. (4) Using a CDN for static assets. (5) Browser caching with proper Cache-Control headers. (6) Reducing HTTP requests by bundling files. (7) Compressing images (WebP format). (8) Server-side rendering (SSR) or static generation for critical content. Tools: Lighthouse, WebPageTest for measurement.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Web components, Shadow DOM, custom elements — what are they?</div>
+          <div class="qa-a">
+            <span>Confused web components with React components initially</span>
+            <span>Mentioned HTML5 features (semantic elements, multimedia, geolocation, canvas) — these are HTML5 APIs, not web components</span>
+            <span>Web worker: no knowledge</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — Web components, Shadow DOM, custom elements, and web workers all unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Web Components</strong>: a set of native browser APIs to create reusable custom HTML elements. Three pillars: (1) <strong>Custom Elements</strong>: define new HTML tags (<code>class MyEl extends HTMLElement</code>). (2) <strong>Shadow DOM</strong>: encapsulated DOM tree attached to a custom element — styles inside don't leak out; styles outside don't leak in. (3) <strong>HTML Templates</strong>: <code>&lt;template&gt;</code> tag for reusable markup. <strong>Web Worker</strong>: runs JavaScript in a background thread — doesn't block the UI thread. Used for heavy computation (image processing, large data parsing).</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Flexbox — difference between justify-content and align-items?</div>
+          <div class="qa-a">
+            <span>Correctly stated that <code>display: flex</code> must be declared first</span>
+            <span>Correctly listed justify-content values: start, end, center</span>
+            <span>Attempted distinction: stated align-items works horizontally when justify-content is vertical — the axis relationship was partially confused</span>
+            <span>Core insight present but axis terminology not precise</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Values listed correctly; main-axis vs cross-axis distinction imprecise</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><code>justify-content</code>: aligns items along the <strong>main axis</strong> (horizontal by default for <code>flex-direction: row</code>). Values: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>. <code>align-items</code>: aligns items along the <strong>cross axis</strong> (vertical by default). Values: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>stretch</code>, <code>baseline</code>. Mnemonic: justify = main axis = the direction flex flows; align = cross axis = perpendicular to flow.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What are arrow functions in JavaScript?</div>
+          <div class="qa-a">
+            <span>Stated arrow functions are "asynchronous functions" — incorrect; arrow functions are not inherently async</span>
+            <span>Correctly noted: arrow functions do not have their own <code>this</code> keyword — a key distinction</span>
+            <span>Correctly noted: cannot be used as constructor functions</span>
+            <span>The async/await statement was an incorrect characterisation — arrow functions can be async but are not by default</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — <code>this</code> binding and constructor restriction correct; incorrect "asynchronous" characterisation</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Arrow functions (<code>const fn = (x) => x * 2</code>) are a concise function syntax introduced in ES6. Key differences from regular functions: (1) No own <code>this</code> — they inherit <code>this</code> from the enclosing lexical scope (solves callback <code>this</code> binding issues). (2) No <code>arguments</code> object. (3) Cannot be used as constructors (<code>new</code> throws error). (4) Implicit return for single expressions: <code>(x) => x * 2</code>. They are NOT inherently async — you can make one async with <code>const fn = async () => await fetch(...)</code>.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Live coding: Reverse an array in-place — then without using .reverse()</div>
+          <div class="qa-a">
+            <span>First implemented using built-in <code>.reverse()</code> — correct and quick</span>
+            <span>When asked to avoid built-in: suggested using map and calculating length, with start/stop/step indexing — indicated slice-based approach</span>
+            <span>Implemented correctly in notepad under connectivity constraints — functional solution delivered</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — Reverse implemented both ways; manual approach completed under pressure (Able to solve 50% per data → full solve on coding)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is lazy loading in React?</div>
+          <div class="qa-a">
+            <span>Stated lazy loading prevents re-rendering and avoids excessive timing — confused with React.memo / performance optimisation concepts</span>
+            <span>Did not mention React.lazy(), Suspense, or the deferred component loading mechanism</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incorrect — Lazy loading confused with re-render prevention; React.lazy() and Suspense not known</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Lazy loading in React defers loading components until they are needed (e.g., when a route is visited). Implementation: <code>const MyComp = React.lazy(() => import('./MyComp'));</code> wrapped in <code>&lt;Suspense fallback=&#123;&lt;Spinner/&gt;&#125;&gt;&lt;MyComp/&gt;&lt;/Suspense&gt;</code>. Benefit: reduces initial bundle size → faster first page load. Re-rendering prevention is a separate concern handled by <code>React.memo</code>, <code>useMemo</code>, and <code>useCallback</code>.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Form validation in React — how do you handle inputs?</div>
+          <div class="qa-a">
+            <span>Mentioned <code>useState</code> for functional components and <code>this.state</code> for class components — correct React state concepts</span>
+            <span>Described maintaining an empty initial state and showing errors if required fields are absent — logically correct pattern</span>
+            <span>Answer was somewhat scattered — mixed component lifecycle concepts with validation logic</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Core useState pattern correct; answer lacked precision and structure</span>
+        </div>
+      </div><!-- end frontend -->
+
+      <!-- Backend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Backend — Node.js, Express, MongoDB &amp; Security (Score: 20 / 100)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">How does Express build on top of the HTTP module?</div>
+          <div class="qa-a">
+            <span>Correctly described Express as a Node.js framework for building APIs and handling routing</span>
+            <span>Correctly noted it communicates between frontend and backend via HTTP methods</span>
+            <span>Did not explain how Express wraps Node's raw <code>http.createServer()</code> with middleware abstractions</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Framework purpose correct; underlying HTTP module wrapping mechanism not explained</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Node.js has a built-in <code>http</code> module: <code>http.createServer((req, res) => &#123;...&#125;)</code>. Express wraps this with: (1) Router — maps URL patterns to handlers (<code>app.get('/users', handler)</code>). (2) Middleware — functions that process requests before they reach route handlers (<code>app.use(express.json())</code>). (3) Simplified request/response API — <code>res.json()</code>, <code>req.body</code>, <code>req.params</code> instead of raw stream parsing. Express is essentially a thin, powerful abstraction over Node's raw HTTP server.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is indexing in MongoDB?</div>
+          <div class="qa-a">
+            <span>Correctly defined indexing as a method to improve query performance and enable fast data retrieval</span>
+            <span>Did not explain the underlying B-Tree structure, the trade-off with write operations, or how to create an index</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Purpose correctly stated; mechanism, trade-offs, and syntax not elaborated</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>MongoDB indexes use a B-Tree data structure to avoid full collection scans. Create with: <code>db.users.createIndex(&#123; email: 1 &#125;)</code>. Types: single field, compound, text, geospatial. Trade-off: speeds up reads (find, sort) but slows writes (insert, update, delete) because the index must be maintained. Use <code>explain()</code> to verify an index is being used. Always index fields in <code>find()</code>, <code>sort()</code>, and join ($lookup) operations.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Live MongoDB query: Find all posts that contain both "tech" and "javascript" in their tags array</div>
+          <div class="qa-a">
+            <span>Could not understand the MongoDB collection/document structure initially — confused it with SQL table terminology</span>
+            <span>Did not know the MongoDB query syntax for array field matching</span>
+            <span>Interviewer explained the structure clearly — still could not formulate the query</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — MongoDB document structure and array query operators unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>To find documents where tags array contains BOTH "tech" AND "javascript": <code>db.posts.find(&#123; tags: &#123; $all: ["tech", "javascript"] &#125; &#125;)</code>. The <code>$all</code> operator matches arrays that contain all specified elements (regardless of order or other elements). To find posts with EITHER tag: <code>db.posts.find(&#123; tags: &#123; $in: ["tech", "javascript"] &#125; &#125;)</code>. To find posts where tags IS exactly a value: <code>db.posts.find(&#123; tags: "tech" &#125;)</code>.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Design RESTful API endpoints for a to-do app with JWT authentication (user sees only their tasks)</div>
+          <div class="qa-a">
+            <span>Described routing initialisation and GET request with query parameters for authentication — directionally on track</span>
+            <span>Mentioned validating the request and returning tasks if authenticated — correct concept</span>
+            <span>Could not map this to specific HTTP methods, endpoint paths, request/response bodies, or status codes</span>
+            <span>Code attempt ran out of time — functional endpoint not delivered</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not completed — Conceptual awareness without REST endpoint structure; no working code (Unable to understand the question per data)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>All endpoints require <code>Authorization: Bearer &lt;JWT&gt;</code> header. <code>POST /auth/register</code> → 201 Created. <code>POST /auth/login</code> → 200 + JWT token. <code>GET /todos</code> → 200 + array of user's todos (filter by <code>req.user.id</code>). <code>POST /todos</code> body: &#123;title&#125; → 201 + created todo. <code>PUT /todos/:id</code> → 200 + updated todo (verify ownership first). <code>DELETE /todos/:id</code> → 204 (verify ownership first). Middleware: JWT verify middleware on all /todos routes extracts <code>req.user</code> from token.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">RBAC Express middleware: admin can delete any post; members can only delete their own</div>
+          <div class="qa-a">
+            <span>No implementation attempted — the question was noted in the session but time and knowledge did not allow a response</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — RBAC middleware design unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Express middleware: <code>const rbacDelete = async (req, res, next) => &#123; const post = await Post.findById(req.params.id); if (!post) return res.status(404).json(&#123;error:'Not found'&#125;); if (req.user.role === 'admin') return next(); if (post.authorId.toString() !== req.user.id) return res.status(403).json(&#123;error:'Forbidden'&#125;); next(); &#125;;</code> Apply: <code>router.delete('/:id', authenticateJWT, rbacDelete, deletePostHandler);</code>. Key: check role first (admin bypass), then ownership check for members.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Secure forget password flow — describe the implementation</div>
+          <div class="qa-a">
+            <span>Described a flow involving user registration, login, and then a password change mechanism</span>
+            <span>Mentioned: old password → new password flow; validation constraints (no repeat of previous password, must include numbers/symbols)</span>
+            <span>Did not describe the secure reset token flow: email link with expiring token → token validation → password update</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Validation constraints mentioned; secure token-based reset flow not known</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Secure forget password flow: (1) User clicks "Forgot Password" → enters email. (2) Server generates a cryptographically secure reset token (UUID/crypto.randomBytes), stores it hashed with expiry (15 min) in DB. (3) Server sends email with reset link: <code>https://app.com/reset?token=xyz</code>. (4) User clicks link → server validates token (not expired, matches hash). (5) User enters new password → server hashes with bcrypt, updates DB, invalidates token. Security notes: token must be single-use and time-limited; new password must not match the previous hash (bcrypt.compare).</span>
+          </div>
+        </div>
+      </div><!-- end backend -->
+
+      <!-- Internship -->
+      <div class="qa-block">
+        <div class="qa-block-label">Internship &amp; Practical Experience (Score: 24 / 100)</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Interned as a Full Stack Developer Unified Mentor — built the Gym Management System as the internship deliverable</span>
+            <span>Assisted in small modules — not end-to-end ownership of features independently</span>
+            <span>Could explain the internship project partially but with significant gaps in backend depth, security implementation, and deployment decisions</span>
+            <span>Partial explanation with gaps — shows exposure but limited depth of independent execution</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Real internship experience present; depth of independent contribution limited (24/100)</span>
+        </div>
+      </div>
+
+    </div><!-- round-body -->
+    <div class="round-remarks">
+      <strong>TR-2 Overall Remarks:</strong> "Candidate was able to explain the projects but very poor explanation skills. Need more in-depth knowledge in technical skills. Need more and more practice in Backend." &nbsp;·&nbsp; Frontend Score: 35 · Backend Score: 20 · Overall: 36/100 · Low Hire verdict across all buckets.
+    </div>
+  </div><!-- end TR-2 -->
+
+
+  <!-- ══ SECTION 05 — OVERALL ══ -->
+  <div class="section-label">05 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+    <div class="round-header" style="background:#2c3e50;">
+      <div class="round-icon" style="background:var(--amber-bg);">📋</div>
+      <div class="round-title-group">
+        <div class="round-name">Overall Assessment — Full Journey</div>
+        <div class="round-meta">Cycle 4 · TR-1 Medium Hire · TR-2 36/100 Low Hire · All Buckets Not Cleared</div>
+      </div>
+    </div>
+
+    <div class="overall-block">
+      <p>
+        Your TR-1 result tells a clear story: you can think algorithmically and reach the right approach — sort + swap for the wiggle array problem and min-heap for K-pairs were both identified correctly and largely implemented. The issue is a consistent gap between conceptual understanding and clean, complete implementation. This same pattern carried into TR-2: you have real project experience (JWT authentication, Make.com email automation, Express routing) and you can explain what you built at a surface level, but when the interviewer probed for depth — SQL injection, RBAC, session vs token architecture, MongoDB query operators — those gaps surfaced clearly. Your backend score (20/100) is the most critical area: REST API design, MongoDB queries, and Express middleware are areas you will need to build from scratch through hands-on projects. Your communication confidence also needs work — you are honest about not knowing things (which is good) but your explanations become scattered under questioning pressure. A focused month of backend project building and structured interview practice will make a significant difference.
+      </p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>DSA Algorithmic Thinking:</strong> Correctly approached both TR-1 problems — sort+swap strategy for wiggle array and min-heap for K-pairs with smallest sums — shows strong pattern recognition.</li>
+        <li><strong>Real Internship Experience:</strong> Gym Management System with JWT, Express routing, and password hashing built during an actual internship — shows you can work to a deadline and deliver.</li>
+        <li><strong>JWT Authentication Understanding:</strong> Correctly explained the full JWT login flow (token issuance → localStorage storage → query parameter validation) — a non-trivial concept well explained.</li>
+        <li><strong>Practical API Integration:</strong> Make.com email automation integrated via webhook into server.js — shows resourceful use of third-party tools in real projects.</li>
+        <li><strong>Intellectual Honesty:</strong> Consistently admitted knowledge gaps instead of guessing — prevents wasted time and is a respected professional habit.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Backend Depth (Critical):</strong> REST API endpoint design, RBAC middleware, secure password reset flow, and MongoDB query operators are all either unknown or incomplete. Must build 3+ full backend applications independently.</li>
+        <li><strong>MongoDB Query Syntax (Critical):</strong> <code>$all</code>, <code>$in</code>, <code>$set</code>, <code>$gt</code>, aggregation pipelines — none demonstrated. Practise MongoDB CRUD operators daily for 2 weeks.</li>
+        <li><strong>Web Security Fundamentals:</strong> SQL injection, XSS, CSRF, RBAC — all unknown. These are expected knowledge for any backend/full-stack role — study and understand each with a concrete example.</li>
+        <li><strong>DSA Implementation Precision:</strong> Concepts are right but code has systematic gaps (exploration logic in K-pairs heap). Dry-run every solution on paper before submitting — catch logical gaps yourself.</li>
+        <li><strong>JavaScript Depth:</strong> Arrow functions mischaracterised as "asynchronous"; lazy loading confused with re-rendering; web components and web workers completely unknown. Structured JS study needed.</li>
+        <li><strong>Communication Structure:</strong> Answers tend to scatter under follow-up questions. Practise the STAR format: Situation → Technique → Implementation → Result — for every technical answer.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">✦ 1-Month Action Plan</div>
+      <div class="week-grid">
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 01</div>
+            <div class="week-title">JavaScript &amp; React Deep Dive</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study arrow functions correctly — lexical <code>this</code>, no constructor, implicit return</li>
+              <li>Learn React.lazy + Suspense — implement lazy-loaded routes in a small project</li>
+              <li>Study flexbox axes — justify-content (main) vs align-items (cross) with 10 layout exercises</li>
+              <li>Learn web workers — build a simple off-thread computation example</li>
+              <li>Study web components — custom element + Shadow DOM mini demo</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 02</div>
+            <div class="week-title">Backend — Express, Auth &amp; Security</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Build a full REST API with JWT: register, login, protected routes, refresh tokens</li>
+              <li>Implement RBAC middleware: admin vs member role checks on Express routes</li>
+              <li>Build secure forget password: crypto token → email link → expiry validation → bcrypt update</li>
+              <li>Study SQL injection, XSS, CSRF — implement parameterised queries and CSRF tokens</li>
+              <li>Understand session-based vs token-based auth — implement both in separate demos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 03</div>
+            <div class="week-title">MongoDB &amp; Database Mastery</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study MongoDB CRUD: find, insertOne, updateOne ($set), deleteOne, findOneAndUpdate</li>
+              <li>Master array operators: <code>$all</code>, <code>$in</code>, <code>$elemMatch</code>, <code>$push</code>, <code>$pull</code></li>
+              <li>Learn aggregation pipeline: <code>$match</code>, <code>$group</code>, <code>$sort</code>, <code>$lookup</code></li>
+              <li>Create indexes — benchmark query performance with and without index</li>
+              <li>Build a posts/tags collection and write the tech+javascript query from the TR-2 question</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 04</div>
+            <div class="week-title">DSA Practice &amp; Mock Interviews</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Solve Floyd's cycle detection cleanly — implement both HashSet and two-pointer versions</li>
+              <li>Solve Boyer-Moore majority vote — implement and dry-run with 3 examples</li>
+              <li>Solve K-Pairs with Smallest Sums correctly — fix the exploration gap (i+1 vs j+1)</li>
+              <li>Solve 8 heap problems: LeetCode 215, 347, 373, 378, 658</li>
+              <li>Do 2 full mock interviews — explain approach verbally before writing any code</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end overall card -->
+
+</div><!-- body-wrap -->
+
+<div class="report-footer">
+  Report generated by NxtWave Interview Evaluation System · Cycle 4 · April 2026
+</div>
+
+</body>
+</html>

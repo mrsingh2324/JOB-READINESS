@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inumarthi Bala Satya Vinay Kumar — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f4f1eb;
+    --card-bg: #faf8f4;
+    --primary: #1a3a52;
+    --accent: #c8873f;
+    --green: #1a5c3a;
+    --green-bg: #e6f4ed;
+    --amber: #7a4f10;
+    --amber-bg: #fef3d8;
+    --red: #8b1c1c;
+    --red-bg: #fde8e8;
+    --border: #d8d0c4;
+    --blue-mid: #1e5a9e;
+    --blue-bg: #f0f7ff;
+    --blue-border: #c0d8f0;
+    --text: #2c2c2c;
+    --muted: #6b6560;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.65; }
+  .report-header { background: var(--primary); color: #fff; padding: 52px 40px 44px; text-align: center; }
+  .report-header .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+  .report-header h1 { font-family: 'DM Serif Display', serif; font-size: 38px; font-weight: 400; letter-spacing: -.5px; color: #fff; margin-bottom: 8px; }
+  .report-header .subtitle { font-size: 14px; color: rgba(255,255,255,.6); font-weight: 300; }
+  .body-wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
+  .info-cell { background: var(--card-bg); padding: 18px 22px; }
+  .info-cell .label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .info-cell .value { font-weight: 600; font-size: 15px; color: var(--primary); }
+  .info-cell.full { grid-column: 1 / -1; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; letter-spacing: .04em; }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-red   { background: var(--red-bg);   color: var(--red); }
+  .journey { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; }
+  .journey-row { display: flex; align-items: flex-start; gap: 20px; position: relative; padding-bottom: 28px; }
+  .journey-row:last-child { padding-bottom: 0; }
+  .journey-col-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 16px; }
+  .journey-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; border: 3px solid; box-shadow: 0 0 0 3px var(--bg); }
+  .dot-green { background: var(--green); border-color: var(--green); }
+  .dot-amber { background: var(--amber); border-color: var(--amber); }
+  .dot-red   { background: #c0392b; border-color: #c0392b; }
+  .journey-line { width: 2px; flex: 1; background: var(--border); min-height: 30px; margin-top: 4px; }
+  .journey-content { flex: 1; }
+  .journey-stage { font-weight: 700; font-size: 14px; color: var(--primary); margin-bottom: 3px; }
+  .journey-result { font-size: 12.5px; font-weight: 600; margin-bottom: 3px; }
+  .journey-result.green { color: var(--green); }
+  .journey-result.amber { color: var(--amber); }
+  .journey-result.red   { color: var(--red); }
+  .journey-detail { font-size: 12.5px; color: var(--muted); font-family: 'DM Mono', monospace; }
+  .journey-detail a { color: var(--accent); text-decoration: none; }
+  .journey-detail a:hover { text-decoration: underline; }
+  .round-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .round-header { background: var(--primary); color: #fff; padding: 22px 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .round-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .icon-amber { background: var(--amber-bg); }
+  .icon-red   { background: var(--red-bg); }
+  .round-title-group { flex: 1; }
+  .round-name { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; color: #fff; margin-bottom: 3px; }
+  .round-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,.55); }
+  .round-meta a { color: var(--accent); text-decoration: none; }
+  .round-score-box { text-align: right; flex-shrink: 0; }
+  .round-score-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: #fff; line-height: 1; }
+  .round-score-label { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .1em; }
+  .round-body { padding: 28px; }
+  .score-breakdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+  .score-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .score-cell .snum { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1; margin-bottom: 4px; }
+  .score-cell .slabel { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .snum-green { color: var(--green); }
+  .snum-amber { color: var(--amber); }
+  .snum-red   { color: var(--red); }
+  .qa-block { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .qa-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .qa-block-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--primary); font-weight: 500; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+  .qa-item { margin-bottom: 18px; }
+  .qa-item:last-child { margin-bottom: 0; }
+  .qa-q { font-weight: 600; color: var(--primary); margin-bottom: 7px; font-size: 14px; }
+  .qa-a { color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 9px; }
+  .qa-a span { display: block; padding-left: 12px; position: relative; }
+  .qa-a span::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
+  .qa-verdict { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; }
+  .verdict-good { background: var(--green-bg); color: var(--green); }
+  .verdict-mid  { background: var(--amber-bg); color: var(--amber); }
+  .verdict-bad  { background: var(--red-bg);   color: var(--red); }
+  .model-answer { background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 8px; padding: 14px 18px; margin-top: 10px; font-size: 13px; line-height: 1.65; }
+  .model-answer .model-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-mid); font-weight: 500; margin-bottom: 7px; }
+  .model-answer span { display: block; padding-left: 14px; position: relative; color: #1a3a6e; }
+  .model-answer span::before { content: '→'; position: absolute; left: 0; color: var(--blue-mid); }
+  .round-remarks { background: var(--amber-bg); border-top: 1px solid var(--border); padding: 18px 28px; font-style: italic; font-size: 13.5px; color: var(--amber); }
+  .round-remarks strong { font-style: normal; font-weight: 600; color: var(--primary); }
+  .overall-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .overall-block { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .overall-block:last-child { border-bottom: none; }
+  .overall-block p { font-size: 14.5px; line-height: 1.75; color: var(--text); }
+  .title-green { color: var(--green); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-red   { color: var(--red);   font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-blue  { color: var(--blue-mid); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 16px; }
+  .strength-list, .improve-list { list-style: none; }
+  .strength-list li, .improve-list li { padding: 8px 0 8px 14px; border-bottom: 1px dashed var(--border); position: relative; font-size: 14px; color: var(--text); }
+  .strength-list li:last-child, .improve-list li:last-child { border-bottom: none; }
+  .strength-list li::before { content: '·'; position: absolute; left: 0; color: var(--green); font-size: 18px; line-height: 1; top: 8px; }
+  .improve-list li::before  { content: '·'; position: absolute; left: 0; color: var(--red);   font-size: 18px; line-height: 1; top: 8px; }
+  .week-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .week-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg); }
+  .week-card-header { background: var(--primary); padding: 12px 16px; }
+  .week-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .week-title { font-family: 'DM Serif Display', serif; font-size: 16px; color: #fff; font-weight: 400; }
+  .week-card-body { padding: 14px 16px; }
+  .week-card-body ul { list-style: none; }
+  .week-card-body li { font-size: 13px; color: var(--text); padding: 4px 0 4px 18px; position: relative; line-height: 1.5; }
+  .week-card-body li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 6px; }
+  .report-footer { border-top: 1px solid var(--border); padding: 18px 24px; text-align: center; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); max-width: 860px; margin: 0 auto; }
+  a { color: var(--accent); }
+  code { font-family: 'DM Mono', monospace; font-size: 12.5px; background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Inumarthi Bala Satya Vinay Kumar</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="label">Candidate Name</div>
+      <div class="value">Inumarthi Bala Satya Vinay Kumar</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Year of Graduation</div>
+      <div class="value">2025</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Offline Assessment Date</div>
+      <div class="value">8 February 2026 · Cycle 1</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Email</div>
+      <div class="value">inumarthivinaykumari@gmail.com</div>
+    </div>
+    <div class="info-cell full">
+      <div class="label">Final Status</div>
+      <div class="value" style="margin-top:6px;">
+        <span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 02 ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared</div>
+        <div class="journey-detail">8 Feb 2026 · Cycle 1</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result amber">~ Not Qualified · Score 50 / 100 · Low Hire</div>
+        <div class="journey-detail">12 Feb 2026 · Score: 50 · <a href="https://drive.google.com/file/d/1A0MsAv7c96POcjJY4jCrD_K3eqyn4enw/view?usp=sharing" target="_blank">Recording ↗</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 03 ══ -->
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-amber">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">12 Feb 2026 · <a href="https://drive.google.com/file/d/1A0MsAv7c96POcjJY4jCrD_K3eqyn4enw/view?usp=sharing" target="_blank">View Recording ↗</a></div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">50</div>
+        <div class="round-score-label">/ 100 · Low Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Score Breakdown -->
+      <div class="score-breakdown">
+        <div class="score-cell">
+          <div class="snum snum-green">4/5</div>
+          <div class="slabel">Communication</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-red">0/5</div>
+          <div class="slabel">DSA Theory</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-red">0/5</div>
+          <div class="slabel">Core CS</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-amber">3/5</div>
+          <div class="slabel">Avg Problem Solving</div>
+        </div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>Completed BTech in CSE from Lovely Professional University (LPU)</span>
+            <span>Internship at Boolean Data Systems as a Data Engineer Intern — worked on data pipelines, data modelling, and SQL query optimisation</span>
+            <span>Projects: Road Payment Condition App and RE Application — cited as strengthening problem solving skills</span>
+            <span>Technical stack: Python, SQL, AWS, Snowflake, JavaScript, and web technologies — strong data engineering background</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Strong Background — Data engineering internship at Boolean Data Systems and Python/SQL expertise are meaningful differentiators</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Given an array of size N, return the majority element — the element that appears more than ⌊N/2⌋ times.</div>
+          <div class="qa-a">
+            <span>Spent a very long time thinking silently without verbalising any approach — interviewer waited for an extended period</span>
+            <span>Could not produce any answer — neither a brute force hashmap approach nor the optimal Boyer-Moore voting algorithm</span>
+            <span>Interviewer moved on after the extended silence with no response given</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Answered — No approach offered despite extended thinking time (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>O(N) time, O(1) space — Boyer-Moore Voting:</strong> maintain a <code>candidate</code> and <code>count</code>. For each element: if count = 0, set candidate = element. If element = candidate, increment count; else decrement count. The final candidate is the majority element.</span>
+            <span><strong>Why it works:</strong> the majority element appears more than all others combined, so it always "survives" the cancellation. Also solvable in O(N) time and O(N) space using a hashmap frequency count — know both approaches.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Every number in an array appears exactly twice except one. Find that number in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Same pattern as Q1 — extended silence with no verbal approach offered</span>
+            <span>Could not arrive at the XOR solution or even suggest a hashmap as a starting point</span>
+            <span>Interviewer moved to the coding problems without receiving any response</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Answered — No approach offered (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Use XOR: <code>result = 0; for num in arr: result ^= num; return result</code></span>
+            <span>XOR properties: <code>a ^ a = 0</code> (pairs cancel) and <code>a ^ 0 = a</code> (identity). All duplicate pairs cancel, leaving only the unique element. Time: O(N), Space: O(1). This is a must-know bit manipulation pattern that appears very frequently in interviews.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/car-fleet/description/" target="_blank">Car Fleet ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood the problem: multiple cars start at different positions and speeds heading toward a target; a car that catches a slower car ahead forms a fleet; return the total number of fleets at the target</span>
+            <span>Identified the core formula correctly: <code>time = (target - position) / speed</code> — this is the key insight for the problem</span>
+            <span>Missed the critical pre-processing step: cars must be sorted by starting position in descending order (closest to target first) before comparing times</span>
+            <span>Without correct sorting, the fleet-forming logic produces incorrect results — a car behind can only catch a car ahead, not the other way around</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Core time formula identified correctly; sorting logic incorrect causing wrong results (Rating: 2/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Sort cars by position in <strong>descending order</strong> (closest to target first). Compute time for each car: <code>time = (target - pos) / speed</code>.</span>
+            <span>Use a stack. For each car (in sorted order): if its time &gt; the top of the stack, it cannot catch the car ahead — push it as a new fleet. Otherwise it merges with the fleet ahead — do not push.</span>
+            <span>Answer = stack size. Time: O(N log N) for sorting. Space: O(N) for stack. The key insight: a faster car behind a slower one will always slow down to match — they form one fleet.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Wrote a Python solution with a for loop over positions and speeds, applied the time formula, and used an <code>if not start</code> flag for fleet tracking</span>
+            <span>Only 1 sample test case passed — the sorting issue caused incorrect fleet counts on all other cases</span>
+            <span>Spent extended time attempting to debug using the failing test cases but could not identify the root cause independently</span>
+            <span>Interviewer pointed out the sorting logic was the issue — candidate could not fix it within the remaining time</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Code written and partially functional; incorrect sorting caused most test cases to fail; debugging unsuccessful (Rating: 2/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/number-of-sub-arrays-with-odd-sum/description/" target="_blank">Number of Subarrays with Odd Sum ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood the problem: count all contiguous subarrays whose sum is odd; return count modulo 10⁹+7</span>
+            <span>Correctly explained the brute force approach: two nested loops generating all subarrays, checking each sum — O(N²) time</span>
+            <span>Could not independently reach the O(N) prefix sum approach</span>
+            <span>With interviewer hint about prefix sum: identified that tracking odd and even prefix sum counts allows O(N) counting — the number of odd-sum subarrays ending at index i equals the count of even prefix sums so far (and vice versa)</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Brute force correctly identified; prefix sum approach reached only with hint (Rating: 4/5 per sheet — credited for implementation)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented the prefix sum approach in Python — initialised odd and even counts, iterated through the array updating the running prefix sum parity</span>
+            <span>Solution was accepted on LeetCode — all test cases passed</span>
+            <span>However, could not clearly articulate the logic behind the code when asked by the interviewer — implemented correctly but understanding was surface-level</span>
+            <span>This is a critical gap: passing test cases without being able to explain why the code works means the concept is not deeply internalised</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Solution passed on LeetCode; however could not explain the approach clearly post-implementation (Rating: 4/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Track running prefix sum parity. Maintain <code>odd_count</code> and <code>even_count</code> (initialise <code>even_count = 1</code> for empty prefix). For each element: update prefix parity. If current prefix is odd, add <code>even_count</code> to result (odd - even = odd). If even, add <code>odd_count</code>. Then increment the respective counter.</span>
+            <span><strong>Why:</strong> a subarray <code>[i..j]</code> has odd sum iff <code>prefix[j] XOR prefix[i-1] = 1</code>, i.e., one is odd and one is even. Time: O(N), Space: O(1). Being able to explain this is as important as coding it.</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- round-body -->
+
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Weak candidate, needs to improve DSA a lot, not able to explain approach properly. He had decent coding knowledge and theory knowledge." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 4/5 — Decent communicator in general; however, the pattern of extended silences during rapid fire questions without verbalising any thought process is a significant interview weakness to address.
+    </div>
+  </div>
+
+  <!-- ══ SECTION 04 ══ -->
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>You have a genuinely strong background — a completed data engineering internship at Boolean Data Systems, solid Python and SQL skills, and working knowledge of AWS and Snowflake set you apart from many candidates at this stage. The TR-1 result of 50, however, reveals a clear gap between your data/backend experience and your algorithmic problem-solving depth. You could not answer either rapid fire question despite extended thinking time, and your Car Fleet solution failed due to a missing sort step — a detail that should have been caught during dry-running. The bright spot is Problem 2: you implemented a working prefix sum solution that passed on LeetCode, showing your coding ability is real. The core issue is that you can implement but not yet explain — internalising the "why" behind algorithms is what you need to focus on before your re-attempt.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Industry Internship:</strong> Data engineering at Boolean Data Systems with hands-on work on pipelines, data modelling, and SQL optimisation — this is a strong foundation that demonstrates real technical capability.</li>
+        <li><strong>Code Implementation Ability:</strong> You implemented a working prefix sum solution for Problem 2 that passed all LeetCode test cases — proving your ability to translate a concept into functional code when given the right direction.</li>
+        <li><strong>Problem Comprehension:</strong> You correctly understood both coding problems and identified the core formula for Car Fleet (time = (target - pos) / speed) — showing strong problem-reading skills.</li>
+        <li><strong>Communication:</strong> 4/5 — Decent communicator who engages well with the interviewer; the language barrier is manageable and does not significantly impact interview performance.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Think Out Loud Always:</strong> Both rapid fire questions resulted in long silences with no verbal output. In interviews, thinking silently for extended periods without communicating is as bad as not knowing the answer — always verbalise your thought process, even if it is incomplete.</li>
+        <li><strong>Bit Manipulation &amp; Classic Patterns:</strong> Both Majority Element (Boyer-Moore) and Single Element (XOR) are standard interview questions that must be memorised and understood. These appeared here and will appear again.</li>
+        <li><strong>Sorting as Pre-processing:</strong> The Car Fleet solution failed entirely due to missing a sort step. Before coding any array/position-based problem, ask yourself: "does the order of elements matter? Should I sort first?" — build this as a habit.</li>
+        <li><strong>Explanation After Coding:</strong> You passed Problem 2 on LeetCode but could not explain why the code works. Every algorithm you implement must be explainable in plain language — interviewers evaluate understanding, not just output.</li>
+        <li><strong>Stack-Based Problems:</strong> Car Fleet's optimal solution uses a monotonic stack — a pattern you need to add to your repertoire alongside prefix sums.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 01</div>
+            <div class="week-title">Classic Patterns &amp; Think-Out-Loud</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Master Boyer-Moore Voting: implement Majority Element I &amp; II — understand why cancellation works, not just the code</li>
+              <li>Master XOR trick: Single Number I, II, III — Missing Number, Find the Difference</li>
+              <li>Practice "think out loud" daily: for every problem you solve, narrate every step verbally before touching the keyboard</li>
+              <li>Re-attempt Car Fleet — implement with correct descending sort + stack approach; submit and verify all test cases pass</li>
+              <li>Solve 5 sorting-as-preprocessing problems: Two Sum II, Merge Intervals, Meeting Rooms, 3Sum, Sort Colors</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 02</div>
+            <div class="week-title">Prefix Sums, Stacks &amp; Hashmaps</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Re-implement the Odd Sum Subarrays prefix solution from scratch without hints — then write a 3-sentence explanation of why it works</li>
+              <li>Deepen prefix sum mastery: Subarray Sum Equals K, Product of Array Except Self, Range Sum Query</li>
+              <li>Study monotonic stack pattern: Daily Temperatures, Next Greater Element I &amp; II, Car Fleet (revisit), Largest Rectangle in Histogram</li>
+              <li>Solve 6 hashmap problems: Group Anagrams, Top K Frequent, Two Sum, Longest Consecutive Sequence</li>
+              <li>After every LeetCode submission — write 2–3 lines explaining the approach before moving to the next problem</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 03</div>
+            <div class="week-title">Linked Lists, Trees &amp; Two Pointers</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study linked list fundamentals: reverse, cycle detection (Floyd's), find middle (slow-fast pointer), merge two sorted lists</li>
+              <li>Study binary tree basics: BFS level order traversal, DFS (pre/in/post-order), maximum depth, lowest common ancestor</li>
+              <li>Study two-pointer patterns: Valid Palindrome, Container With Most Water, Remove Duplicates from Sorted Array</li>
+              <li>Solve 10 problems across these three topics — mix easy and medium, time yourself at 20 minutes each</li>
+              <li>Take one timed mock interview (45 min) — use LeetCode's mock interview mode or ask a peer</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 04</div>
+            <div class="week-title">Medium Problems &amp; Full Mocks</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Solve 12 medium-level problems randomly across all topics covered in Weeks 1–3 — no topic filtering, simulate real interview randomness</li>
+              <li>For each problem: state time and space complexity before submitting, and explain the approach in plain English after</li>
+              <li>Study 1D DP basics: Climbing Stairs, House Robber, Coin Change — understand state + transition before touching code</li>
+              <li>Take 2 full timed mock interviews (60 min each) — camera on, strict timing, rapid fire + 2 coding questions format</li>
+              <li>Review the 3 weakest topic areas from the month and solve 5 additional problems in each before re-attempt</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">
+  Report generated by NxtWave Interview Evaluation System · Cycle 1 · 12 February 2026
+</div>
+
+</body>
+</html>

@@ -39,6 +39,26 @@ Open `http://localhost:5173`. Admin is at `http://localhost:5173/admin` (or `/?a
 
 Try UID `NW2024001` on the student portal to see a fully-qualified student. Other sample UIDs (`NW2024002`–`NW2024005`) cover offered, rejected, partial, and pending states.
 
+## Showing HTML interview reports
+
+The workbook tab `Reports` can contain `Candidate UID`, `Candidate Name`, `Number`, and a local HTML file path. Browser users cannot open `file:///Users/...` paths from an online app, so the files must be moved into the app or uploaded to storage.
+
+For this local setup, the reports from `Bucket A.xlsx` were copied into:
+
+```text
+backend/public/reports/
+```
+
+Their UID/mobile mapping is stored in:
+
+```text
+backend/reports.json
+```
+
+The backend serves those files at `/reports/<file>.html`, and the student login accepts either a mobile number or a Student UID. A mobile number that exists in `backend/reports.json` opens the HTML report directly inside the app.
+
+For production, use the same model: either deploy `backend/public/reports` with the backend, or upload the HTML files to a storage/CDN service and store those HTTPS URLs in the manifest/database. Do not use `file://` links in production.
+
 ## Deployment
 
 - Backend → Render (free tier). Set `MONGODB_URI`, `ADMIN_KEY`, `PORT=3001`.

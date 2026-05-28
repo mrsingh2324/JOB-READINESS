@@ -276,6 +276,18 @@ button:hover { opacity: 0.92; }
 button.secondary { background: #fff; color: var(--ink); border: 1px solid var(--border); }
 button.danger { background: var(--red); }
 button.ghost { background: transparent; color: var(--ink); padding: 6px 10px; }
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 600;
+}
 
 /* Login */
 .login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
@@ -283,6 +295,42 @@ button.ghost { background: transparent; color: var(--ink); padding: 6px 10px; }
 .brand { font-family: Georgia, serif; font-size: 28px; margin: 0 0 6px; }
 .brand-sub { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
 .error { color: var(--red); font-size: 13px; margin-top: 8px; }
+
+/* Report viewer */
+.report-page {
+  min-height: calc(100vh - 52px);
+  display: flex;
+  flex-direction: column;
+}
+.report-toolbar {
+  display: grid;
+  grid-template-columns: 160px 1fr 160px;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+.report-meta { text-align: center; min-width: 0; }
+.report-meta h1 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 22px;
+  line-height: 1.25;
+}
+.report-meta p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.report-frame {
+  width: 100%;
+  flex: 1;
+  min-height: 720px;
+  border: 0;
+  background: #fff;
+}
 
 /* Admin */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
@@ -305,4 +353,10 @@ th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: 
   .tracks { grid-template-columns: 1fr; }
   .two-col { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
+  .report-toolbar {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+  .report-meta { text-align: left; }
+  .report-frame { min-height: 760px; }
 }

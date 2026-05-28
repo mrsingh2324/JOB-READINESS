@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tatimakula Divyadeepthi — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f4f1eb; --card-bg: #faf8f4; --primary: #1a3a52; --accent: #c8873f;
+    --green: #1a5c3a; --green-bg: #e6f4ed; --amber: #7a4f10; --amber-bg: #fef3d8;
+    --red: #8b1c1c; --red-bg: #fde8e8; --border: #d8d0c4;
+    --blue-mid: #1e5a9e; --blue-bg: #f0f7ff; --blue-border: #c0d8f0;
+    --text: #2c2c2c; --muted: #6b6560;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.65; }
+
+  .report-header { background: var(--primary); color: #fff; padding: 52px 40px 44px; text-align: center; }
+  .report-header .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+  .report-header h1 { font-family: 'DM Serif Display', serif; font-size: 42px; font-weight: 400; letter-spacing: -.5px; color: #fff; margin-bottom: 8px; }
+  .report-header .subtitle { font-size: 14px; color: rgba(255,255,255,.6); font-weight: 300; }
+
+  .body-wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
+
+  .section-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
+  .info-cell { background: var(--card-bg); padding: 18px 22px; }
+  .info-cell .label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .info-cell .value { font-weight: 600; font-size: 15px; color: var(--primary); }
+  .info-cell.full { grid-column: 1 / -1; }
+
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; letter-spacing: .04em; }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-red   { background: var(--red-bg);   color: var(--red); }
+
+  .journey { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; }
+  .journey-row { display: flex; align-items: flex-start; gap: 20px; padding-bottom: 28px; }
+  .journey-row:last-child { padding-bottom: 0; }
+  .journey-col-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 16px; }
+  .journey-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; border: 3px solid; box-shadow: 0 0 0 3px var(--bg); }
+  .dot-green { background: var(--green); border-color: var(--green); }
+  .dot-amber { background: var(--amber); border-color: var(--amber); }
+  .journey-line { width: 2px; flex: 1; background: var(--border); min-height: 30px; margin-top: 4px; }
+  .journey-content { flex: 1; }
+  .journey-stage { font-weight: 700; font-size: 14px; color: var(--primary); margin-bottom: 3px; }
+  .journey-result { font-size: 12.5px; font-weight: 600; margin-bottom: 3px; }
+  .journey-result.green { color: var(--green); }
+  .journey-result.amber { color: var(--amber); }
+  .journey-detail { font-size: 12.5px; color: var(--muted); font-family: 'DM Mono', monospace; }
+  .journey-detail a { color: var(--accent); text-decoration: none; }
+
+  .round-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .round-header { background: var(--primary); color: #fff; padding: 22px 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .round-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .icon-green { background: var(--green-bg); }
+  .icon-amber { background: var(--amber-bg); }
+  .round-title-group { flex: 1; }
+  .round-name { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; color: #fff; margin-bottom: 3px; }
+  .round-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,.55); }
+  .round-meta a { color: var(--accent); text-decoration: none; }
+  .round-score-box { text-align: right; flex-shrink: 0; }
+  .round-score-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: #fff; line-height: 1; }
+  .round-score-label { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .1em; }
+  .round-body { padding: 28px; }
+
+  .score-breakdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+  .score-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .score-cell .snum { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1; margin-bottom: 4px; }
+  .score-cell .slabel { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .snum-green { color: var(--green); }
+  .snum-amber { color: var(--amber); }
+  .snum-red   { color: var(--red); }
+
+  .qa-block { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .qa-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .qa-block-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--primary); font-weight: 500; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+  .qa-item { margin-bottom: 18px; }
+  .qa-item:last-child { margin-bottom: 0; }
+  .qa-q { font-weight: 600; color: var(--primary); margin-bottom: 7px; font-size: 14px; }
+  .qa-a { color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 9px; }
+  .qa-a span { display: block; padding-left: 12px; position: relative; }
+  .qa-a span::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
+  .qa-verdict { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; }
+  .verdict-good { background: var(--green-bg); color: var(--green); }
+  .verdict-mid  { background: var(--amber-bg); color: var(--amber); }
+  .verdict-bad  { background: var(--red-bg);   color: var(--red); }
+
+  .model-answer { background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 8px; padding: 14px 18px; margin-top: 10px; font-size: 13px; line-height: 1.65; }
+  .model-answer .model-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-mid); font-weight: 500; margin-bottom: 7px; }
+  .model-answer span { display: block; padding-left: 14px; position: relative; color: #1a3a6e; }
+  .model-answer span::before { content: '→'; position: absolute; left: 0; color: var(--blue-mid); }
+
+  .round-remarks { background: var(--amber-bg); border-top: 1px solid var(--border); padding: 18px 28px; font-style: italic; font-size: 13.5px; color: var(--amber); }
+  .round-remarks strong { font-style: normal; font-weight: 600; color: var(--primary); }
+
+  /* highlight box for strong TR-1 */
+  .highlight-box { background: var(--green-bg); border: 1px solid #a8d8b8; border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; }
+  .highlight-box .hl-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--green); font-weight: 500; margin-bottom: 8px; }
+  .highlight-box span { display: block; padding-left: 14px; position: relative; color: var(--green); font-size: 14px; margin-top: 4px; }
+  .highlight-box span::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-size: 12px; top: 3px; }
+
+  .overall-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .overall-block { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .overall-block:last-child { border-bottom: none; }
+  .overall-block p { font-size: 14.5px; line-height: 1.75; color: var(--text); }
+  .title-green { color: var(--green); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-red   { color: var(--red);   font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-blue  { color: var(--blue-mid); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 16px; }
+  .strength-list, .improve-list { list-style: none; }
+  .strength-list li, .improve-list li { padding: 8px 0 8px 14px; border-bottom: 1px dashed var(--border); position: relative; font-size: 14px; color: var(--text); }
+  .strength-list li:last-child, .improve-list li:last-child { border-bottom: none; }
+  .strength-list li::before { content: '·'; position: absolute; left: 0; color: var(--green); font-size: 18px; line-height: 1; top: 8px; }
+  .improve-list li::before  { content: '·'; position: absolute; left: 0; color: var(--red);   font-size: 18px; line-height: 1; top: 8px; }
+
+  .week-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .week-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg); }
+  .week-card-header { background: var(--primary); padding: 12px 16px; }
+  .week-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .week-title { font-family: 'DM Serif Display', serif; font-size: 16px; color: #fff; font-weight: 400; }
+  .week-card-body { padding: 14px 16px; }
+  .week-card-body ul { list-style: none; }
+  .week-card-body li { font-size: 13px; color: var(--text); padding: 4px 0 4px 18px; position: relative; line-height: 1.5; }
+  .week-card-body li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 6px; }
+
+  .report-footer { border-top: 1px solid var(--border); padding: 18px 24px; text-align: center; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); max-width: 860px; margin: 0 auto; }
+  a { color: var(--accent); } code { font-family: 'DM Mono', monospace; font-size: 12.5px; background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <h1>Tatimakula Divyadeepthi</h1>
+  <div class="subtitle">Software Development — DSA &amp; Full Stack Placement Track · Cycle 4</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="label">Candidate Name</div>
+      <div class="value">Tatimakula Divyadeepthi</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Year of Graduation</div>
+      <div class="value">2027 (3rd Year — B.Tech CSE)</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Offline Assessment Date</div>
+      <div class="value">15 March 2026 · Cycle 4</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">College</div>
+      <div class="value">RJK Valley District University</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Placement Bucket</div>
+      <div class="value">Bucket A &nbsp;<span class="badge badge-green" style="font-size:11px;">NxtMock Cleared</span></div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Resume</div>
+      <div class="value"><a href="https://drive.google.com/file/d/17yG4oy-v2bMr_oANceI8uWBGe-Z9G4na/view?usp=sharing" target="_blank">View Resume ↗</a></div>
+    </div>
+    <div class="info-cell full">
+      <div class="label">Final Placement Status</div>
+      <div class="value" style="margin-top:6px;">
+        <span class="badge badge-amber">⚠ Not Cleared — Re-attempt Required</span>
+        &nbsp;<span class="badge badge-green" style="font-size:11px;">Shortlisted for Offline Test</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 02 ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared — Bucket A · NxtMock Cleared</div>
+        <div class="journey-detail">15 Mar 2026 · Cycle 4</div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result green">✓ Cleared · Strong Hire — Outstanding DSA Performance</div>
+        <div class="journey-detail">18 Apr 2026 · 11:30 AM · Panelist: Isha Rawat ·
+          <a href="https://drive.google.com/file/d/1rIfvaxmjR_X8xjljfEecCsCASh2wwSjv/view?usp=drivesdk" target="_blank">Recording ↗</a>
+          &nbsp;· Both problems solved with full marks — rapid fire 5/5 on both
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 2 (TR-2) — Full Stack Interview</div>
+        <div class="journey-result amber">~ Not Cleared · Score 59 / 100 · Low Hire</div>
+        <div class="journey-detail">30 Apr 2026 · 5:30 PM · Panelist: Megha Gupta (C2, Microsoft) ·
+          <a href="https://drive.google.com/file/d/1JvPhj4i1T6qvUBEvqYTm5i0lVE-ltBCk/view?usp=drivesdk" target="_blank">Recording ↗</a>
+          &nbsp;· Frontend 80 · Backend 30 · Internship 9.4
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ SECTION 03 — TR-1 ══ -->
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-green">🟢</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">Panelist: Isha Rawat &nbsp;·&nbsp; 18 Apr 2026 · 11:30 AM &nbsp;·&nbsp;
+          <a href="https://drive.google.com/file/d/1rIfvaxmjR_X8xjljfEecCsCASh2wwSjv/view?usp=drivesdk" target="_blank">Recording ↗</a>
+        </div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#6ee09e;">★</div>
+        <div class="round-score-label">Strong Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Outstanding</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <div class="highlight-box">
+        <div class="hl-label">🏆 TR-1 Highlights — Full Marks Across the Board</div>
+        <span>Rapid Fire Q1 — Majority Element: 5/5 — Boyer-Moore Voting Algorithm correctly explained</span>
+        <span>Rapid Fire Q2 — Cycle in Graph: 5/5 — BFS/DFS approach with visited+parent logic correctly stated</span>
+        <span>Problem 1 — Maximize Tastiness (LeetCode 2517): 5/5 approach + 5/5 implementation — sort + binary search on answer</span>
+        <span>Problem 2 — Maximum Number of Moves in Grid (LeetCode 2684): 4/5 approach + 4/5 implementation — DP with space optimisation; minor underconfidence noted</span>
+        <span>Communication: 4/5 — Good overall; interviewer noted "great problem solving skills"</span>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Find the majority element in an array (appears ≥ n/2 times) — O(n) time, O(1) space</div>
+          <div class="qa-a">
+            <span>Immediately identified Boyer-Moore Voting Algorithm — no prompting required</span>
+            <span>Correctly described: initialise candidate and count; if count == 0, set current element as candidate; if element equals candidate, increment count; else decrement</span>
+            <span>Correctly stated the final candidate is the majority element if one exists</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — Boyer-Moore Voting Algorithm fully and correctly explained (Rating: 5/5)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Detect a cycle in an undirected graph</div>
+          <div class="qa-a">
+            <span>Correctly identified: while traversing the graph, if you visit a node that is already visited and is NOT the parent, a cycle exists</span>
+            <span>Correctly stated both BFS and DFS can be used for cycle detection</span>
+            <span>Showed clear understanding of the parent-tracking requirement specific to undirected graphs</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — Visited + parent condition correctly stated; both BFS/DFS approaches mentioned (Rating: 5/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/maximize-the-minimum-powered-city/" target="_blank">Maximize Tastiness / Maximize Min Difference (LeetCode 2517) ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood the problem: pick exactly k candidates from a price-sorted list; maximise the minimum pairwise difference (tastiness) among chosen candidates</span>
+            <span>Immediately identified the Binary Search on Answer approach — sort array, then binary search on the answer (minimum difference mid), use a greedy check to count how many candidates can be selected with that minimum gap</span>
+            <span>Correctly described the greedy feasibility check: pick first element, then pick next only when its price differs by at least mid from last picked</span>
+            <span>Correctly identified the goal: maximise the smallest such mid where k elements can be chosen</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct approach — Sort + Binary Search on Answer with greedy check (Rating: 5/5)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented sort + binary search correctly — test cases passed</span>
+            <span>Greedy feasibility checker written correctly within the binary search</span>
+            <span>Clean and complete implementation with correct complexity reasoning</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct code — All test cases passed (Rating: 5/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/maximum-number-of-moves-in-a-grid/" target="_blank">Maximum Number of Moves in a Grid (LeetCode 2684) ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood: start from any cell in column 0; move to (row-1, col+1), (row, col+1), or (row+1, col+1) only if next cell is strictly greater; maximise total moves</span>
+            <span>Initially approached with DFS + memoisation — correct direction</span>
+            <span>Pivoted to column-wise DP with space optimisation — storing maximum moves per cell considering transitions from previous column positions</span>
+            <span>Slightly underconfident during explanation but the logic was sound</span>
+            <span>Correctly identified: movement is always left-to-right; three possible transitions per cell</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct approach — DFS+memo / column-wise DP with space optimisation (Rating: 4/5 — minor underconfidence)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented DP approach — test cases largely correct</span>
+            <span>Hit an indentation error in the for-loop which caused incorrect results initially</span>
+            <span>Self-identified the issue: "the indentation was missed" for the if-condition and for-loop — and corrected it</span>
+            <span>Final submission approached correctness after fix — minor implementation detail cost some marks</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Code with minor miss — Correct logic; indentation error self-identified and partially corrected (Rating: 4/5)</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Had great problem solving skills. But can improve in writing and practice the code. Overall a good candidate." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 4/5 — Good, clear, and responsive. Slight underconfidence in Problem 2 explanation but compensated by strong technical accuracy.
+    </div>
+  </div><!-- end TR-1 -->
+
+
+  <!-- ══ SECTION 04 — TR-2 ══ -->
+  <div class="section-label">04 · Technical Round 2 — Full Stack Interview</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-amber">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 2 — Full Stack Interview</div>
+        <div class="round-meta">Panelist: Megha Gupta (C2, Microsoft) &nbsp;·&nbsp; 30 Apr 2026 · 5:30 PM &nbsp;·&nbsp;
+          <a href="https://drive.google.com/file/d/1JvPhj4i1T6qvUBEvqYTm5i0lVE-ltBCk/view?usp=drivesdk" target="_blank">Recording ↗</a>
+        </div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">59</div>
+        <div class="round-score-label">/ 100 · Low Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">75</div><div class="slabel">Soft Skills &amp; Comm.</div></div>
+        <div class="score-cell"><div class="snum snum-amber">50</div><div class="slabel">Projects</div></div>
+        <div class="score-cell"><div class="snum snum-green">80</div><div class="slabel">Frontend Score</div></div>
+        <div class="score-cell"><div class="snum snum-red">30</div><div class="slabel">Backend Score</div></div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="qa-block">
+        <div class="qa-block-label">Soft Skills &amp; Communication</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Presentability: Well-groomed and professional appearance — noted positively</span>
+            <span>Communication: Confident and understandable, with minor grammar imperfections — rated 75/100</span>
+            <span>Handled audio issues and connectivity disruptions patiently throughout the session</span>
+            <span>Proactively sought improvement feedback at the end — shows growth mindset</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Good — Confident and clear with minor grammar gaps; handled technical difficulties well (75/100)</span>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="qa-block">
+        <div class="qa-block-label">Projects (Score: 50 / 100)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">SpeakUp Portal — Citizen Issue Reporting System (React, Node.js, MongoDB)</div>
+          <div class="qa-a">
+            <span>Problem domain well-explained: citizens raise complaints (water leakage, civic issues) through an online portal; submissions include location, description, and proof</span>
+            <span>Tech stack correctly identified: HTML/CSS/JS/Bootstrap for UI, Node.js for backend (login auth, complaint submission), MongoDB for database</span>
+            <span>Deployment: tried Render (faced issues), fell back to local deployment — honest about challenges</span>
+            <span>Gap: Could not explain how complaints specifically reach government authorities (notification mechanism, admin dashboard)</span>
+            <span>Gap: Project was incomplete — unique complaint numbering issue was unresolved; was honest about this</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Domain and tech stack clear; flow from submission to government resolution not fully designed</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A complete answer would describe: (1) Citizen submits complaint via form → stored in MongoDB with a unique complaint ID (UUID/auto-increment). (2) Government admin dashboard polls/subscribes to new complaints (WebSocket or polling). (3) Admin updates status (received → in-progress → resolved). (4) Email/SMS notification sent to citizen on status change. (5) Unique ID generated server-side using <code>crypto.randomUUID()</code> or MongoDB's <code>ObjectId</code> — preventing duplicate submissions.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Student Auditorium Management System — Booking &amp; Scheduling App</div>
+          <div class="qa-a">
+            <span>Explained the purpose: manage booking of college auditorium for seminars, workshops, and cultural events</span>
+            <span>Features mentioned: booking requests, schedule management, payment handling</span>
+            <span>Tech stack: React, JavaScript, Bootstrap, Node.js — same as SpeakUp Portal</span>
+            <span>Gap: Could not explain whether it's a web app or mobile app clearly; later confirmed web</span>
+            <span>Gap: Both projects use the same tech stack — shows limited exploration of different technologies</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Project purpose clear; tech differentiation and implementation depth limited</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">AI-Assisted 360° Appraisal System — Sentiment Analysis + Performance Scoring</div>
+          <div class="qa-a">
+            <span>Best-explained project: reduces manager bias by collecting multi-source feedback (manager, peers, self-evaluation, subordinates)</span>
+            <span>Sentiment analysis used to categorise feedback as positive/negative/neutral — generates a performance score</span>
+            <span>Leaderboard generated for transparency across the organisation</span>
+            <span>MongoDB used for storing ratings and feedback data — correctly justified: flexible schema for varied feedback structures</span>
+            <span>Gap: Could not name the specific sentiment analysis algorithm or library used</span>
+            <span>Gap: Report storage described as "in my laptop" — no production deployment or cloud storage plan</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Strong concept understanding; missing technical depth on algorithm choice and deployment</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Sentiment analysis for text feedback: common approaches include VADER (rule-based, fast, good for short texts), TextBlob (simple Python library), or fine-tuned transformer models (BERT, RoBERTa). For a production system: store all raw feedback in MongoDB → run sentiment pipeline on each submission → write <code>sentimentScore</code> back to the document → aggregate scores per employee per review cycle. Reports should be generated server-side (PDF/Excel) and stored in cloud storage (S3/GCS) or served via API — not locally on a laptop.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Frontend — HTML, CSS, JavaScript &amp; React (Score: 80 / 100)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is the purpose of the DOCTYPE HTML declaration?</div>
+          <div class="qa-a">
+            <span>Correctly explained: it declares to the browser which version of HTML the document uses</span>
+            <span>Correctly noted it is not an HTML tag but a declaration</span>
+            <span>Did not mention "standards mode" vs "quirks mode" distinction</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — Declaration purpose and non-tag nature correctly stated</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">How do you add a comment in HTML?</div>
+          <div class="qa-a">
+            <span>Stated single-line comment uses <code>//</code> and multi-line uses <code>/* ... */</code> — these are JavaScript comment syntaxes, NOT HTML</span>
+            <span>HTML comment syntax is <code>&lt;!-- ... --&gt;</code> — not mentioned</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incorrect — Gave JavaScript comment syntax instead of HTML comment syntax</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>HTML comments use: <code>&lt;!-- This is a comment --&gt;</code>. This works for both single-line and multi-line — there is no distinction. The browser ignores everything between <code>&lt;!--</code> and <code>--&gt;</code>. Unlike JavaScript (<code>//</code> and <code>/* */</code>) or CSS (<code>/* */</code>), HTML has only one comment syntax. Common uses: temporarily disabling markup, leaving notes for developers, or conditional comments (legacy IE).</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is the purpose of div vs span tags?</div>
+          <div class="qa-a">
+            <span>span: correctly identified as for styling small inline portions of text within a line — inline element</span>
+            <span>div: correctly identified as a block-level element for large sections; starts a new line</span>
+            <span>Accurate and well-articulated distinction</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — Block vs inline distinction accurately described for both tags</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is the CSS Box Model?</div>
+          <div class="qa-a">
+            <span>Correctly named all four components: content, padding, border, margin</span>
+            <span>Content: actual text or image controlled by width/height — correct</span>
+            <span>Padding: space inside the element around the content — correct</span>
+            <span>Border: surrounds padding; controls colour and thickness — correct</span>
+            <span>Margin: space outside the element; creates distance between elements — correct</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — All four components explained accurately with purpose</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Difference between inline CSS and external CSS</div>
+          <div class="qa-a">
+            <span>Inline: applied directly within the HTML tag attribute — correct</span>
+            <span>External: styles written in a separate CSS file linked to the HTML — correct</span>
+            <span>Did not mention internal/embedded CSS (<code>&lt;style&gt;</code> in <code>&lt;head&gt;</code>) as the third type</span>
+            <span>Did not discuss specificity differences or maintenance trade-offs</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Core distinction correct; third type (internal CSS) and specificity not mentioned</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is scope in JavaScript?</div>
+          <div class="qa-a">
+            <span>Correctly defined scope as where variables can be accessed in code</span>
+            <span>Global scope: variables declared outside any function — accessible anywhere — correct</span>
+            <span>Local/function scope: variables declared inside a function — not accessible outside — correct</span>
+            <span>Block scope: <code>let</code> and <code>const</code> inside braces — only available within the block — correct</span>
+            <span>Correctly distinguished: <code>var</code> = function scope; <code>let</code>/<code>const</code> = block scope</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — All three scope types correctly defined with var/let/const distinction</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is an event in JavaScript?</div>
+          <div class="qa-a">
+            <span>Correctly defined: an action or occurrence in the browser that code can detect and respond to</span>
+            <span>Correctly listed multiple event types: mouse events (click, double-click), keyboard events, window events, form events</span>
+            <span>Clear and well-structured answer</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — Event definition and categories well explained</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What are arrow functions? How do they handle <code>this</code>?</div>
+          <div class="qa-a">
+            <span>Correctly stated: arrow functions do not have their own <code>this</code></span>
+            <span>Correctly explained: <code>this</code> is inherited from the surrounding lexical scope (parent scope)</span>
+            <span>Correctly distinguished from regular functions: regular functions have dynamic <code>this</code> (depends on the calling context); arrow functions have lexical <code>this</code></span>
+            <span>Explanation was slightly scattered but the core concept was correctly conveyed</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — Lexical this vs dynamic this distinction correctly articulated</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Live coding: Reverse an array in JavaScript (without using .reverse())</div>
+          <div class="qa-a">
+            <span>First solution used built-in <code>.reverse()</code> — correct but not what was asked</span>
+            <span>When asked to avoid built-in: described using map, length calculation, and step/slice indexing — correct direction</span>
+            <span>Implemented the manual reverse with iteration — functional solution delivered in notepad under connectivity issues</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — Manual reverse implemented; both approaches attempted (Able to solve 100%)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">React: Components, Virtual DOM, onClick (camelCase vs lowercase), Hooks</div>
+          <div class="qa-a">
+            <span>Components: correctly defined as reusable, independent pieces of UI — functions or classes that return JSX — fully correct</span>
+            <span>Virtual DOM: correctly explained — real DOM updates are slow; React creates a virtual copy in memory and diffs it before applying minimal real DOM changes — correct</span>
+            <span>onClick (capital C) vs onclick (lowercase): correctly explained — React JSX uses camelCase (<code>onClick</code>); HTML uses lowercase (<code>onclick</code> as attribute) — correct</span>
+            <span>Hooks (useCallback): audio issues during this question prevented a complete answer — not evaluated fairly</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Strong — Components, Virtual DOM, and camelCase event naming all correctly explained; hooks cut short by audio issues</span>
+        </div>
+      </div><!-- end frontend -->
+
+      <!-- Backend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Backend — Node.js, MongoDB &amp; System Design (Score: 30 / 100)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is Node.js and how is it different from JavaScript?</div>
+          <div class="qa-a">
+            <span>Correctly stated: Node.js is used for the backend; JavaScript is used for both frontend and backend</span>
+            <span>Correctly identified: JavaScript is the programming language; Node.js is the runtime environment</span>
+            <span>Did not explain: Node.js allows JS to run outside the browser (server-side); it uses V8 engine; it is event-driven and non-blocking I/O</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct positioning; runtime environment distinction and non-blocking I/O not elaborated</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>JavaScript is a programming language that originally ran only in browsers. Node.js is a <strong>runtime environment</strong> built on Chrome's V8 engine that allows JavaScript to run on the server side (outside a browser). Key Node.js features: non-blocking, event-driven I/O model (handles many concurrent connections without threading overhead); npm ecosystem; single-threaded but highly scalable for I/O-bound tasks. JavaScript handles UI logic; Node.js handles server logic, file system, databases, and APIs.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is a callback function in Node.js?</div>
+          <div class="qa-a">
+            <span>Correctly defined: a function passed as an argument to another function, executed after the task completes</span>
+            <span>Did not provide a code example or explain error-first callback pattern (<code>(err, result) => {}</code>)</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Definition correct; error-first pattern and example not provided</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What are streams in Node.js?</div>
+          <div class="qa-a">
+            <span>Directly admitted: "I don't know streams correctly"</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — Streams concept unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Streams are objects that let you read data from a source or write data to a destination in a continuous fashion — without loading the entire content into memory. Four types: Readable (e.g., <code>fs.createReadStream()</code>), Writable (e.g., <code>fs.createWriteStream()</code>), Duplex (both), and Transform (modify data as it passes through). Key use case: reading/writing large files or HTTP request/response bodies. Streams emit events: <code>data</code>, <code>end</code>, <code>error</code>. Piping: <code>readStream.pipe(writeStream)</code>.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Difference between SQL and NoSQL databases</div>
+          <div class="qa-a">
+            <span>SQL: relational, uses tables with rows and columns — correct</span>
+            <span>NoSQL: non-relational, uses JSON/key-value/graph formats — correct</span>
+            <span>Mentioned MongoDB as a common NoSQL example — correct</span>
+            <span>Did not discuss: ACID vs BASE, schema flexibility, scalability differences, or when to choose each</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Core distinction correct; trade-offs and use-case guidance not mentioned</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is indexing in MongoDB?</div>
+          <div class="qa-a">
+            <span>Correctly explained: indexing creates data structures that allow faster data retrieval</span>
+            <span>Correctly noted: without index, MongoDB scans every document (slow); with index, it jumps directly to matching data (fast)</span>
+            <span>Did not mention: B-Tree structure, write overhead trade-off, or how to create an index (<code>createIndex()</code>)</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — Purpose and read-speed benefit correctly explained with scan vs index comparison</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">How does MongoDB ensure high availability?</div>
+          <div class="qa-a">
+            <span>Correctly described replica sets: multiple copies of data maintained; if primary fails, a secondary is automatically elected</span>
+            <span>Correctly mentioned: minimal downtime during primary failure; continuous operation via secondary election</span>
+            <span>Did not mention: write concerns, read preferences, or sharding for horizontal scaling</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — Replica set and automatic failover correctly described</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">System design: Real-time notification system (scenario-based full-stack design)</div>
+          <div class="qa-a">
+            <span>Correctly chose MERN stack (MongoDB, Express, Node.js, React) with justification</span>
+            <span>Correctly identified Socket.IO for real-time push notifications — shows awareness of WebSocket technology</span>
+            <span>Described the flow: User A sends message → Node.js API stores in MongoDB → Socket.IO emits event → User B receives notification → React UI updates instantly</span>
+            <span>Gap: Did not explain why Socket.IO over alternatives (WebSockets, SSE, long-polling); no mention of message queuing (Redis/RabbitMQ) for scale</span>
+            <span>Gap: Did not describe the system architecture diagram (load balancer, microservices, CDN for frontend)</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct tech choices and flow description; missing depth on architecture and scaling rationale (Understands flow but misses key details)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Full system design: Frontend (React) connects via <strong>Socket.IO</strong> (WebSocket layer). Backend: Node.js/Express handles REST APIs + Socket.IO server. On message send: HTTP POST → stored in MongoDB → Socket.IO emits to target user's room. For scale: use <strong>Redis Pub/Sub</strong> as the Socket.IO adapter so multiple Node.js instances share socket events. Horizontal scaling: multiple Node instances behind a load balancer; sticky sessions or Redis for socket state. Notification persistence: store unread notifications in MongoDB; fetch on reconnect. Delivery confirmation: message ACK pattern in Socket.IO.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What are OOP fundamentals? Do you use OOP in your projects?</div>
+          <div class="qa-a">
+            <span>Correctly named the four pillars: encapsulation, polymorphism, abstraction, inheritance</span>
+            <span>Inheritance: child class depends on parent class — correct description</span>
+            <span>Honest admission: "I haven't used OOP in my projects" — did not apply in Node.js/React work</span>
+            <span>Could not explain each pillar in depth beyond naming</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Four pillars named; depth and practical application missing</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Encapsulation</strong>: bundling data and methods together; hiding internal state (private fields). <strong>Abstraction</strong>: exposing only necessary interfaces; hiding complex implementation. <strong>Inheritance</strong>: child class inherits properties/methods from parent; promotes reuse. <strong>Polymorphism</strong>: same interface, different implementations — method overriding and overloading. In Node.js: OOP is used via ES6 classes (<code>class User extends BaseModel</code>). In React: class components use OOP; functional components use hooks as the modern alternative.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Difference between process and thread</div>
+          <div class="qa-a">
+            <span>Process: independent program execution with its own separate memory — correct</span>
+            <span>Thread: lightweight unit of execution within a process — correct direction</span>
+            <span>Stated threads are "a part of process" — correct</span>
+            <span>Did not mention: threads share memory within a process (faster communication but race conditions); processes have isolated memory (safer but higher overhead); Node.js is single-threaded but uses worker threads for CPU-heavy tasks</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Core definitions correct; memory sharing, race conditions, and Node.js context not mentioned</span>
+        </div>
+      </div><!-- end backend -->
+
+      <!-- Internship -->
+      <div class="qa-block">
+        <div class="qa-block-label">Internship &amp; Practical Experience (Score: 9.4 / 100)</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>No internship experience — currently 3rd year, semester 2; looking forward to opportunities</span>
+            <span>Certificate achievements: 9.4/100 — good certificates noted (learning platform completion)</span>
+            <span>All project experience is self-driven and academic; no real-world workplace exposure yet</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ No internship — Self-driven academic projects only; good certificates noted (9.4)</span>
+        </div>
+      </div>
+
+    </div><!-- round-body -->
+    <div class="round-remarks">
+      <strong>TR-2 Interviewer Feedback:</strong> "Candidate missed depth of understanding — why the issue occurred and how it was solved." Frontend was strong (80/100) — HTML/CSS/JS/React theory largely correct. Backend was the critical gap (30/100) — streams unknown, OOP not applied in projects, system design lacked architectural depth. Overall: 59/100 · Low Hire · Shortlisted for Offline Test.
+    </div>
+  </div><!-- end TR-2 -->
+
+
+  <!-- ══ SECTION 05 — OVERALL ══ -->
+  <div class="section-label">05 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+    <div class="round-header" style="background:#2c3e50;">
+      <div class="round-icon" style="background:var(--amber-bg);">📋</div>
+      <div class="round-title-group">
+        <div class="round-name">Overall Assessment — Full Journey</div>
+        <div class="round-meta">Cycle 4 · TR-1 Strong Hire · TR-2 59/100 Low Hire · Shortlisted for Offline Test</div>
+      </div>
+    </div>
+
+    <div class="overall-block">
+      <p>
+        Your TR-1 performance is genuinely exceptional — a Strong Hire verdict with full marks on both rapid-fire questions (Boyer-Moore and graph cycle detection) and nearly perfect scores on both coding problems (sort + binary search on answer, and column-wise DP with space optimisation). This places you among the top DSA performers in the placement cohort. The contrast with TR-2 is striking: your frontend knowledge is solid (80/100 — HTML, CSS box model, JavaScript scope, events, arrow functions, React Virtual DOM and components all correctly explained) but your backend depth fell significantly short (30/100). Node.js streams were unknown, OOP was not applied in any project, the system design scenario lacked architectural rationale, and project explanations did not go deep enough into "why this technology" and "how was the problem solved". You have been shortlisted for the Offline Test — the opportunity is real. The path forward is clear: spend the next month building backend depth through hands-on project work and structured study of the Node.js/MongoDB ecosystem.
+      </p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>DSA Ability (Exceptional):</strong> Strong Hire in TR-1 — Boyer-Moore voting algorithm, graph cycle detection, binary search on answer, and DP with space optimisation all demonstrated independently with full implementation. A top-tier result.</li>
+        <li><strong>Frontend Fundamentals (Strong):</strong> CSS Box Model, JavaScript scope (global/local/block), events, arrow functions and lexical <code>this</code>, React components and Virtual DOM — all accurately explained. 80/100 frontend score.</li>
+        <li><strong>MongoDB Conceptual Understanding:</strong> Correctly explained indexing (scan vs index comparison), NoSQL schema flexibility, and replica sets for high availability — solid foundational knowledge.</li>
+        <li><strong>System Design Awareness:</strong> Identified MERN + Socket.IO for real-time notifications unprompted — shows exposure to modern full-stack patterns.</li>
+        <li><strong>Intellectual Honesty:</strong> Admitted gaps (streams, OOP in projects, incomplete SpeakUp Portal) rather than guessing — a professional quality that interviewers respect.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Node.js Backend Depth (Critical):</strong> Streams, middleware architecture, error-first callbacks, REST API design, JWT authentication, and RBAC — all need hands-on project practice. Build at least 2 complete backend applications independently.</li>
+        <li><strong>System Design Depth:</strong> You named the right tech stack but could not explain why (Socket.IO vs polling vs SSE) or how to scale (Redis Pub/Sub, load balancing, sticky sessions). Study system design fundamentals and practise designing 3-4 common systems.</li>
+        <li><strong>OOP in JavaScript:</strong> You named the four pillars but haven't applied OOP in projects. Learn ES6 classes, practice encapsulation, inheritance, and polymorphism in a Node.js application.</li>
+        <li><strong>HTML Comment Syntax:</strong> You stated JavaScript comment syntax for HTML comments — a basic HTML gap. Memorise: <code>&lt;!-- comment --&gt;</code> is the only HTML comment syntax.</li>
+        <li><strong>Project Explanation Depth:</strong> The interviewer specifically noted "missed depth of understanding why the issue occurred and how it was solved." For every project feature, practise explaining: the problem → your technical decision → the trade-off → how you validated it.</li>
+        <li><strong>Process vs Thread &amp; Node.js Internals:</strong> Memory sharing, race conditions, Node.js single-threaded model, and worker threads — study these for CS fundamentals questions in future rounds.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">✦ 1-Month Action Plan (Pre-Offline Test)</div>
+      <div class="week-grid">
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 01</div>
+            <div class="week-title">Node.js Deep Dive</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study Node.js event loop, single-threaded model, non-blocking I/O</li>
+              <li>Learn streams: Readable, Writable, Duplex, Transform — pipe a file read to write</li>
+              <li>Study error-first callback pattern and promises vs async/await in Node.js</li>
+              <li>Build a REST API with JWT authentication from scratch — register, login, protected routes</li>
+              <li>Implement RBAC middleware: admin vs regular user access control</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 02</div>
+            <div class="week-title">MongoDB, OOP &amp; Backend Practice</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Master MongoDB CRUD: <code>$all</code>, <code>$in</code>, <code>$set</code>, <code>$gt</code>, aggregation pipeline</li>
+              <li>Study and practise OOP in JavaScript — ES6 classes, inheritance, encapsulation</li>
+              <li>Refactor one of your projects to use class-based models with OOP principles</li>
+              <li>Add deployment to your SpeakUp Portal: unique complaint ID via <code>crypto.randomUUID()</code></li>
+              <li>Study process vs thread — and how Node.js uses worker threads for CPU tasks</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 03</div>
+            <div class="week-title">System Design &amp; Full Stack Integration</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study system design fundamentals: load balancing, caching, message queues, CDN</li>
+              <li>Design 3 systems: URL shortener, chat application, notification service</li>
+              <li>Learn Redis Pub/Sub for Socket.IO scaling across multiple Node instances</li>
+              <li>Build a real-time feature: implement Socket.IO in your auditorium booking system</li>
+              <li>Study WebSocket vs SSE vs long-polling — when to use each</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 04</div>
+            <div class="week-title">Communication, HTML Gaps &amp; Mock Practice</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Memorise HTML basics: comment syntax (<code>&lt;!-- --&gt;</code>), meta tags, iframe, semantic elements</li>
+              <li>Practise project explanation using STAR: Situation → Technique → Implementation → Result</li>
+              <li>For each project: write a 2-minute explanation of "why this tech" + "how the problem was solved"</li>
+              <li>Do 2 full mock interviews — frontend + backend questions under time pressure</li>
+              <li>Study hooks (useCallback, useMemo, useReducer) — complete the answer interrupted in TR-2</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end overall card -->
+
+</div><!-- body-wrap -->
+
+<div class="report-footer">
+  Report generated by NxtWave Interview Evaluation System · Cycle 4 · April–May 2026
+</div>
+
+</body>
+</html>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manasa Jilla — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f4f1eb; --card-bg: #faf8f4; --primary: #1a3a52; --accent: #c8873f;
+    --green: #1a5c3a; --green-bg: #e6f4ed; --amber: #7a4f10; --amber-bg: #fef3d8;
+    --red: #8b1c1c; --red-bg: #fde8e8; --border: #d8d0c4;
+    --blue-mid: #1e5a9e; --blue-bg: #f0f7ff; --blue-border: #c0d8f0;
+    --text: #2c2c2c; --muted: #6b6560;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.65; }
+
+  .report-header { background: var(--primary); color: #fff; padding: 52px 40px 44px; text-align: center; }
+  .report-header .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+  .report-header h1 { font-family: 'DM Serif Display', serif; font-size: 42px; font-weight: 400; letter-spacing: -.5px; color: #fff; margin-bottom: 8px; }
+  .report-header .subtitle { font-size: 14px; color: rgba(255,255,255,.6); font-weight: 300; }
+
+  .body-wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
+
+  .section-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
+  .info-cell { background: var(--card-bg); padding: 18px 22px; }
+  .info-cell .label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .info-cell .value { font-weight: 600; font-size: 15px; color: var(--primary); }
+  .info-cell.full { grid-column: 1 / -1; }
+
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; letter-spacing: .04em; }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-red   { background: var(--red-bg);   color: var(--red); }
+
+  .journey { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; }
+  .journey-row { display: flex; align-items: flex-start; gap: 20px; padding-bottom: 28px; }
+  .journey-row:last-child { padding-bottom: 0; }
+  .journey-col-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 16px; }
+  .journey-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; border: 3px solid; box-shadow: 0 0 0 3px var(--bg); }
+  .dot-green { background: var(--green); border-color: var(--green); }
+  .dot-amber { background: var(--amber); border-color: var(--amber); }
+  .dot-red   { background: #c0392b; border-color: #c0392b; }
+  .journey-line { width: 2px; flex: 1; background: var(--border); min-height: 30px; margin-top: 4px; }
+  .journey-content { flex: 1; }
+  .journey-stage { font-weight: 700; font-size: 14px; color: var(--primary); margin-bottom: 3px; }
+  .journey-result { font-size: 12.5px; font-weight: 600; margin-bottom: 3px; }
+  .journey-result.green { color: var(--green); }
+  .journey-result.amber { color: var(--amber); }
+  .journey-result.red   { color: var(--red); }
+  .journey-detail { font-size: 12.5px; color: var(--muted); font-family: 'DM Mono', monospace; }
+  .journey-detail a { color: var(--accent); text-decoration: none; }
+
+  .round-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .round-header { background: var(--primary); color: #fff; padding: 22px 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .round-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .icon-green { background: var(--green-bg); }
+  .icon-amber { background: var(--amber-bg); }
+  .round-title-group { flex: 1; }
+  .round-name { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; color: #fff; margin-bottom: 3px; }
+  .round-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,.55); }
+  .round-score-box { text-align: right; flex-shrink: 0; }
+  .round-score-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: #fff; line-height: 1; }
+  .round-score-label { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .1em; }
+  .round-body { padding: 28px; }
+
+  .score-breakdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+  .score-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .score-cell .snum { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1; margin-bottom: 4px; }
+  .score-cell .slabel { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .snum-green { color: var(--green); }
+  .snum-amber { color: var(--amber); }
+  .snum-red   { color: var(--red); }
+
+  .qa-block { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .qa-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .qa-block-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--primary); font-weight: 500; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+  .qa-item { margin-bottom: 18px; }
+  .qa-item:last-child { margin-bottom: 0; }
+  .qa-q { font-weight: 600; color: var(--primary); margin-bottom: 7px; font-size: 14px; }
+  .qa-a { color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 9px; }
+  .qa-a span { display: block; padding-left: 12px; position: relative; }
+  .qa-a span::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
+  .qa-verdict { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; }
+  .verdict-good { background: var(--green-bg); color: var(--green); }
+  .verdict-mid  { background: var(--amber-bg); color: var(--amber); }
+  .verdict-bad  { background: var(--red-bg);   color: var(--red); }
+
+  .model-answer { background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 8px; padding: 14px 18px; margin-top: 10px; font-size: 13px; line-height: 1.65; }
+  .model-answer .model-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-mid); font-weight: 500; margin-bottom: 7px; }
+  .model-answer span { display: block; padding-left: 14px; position: relative; color: #1a3a6e; }
+  .model-answer span::before { content: '→'; position: absolute; left: 0; color: var(--blue-mid); }
+
+  .audit-box { background: var(--red-bg); border: 1px solid #f0c0c0; border-radius: 10px; padding: 20px 24px; margin-bottom: 28px; }
+  .audit-box .audit-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 10px; }
+  .audit-box span { display: block; padding-left: 14px; position: relative; color: #5a1515; font-size: 14px; margin-top: 6px; }
+  .audit-box span::before { content: '·'; position: absolute; left: 0; color: var(--red); font-size: 18px; line-height: 1; top: 1px; }
+
+  .round-remarks { background: var(--amber-bg); border-top: 1px solid var(--border); padding: 18px 28px; font-style: italic; font-size: 13.5px; color: var(--amber); }
+  .round-remarks strong { font-style: normal; font-weight: 600; color: var(--primary); }
+
+  .overall-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .overall-block { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .overall-block:last-child { border-bottom: none; }
+  .overall-block p { font-size: 14.5px; line-height: 1.75; color: var(--text); }
+  .title-green { color: var(--green); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-red   { color: var(--red);   font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-blue  { color: var(--blue-mid); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 16px; }
+  .strength-list, .improve-list { list-style: none; }
+  .strength-list li, .improve-list li { padding: 8px 0 8px 14px; border-bottom: 1px dashed var(--border); position: relative; font-size: 14px; color: var(--text); }
+  .strength-list li:last-child, .improve-list li:last-child { border-bottom: none; }
+  .strength-list li::before { content: '·'; position: absolute; left: 0; color: var(--green); font-size: 18px; line-height: 1; top: 8px; }
+  .improve-list li::before  { content: '·'; position: absolute; left: 0; color: var(--red);   font-size: 18px; line-height: 1; top: 8px; }
+
+  .week-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .week-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg); }
+  .week-card-header { background: var(--primary); padding: 12px 16px; }
+  .week-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .week-title { font-family: 'DM Serif Display', serif; font-size: 16px; color: #fff; font-weight: 400; }
+  .week-card-body { padding: 14px 16px; }
+  .week-card-body ul { list-style: none; }
+  .week-card-body li { font-size: 13px; color: var(--text); padding: 4px 0 4px 18px; position: relative; line-height: 1.5; }
+  .week-card-body li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 6px; }
+
+  .report-footer { border-top: 1px solid var(--border); padding: 18px 24px; text-align: center; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); max-width: 860px; margin: 0 auto; }
+  a { color: var(--accent); } code { font-family: 'DM Mono', monospace; font-size: 12.5px; background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <h1>Manasa Jilla</h1>
+  <div class="subtitle">Software Development — DSA &amp; Full Stack Placement Track · Cycle 5</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="label">Candidate Name</div>
+      <div class="value">Manasa Jilla</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Offline Assessment Date</div>
+      <div class="value">5 April 2026 · Cycle 5</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Placement Bucket</div>
+      <div class="value">Bucket B → Upgraded to Bucket A</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Audit Completion</div>
+      <div class="value">11 May 2026</div>
+    </div>
+    <div class="info-cell full">
+      <div class="label">Final Placement Status</div>
+      <div class="value" style="margin-top:6px;">
+        <span class="badge badge-amber">⚠ Not Cleared — Re-attempt Required</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 02 ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared — Bucket B → Upgraded to Bucket A · NxtMock Cleared</div>
+        <div class="journey-detail">5 Apr 2026 · Cycle 5</div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result green">✓ Cleared · Score 65 / 100 · Medium Hire</div>
+        <div class="journey-detail">27 Apr 2026 · 3:30 PM · Good problem solving; implementation needs improvement</div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 2 (TR-2) — Full Stack Interview</div>
+        <div class="journey-result amber">~ Not Cleared · Score 47 / 100 · Low Hire</div>
+        <div class="journey-detail">4 May 2026 · 4:00 PM · Frontend 30 · Backend 7 · Communication 100/100</div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Audit Review</div>
+        <div class="journey-result red">✗ Not Cleared — All Buckets</div>
+        <div class="journey-detail">11 May 2026 · Frontend ✗ · Backend ✗ · Full Stack ✗</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ SECTION 03 — TR-1 ══ -->
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-green">🟢</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">27 Apr 2026 · 3:30 PM</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#6ee09e;">65</div>
+        <div class="round-score-label">/ 100 · Medium Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Check if a number is a power of 2 — most efficient approach</div>
+          <div class="qa-a">
+            <span>Proposed: square root approach — compute square root, check if the result is an integer — O(1) but not the optimal bit manipulation solution</span>
+            <span>When prompted for bit manipulation: identified that a power of 2 in binary has exactly one set bit with all remaining bits as zeros (e.g. 16 = 10000)</span>
+            <span>Could not cleanly articulate the single-line bit trick: <code>n &gt; 0 &amp;&amp; (n &amp; (n-1)) == 0</code></span>
+            <span>Direction was correct; precise formulation was incomplete</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Bit manipulation direction correct; optimal one-liner not articulated (Rating: 4/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A power of 2 in binary has exactly one set bit: 1=0001, 2=0010, 4=0100, 8=1000. The trick: <code>n &gt; 0 and (n &amp; (n-1)) == 0</code>. Why it works: <code>n-1</code> flips all bits from the rightmost set bit onwards, so ANDing with n gives 0 only if there was exactly one set bit. Time O(1), Space O(1). This is the optimal and expected answer.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Count trailing zeros in n! (factorial)</div>
+          <div class="qa-a">
+            <span>Correctly identified the key insight: trailing zeros come from factors of 10 = 2 × 5; since 2s are abundant, count factors of 5</span>
+            <span>Correctly described the brute force: iterate 1 to n, count how many times each number is divisible by 5 — O(n log n)</span>
+            <span>Gave the correct optimal approach: sum of floor(n/5) + floor(n/25) + floor(n/125) + ... — O(log n)</span>
+            <span>Could not implement the optimal approach in code within the session</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct optimal approach stated — floor division series; implementation not completed (Rating: 4/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Implementation: <code>count = 0; while n &gt;= 5: n //= 5; count += n; return count</code>. This divides n by successive powers of 5, accumulating contributions. Each division by 5 accounts for multiples of 5, then 25 (double-counted), 125 (triple-counted), etc. Time O(log n), Space O(1).</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/check-knight-tour-configuration/description/" target="_blank">Check Knight Tour Configuration ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood: given an n×n grid where each cell contains a move number, verify whether a valid knight tour visits each cell exactly once in sequence</span>
+            <span>Correctly identified: for each step, check that the move from position k to position k+1 is a valid knight move (±1,±2 or ±2,±1 offsets)</span>
+            <span>Mentioned recursion and DP — the interviewer guided toward the simpler direct simulation approach</span>
+            <span>Ultimately arrived at: build a position lookup table, then validate each consecutive move's (row, col) difference is a valid knight jump</span>
+            <span>Approach rated correct and optimal</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct approach — Position lookup + valid knight move verification (Rating: 3/5 — approach correct but needed guidance)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented the solution — partial test cases passed; not all test cases cleared</span>
+            <span>Code structure was directionally correct; implementation had gaps in edge case handling</span>
+            <span>Boundary condition checks (valid cell range) were incomplete — caused failures on edge inputs</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Approach correct; not all test cases passed due to implementation gaps (Rating: 4/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Build a position map: <code>pos = &#123;&#125;</code>, iterate grid cells and store <code>pos[grid[i][j]] = (i, j)</code>. Then for each step k from 0 to n²-2: get <code>(r1,c1) = pos[k]</code> and <code>(r2,c2) = pos[k+1]</code>; compute <code>dr = abs(r2-r1), dc = abs(c2-c1)</code>; return False if not <code>(dr,dc) in [(1,2),(2,1)]</code>. Return True at end. Time O(n²), Space O(n²).</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/network-delay-time/" target="_blank">Network Delay Time ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly identified this as a graph/shortest path problem</span>
+            <span>Correctly identified BFS/DFS as relevant traversal approaches</span>
+            <span>Correctly explained the core logic: starting from node k, find the minimum time for each node to receive the signal, track the maximum of all those minimum times</span>
+            <span>Correctly identified that Dijkstra's algorithm (or BFS with weights) is the appropriate approach for weighted shortest paths</span>
+            <span>Explained the adjacency list representation and BFS queue approach clearly</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct and optimal approach — Dijkstra / BFS with weighted graph correctly identified (Rating: 4/5)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented BFS-based shortest path using adjacency list and distance array</span>
+            <span>Hit an index-out-of-bounds error — adjacency matrix size was not correctly initialised (n+1 required)</span>
+            <span>With the interviewer's guidance on the size fix, made progress but hit TLE (Time Limit Exceeded) due to suboptimal BFS without a min-heap</span>
+            <span>Partially passed test cases; logic was sound but performance optimisation was incomplete</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Logic correct; index error self-identified; TLE due to missing priority queue (Rating: 3/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Dijkstra with min-heap: initialise <code>dist = [inf] * (n+1); dist[k] = 0</code>. Min-heap: <code>heap = [(0, k)]</code>. While heap: pop <code>(d, u)</code>; if <code>d &gt; dist[u]</code> skip; for each neighbour <code>(v, w)</code>: if <code>dist[u]+w &lt; dist[v]</code>: update and push. Answer: <code>max(dist[1:])</code> if no inf, else -1. Time O((V+E) log V), Space O(V+E).</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Candidate communication is good and overall problem solving skill is also good but needs improvement from implementation point of view." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 4/5 — Clear, responsive, and well-structured verbal explanations throughout.
+    </div>
+  </div><!-- end TR-1 -->
+
+
+  <!-- ══ SECTION 04 — TR-2 ══ -->
+  <div class="section-label">04 · Technical Round 2 — Full Stack Interview</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-amber">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 2 — Full Stack Interview</div>
+        <div class="round-meta">4 May 2026 · 4:00 PM</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">47</div>
+        <div class="round-score-label">/ 100 · Low Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-green">100</div><div class="slabel">Soft Skills &amp; Comm.</div></div>
+        <div class="score-cell"><div class="snum snum-amber">50</div><div class="slabel">Projects</div></div>
+        <div class="score-cell"><div class="snum snum-red">30</div><div class="slabel">Frontend Score</div></div>
+        <div class="score-cell"><div class="snum snum-red">7</div><div class="slabel">Backend Score</div></div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="qa-block">
+        <div class="qa-block-label">Soft Skills &amp; Communication</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Presentability: Highly professional and well-groomed — noted positively by the interviewer</span>
+            <span>Communication: Confident and fluent — rated 100/100, the maximum score</span>
+            <span>Introduced projects clearly and with enthusiasm; admitted gaps openly rather than deflecting</span>
+            <span>Sought feedback at the end of the interview — shows maturity and growth mindset</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Exceptional — 100/100 communication; highly professional presentation</span>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="qa-block">
+        <div class="qa-block-label">Projects (Score: 50 / 100)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Digital Queue Management System for Clinics — React, Node.js, MySQL</div>
+          <div class="qa-a">
+            <span>Problem domain well-explained: patients book appointments online to reduce waiting time and exposure to other illnesses in waiting halls</span>
+            <span>Tech: front end in React (login, adding products/appointments); back end in Node.js; database in MySQL</span>
+            <span>Authentication: described checking email/phone validity and cross-referencing with database — correct direction</span>
+            <span>Password storage: admitted first project stored plaintext; second project reversed the password as "encryption" — not a secure approach</span>
+            <span>Gap: No JWT, bcrypt, or session token awareness demonstrated</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Project concept clear; authentication shallow; password handling insecure (Score: 50/100)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Secure password storage uses <strong>bcrypt</strong>: <code>const hash = await bcrypt.hash(password, 10)</code> (salted hash). On login: <code>await bcrypt.compare(inputPassword, storedHash)</code>. Never store plaintext or reversible transformations. Authentication flow: user logs in → server issues a JWT (signed with secret, contains userId and expiry) → client stores JWT in httpOnly cookie or localStorage → sends in <code>Authorization: Bearer &lt;token&gt;</code> header → server validates on each protected route.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Handloom Bazaar — E-commerce connecting weavers directly to customers</div>
+          <div class="qa-a">
+            <span>Concept well-articulated: eliminates middlemen; weavers can showcase and customise products; customers buy directly</span>
+            <span>Tech: HTML + React for front end; MySQL for database</span>
+            <span>Front-end focus: login page and product listing/adding features were her main contribution</span>
+            <span>Gap: Could not explain how the weaver-customer customisation flow works technically</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Good product vision; technical depth of implementation not demonstrated</span>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Frontend — HTML, CSS &amp; JavaScript (Score: 30 / 100)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">DOCTYPE HTML declaration — purpose? HTML4 vs HTML5 differences? Semantic HTML?</div>
+          <div class="qa-a">
+            <span>DOCTYPE: correctly described as telling the browser the HTML version in use (HTML5); correctly noted it is a declaration not a tag</span>
+            <span>HTML4 vs HTML5: mentioned Bootstrap support in HTML5 — incorrect; Bootstrap is a CSS framework, not an HTML5 feature. Could not recall other differences</span>
+            <span>Semantic HTML: described as "proper format, proper meaning"; gave examples including heading tags, div, fragment, span — partially correct but confused non-semantic elements (div, span) with semantic ones</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — DOCTYPE correct; HTML4/HTML5 incorrect; semantic HTML definition vague with wrong examples</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>HTML5 additions over HTML4: semantic elements (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>), native audio/video support, canvas API, local/session storage, geolocation API, form validation attributes, WebSockets. Semantic HTML uses tags whose names describe their content — e.g., <code>&lt;article&gt;</code> for a blog post, <code>&lt;nav&gt;</code> for navigation. Benefits: accessibility (screen readers), SEO, and self-documenting code. <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> are NOT semantic — they have no inherent meaning.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Live coding: Create an HTML dropdown; explain ID attribute; position relative vs absolute; z-index; CSS box model</div>
+          <div class="qa-a">
+            <span>HTML dropdown: successfully created a working <code>&lt;select&gt;</code> with <code>&lt;option&gt;</code> elements in VS Code</span>
+            <span>ID attribute: correctly explained as providing a unique token to each option for targeting and further manipulation</span>
+            <span>Position relative: described as positioning relative to the parent element — correct</span>
+            <span>Position absolute: confused — described it as taking full screen width at specified percentage — incorrect (absolute positions relative to nearest positioned ancestor)</span>
+            <span>Z-index: no knowledge — stated directly</span>
+            <span>CSS box model: correctly named all four components — content, padding, border, margin — with correct definitions for each</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Dropdown ✓, ID ✓, box model ✓; position absolute incorrect; z-index unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>position: relative</strong>: element is positioned relative to its normal position in the document flow; other elements are not affected. <strong>position: absolute</strong>: element is removed from normal flow and positioned relative to its nearest ancestor with <code>position: relative/absolute/fixed</code> (not the full screen). <strong>z-index</strong>: controls the stacking order of overlapping positioned elements — higher z-index appears on top. Only works on positioned elements (not <code>static</code>).</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">JavaScript: function declaration vs expression; spread vs rest operators; closures; live JS coding (map)</div>
+          <div class="qa-a">
+            <span>Function declaration vs expression: confused — described expression as "calling a function inside another function" (that is a function call, not an expression); definition was inaccurate for both</span>
+            <span>Spread operator: correctly described as expanding array elements into individual values — <code>[...a, ...b]</code> merges arrays</span>
+            <span>Rest operator: correctly described as collecting multiple elements into a single array — used in function parameters</span>
+            <span>Closures: stated "No ma'am" — unknown concept</span>
+            <span>Live JS coding (map + multiply elements): could not write the syntax; knew the concept of map but could not implement</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Spread/rest correct; function declaration/expression confused; closures unknown; JS coding not implemented (Understood question, unable to tell approach)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Function declaration</strong>: <code>function greet() &#123; ... &#125;</code> — hoisted, can be called before definition. <strong>Function expression</strong>: <code>const greet = function() &#123; ... &#125;</code> — not hoisted. <strong>Closure</strong>: a function that retains access to its outer scope even after the outer function returns. Example: <code>function outer() &#123; let x = 10; return function inner() &#123; return x; &#125; &#125;</code>. <strong>Map example</strong>: <code>const doubled = arr.map(x => x * 2);</code></span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">React: create-react-app command, virtual DOM, state vs props</div>
+          <div class="qa-a">
+            <span>create-react-app: stated <code>npm create react app</code> — partially correct but could not recall the exact hyphenated form (<code>npx create-react-app app-name</code>); attempted execution but failed on syntax</span>
+            <span>Virtual DOM: described as allowing component import without re-importing; confused with module import system — not the correct definition of virtual DOM</span>
+            <span>State vs props: correctly distinguished — props come from parent component and can be used in child; state is local to the component and triggers re-render when updated</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — State vs props correct; virtual DOM explanation confused with imports; create-react-app syntax imprecise</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Command: <code>npx create-react-app my-app</code> (npx, not npm create). <strong>Virtual DOM</strong>: React keeps a lightweight in-memory representation of the real DOM. On state/prop change, React re-renders the virtual DOM, diffs it against the previous version (reconciliation), and applies only the changed nodes to the real DOM — far more efficient than re-rendering the entire page. This is why React uses <code>setState</code> rather than direct mutation — React needs to control the update cycle.</span>
+          </div>
+        </div>
+      </div><!-- end frontend -->
+
+      <!-- Backend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Backend — Node.js, Express, Databases &amp; CS Fundamentals (Score: 7 / 100)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Create a backend endpoint using Node.js or Express — localhost:3000/hello returns "hello"</div>
+          <div class="qa-a">
+            <span>Stated comfort in Java and React (React is front-end) for back end</span>
+            <span>Could not attempt in Node.js or Express — admitted: "I don't know that much about back end"</span>
+            <span>Could not attempt in Java either — no working backend implementation produced</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — No backend implementation attempted in any language</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Express endpoint: <code>const express = require('express'); const app = express(); app.get('/hello', (req, res) => &#123; res.send('hello'); &#125;); app.listen(3000, () => console.log('Running on 3000'));</code>. Run with <code>node server.js</code>, then visit <code>localhost:3000/hello</code> in browser → returns "hello". This is the most basic Express endpoint — must be known by any Node.js developer.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Design REST API endpoints for a to-do list application</div>
+          <div class="qa-a">
+            <span>Could not understand the concept of "payload" initially — explained by interviewer</span>
+            <span>After explanation: described storing tasks in database, checking which tasks are pending, removing completed tasks — correct domain understanding</span>
+            <span>Could not map this to specific HTTP methods, endpoint paths, request/response structures, or status codes</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — REST endpoint design unknown; payload concept not known initially</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><code>GET /todos</code> → 200 + list of todos. <code>POST /todos</code> body: &#123;title, description&#125; → 201 + created todo. <code>PATCH /todos/:id</code> body: &#123;completed: true&#125; → 200 + updated todo. <code>DELETE /todos/:id</code> → 204 No Content. Each route should validate the payload (required fields), handle errors with appropriate status codes (400 bad request, 404 not found), and return consistent JSON responses.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Callback function in Node.js; chaining middleware in Express; what is npm?</div>
+          <div class="qa-a">
+            <span>Callback: described as a function that updates React UI after changes (delete, update) — confused with React re-rendering, not Node.js async pattern</span>
+            <span>Middleware chaining: stated "No ma'am" — not known</span>
+            <span>npm: recalled "node package" — stated "not exactly sure but starts with node package" — incomplete; correct answer is Node Package Manager</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Weak — Callback definition wrong; middleware unknown; npm expansion incomplete</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Callback</strong>: a function passed as an argument to another function, executed after an async task completes. Error-first pattern: <code>fs.readFile('file', (err, data) => &#123; if (err) throw err; console.log(data); &#125;)</code>. <strong>Middleware chaining</strong>: Express middleware functions called in sequence via <code>next()</code>: <code>app.use(auth, logger, handler)</code>. <strong>npm</strong>: Node Package Manager — manages project dependencies via <code>package.json</code>, installs via <code>npm install</code>, runs scripts via <code>npm start</code>.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">SQL vs NoSQL; MongoDB query for tags containing "tech" AND "javascript"</div>
+          <div class="qa-a">
+            <span>SQL vs NoSQL: correctly identified SQL as structured with fixed format; NoSQL as unstructured with flexible/custom queries — directionally correct</span>
+            <span>MySQL used in projects — justified by familiarity from college coursework</span>
+            <span>MongoDB query: no knowledge of MongoDB syntax — wrote an SQL SELECT query instead when asked for MongoDB</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ MongoDB unknown — wrote SQL query for MongoDB question; no MongoDB operator knowledge (No Understanding of MongoDB Concepts)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>MongoDB query to find posts with both "tech" AND "javascript" in tags array: <code>db.posts.find(&#123; tags: &#123; $all: ["tech", "javascript"] &#125; &#125;)</code>. The <code>$all</code> operator matches documents where the array field contains all specified values. For OR (either tag): use <code>$in</code> instead. MongoDB uses JSON-like documents, not SQL syntax — no <code>SELECT FROM WHERE</code>.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">TCP vs UDP; deadlock; CORS error (localhost:5000 frontend, localhost:3000 backend)</div>
+          <div class="qa-a">
+            <span>TCP vs UDP: correctly explained — TCP is reliable with acknowledgement (slower); UDP is fast without acknowledgement (used for video games and streaming) — strong answer</span>
+            <span>Deadlock: correctly defined — two or more processes each waiting for a resource held by the other, creating a circular wait; neither can proceed</span>
+            <span>CORS error: no answer — could not explain cross-origin resource sharing or how to resolve it</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — TCP/UDP ✓, deadlock ✓; CORS unknown (Understands flow but misses key details)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>CORS (Cross-Origin Resource Sharing): browsers block requests from one origin (localhost:5000) to a different origin (localhost:3000) by default — this is the Same-Origin Policy. The error appears because the backend hasn't told the browser it's allowed. Fix (Express): <code>const cors = require('cors'); app.use(cors(&#123; origin: 'http://localhost:5000' &#125;))</code>. The server sends <code>Access-Control-Allow-Origin</code> header in the response, and the browser allows the request. CORS is enforced by the browser, not the server.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">AI tools usage — AI models used in clinic project</div>
+          <div class="qa-a">
+            <span>Mentioned using AI/ML models for disease-related data in the Digital Queue Management System</span>
+            <span>Could not specify which model was used or how it was chosen</span>
+            <span>No clear explanation of how the model was integrated into the project flow</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Vague — AI model mentioned but neither name, selection criteria, nor integration described (Basic understanding of AI tools)</span>
+        </div>
+      </div><!-- end backend -->
+
+      <!-- Internship -->
+      <div class="qa-block">
+        <div class="qa-block-label">Internship &amp; Practical Experience</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>No internship experience — 3rd year student</span>
+            <span>All projects are academic and team-based; no independent end-to-end ownership demonstrated</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ No internship — Academic group projects only</span>
+        </div>
+      </div>
+
+    </div><!-- round-body -->
+    <div class="round-remarks">
+      <strong>TR-2 Overall Remarks:</strong> "Candidate gave up on frontend/backend/MongoDB coding questions. Has basic knowledge on concepts but no in-depth knowledge." Communication was exceptional (100/100). Frontend score: 30/100. Backend score: 7/100. Overall: 47/100 · Low Hire.
+    </div>
+  </div><!-- end TR-2 -->
+
+
+  <!-- ══ SECTION 05 — AUDIT ══ -->
+  <div class="section-label">05 · Audit Review — NxtWave Assessment</div>
+  <div class="round-card">
+    <div class="round-header" style="background:#5a1515;">
+      <div class="round-icon" style="background:var(--red-bg);">🔍</div>
+      <div class="round-title-group">
+        <div class="round-name">Post-Interview Audit</div>
+        <div class="round-meta">Completed: 11 May 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5a0a0;">✗</div>
+        <div class="round-score-label">All Buckets</div>
+        <div style="margin-top:6px;"><span class="badge badge-red" style="font-size:11px;">Not Cleared — All Buckets</span></div>
+      </div>
+    </div>
+    <div class="round-body">
+      <div class="audit-box">
+        <div class="audit-label">📋 Audit Findings — NxtWave Team</div>
+        <span>Basic exposure to frontend development and academic fullstack projects — below expected hiring bar</span>
+        <span>Weak JavaScript fundamentals and coding ability — could not implement even basic JS live</span>
+        <span>Very limited backend understanding; could not explain APIs, endpoints, or middleware properly</span>
+        <span>Poor understanding of React internals and database concepts; no MongoDB knowledge</span>
+        <span>Heavy reliance on team projects with limited ownership clarity over any individual feature</span>
+        <span>Currently lacks the technical foundation required for a fullstack or backend role — requires significant improvement in JavaScript, backend development, and system understanding</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+        <div style="background:var(--red-bg);border:1px solid #f0c0c0;border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:6px;">Frontend Bucket</div>
+          <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--red);">✗</div>
+          <div style="font-size:12px;color:var(--red);font-weight:600;">Not Cleared</div>
+        </div>
+        <div style="background:var(--red-bg);border:1px solid #f0c0c0;border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:6px;">Backend Bucket</div>
+          <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--red);">✗</div>
+          <div style="font-size:12px;color:var(--red);font-weight:600;">Not Cleared</div>
+        </div>
+        <div style="background:var(--red-bg);border:1px solid #f0c0c0;border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:6px;">Full Stack Bucket</div>
+          <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--red);">✗</div>
+          <div style="font-size:12px;color:var(--red);font-weight:600;">Not Cleared</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end audit -->
+
+
+  <!-- ══ SECTION 06 — OVERALL ══ -->
+  <div class="section-label">06 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+    <div class="round-header" style="background:#2c3e50;">
+      <div class="round-icon" style="background:var(--amber-bg);">📋</div>
+      <div class="round-title-group">
+        <div class="round-name">Overall Assessment — Full Journey</div>
+        <div class="round-meta">Cycle 5 · TR-1 65/100 Medium Hire · TR-2 47/100 Low Hire · Audit: Not Cleared</div>
+      </div>
+    </div>
+
+    <div class="overall-block">
+      <p>
+        Your placement journey reveals a clear strength and a clear gap. The strength is exceptional: your communication (100/100 in TR-2, 4/5 in TR-1) and your DSA reasoning are both notably strong — you correctly identified the optimal trailing zeros approach in the rapid fire, correctly approached the Knight Tour as a position-lookup problem, and correctly identified BFS/Dijkstra for the network delay problem. These are not trivial insights for a 3rd-year student. The gap is equally clear: the moment the interview shifts from reasoning to implementation — whether writing a JS async/await block, a basic Express endpoint, a MongoDB query, or a React component command — you hit a wall. This is a practice gap, not a knowledge gap. You understand concepts but have not written enough code independently to make them muscle memory. The audit confirmed the same pattern: strong at pattern-recognition, weak at independent execution. Your path forward is simple but demands consistency: write code every single day.
+      </p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Communication (Exceptional):</strong> 100/100 in TR-2 — the highest possible score. Confident, fluent, professional, and clear throughout both rounds. This is a career-level strength.</li>
+        <li><strong>DSA Reasoning:</strong> Correctly identified optimal approaches for trailing zeros (floor division series), knight tour (position lookup), and network delay (Dijkstra/BFS) — strong pattern recognition and algorithmic thinking.</li>
+        <li><strong>CS Fundamentals Awareness:</strong> TCP vs UDP correctly distinguished with use cases; deadlock correctly defined — solid foundational CS knowledge.</li>
+        <li><strong>CSS Box Model &amp; HTML:</strong> All four box model components (content, padding, border, margin) correctly named and defined; HTML dropdown created independently; state vs props correctly distinguished in React.</li>
+        <li><strong>Honest Self-Awareness:</strong> Openly admitted knowledge gaps (backend, JS coding, MongoDB) rather than guessing — saves interviewer time and reflects professional maturity.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>JavaScript Coding (Critical):</strong> You cannot write basic JS — not map, not closures, not async/await. You must practise writing JavaScript code every day. This is the single most important gap to close.</li>
+        <li><strong>Backend Implementation (Critical):</strong> You cannot write a basic Express endpoint. Before any re-attempt, you must build at least two complete Node.js + Express + MongoDB applications entirely on your own.</li>
+        <li><strong>MongoDB Syntax:</strong> No MongoDB knowledge demonstrated. Learn and practise CRUD operators — especially <code>$all</code>, <code>$in</code>, <code>$set</code> — and understand the difference from SQL syntax.</li>
+        <li><strong>DSA Implementation:</strong> Your approaches in TR-1 were correct but implementations failed on edge cases. After identifying an approach, practise writing it completely, running it, and debugging it independently.</li>
+        <li><strong>CORS &amp; Full Stack Integration:</strong> CORS is a standard full-stack concept — learn what it is, why it occurs, and how to fix it in Express with the <code>cors</code> package.</li>
+        <li><strong>React Internals:</strong> Virtual DOM definition was confused with module imports. Study reconciliation, diffing, and why React uses setState instead of direct mutation — this is a standard interview question.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">✦ 1-Month Action Plan</div>
+      <div class="week-grid">
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 01</div>
+            <div class="week-title">JavaScript — Daily Coding</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Write async/await + fetch with try-catch from memory — repeat daily until automatic</li>
+              <li>Implement: map, filter, reduce with 5 exercises each</li>
+              <li>Study closures with 5 hands-on examples — build a counter and a memoisation function</li>
+              <li>Study function declarations vs expressions — write 10 prediction exercises</li>
+              <li>Solve 10 LeetCode Easy problems in JavaScript — not Python</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 02</div>
+            <div class="week-title">Backend — Build from Scratch</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Build a full Express REST API: GET, POST, PATCH, DELETE endpoints with correct status codes</li>
+              <li>Add JWT authentication: register, login, protected route middleware</li>
+              <li>Add bcrypt password hashing — never store plaintext or reversed strings</li>
+              <li>Learn npm — what it is, package.json, npm install, npm start</li>
+              <li>Study and implement Express middleware chaining with <code>next()</code></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 03</div>
+            <div class="week-title">MongoDB, React &amp; Full Stack</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study MongoDB CRUD: find, insertOne, updateOne ($set), deleteOne — practise 20 queries</li>
+              <li>Master array operators: <code>$all</code>, <code>$in</code>, <code>$elemMatch</code></li>
+              <li>Connect React front end to Express backend — fix CORS with the cors package</li>
+              <li>Study React virtual DOM and reconciliation — draw the diffing flow on paper</li>
+              <li>Learn <code>npx create-react-app</code> command — run it 3 times from memory</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 04</div>
+            <div class="week-title">DSA Implementation &amp; Mock Practice</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Re-solve Knight Tour and Network Delay Time — clean, passing all test cases</li>
+              <li>Implement power-of-2 bit trick: <code>n &gt; 0 and (n &amp; (n-1)) == 0</code> — memorise and explain</li>
+              <li>Implement trailing zeros optimally: <code>while n &gt;= 5: n //= 5; count += n</code></li>
+              <li>Solve 8 graph problems: BFS/DFS + Dijkstra — LeetCode 743, 994, 207, 210</li>
+              <li>Do 2 full mock interviews — code every answer; no "I know but can't recall the syntax"</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end overall card -->
+
+</div><!-- body-wrap -->
+
+<div class="report-footer">
+  Report generated by NxtWave Interview Evaluation System · Cycle 5 · May 2026
+</div>
+
+</body>
+</html>

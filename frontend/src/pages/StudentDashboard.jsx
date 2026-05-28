@@ -14,7 +14,6 @@ export default function StudentDashboard({ student, onBack }) {
     <div className="container stack">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <button className="ghost" onClick={onBack}>← Back</button>
-        <div className="muted">UID: {student.uid}</div>
       </div>
       <HeroCard student={student} />
       <JourneyStepper student={student} />

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sanka Santhosh Kumar — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:40px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-red{background:var(--red-bg);color:var(--red);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--amber-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Sanka Santhosh Kumar</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Sanka Santhosh Kumar</div></div>
+    <div class="info-cell"><div class="label">Year of Graduation</div><div class="value">2026</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">22 March 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">sankasanthoshkumar@gmail.com</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">22 Mar 2026</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">NxtMock — AI Interview</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">Cleared prior to TR-1</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result amber">~ Not Qualified · NxtWave Score 24 / 100</div>
+        <div class="journey-detail">28 Apr 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">28 Apr 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">24</div>
+        <div class="round-score-label">/ 100 · NxtWave Score</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">3/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-red">1/5</div><div class="slabel">DSA Theory</div></div>
+        <div class="score-cell"><div class="snum snum-red">0/5</div><div class="slabel">Core CS</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">Avg Problem Solving</div></div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>2026 batch — NxtMock cleared prior to TR-1</span>
+            <span>Demonstrated familiarity with Python and LeetCode problem solving during the session</span>
+            <span>Closed session with a genuine question: "To master DSA, in which aspect should I work more?" — showing self-awareness and eagerness to improve</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Brief Introduction — NxtMock cleared; closing question to the interviewer shows the right mindset; structured preparation is what the re-attempt will need</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA &amp; Core CS Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Return the majority element — appearing more than ⌊N/2⌋ times — in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Proposed: loop through array, mark frequency of each element using a conditional, check if frequency exceeds N/2 — correct direction but requires storing frequencies which is O(N) extra space</span>
+            <span>When told O(1) space is required: tried "two pointers from front and back" — not valid here since the array is not sorted and the majority element can appear anywhere</span>
+            <span>Could not arrive at Boyer-Moore Voting Algorithm despite the space constraint hint</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Frequency-counting direction correct; O(1) space constraint not met; Boyer-Moore not known (Rating: 1/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Boyer-Moore Voting:</strong> maintain <code>candidate = None</code> and <code>count = 0</code>. For each element: if count == 0 → set candidate. If element == candidate → count += 1. Else → count -= 1. Return candidate.</span>
+            <span>Why it works: the majority element always survives cancellation because it outnumbers all others combined. Time: O(N), Space: O(1). Two pointers only works on sorted arrays — for unsorted frequency problems, Boyer-Moore is the correct O(1) tool.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Every number appears exactly twice except one. Find that number in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>No approach offered — completely unknown</span>
+            <span>XOR solution was not considered or mentioned</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Answered — No approach given; XOR trick not known (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>XOR all elements: <code>result = 0; for num in nums: result ^= num; return result</code>. Since <code>a ^ a = 0</code> and <code>a ^ 0 = a</code>, all duplicate pairs cancel and the unique element remains. Time: O(N), Space: O(1).</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/car-fleet/description/" target="_blank">Car Fleet ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood the problem: cars at various positions travel toward a target; a faster car behind a slower car catches up and they merge into a fleet traveling at the slower speed; count how many distinct fleets reach the target</span>
+            <span>Correctly identified the key formula: time for each car = <code>(target - position) / speed</code></span>
+            <span>Correctly identified that cars must be sorted by position before comparing times</span>
+            <span>Sorting approach: created a sorted index list using a lambda function, then accessed position and speed via those indices — roundabout but directionally correct</span>
+            <span>Fleet counting logic: "if previous time ≤ current time, increment fleet count; update time" — partially wrong; the correct logic is that iterating from farthest car to nearest, a new fleet forms only when the current car's time is strictly greater than the previous fleet's time (it cannot catch up)</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Core insight (time formula + sort by position) correct; fleet counting condition inverted; needed a monotonic stack or reverse iteration approach (Rating: 3/5 PS)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Sort cars by position descending (farthest first). Compute <code>time[i] = (target - pos[i]) / speed[i]</code>. Iterate: maintain a stack of fleet times. If current car's time &gt; stack top, it cannot catch the car ahead → new fleet, push to stack. Otherwise it joins the fleet ahead (discard).</span>
+            <span>Fleet count = stack size at the end. Time: O(N log N) for sort, O(N) for traversal. The key insight: sorting farthest-first means you always know whether a car can catch the one ahead of it — if its time is greater, it cannot (it arrives later), so it's a new fleet.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented code with index sorting via lambda, time calculation, and a fleet counter with a previous-time variable</span>
+            <span>Logic bug: fleet counting condition was inverted — incrementing when previous ≤ current rather than when current &gt; previous fleet's time</span>
+            <span>Sorting was done in increasing order when it should be decreasing (farthest first)</span>
+            <span>Code submitted; results not confirmed before session ended</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct structure; time formula right; sorting direction and counting condition bugs (Rating: 2/5 Code)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/maximum-number-of-jumps-to-reach-the-last-index/description/" target="_blank">Maximum Number of Jumps to Reach Last Index ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Understood: from index i, can jump to any j &gt; i if <code>|nums[i] - nums[j]| ≤ target</code>; find the maximum number of jumps to reach the last index; return -1 if unreachable</span>
+            <span>Proposed sliding window — interviewer immediately identified this is not applicable; sliding window does not explore all possible jump sequences</span>
+            <span>After hint that it is a DP question: acknowledged but could not formulate the DP state or transition — "not getting any idea"</span>
+            <span>Chose to return to Problem 1 rather than attempt Problem 2 — did not attempt</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Attempted — Sliding window not applicable; DP not studied; returned to Problem 1 (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>1D DP:</strong> <code>dp[i]</code> = max jumps to reach index i. Init <code>dp[0] = 0</code>, all others = -1. For each i from 1 to n-1: for each j from 0 to i-1: if <code>abs(nums[i] - nums[j]) &lt;= target</code> and <code>dp[j] != -1</code>: <code>dp[i] = max(dp[i], dp[j] + 1)</code>.</span>
+            <span>Return <code>dp[n-1]</code>. Time: O(N²), Space: O(N). Sliding window processes contiguous subarrays — it cannot evaluate all valid jump pairs. DP is needed because each state depends on all valid predecessors.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> Communication 3/5 — Can improve. &nbsp;·&nbsp; You asked the right closing question — "in which aspect should I work more?" The answer is: complete the patterns you started (Boyer-Moore, stack-based fleet counting) and build DP from scratch. Both are achievable in one focused month.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>You showed genuine problem-solving instincts in this interview. For the Car Fleet problem, you independently arrived at the time formula <code>(target - position) / speed</code> and correctly identified that cars need to be sorted by position — both non-trivial insights. The gap was in the final step: the fleet merging logic was inverted and the sorting direction was wrong. For the rapid fire questions, the frequency-counting direction was right but you didn't know how to achieve it in O(1) space (Boyer-Moore), and XOR for single number was completely unknown. The most important preparation gap is Dynamic Programming — you had no approach for the DP problem. Your closing question to the interviewer ("in which aspect should I work more?") shows exactly the right attitude. Act on it with the plan below.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Car Fleet Core Insight:</strong> Correctly derived <code>time = (target - pos) / speed</code> and identified sorting by position as required — the hardest parts of this problem to see. The implementation just needed the direction corrected.</li>
+        <li><strong>Frequency-Counting Direction (Q1):</strong> Your instinct to count frequencies and check against N/2 is the right conceptual starting point for majority element — only the space constraint blocked you.</li>
+        <li><strong>Self-Awareness &amp; Curiosity:</strong> Asking "in which aspect should I work more?" at the close of an interview shows genuine commitment to improvement — channel that into the structured plan below.</li>
+        <li><strong>NxtMock Cleared:</strong> Structured assessment performance clears the first hurdle — TR-1 requires more depth and that depth is reachable.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Boyer-Moore Voting — Complete It:</strong> You knew the frequency direction but not the O(1) method. Boyer-Moore is the answer: candidate + count, increment on match, decrement on mismatch. Study and memorise it completely — it appears in almost every interview set.</li>
+        <li><strong>XOR for Single Number — Must Know:</strong> No approach was offered. XOR is a 1-line O(1) solution: <code>result ^= num</code> for each element. Study it alongside Boyer-Moore as a pair of O(1) space classics.</li>
+        <li><strong>Car Fleet — Sorting Direction and Fleet Logic:</strong> Sort descending by position (farthest first). A new fleet forms when current time > previous fleet's time — not ≤. Use a monotonic stack: push times, compare with stack top. Re-implement and submit this problem correctly.</li>
+        <li><strong>Dynamic Programming — Start Now:</strong> You had no approach for the DP problem. DP is essential for medium-level interviews — begin with 1D DP this week. Climbing Stairs → House Robber → Coin Change → then Maximum Number of Jumps.</li>
+        <li><strong>Sliding Window vs DP Distinction:</strong> Sliding window processes contiguous subarrays of fixed/variable length. DP evaluates all possible predecessor states at each index. When a problem asks "maximum jumps" or "minimum cost path" with conditional transitions between non-adjacent indices, that is DP — not sliding window.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">O(1) Space Classics &amp; Car Fleet Fix</div></div>
+          <div class="week-card-body"><ul>
+            <li>Master Boyer-Moore: implement Majority Element from scratch — candidate + count, increment on match, decrement on mismatch; submit LeetCode 169</li>
+            <li>Master XOR: implement Single Number — <code>result ^= num</code>; understand why <code>a ^ a = 0</code>; submit LeetCode 136</li>
+            <li>Re-implement Car Fleet correctly: sort by position descending; compute times; use a stack — push when current time &gt; stack top (new fleet); submit LeetCode 853</li>
+            <li>Study monotonic stack pattern: Car Fleet uses it implicitly; also study Daily Temperatures and Next Greater Element for the same pattern</li>
+            <li>Dry-run Car Fleet on the given example on paper before submitting — verify fleet count step by step</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">DP Foundations — 1D Patterns</div></div>
+          <div class="week-card-body"><ul>
+            <li>Start 1D DP from scratch: Climbing Stairs, House Robber, Min Cost Climbing Stairs — state, transition, base case for each; trace the DP array on paper before coding</li>
+            <li>Study Coin Change and Longest Increasing Subsequence — different transition shapes; LIS is a direct precursor to Maximum Number of Jumps</li>
+            <li>Implement Maximum Number of Jumps to Reach Last Index — the problem from this interview; O(N²) DP with validity condition; submit LeetCode 2770</li>
+            <li>Distinction to memorise: sliding window = contiguous subarray; DP = optimal value across all valid predecessor states — if jumps are non-adjacent and conditional → DP</li>
+            <li>Solve 8 DP problems at easy-medium level — trace DP table for each before coding</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Sorting, Hashmaps &amp; Two Pointers</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study sorting-based problems: Merge Intervals, Meeting Rooms, 3Sum, Sort Colors, Largest Number — all require choosing the right sort key</li>
+            <li>Study hashmap patterns: Two Sum, Group Anagrams, Subarray Sum Equals K, Longest Consecutive Sequence</li>
+            <li>Study two-pointer patterns on sorted arrays: Valid Palindrome, Container With Most Water, Remove Duplicates — understand when two pointers apply (sorted, or specific invariants)</li>
+            <li>Review the Boyer-Moore and XOR solutions from Week 1 from memory — can you write both without looking?</li>
+            <li>Solve 10 medium problems across these patterns — time each at 25 minutes</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Mixed Practice &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Solve 15 medium problems randomly — no topic filters; identify pattern (DP? greedy? two pointer? hashmap?) before coding</li>
+            <li>Study binary search on answer: Koko Eating Bananas, Minimum Time to Complete Trips — add this pattern to your toolkit</li>
+            <li>Study BFS basics: Number of Islands, Jump Game III — minimum steps problems</li>
+            <li>Take 2 full timed mock interviews (60 min each) — rapid fire + 2 coding problems; camera on, no hints</li>
+            <li>After each mock: verify you can state Boyer-Moore, XOR, and the Car Fleet monotonic stack solution in under 60 seconds each — these are the specific gaps from TR-1</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 28 April 2026</div>
+</body>
+</html>

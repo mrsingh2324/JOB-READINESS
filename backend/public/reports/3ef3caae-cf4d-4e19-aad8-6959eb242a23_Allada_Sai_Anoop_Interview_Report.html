@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Allada Sai Anoop — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f4f1eb;
+    --card-bg: #faf8f4;
+    --primary: #1a3a52;
+    --accent: #c8873f;
+    --green: #1a5c3a;
+    --green-bg: #e6f4ed;
+    --amber: #7a4f10;
+    --amber-bg: #fef3d8;
+    --red: #8b1c1c;
+    --red-bg: #fde8e8;
+    --border: #d8d0c4;
+    --blue-mid: #1e5a9e;
+    --blue-bg: #f0f7ff;
+    --blue-border: #c0d8f0;
+    --text: #2c2c2c;
+    --muted: #6b6560;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── HEADER ── */
+  .report-header {
+    background: var(--primary);
+    color: #fff;
+    padding: 52px 40px 44px;
+    text-align: center;
+  }
+  .report-header .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.55);
+    margin-bottom: 14px;
+  }
+  .report-header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: -.5px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .report-header .subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,.6);
+    font-weight: 300;
+  }
+
+  /* ── BODY ── */
+  .body-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── INFO GRID ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  .info-cell {
+    background: var(--card-bg);
+    padding: 18px 22px;
+  }
+  .info-cell .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+  .info-cell .value {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--primary);
+  }
+  .info-cell.full { grid-column: 1 / -1; }
+
+  /* ── BADGES ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: .04em;
+  }
+  .badge-green  { background: var(--green-bg);  color: var(--green); }
+  .badge-amber  { background: var(--amber-bg);  color: var(--amber); }
+  .badge-red    { background: var(--red-bg);    color: var(--red); }
+
+  /* verdict badges */
+  .verdict-good { background: var(--green-bg); color: var(--green); }
+  .verdict-mid  { background: var(--amber-bg); color: var(--amber); }
+  .verdict-bad  { background: var(--red-bg);   color: var(--red); }
+
+  /* ── JOURNEY TIMELINE ── */
+  .journey {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .journey-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    padding-bottom: 28px;
+  }
+  .journey-row:last-child { padding-bottom: 0; }
+  .journey-col-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 16px;
+  }
+  .journey-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 3px;
+    border: 3px solid;
+    box-shadow: 0 0 0 3px var(--bg);
+  }
+  .dot-green  { background: var(--green); border-color: var(--green); }
+  .dot-amber  { background: var(--amber); border-color: var(--amber); }
+  .dot-red    { background: #c0392b; border-color: #c0392b; }
+  .journey-line {
+    width: 2px;
+    flex: 1;
+    background: var(--border);
+    min-height: 30px;
+    margin-top: 4px;
+  }
+  .journey-content { flex: 1; padding-top: 0; }
+  .journey-stage {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--primary);
+    margin-bottom: 3px;
+  }
+  .journey-result { font-size: 12.5px; font-weight: 600; margin-bottom: 3px; }
+  .journey-result.green { color: var(--green); }
+  .journey-result.amber { color: var(--amber); }
+  .journey-result.red   { color: var(--red); }
+  .journey-detail {
+    font-size: 12.5px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+  .journey-detail a { color: var(--accent); text-decoration: none; }
+  .journey-detail a:hover { text-decoration: underline; }
+
+  /* ── ROUND CARD ── */
+  .round-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  .round-header {
+    background: var(--primary);
+    color: #fff;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .round-icon {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .icon-green { background: var(--green-bg); }
+  .icon-amber { background: var(--amber-bg); }
+  .round-title-group { flex: 1; }
+  .round-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .round-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,.55);
+  }
+  .round-meta a { color: var(--accent); text-decoration: none; }
+  .round-meta a:hover { text-decoration: underline; }
+  .round-score-box {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .round-score-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: #fff;
+    line-height: 1;
+  }
+  .round-score-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,.5);
+    letter-spacing: .1em;
+  }
+
+  .round-body { padding: 28px; }
+
+  /* ── QA BLOCK ── */
+  .qa-block {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .qa-block:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .qa-block-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+  .qa-item { margin-bottom: 18px; }
+  .qa-item:last-child { margin-bottom: 0; }
+  .qa-q {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 7px;
+    font-size: 14px;
+  }
+  .qa-a {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 9px;
+  }
+  .qa-a span { display: block; padding-left: 12px; position: relative; }
+  .qa-a span::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
+
+  .qa-verdict {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'DM Mono', monospace;
+  }
+  .model-answer {
+    background: var(--blue-bg);
+    border: 1px solid var(--blue-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .model-answer .model-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    font-weight: 500;
+    margin-bottom: 7px;
+  }
+  .model-answer p { color: #1a3a6e; }
+  .model-answer span { display: block; padding-left: 14px; position: relative; color: #1a3a6e; }
+  .model-answer span::before { content: '→'; position: absolute; left: 0; color: var(--blue-mid); }
+
+  /* ── ROUND REMARKS FOOTER ── */
+  .round-remarks {
+    background: var(--amber-bg);
+    border-top: 1px solid var(--border);
+    padding: 18px 28px;
+    font-style: italic;
+    font-size: 13.5px;
+    color: var(--amber);
+  }
+  .round-remarks strong { font-style: normal; font-weight: 600; color: var(--primary); }
+
+  /* ── OVERALL CARD ── */
+  .overall-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  .overall-card .round-header { background: #2c3e50; }
+
+  .overall-block { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .overall-block:last-child { border-bottom: none; }
+  .overall-block p { font-size: 14.5px; line-height: 1.75; color: var(--text); }
+
+  .title-green { color: var(--green); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-red   { color: var(--red);   font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-blue  { color: var(--blue-mid); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 16px; }
+
+  .strength-list, .improve-list { list-style: none; }
+  .strength-list li, .improve-list li {
+    padding: 8px 0 8px 14px;
+    border-bottom: 1px dashed var(--border);
+    position: relative;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .strength-list li:last-child, .improve-list li:last-child { border-bottom: none; }
+  .strength-list li::before { content: '·'; position: absolute; left: 0; color: var(--green); font-size: 18px; line-height: 1; top: 8px; }
+  .improve-list li::before  { content: '·'; position: absolute; left: 0; color: var(--red);   font-size: 18px; line-height: 1; top: 8px; }
+
+  /* ── WEEK GRID ── */
+  .week-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .week-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .week-card-header {
+    background: var(--primary);
+    padding: 12px 16px;
+  }
+  .week-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .week-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+  }
+  .week-card-body { padding: 14px 16px; }
+  .week-card-body ul { list-style: none; }
+  .week-card-body li {
+    font-size: 13px;
+    color: var(--text);
+    padding: 4px 0 4px 18px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .week-card-body li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 6px; }
+
+  /* ── FOOTER ── */
+  .report-footer {
+    border-top: 1px solid var(--border);
+    padding: 18px 24px;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* misc */
+  .spacer { height: 32px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ HEADER ══ -->
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <h1>Allada Sai Anoop</h1>
+  <div class="subtitle">Software Development — DSA &amp; Full Stack Placement Track</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 — CANDIDATE INFORMATION ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="label">Candidate Name</div>
+      <div class="value">Allada Sai Anoop</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Year of Graduation</div>
+      <div class="value">2027 (2nd Year)</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Offline Assessment Date</div>
+      <div class="value">15 March 2026 · Cycle 4</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Email</div>
+      <div class="value">saianoopallada@gmail.com</div>
+    </div>
+    <div class="info-cell full">
+      <div class="label">Final Placement Status</div>
+      <div class="value" style="margin-top:6px;">
+        <span class="badge badge-amber">⚠ Not Cleared — Re-attempt Required</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 02 — JOURNEY OVERVIEW ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey" style="margin-bottom:40px;">
+
+    <div class="journey-row">
+      <div class="journey-col-left">
+        <div class="journey-dot dot-green"></div>
+        <div class="journey-line"></div>
+      </div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared</div>
+        <div class="journey-detail">15 Mar 2026 · Cycle 4 · Qualified for interview rounds</div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left">
+        <div class="journey-dot dot-green"></div>
+        <div class="journey-line"></div>
+      </div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result green">✓ Cleared · 65 / 100</div>
+        <div class="journey-detail">11 Apr 2026 · 11:30 AM · Panelist: Mostafijur Rahaman ·
+          <a href="https://drive.google.com/file/d/17loLUMYzafsqm9-wW7cFBlqgsy0eGa7F/view?usp=drivesdk" target="_blank">Recording ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left">
+        <div class="journey-dot dot-amber"></div>
+      </div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 2 (TR-2) — Full Stack &amp; CS Fundamentals</div>
+        <div class="journey-result amber">~ Not Cleared</div>
+        <div class="journey-detail">Significant gaps in Frontend depth, Backend implementation, and CS Fundamentals</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ SECTION 03 — TR-1 ══ -->
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-green">🟢</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">
+          Panelist: Mostafijur Rahaman &nbsp;·&nbsp; 11 Apr 2026 · 11:30 AM &nbsp;·&nbsp;
+          <a href="https://drive.google.com/file/d/17loLUMYzafsqm9-wW7cFBlqgsy0eGa7F/view?usp=drivesdk" target="_blank">Recording ↗</a>
+        </div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#6ee09e;">65</div>
+        <div class="round-score-label">/ 100</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire Questions</div>
+
+        <!-- Q1 -->
+        <div class="qa-item">
+          <div class="qa-q">Q1 — Find the single non-duplicate element in an array where every other element appears exactly twice. Give the most efficient approach.</div>
+          <div class="qa-a">
+            <span>Identified the XOR bit-manipulation approach correctly without prompting</span>
+            <span>Correctly stated: <em>a XOR a = 0</em> and <em>a XOR 0 = a</em>, so XOR-ing all elements leaves only the unique one</span>
+            <span>Time complexity: O(n) · Space complexity: O(1) — both stated accurately</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — XOR approach with correct complexities</span>
+        </div>
+
+        <!-- Q2 -->
+        <div class="qa-item">
+          <div class="qa-q">Q2 — Find the number of digits in an integer without converting to string and without using any loops.</div>
+          <div class="qa-a">
+            <span>Proposed: <code>floor(log₁₀(|n|)) + 1</code> — mathematically correct</span>
+            <span>Correctly noted the need to take the absolute value to handle negative inputs</span>
+            <span>Correctly identified the edge case: <em>n = 0</em> requires special handling (return 1)</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — complete with edge-case handling for zero</span>
+        </div>
+      </div><!-- end rapid fire -->
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/minimum-time-to-complete-trips/description/" target="_blank">Minimum Time to Complete Trips ↗</a></div>
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Initially considered DP — self-corrected to binary search after thinking it through</span>
+            <span>Took ~15 minutes to arrive at the binary search on answer pattern</span>
+            <span>Correctly identified binary search bounds: [1, max_time × total_trips]</span>
+            <span>Used a feasibility check — for a given mid time, summed up how many trips each bus can do</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Approached correctly using Binary Search on Answer</span>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation &amp; Complexity</div>
+          <div class="qa-a">
+            <span>Coded the binary search correctly and received an Accepted verdict on submission</span>
+            <span>Time complexity: O(n × log(max_time × trips)) — correctly stated</span>
+            <span>Space complexity: O(1) — correctly stated</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Coded correctly — All test cases passed (AC)</span>
+        </div>
+      </div><!-- end problem 1 -->
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/minimum-jumps-to-reach-home/description/" target="_blank">Minimum Jumps to Reach Home ↗</a></div>
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Could read the problem and identify it as a shortest-path style problem</span>
+            <span>Attempted DP but could not formulate the correct state transitions</span>
+            <span>Recognised that BFS / queue-based traversal might be needed but had not studied that technique</span>
+            <span>Could not switch to a correct strategy within the time window</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Could not approach — unfamiliar with BFS / queue-based shortest path</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>This is a BFS (Breadth-First Search) problem where each state is (position, last_jump_direction). Use a queue storing <code>(position, can_go_back)</code> and explore all valid forward and backward jumps level by level, skipping forbidden positions. The level number gives minimum jumps. Time: O(max_position), Space: O(max_position).</span>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>No code was written for this problem — the interview was wrapped up after the approach discussion</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ No code submitted</span>
+        </div>
+      </div><!-- end problem 2 -->
+
+    </div><!-- round-body -->
+
+    <div class="round-remarks">
+      <strong>Interviewer Feedback:</strong> "Good — was known topics of DSA but lacks problem solving with topics like DP, greedy etc." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 4 / 5 — clear, grammatically sound, responsive to follow-up questions
+    </div>
+  </div><!-- end TR-1 card -->
+
+
+  <!-- ══ SECTION 04 — TR-2 ══ -->
+  <div class="section-label">04 · Technical Round 2 — Full Stack &amp; CS Fundamentals</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-amber">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 2 — Full Stack &amp; CS Fundamentals</div>
+        <div class="round-meta">Panelist: NxtWave Interviewer (Female) &nbsp;·&nbsp; Cycle 4</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">—</div>
+        <div class="round-score-label">Not Cleared</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Re-attempt Required</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Soft Skills -->
+      <div class="qa-block">
+        <div class="qa-block-label">Soft Skills &amp; Communication</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Introduced yourself with confidence — mentioned DSA practice, hackathon participation, and college qualifications</span>
+            <span>Generally clear English with some hesitation under technical questioning pressure</span>
+            <span>Camera cooperation and audio setup caused minor delays at the start</span>
+            <span>Willingness to admit knowledge gaps without deflecting — a positive professional trait</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Adequate — Confident intro, hesitation under deep technical pressure</span>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="qa-block">
+        <div class="qa-block-label">Projects</div>
+        <div class="qa-item">
+          <div class="qa-q">Project: Rooftop Rainwater Harvesting System (Hackathon — SIH)</div>
+          <div class="qa-a">
+            <span>Explained the motivation clearly: water scarcity + flood season = a web-based estimation tool</span>
+            <span>Tech stack: HTML, CSS, JavaScript, React (front end) + Node.js (back end), with government datasets</span>
+            <span>Demonstrated understanding of the problem domain and user inputs (rooftop area, soil level)</span>
+            <span>Could not go deep on implementation specifics — admitted not owning the backend part of the project</span>
+            <span>Challenge articulation was reasonable: handling variability in underground storage viability</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Good domain knowledge, low implementation ownership depth</span>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Frontend — HTML / CSS / JavaScript</div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is Semantic HTML?</div>
+          <div class="qa-a">
+            <span>Mentioned sections, divisions, footers, and articles — partially correct</span>
+            <span>Stated it improves readability and accessibility — correct, but surface-level</span>
+            <span>Did not mention SEO benefits or the semantic meaning attached to tags like <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code></span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Basic definition correct; depth and SEO benefits missing</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Semantic HTML uses elements whose tag names convey meaning about their content — e.g., <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>. Benefits: (1) Accessibility — screen readers can navigate the page; (2) SEO — search engines weight semantic content higher; (3) Maintainability — the code is self-documenting.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What does <code>&lt;!DOCTYPE html&gt;</code> do if the file extension already says .html?</div>
+          <div class="qa-a">
+            <span>Initially struggled to differentiate its purpose from the file extension</span>
+            <span>Eventually arrived at: it tells the browser which version of HTML to render in</span>
+            <span>Did not mention "standards mode" vs "quirks mode"</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Arrived at the right idea under prompting; lacked precision</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><code>&lt;!DOCTYPE html&gt;</code> is a declaration (not a tag) that instructs the browser to render the page in <em>standards mode</em> using HTML5 rules. Without it, older browsers fall back to <em>quirks mode</em> — an inconsistent rendering behaviour emulating old IE. The file extension tells the OS how to open the file; DOCTYPE tells the browser's rendering engine which parsing rules to apply.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Live coding: Create an HTML dropdown (<code>&lt;select&gt;</code>) and explain the ID and name attributes</div>
+          <div class="qa-a">
+            <span>Successfully wrote a working <code>&lt;select&gt;</code> dropdown in Notepad within ~90 seconds</span>
+            <span>Correctly explained that <code>id</code> is unique per page and used for targeting in JS/CSS</span>
+            <span>Explanation of <code>name</code> attribute was imprecise — stated it's for "non-duplicate naming" rather than for form submission data binding</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Code correct; attribute explanation lacked backend form-data context</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>The <code>name</code> attribute is the key sent with form data on submission (e.g., <code>?cars=volvo</code>). Multiple elements can share the same <code>name</code> — that is what groups radio buttons. The <code>id</code> is a unique DOM identifier for CSS/JS targeting. They serve completely different purposes and can co-exist independently.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Explain the CSS Box Model</div>
+          <div class="qa-a">
+            <span>Mentioned content, padding, border, and margin — correct components listed</span>
+            <span>Description was vague — mixed it with visual styling concepts rather than the layout model</span>
+            <span>Could not quantify how box-sizing affects width calculations</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct components listed; model mechanics not articulated</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>The CSS box model defines how an element's total size is calculated: <strong>Content → Padding → Border → Margin</strong> (outside in). By default (<code>box-sizing: content-box</code>), width/height applies to content only — padding and border add to it. With <code>box-sizing: border-box</code>, width includes padding and border, making layout more predictable. Margin never adds to the element's visual size — it creates space around it.</span>
+          </div>
+        </div>
+
+      </div><!-- end frontend block -->
+
+      <!-- JS -->
+      <div class="qa-block">
+        <div class="qa-block-label">JavaScript — Core Concepts</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Difference between <code>let</code>, <code>const</code>, and <code>var</code> — with an example</div>
+          <div class="qa-a">
+            <span>Demonstrated <code>let</code> re-assignment correctly in the browser console</span>
+            <span>Stated <code>var</code> "works similar to let but is a variable type data type" — incorrect/incomplete</span>
+            <span>Did not cover: hoisting differences, function scope vs block scope, or TDZ (Temporal Dead Zone)</span>
+            <span><code>const</code> was not covered at all in the live demo</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Only <code>let</code> re-assignment demonstrated; <code>var</code> scoping and <code>const</code> omitted</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><code>var</code> is function-scoped and hoisted (initialised as <code>undefined</code>). <code>let</code> and <code>const</code> are block-scoped and not initialised before declaration (Temporal Dead Zone). <code>const</code> cannot be reassigned after declaration (but mutable objects still allow mutation of their properties). Prefer <code>const</code> by default; use <code>let</code> when reassignment is needed; avoid <code>var</code>.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is a closure? Write a function that toggles between true and false using closures.</div>
+          <div class="qa-a">
+            <span>Directly stated: "I don't know what closures are"</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — concept unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A closure is a function that retains access to its outer (enclosing) scope even after the outer function has returned. Example toggle: <code>function makeToggle() &#123; let state = false; return function() &#123; state = !state; return state; &#125;; &#125; const toggle = makeToggle(); toggle(); // true &nbsp; toggle(); // false</code>. The inner function closes over <code>state</code>, preserving it between calls.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is a Promise in JavaScript? Give its syntax.</div>
+          <div class="qa-a">
+            <span>Described promises as "specific functions used for callbacks or satisfying conditions" — vague</span>
+            <span>Could not write the <code>new Promise((resolve, reject) => ...)</code> syntax</span>
+            <span>Did not mention <code>.then()</code>, <code>.catch()</code>, or async/await</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Concept vaguely known — syntax not recalled</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A Promise represents an eventual completion or failure of an asynchronous operation. Syntax: <code>const p = new Promise((resolve, reject) => &#123; /* async work */ resolve(value); &#125;); p.then(val => ...).catch(err => ...);</code>. Three states: Pending → Fulfilled / Rejected. Modern usage wraps in <code>async/await</code> for cleaner flow.</span>
+          </div>
+        </div>
+      </div><!-- end JS block -->
+
+      <!-- Backend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Backend — Node.js, Express &amp; MongoDB</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Can you create a backend endpoint using Node.js / Express?</div>
+          <div class="qa-a">
+            <span>Stated no hands-on experience with Express endpoints</span>
+            <span>Clarified that back-end part of the hackathon project was handled by teammates</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ No backend implementation experience demonstrated</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Basic Express GET endpoint: <code>const express = require('express'); const app = express(); app.get('/items', (req, res) => &#123; res.json(&#123; items: [] &#125;); &#125;); app.listen(5000);</code>. For a POST: use <code>app.post</code>, parse body with <code>express.json()</code>, and respond with the created resource + HTTP 201.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is npm? What is it used for in Node.js projects?</div>
+          <div class="qa-a">
+            <span>Attempted: "Node Program Manager" — incorrect expansion</span>
+            <span>Could not describe its role in managing dependencies or scripts</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incorrect — npm stands for Node Package Manager; usage not explained</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>npm (Node Package Manager) is the default package manager for Node.js. It manages project dependencies via <code>package.json</code> (<code>npm install</code> downloads them to <code>node_modules</code>), runs scripts (<code>npm start</code>, <code>npm test</code>), and publishes packages to the npm registry. <code>npm install &lt;package&gt;</code> adds a dependency; <code>--save-dev</code> adds it as a dev dependency.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Difference between SQL and NoSQL databases</div>
+          <div class="qa-a">
+            <span>Correctly identified SQL as structured, table-based with defined schema</span>
+            <span>Correctly identified NoSQL as schema-flexible — gave MongoDB as an example</span>
+            <span>Incorrectly expanded NoSQL as "No Structured Query Language" rather than "Not Only SQL"</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Core concept understood; incorrect full-form and no depth on use-case trade-offs</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>NoSQL stands for <em>Not Only SQL</em>. SQL (relational) databases store data in structured tables with a fixed schema and use ACID transactions — ideal for complex joins and consistency (e.g., PostgreSQL, MySQL). NoSQL databases (document, key-value, graph, time-series) are schema-flexible, horizontally scalable, and suited to unstructured or rapidly changing data. MongoDB stores documents as BSON (JSON-like). Choose based on data shape and consistency requirements.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Write a MongoDB query (shared in chat)</div>
+          <div class="qa-a">
+            <span>Stated: "not familiar with MongoDB queries"</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ No MongoDB query knowledge demonstrated</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Core MongoDB query patterns: Find all: <code>db.collection.find(&#123;&#125;)</code>. Filter: <code>db.users.find(&#123; age: &#123; $gt: 18 &#125; &#125;)</code>. Insert: <code>db.users.insertOne(&#123; name: "Anoop" &#125;)</code>. Update: <code>db.users.updateOne(&#123; _id: id &#125;, &#123; $set: &#123; name: "New" &#125; &#125;)</code>. Delete: <code>db.users.deleteOne(&#123; _id: id &#125;)</code>. Practice the CRUD operators: <code>$set</code>, <code>$gt</code>, <code>$in</code>, <code>$and</code>.</span>
+          </div>
+        </div>
+      </div><!-- end backend block -->
+
+      <!-- Full Stack / CS -->
+      <div class="qa-block">
+        <div class="qa-block-label">CS Fundamentals &amp; Full Stack Integration</div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is a CORS error? (Frontend on localhost:3000, Backend on localhost:5000)</div>
+          <div class="qa-a">
+            <span>Suggested both ports must be the same — incorrect</span>
+            <span>Did not understand the browser's Same-Origin Policy as the root cause</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incorrect — CORS concept and browser Same-Origin Policy not understood</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>CORS (Cross-Origin Resource Sharing) errors occur when a browser's Same-Origin Policy blocks a request from one origin (localhost:3000) to a different origin (localhost:5000). The fix is server-side: add <code>Access-Control-Allow-Origin</code> headers on the backend (in Express: <code>app.use(require('cors')())</code>). The browser enforces this — not the server. Frontend and backend intentionally run on different ports in full-stack development.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Design the backend API endpoints for a to-do application</div>
+          <div class="qa-a">
+            <span>Understood the concept of to-do items having IDs, names, and a completion toggle</span>
+            <span>Could not map this to RESTful HTTP methods (GET, POST, PUT/PATCH, DELETE)</span>
+            <span>Mixed up local storage concepts with API endpoint design</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Data model partially understood; REST API design not known</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A to-do REST API: <code>GET /todos</code> → list all · <code>POST /todos</code> body: &#123;title&#125; → create, returns HTTP 201 · <code>GET /todos/:id</code> → fetch one · <code>PATCH /todos/:id</code> body: &#123;completed: true&#125; → toggle · <code>DELETE /todos/:id</code> → remove, returns HTTP 204. Each endpoint should return appropriate HTTP status codes (200, 201, 404, 400, 204).</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is a deadlock in operating systems?</div>
+          <div class="qa-a">
+            <span>Mentioned "switches logged in a loop" — vague and not technically accurate</span>
+            <span>Could not explain the four necessary conditions: mutual exclusion, hold and wait, no preemption, circular wait</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Concept vaguely recalled — definition inaccurate, conditions not known</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A deadlock is a state where two or more processes are each waiting for a resource held by another, creating a circular dependency that halts all of them indefinitely. Four necessary conditions (Coffman): (1) Mutual Exclusion — resource used by one at a time; (2) Hold and Wait — process holds one resource while waiting for another; (3) No Preemption — resources can't be forcibly taken; (4) Circular Wait — P1 waits on P2, P2 waits on P1.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is a CI/CD pipeline? What stages would you include?</div>
+          <div class="qa-a">
+            <span>Correctly associated CI/CD with continuous integration and continuous deployment</span>
+            <span>Described deploying via GitHub + Vercel — shows practical exposure</span>
+            <span>Could not list formal pipeline stages: Source → Build → Test → Deploy → Monitor</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Practical Vercel deployment experience; formal pipeline stages unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A CI/CD pipeline automates code from commit to production. Stages: (1) Source — git push triggers pipeline; (2) Build — compile/bundle the app; (3) Test — run unit, integration, and E2E tests; (4) Static Analysis — lint, security scan; (5) Deploy to Staging; (6) Smoke Test; (7) Deploy to Production; (8) Monitor — logs, alerts. Tools: GitHub Actions, Jenkins, CircleCI for CI; Vercel, AWS, GCP for CD.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Difference between TCP and UDP protocols</div>
+          <div class="qa-a">
+            <span>Stated awareness of the terms but could not explain either protocol</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — concepts not known</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>TCP (Transmission Control Protocol) is connection-oriented: establishes a 3-way handshake, guarantees ordered and reliable delivery, performs error checking and retransmission. Used for HTTP, file transfer, email. UDP (User Datagram Protocol) is connectionless: no handshake, no delivery guarantee, lower latency. Used for live video, gaming, DNS. Trade-off: TCP = reliability; UDP = speed.</span>
+          </div>
+        </div>
+      </div><!-- end CS block -->
+
+    </div><!-- round-body -->
+
+    <div class="round-remarks">
+      <strong>Overall TR-2 Summary:</strong> You demonstrated enthusiasm and a willingness to engage across all topic areas, which is positive. However, there are significant gaps in core full-stack knowledge — particularly JavaScript depth (closures, promises), backend implementation (Express, MongoDB, REST design), and CS fundamentals (CORS, TCP/UDP, deadlocks). These are foundational topics that must be strengthened before a re-attempt.
+    </div>
+  </div><!-- end TR-2 card -->
+
+
+  <!-- ══ SECTION 05 — OVERALL COMMENTS & ACTION PLAN ══ -->
+  <div class="section-label">05 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+    <div class="round-header" style="background:#2c3e50;">
+      <div class="round-icon" style="background:var(--amber-bg);">📋</div>
+      <div class="round-title-group">
+        <div class="round-name">Overall Assessment</div>
+        <div class="round-meta">Cycle 4 · Allada Sai Anoop</div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="overall-block">
+      <p>
+        You have a solid foundation in DSA — your TR-1 performance (65/100) shows you can think algorithmically, apply binary search on answer patterns, and handle rapid-fire theory questions on XOR and logarithms with confidence. Your hackathon participation and project exposure show initiative and genuine interest in software development. However, your TR-2 result reveals a critical gap between your DSA ability and your full-stack implementation depth: core JavaScript concepts like closures and promises are unknown, you have no hands-on backend experience with Express or MongoDB, and CS fundamentals like CORS, TCP/UDP, and deadlocks need structured study. You are not far from the threshold — one focused month of targeted practice across these specific areas will put you in a strong position for a re-attempt.
+      </p>
+    </div>
+
+    <!-- Strengths -->
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Algorithmic Thinking:</strong> Identified and applied the binary search on answer pattern independently in TR-1 — a non-trivial technique for a 2nd-year student.</li>
+        <li><strong>Rapid-Fire DSA Theory:</strong> XOR-based single element detection and log₁₀ digit-count approach — both answered correctly and completely with edge cases.</li>
+        <li><strong>Honest Self-Assessment:</strong> You clearly stated when you didn't know something rather than guessing — this is a professional trait interviewers value.</li>
+        <li><strong>Practical Initiative:</strong> Hackathon participation (SIH) and building a full-stack project at the 2nd-year stage demonstrates drive beyond coursework.</li>
+        <li><strong>Communication:</strong> Rated 4/5 in TR-1 — clear, calm, and responsive throughout both sessions.</li>
+      </ul>
+    </div>
+
+    <!-- Areas for Improvement -->
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>JavaScript Core Concepts (Critical):</strong> You must study closures, promises, async/await, hoisting, scope (var/let/const), and the event loop — these are mandatory for any frontend/full-stack role.</li>
+        <li><strong>Backend Implementation (Critical):</strong> You need hands-on practice building Express.js REST APIs — create at least 3 full CRUD applications end-to-end before your re-attempt.</li>
+        <li><strong>MongoDB &amp; Database Querying:</strong> You must practise core MongoDB CRUD operators, aggregation pipelines, and indexing — you currently have zero query-writing experience.</li>
+        <li><strong>CS Fundamentals — Networking:</strong> Study TCP vs UDP, HTTP/HTTPS, CORS, and the OSI model — these are tested in every full-stack interview.</li>
+        <li><strong>CS Fundamentals — OS:</strong> Practise deadlock (four Coffman conditions), process vs thread, and memory management concepts.</li>
+        <li><strong>DSA — DP &amp; Greedy:</strong> You need structured practice with dynamic programming (1D DP → 2D DP) and greedy algorithms — the TR-1 interviewer specifically flagged these as weak areas.</li>
+      </ul>
+    </div>
+
+    <!-- Action Plan -->
+    <div class="overall-block">
+      <div class="title-blue">✦ 1-Month Action Plan</div>
+      <div class="week-grid">
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 01</div>
+            <div class="week-title">JavaScript Deep Dive</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study var / let / const — scope, hoisting, TDZ</li>
+              <li>Master closures with 5 hands-on exercises</li>
+              <li>Learn Promises and async/await with fetch examples</li>
+              <li>Study the event loop, call stack, and microtask queue</li>
+              <li>Build a simple async weather-fetch app using fetch + async/await</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 02</div>
+            <div class="week-title">Backend — Express &amp; MongoDB</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Learn npm, package.json, and project initialisation</li>
+              <li>Build a full CRUD REST API with Express.js from scratch</li>
+              <li>Connect Express to MongoDB Atlas using Mongoose</li>
+              <li>Practice all MongoDB CRUD operators and $gt/$in/$set</li>
+              <li>Build a to-do API (GET/POST/PATCH/DELETE with proper status codes)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 03</div>
+            <div class="week-title">CS Fundamentals &amp; Full Stack</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study TCP vs UDP, HTTP methods (GET/POST/PUT/DELETE/PATCH)</li>
+              <li>Understand CORS — what causes it, how to fix it server-side</li>
+              <li>Learn OS concepts: deadlock (4 conditions), process vs thread</li>
+              <li>Study the OSI model (7 layers) with real-world mapping</li>
+              <li>Connect your Express API to a React front end — handle CORS live</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 04</div>
+            <div class="week-title">DSA — DP, Greedy &amp; Mock</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Solve 10 DP problems: Fibonacci → Knapsack → LCS pattern</li>
+              <li>Solve 8 Greedy problems: Activity Selection, Coin Change</li>
+              <li>Solve 5 BFS/shortest path problems on LeetCode</li>
+              <li>Attempt 2 full mock interviews (DSA + full stack questions)</li>
+              <li>Revisit all model answers from TR-2 — ensure you can answer each cold</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- end action plan block -->
+
+  </div><!-- end overall card -->
+
+</div><!-- body-wrap -->
+
+<!-- ══ FOOTER ══ -->
+<div class="report-footer">
+  Report generated by NxtWave Interview Evaluation System · Cycle 4 · April 2026
+</div>
+
+</body>
+</html>

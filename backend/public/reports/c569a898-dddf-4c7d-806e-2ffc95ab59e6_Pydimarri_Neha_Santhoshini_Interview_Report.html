@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pydimarri Neha Santhoshini — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:40px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-green{background:var(--green-bg);color:var(--green);}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-red{background:var(--red-bg);color:var(--red);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .dot-red{background:#c0392b;border-color:#c0392b;}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);} .journey-result.red{color:var(--red);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .journey-detail a{color:var(--accent);text-decoration:none;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--amber-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-meta a{color:var(--accent);text-decoration:none;}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Pydimarri Neha Santhoshini</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Pydimarri Neha Santhoshini</div></div>
+    <div class="info-cell"><div class="label">Year of Graduation</div><div class="value">2026</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">19 April 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">velithota.yamini@nxtwave.co.in</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">19 Apr 2026</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">NxtMock — AI Interview</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">Cleared prior to TR-1</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result amber">~ Not Qualified · Score 25 / 100 · Low Hire</div>
+        <div class="journey-detail">7 May 2026 · Score: 25 · <a href="https://drive.google.com/file/d/1f0woctIb-BaswjU52VTW4kJG5pWUpjLc/view?usp=drivesdk" target="_blank">Recording ↗</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">7 May 2026 · <a href="https://drive.google.com/file/d/1f0woctIb-BaswjU52VTW4kJG5pWUpjLc/view?usp=drivesdk" target="_blank">View Recording ↗</a></div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f09090;">25</div>
+        <div class="round-score-label">/ 100 · Low Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-red" style="font-size:11px;">✗ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-green">4/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-green">5/5</div><div class="slabel">DSA Theory</div></div>
+        <div class="score-cell"><div class="snum snum-green">4/5</div><div class="slabel">Core CS</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">Avg Problem Solving</div></div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>3rd year BTech (Information Technology) student at Bokaraju Rangaraju College — 2026 batch</span>
+            <span>Projects: Health World (web development), NCP Learning Part Generator, Currency Converter</span>
+            <span>Active in hackathons and coding events — credits these for improving logical ability and exposure to new technologies</span>
+            <span>NxtMock cleared prior to TR-1; self-describes as strong in DSA and problem solving</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Decent Introduction — Web development projects and hackathon participation show initiative; DSA depth needs to match self-assessment</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA &amp; Core CS Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Every number in an array appears twice except one. Find that number in O(N) time and O(1) space. Follow-up: what if the array is sorted?</div>
+          <div class="qa-a">
+            <span>First proposed hashmap/count approach — correctly noted it uses O(N) space which violates the constraint</span>
+            <span>Immediately self-corrected to XOR approach: "cancel out numbers that appear twice; only the single number remains" — correct and clearly stated</span>
+            <span>Follow-up (sorted array, binary search): correctly identified that binary search applies given sorted order</span>
+            <span>Explained: compare element at even index with its next element; if equal, the single element is on the right, move low to mid + 1</span>
+            <span>Could not clearly articulate the full decision logic — specifically how to determine which half contains the single element — interviewer noted one point was missing</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Strong — XOR approach correctly identified and explained; binary search direction known; key comparison logic partially incomplete (Rating: 5/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 The Missing Binary Search Logic</div>
+            <span>In a sorted array with one unique element: pairs occupy (even, odd) index positions before the unique element and (odd, even) after. At index mid (even): if <code>arr[mid] == arr[mid+1]</code>, unique is on the right → <code>low = mid + 2</code>. If <code>arr[mid] != arr[mid+1]</code>, unique is at mid or left → <code>high = mid</code>. At index mid (odd): if <code>arr[mid] == arr[mid-1]</code>, unique is on the right → <code>low = mid + 1</code>. Otherwise → <code>high = mid - 1</code>. Time: O(log N), Space: O(1).</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2 (Car Fleet — Theory): Cars at different positions and speeds head toward a target. A faster car that catches a slower car ahead forms a fleet. Find total fleets.</div>
+          <div class="qa-a">
+            <span>Correctly understood the fleet formation concept — cars that meet or would overtake become a group</span>
+            <span>Initial approach: add speed to position each second and check when positions match — correct for the given example but not a generalised algorithm</span>
+            <span>With hint to "think in terms of time": correctly derived the formula — time = (target - position) / speed</span>
+            <span>Could not independently arrive at the stack-based counting approach for fleets</span>
+            <span>Described a partial stack approach — logic for when to push/pop was reversed; "add when top ≤ current" is incorrect for this problem</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Key time formula correctly derived with hint; stack usage for fleet counting not correctly formulated (Rating: 4/5 Core CS)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Sort cars by position in descending order (closest to target first). Compute <code>time[i] = (target - position[i]) / speed[i]</code> for each car.</span>
+            <span>Use a stack. For each car's time (in sorted order): if <code>time[i] &gt; stack top</code>, this car cannot catch the one ahead — push as a new fleet. Otherwise it merges with the fleet ahead — do not push. Answer = stack size. Time: O(N log N) for sort.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/maximum-width-of-binary-tree/description/" target="_blank">Maximum Width of Binary Tree ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood the problem: find the maximum width of a binary tree at any level, where width = distance from leftmost to rightmost node including null gaps</span>
+            <span>Initial idea: create a path from the leftmost node to the rightmost node — not a valid tree algorithm</span>
+            <span>With BFS hint from interviewer: correctly pivoted to level-by-level traversal using a queue</span>
+            <span>Proposed using a dictionary to store nodes at each level — reasonable direction though not the standard approach</span>
+            <span>Key gap: did not handle null nodes in width calculation — null positions between leftmost and rightmost nodes count toward width but were not being tracked</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — BFS approach reached with hint; level-by-level traversal understood; null node width calculation missing (Rating: 2/5 PS)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>BFS with index-based node numbering. Assign root index = 1. For a node at index i: left child = 2i, right child = 2i + 1. At each level, width = last node index - first node index + 1. Normalise by subtracting the first index at each level to prevent integer overflow.</span>
+            <span>Use a queue of (node, index) pairs. For each level: record first and last index, compute width, enqueue children with their computed indices. Time: O(N), Space: O(N). The null gaps are automatically captured because non-existent nodes between valid ones still have valid computed indices.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented a BFS solution using a queue — correctly enqueued children level by level</span>
+            <span>Used a dictionary to group nodes by level and calculated the count of nodes per level</span>
+            <span>Critical missing piece: was counting number of nodes at each level rather than the index span — these are different when null gaps exist</span>
+            <span>Interviewer confirmed: the solution handles most cases but fails when null nodes create width gaps at a level</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incomplete — BFS implemented; node count per level computed instead of index span; null node gap handling missing (Rating: 0/5 Code)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/car-fleet/description/" target="_blank">Car Fleet ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Revisited from the rapid fire section — correctly derived time = (target - position) / speed with interviewer guidance</span>
+            <span>Understood: cars with equal or shorter time than the car ahead form a fleet with it</span>
+            <span>Began describing a stack-based approach — partially articulated when to push vs not push but got the condition direction reversed</span>
+            <span>Interviewer offered a different problem to attempt instead; Car Fleet not fully coded</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Time formula correctly derived; stack direction for fleet counting partially understood but not correctly formulated (Rating: 3/5 PS)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Wrote code attempting the fleet calculation — sorting and time computation attempted</span>
+            <span>Code did not produce correct output — fleet grouping logic was incorrect due to the reversed stack condition</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incorrect — Code written but produced wrong results; fleet counting logic not correctly implemented (Rating: 2/5 Code)</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Weak candidate." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 4/5 — Good communicator throughout; engaged constructively with interviewer explanations and hints; clearly expressed partial ideas even when the full solution was out of reach. Interviewer's closing advice: start from easy LeetCode problems, build to medium — 400 to 500 problems with consistent daily practice.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>Your interview shows a genuinely mixed picture — you scored 5/5 on DSA Theory and 4/5 on Core CS, demonstrating that you know the standard algorithms at a conceptual level. You correctly identified XOR, correctly derived the time formula for Car Fleet with a hint, and showed awareness of BFS for tree traversal. The critical gap is in implementation and depth: knowing the tool exists is not enough — you need to be able to apply it correctly under time pressure without hints. Null node handling in tree width, the correct stack direction for Car Fleet, and the binary search decision condition are all precision-level details that separate a partial answer from a passing one. With 3rd year still ahead of you, consistent daily LeetCode practice from easy to medium will close this gap effectively before your re-attempt.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>XOR Mastery:</strong> You correctly identified and explained the XOR approach for the single number problem — including why it works conceptually. This is a 5/5 answer and demonstrates real pattern knowledge.</li>
+        <li><strong>Time Formula Insight:</strong> You independently derived <code>time = (target - position) / speed</code> for Car Fleet — the correct key insight — once given the "think in terms of time" direction.</li>
+        <li><strong>BFS Direction:</strong> When given the hint, you correctly pivoted to level-by-level BFS traversal for the tree problem and produced partial working code — showing you can implement when the right framework is activated.</li>
+        <li><strong>Communication:</strong> 4/5 — You expressed partial ideas clearly and engaged well with every hint and follow-up question; this collaborative engagement is a real interview strength.</li>
+        <li><strong>NxtMock Cleared:</strong> Demonstrates structured assessment performance — carry the same preparation into TR-1.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Binary Search Decision Logic:</strong> You knew binary search applies to the sorted unique element problem but couldn't state the key condition — how to decide which half contains the single element based on index parity. This must be understood and memorised completely.</li>
+        <li><strong>Stack Direction for Car Fleet:</strong> You described the stack approach but got the push/pop condition reversed. Re-study the Car Fleet solution — specifically: push if current car's time is greater than stack top (new fleet), otherwise it merges (do not push).</li>
+        <li><strong>Index-Based Tree Width:</strong> Counting nodes per level is not the same as width. Width requires tracking the index span from leftmost to rightmost node including null gaps. Study the array-index node numbering technique (left child = 2i, right child = 2i+1) and implement it.</li>
+        <li><strong>Hint Dependency:</strong> Most of your correct answers came after interviewer hints. In the re-attempt, practice solving problems without any hints by timing yourself strictly and forcing an answer before looking at solutions.</li>
+        <li><strong>Monotonic Stack Pattern:</strong> Car Fleet, Daily Temperatures, Next Greater Element all use monotonic stacks. This pattern needs dedicated study — you are close to understanding it but need more practice to apply it correctly.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">Binary Search &amp; XOR Mastery</div></div>
+          <div class="week-card-body"><ul>
+            <li>Complete the binary search single unique element problem — implement the full decision logic (index parity check) and submit on LeetCode</li>
+            <li>Study binary search variations: Search in Rotated Sorted Array, Find Minimum in Rotated Array, Single Element in Sorted Array</li>
+            <li>Re-implement XOR problems: Single Number I, II, III — Missing Number, Find the Difference, XOR Queries of a Subarray</li>
+            <li>Solve 10 binary search problems at easy-medium level — time each strictly at 20 minutes</li>
+            <li>For each problem: state the decision condition (left or right?) verbally before coding — build the habit of precision</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">Monotonic Stack &amp; Car Fleet</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study monotonic stack pattern from scratch: understand the core rule — maintain a stack in increasing or decreasing order</li>
+            <li>Solve: Daily Temperatures, Next Greater Element I &amp; II, Next Smaller Element — trace through each manually before coding</li>
+            <li>Re-implement Car Fleet completely: sort by position descending → compute times → use stack to count fleets — submit and verify</li>
+            <li>Study why the condition is: push if time[i] &gt; stack top (new fleet), not push if time[i] ≤ stack top (merges)</li>
+            <li>Solve 6 monotonic stack problems — draw the stack state at each step for every problem until the pattern is automatic</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Trees — BFS, Width &amp; Index Technique</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study index-based BFS for trees: root = index 1, left child = 2i, right child = 2i+1 — draw and trace this for 3 examples by hand</li>
+            <li>Re-implement Maximum Width of Binary Tree using the index technique — submit and pass all test cases including null gap cases</li>
+            <li>Study why counting nodes per level is wrong and why index span gives correct width even with nulls</li>
+            <li>Solve: Binary Tree Level Order Traversal, Maximum Depth, Symmetric Tree, Lowest Common Ancestor, Path Sum</li>
+            <li>Solve 8 tree problems by end of week — trees should be a strength, not a dependency on hints</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">No-Hint Practice &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Solve 15 medium problems randomly across binary search, stacks, and trees — strict 25-minute limit, no hints, no solution peeking</li>
+            <li>After each problem: if stuck at 25 min, write down what you tried and why it failed before reading the solution</li>
+            <li>Study hashmaps and two pointers: Two Sum, 3Sum, Container With Most Water, Group Anagrams</li>
+            <li>Take 2 full timed mock interviews (60 min each) — camera on, rapid fire + 2 coding questions, no external help</li>
+            <li>After each mock: specifically assess how many answers needed hints vs were independent — target 0 hints needed by re-attempt</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 7 May 2026</div>
+</body>
+</html>

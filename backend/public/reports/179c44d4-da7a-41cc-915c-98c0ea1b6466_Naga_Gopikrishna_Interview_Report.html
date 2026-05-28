@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Naga Gopikrishna — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-red{background:var(--red-bg);color:var(--red);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-red{background:#c0392b;border-color:#c0392b;}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.red{color:var(--red);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--red-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Naga Gopikrishna</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Naga Gopikrishna</div></div>
+    <div class="info-cell"><div class="label">Year of Graduation</div><div class="value">2026</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">12 April 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">nagagopikrishna4@gmail.com</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">12 Apr 2026</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">NxtMock — AI Interview</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">Cleared prior to TR-1</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result red">✗ Not Qualified · Score 10 / 100</div>
+        <div class="journey-detail">2 May 2026 · Score: 10</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🔴</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">2 May 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f09090;">10</div>
+        <div class="round-score-label">/ 100</div>
+        <div style="margin-top:6px;"><span class="badge badge-red" style="font-size:11px;">✗ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">DSA Theory</div></div>
+        <div class="score-cell"><div class="snum snum-red">0/5</div><div class="slabel">Core CS</div></div>
+        <div class="score-cell"><div class="snum snum-red">0/5</div><div class="slabel">Avg Problem Solving</div></div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>Self-described as "currently working in global services like project" — introduction was unclear due to significant audio connectivity issues throughout the session</span>
+            <span>Self-reported: approximately 90 LeetCode problems solved prior to TR-1</span>
+            <span>NxtMock cleared prior to TR-1</span>
+            <span>Note: the interview was significantly impacted by audio quality and connectivity problems on the candidate's side, making communication extremely difficult. While this affected the session, the preparation gaps identified are real and need to be addressed regardless</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Incomplete Introduction — Audio issues prevented a clear picture; NxtMock cleared but DSA performance did not reflect the 90 LeetCode problems self-reported</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA &amp; Core CS Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Count the trailing zeros in the factorial of N. What is the optimal approach?</div>
+          <div class="qa-a">
+            <span>Initial approach: calculate factorial using a loop, then use <code>% 10</code> to extract the last digit and count trailing zeros — brute force, correct direction but infeasible for large N</span>
+            <span>Interviewer pointed out: factorial of 50, 100, or 150 cannot be stored in any integer data type — overflow makes this approach impossible</span>
+            <span>With hint "think about multiples of five": candidate said "multiples of five" — pointed in the right direction but could not convert this into the complete formula</span>
+            <span>The key derivation — that trailing zeros = count of 5s in N! = <code>⌊N/5⌋ + ⌊N/25⌋ + ...</code> — was not reached</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Brute force approach proposed; "multiples of five" intuition reached with hint but formula not derived (Rating: 2/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Trailing zeros come from factors of 10 = 2 × 5. Since factors of 2 always exceed factors of 5, count only factors of 5 in N!.</span>
+            <span>Formula: <code>count = ⌊N/5⌋ + ⌊N/25⌋ + ⌊N/125⌋ + ...</code> until the term = 0. Each term counts numbers contributing that power of 5 (e.g., 25 = 5², contributes two). Time: O(log N), Space: O(1). Never compute the factorial.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Check if a given number N is a power of 2 in O(1) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Proposed: check if N is divisible by 2 — interviewer immediately identified the flaw: 6 is divisible by 2 but is not a power of 2</span>
+            <span>When interviewer asked whether 6 is a power of 2, candidate initially said "yes" — showing the concept of "power of 2" was not clearly understood vs. "divisible by 2"</span>
+            <span>Could not arrive at the bit manipulation approach even after extended discussion</span>
+            <span>Interviewer eventually demonstrated: powers of 2 in binary have exactly one bit set; <code>(n &amp; (n-1)) == 0</code> checks this in O(1)</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — Confused "divisible by 2" with "power of 2"; bit manipulation approach not known (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Powers of 2 in binary: 2=10, 4=100, 8=1000 — exactly one bit is set. N-1 flips all bits below the set bit: 8-1=0111. So <code>(n &amp; (n-1)) == 0</code> and <code>n &gt; 0</code> iff N is a power of 2.</span>
+            <span>Time: O(1), Space: O(1). The key conceptual distinction: "divisible by 2" means the last bit is 0 (even number). "Power of 2" means exactly one bit is 1 anywhere. These are completely different conditions — understand this difference clearly.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/minimum-time-to-complete-trips/description/" target="_blank">Minimum Time to Complete Trips ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Interviewer explained the problem in detail — multiple buses each complete trips independently; at time T, bus i completes <code>⌊T/time[i]⌋</code> trips; find the minimum T such that total trips ≥ target</span>
+            <span>Despite the extended walkthrough (3+ minutes with detailed examples: T=1→1 trip, T=2→3 trips, T=3→5 trips), the candidate kept adding trip times sequentially: 1+2=3, 3+3=6 — misunderstanding the simulation as summing durations, not counting completions</span>
+            <span>Could not grasp the floor division mechanism — the fundamental operation that drives this problem</span>
+            <span>No approach formulated; no code produced; interviewer moved to the second question</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — Problem not understood despite extended explanation; floor division simulation not grasped (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Key insight: at time T, bus i completes exactly <code>⌊T/time[i]⌋</code> trips. Total trips at time T = <code>sum(T // time[i] for i in range(n))</code>. This function is monotonically non-decreasing in T.</span>
+            <span><strong>Binary Search on T:</strong> search range [1, min(time) × totalTrips]. If <code>total_trips(mid) &gt;= target</code>, try smaller: <code>high = mid</code>. Else: <code>low = mid + 1</code>. Time: O(N × log(min × target)). The floor division is the core of this problem — practise it on simpler problems first.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/minimum-jumps-to-reach-home/description/" target="_blank">Minimum Jumps to Reach Home ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>After extended interviewer explanation, eventually understood the problem: bug starts at position 0, can jump +a right or −b left, must avoid forbidden positions, must reach position x with minimum jumps</span>
+            <span>Correctly traced Example 3: <code>0 → +16 → 16−9 = 7</code>, confirming understanding of the movement mechanics</span>
+            <span>After a long silence when asked for the algorithm, said "BFS" — correct keyword, showing some awareness</span>
+            <span>Could not explain how BFS applies — "I'm not getting any algorithm" — BFS was a recalled term rather than an understood pattern</span>
+            <span>No code attempted; session concluded</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — Problem eventually understood; BFS keyword recalled but not applied; no implementation attempted (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>BFS on positions:</strong> use a queue of (position, steps). Start: enqueue (0, 0). For each dequeued position p: try p+a (forward) and p-b (backward if p-b &gt;= 0). Skip if forbidden, already visited, or beyond safe upper bound (<code>max(forbidden) + a + b</code>). Return steps when p == x.</span>
+            <span>BFS guarantees minimum steps because it explores positions level by level. Key: knowing that "BFS = minimum steps" is not enough — you must know how to model the graph (what are nodes, what are valid edges, what terminates). Practise 5 BFS problems to build this instinct.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Very weak candidate." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 2/5 — Significant audio and connectivity issues throughout the session made communication very difficult. Independently of the technical issues, the ability to clearly articulate problem understanding and algorithmic reasoning also needs substantial improvement.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>The session was severely hampered by audio connectivity issues — it is important to acknowledge this and ensure your next interview is set up with stable internet and clear audio as a non-negotiable prerequisite. However, looking at what was observable: you had the right instinct to say "BFS" for Problem 2 and you correctly traced the jump example, which shows some awareness is developing. The core gaps are significant though — confusing "divisible by 2" with "power of 2" is a conceptual gap at the level of number theory basics, and not understanding floor division (the heart of Problem 1) after multiple explanations suggests that the 90 LeetCode problems solved have not been deeply internalised. The action plan below starts from fundamentals and builds up systematically.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>BFS Awareness:</strong> You said "BFS" when asked for the Problem 2 algorithm — showing pattern recognition is beginning to develop, even if the implementation knowledge isn't yet there.</li>
+        <li><strong>Example Tracing:</strong> You correctly traced Example 3 of Problem 2 (0 → +16 → 7) after the problem was explained — demonstrating that once you understand a problem you can follow through specific examples.</li>
+        <li><strong>NxtMock Cleared:</strong> Passing the AI assessment shows you can perform in structured settings — use that same focus for TR-1 preparation.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Fix Your Interview Setup:</strong> Severe audio issues cost significant interview time and prevented clear communication. Before your re-attempt, test your connection, use a wired headset if possible, and ensure no audio lag or cutting — this is as important as DSA preparation.</li>
+        <li><strong>Divisible by 2 vs Power of 2:</strong> These are completely different concepts. "Divisible by 2" means even (last bit = 0). "Power of 2" means exactly one bit is set anywhere. Study this distinction and the bit manipulation trick <code>(n &amp; (n-1)) == 0</code> immediately.</li>
+        <li><strong>Floor Division as a Simulation Tool:</strong> Problem 1 depends entirely on understanding <code>⌊T / time[i]⌋</code> = completions by bus i at time T. Study how floor division models counting in simulation problems — this is a fundamental building block.</li>
+        <li><strong>BFS — From Keyword to Implementation:</strong> Knowing "BFS" is not enough. You must know: how to set up a queue, what the nodes and edges are for a given problem, what visited means, and when BFS terminates. Practice 5 BFS problems end-to-end.</li>
+        <li><strong>Depth Over Breadth in Practice:</strong> If 90 LeetCode problems have been solved without developing these fundamentals, the issue is likely surface-level practice — running code without understanding the pattern. For every problem you solve, write the explanation in your own words before moving on.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">Number Theory &amp; Bit Manipulation</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study the distinction between even numbers vs powers of 2 — draw binary representations of 2, 4, 6, 8, 10, 12, 16 and compare</li>
+            <li>Master the 5 core bit tricks: power of 2 (<code>n &amp; (n-1)</code>), count set bits, XOR single element, check/set/clear kth bit</li>
+            <li>Implement trailing zeros formula — submit LeetCode 172 and verify for N=100, 1000, 10000</li>
+            <li>Solve: Single Number, Number of 1 Bits, Reverse Bits, Missing Number, Power of Three</li>
+            <li>After every problem: write 2 sentences explaining the solution before submitting — build depth habit</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">BFS — Full Implementation</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study BFS from scratch: queue setup, visited array, level-by-level processing, termination condition</li>
+            <li>For every BFS problem ask: what is a node? what are valid edges? what is forbidden? what does "level" mean?</li>
+            <li>Re-implement Minimum Jumps to Reach Home — trace the queue state on paper level by level before coding</li>
+            <li>Solve: Word Ladder, Jump Game III, Rotting Oranges, 01 Matrix, Minimum Knight Moves</li>
+            <li>Take one timed mock (30 min) — pick any BFS problem, solve without looking at hints</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Floor Division &amp; Binary Search on Answer</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study floor division in simulations: how <code>⌊T/k⌋</code> counts completions in time T with period k — dry-run with k=1,2,3 and T=1,2,3,4,5</li>
+            <li>Re-implement Minimum Time to Complete Trips — trace total trips at T=1,2,3 on paper, then code binary search</li>
+            <li>Study binary search on answer pattern: Koko Eating Bananas, Capacity to Ship Packages Within D Days</li>
+            <li>Template: <code>lo=1, hi=max_val; while lo &lt; hi: mid=(lo+hi)//2; if feasible(mid): hi=mid; else: lo=mid+1</code></li>
+            <li>Solve 6 binary search problems — focus on identifying the monotone feasibility function first</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Communication Practice &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Fix interview setup: test stable wired internet connection, clear audio headset, quiet room — do a 15-minute test call before any interview</li>
+            <li>Practice speaking about DSA solutions out loud daily: explain your approach to a problem verbally for 2 minutes before writing code</li>
+            <li>Solve 12 medium problems randomly across bit manipulation, BFS, and binary search — no topic labels</li>
+            <li>Take 2 full timed mock interviews (60 min) with camera on, stable connection, speaking clearly — treat setup as part of the assessment</li>
+            <li>After each mock: were your explanations clear enough for the interviewer to follow? This is as important as the solution itself</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 2 May 2026</div>
+</body>
+</html>

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naga Seetha Kota — Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1923;
+    --ink-soft: #3d4f5e;
+    --ink-mute: #8a9baa;
+    --bg: #f4f1eb;
+    --bg-card: #faf8f4;
+    --blue-deep: #1a3a52;
+    --blue-mid: #2e6da4;
+    --blue-light: #d6e9f7;
+    --green: #1a5c3a;
+    --green-bg: #e6f4ed;
+    --amber: #7a4f10;
+    --amber-bg: #fef3d8;
+    --red: #8b1c1c;
+    --red-bg: #fde8e8;
+    --accent: #c8873f;
+    --rule: #d8d0c4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+
+  .report-header {
+    background: var(--blue-deep);
+    padding: 56px 64px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .report-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.07);
+  }
+  .report-header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 40px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .header-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .header-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .header-sub {
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  .report-body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+    animation: fadeUp 0.5s ease both;
+  }
+  .section:nth-child(1) { animation-delay: 0.05s; }
+  .section:nth-child(2) { animation-delay: 0.08s; }
+  .section:nth-child(3) { animation-delay: 0.11s; }
+  .section:nth-child(4) { animation-delay: 0.14s; }
+  .section:nth-child(5) { animation-delay: 0.17s; }
+  .section:nth-child(6) { animation-delay: 0.20s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--blue-deep);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid var(--rule);
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .info-cell { background: var(--bg-card); padding: 14px 20px; }
+  .info-cell.full { grid-column: 1 / -1; }
+  .info-key {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 3px;
+  }
+  .info-val { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-red   { background: var(--red-bg);   color: var(--red); }
+
+  .journey { display: flex; flex-direction: column; gap: 0; }
+  .journey-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0;
+    position: relative;
+  }
+  .journey-row:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 173px; top: 34px; bottom: -10px;
+    width: 1px;
+    background: var(--rule);
+  }
+  .journey-stage {
+    padding: 16px 20px 16px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .journey-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+  .dot-green { background: var(--green); }
+  .dot-amber { background: #e09a2b; }
+  .dot-red   { background: #c0392b; }
+  .journey-stage-name {
+    font-size: 12px; font-weight: 600;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .journey-content {
+    padding: 12px 0 16px 20px;
+    border-left: 1px solid var(--rule);
+  }
+  .journey-result { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+  .journey-detail { font-size: 13px; color: var(--ink-soft); }
+
+  .course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .course-row {
+    display: grid;
+    grid-template-columns: 1fr 60px 60px;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .course-name { font-size: 12px; font-weight: 600; color: var(--ink); }
+  .course-pct {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: right;
+  }
+  .cert-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .cert-yes { background: var(--green-bg); color: var(--green); }
+  .cert-no  { background: var(--red-bg);   color: var(--red); }
+
+  .round-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .round-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .round-header-left { display: flex; align-items: center; gap: 14px; }
+  .round-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .round-icon-amber { background: var(--amber-bg); }
+  .round-icon-red   { background: var(--red-bg); }
+  .round-icon-green { background: var(--green-bg); }
+  .round-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px; color: var(--blue-deep);
+  }
+  .round-meta { font-size: 12px; color: var(--ink-mute); margin-top: 1px; }
+  .round-body { padding: 20px 24px; display: flex; flex-direction: column; gap: 18px; }
+
+  .qa-block {}
+  .qa-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .qa-item { margin-bottom: 14px; }
+  .qa-item:last-child { margin-bottom: 0; }
+  .qa-q {
+    font-size: 13px; font-weight: 600;
+    color: var(--blue-deep);
+    margin-bottom: 5px;
+  }
+  .qa-a {
+    font-size: 13px; color: var(--ink-soft);
+    line-height: 1.7;
+    padding-left: 14px;
+    border-left: 2px solid var(--rule);
+  }
+  .qa-verdict {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .verdict-good { background: var(--green-bg); color: var(--green); }
+  .verdict-mid  { background: var(--amber-bg); color: var(--amber); }
+  .verdict-bad  { background: var(--red-bg);   color: var(--red); }
+
+  .divider { height: 1px; background: var(--rule); }
+
+  .round-remarks {
+    padding: 16px 24px;
+    background: #f0ede6;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .round-remarks strong { color: var(--ink); font-style: normal; }
+
+  .score-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .score-cell {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 18px 22px;
+    text-align: center;
+  }
+  .score-cell-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-mute);
+    margin-bottom: 8px;
+  }
+  .score-big {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px; line-height: 1;
+  }
+  .score-big span { font-size: 16px; color: var(--ink-mute); }
+
+  .overall-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .overall-summary {
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px; color: var(--ink-soft);
+    line-height: 1.8;
+  }
+  .overall-block {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .overall-block:last-child { border-bottom: none; }
+  .overall-block-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .title-green { color: var(--green); }
+  .title-red   { color: var(--red); }
+  .title-blue  { color: var(--blue-mid); }
+
+  .bullet-list { display: flex; flex-direction: column; gap: 10px; }
+  .bullet-item { display: flex; gap: 12px; align-items: flex-start; font-size: 13.5px; }
+  .bullet-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .bdot-green { background: var(--green); }
+  .bdot-red   { background: var(--red); }
+  .bdot-blue  { background: var(--blue-mid); }
+  .bullet-label { font-weight: 700; color: var(--ink); }
+  .bullet-text  { color: var(--ink-soft); }
+
+  .report-footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 11px; color: var(--ink-mute);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.06em;
+    border-top: 1px solid var(--rule);
+  }
+
+  code {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    background: #e8e4dc;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 600px) {
+    .report-header { padding: 36px 24px 32px; }
+    .header-title { font-size: 28px; }
+    .info-grid, .course-grid, .score-box { grid-template-columns: 1fr; }
+    .course-row { grid-template-columns: 1fr 50px 50px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <div class="header-eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <div class="header-title">Naga Seetha Kota</div>
+  <div class="header-sub">Candidate Interview Evaluation Report &nbsp;·&nbsp; Product Based SDE Role</div>
+</header>
+
+<main class="report-body">
+
+  <!-- 1. CANDIDATE INFORMATION -->
+  <section class="section">
+    <div class="section-label">Section 01</div>
+    <div class="section-title">Candidate Information</div>
+    <div class="info-grid">
+      <div class="info-cell">
+        <div class="info-key">Candidate Name</div>
+        <div class="info-val">Naga Seetha Kota</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-key">Year of Graduation</div>
+        <div class="info-val">2026</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-key">Offline Assessment Date</div>
+        <div class="info-val">February 22, 2026</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-key">Email</div>
+        <div class="info-val" style="font-size:13px;">nagaseethakota@gmail.com</div>
+      </div>
+      <div class="info-cell full">
+        <div class="info-key">Eligible Role</div>
+        <div class="info-val"><span class="badge badge-green">Product Based SDE Role — Eligible</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PLACEMENT JOURNEY -->
+  <section class="section">
+    <div class="section-label">Section 02</div>
+    <div class="section-title">Placement Journey Overview</div>
+    <div class="journey">
+      <div class="journey-row">
+        <div class="journey-stage">
+          <div class="journey-dot dot-green"></div>
+          <div class="journey-stage-name">Offline Assessment</div>
+        </div>
+        <div class="journey-content">
+          <div class="journey-result" style="color:var(--green);">Cleared</div>
+          <div class="journey-detail">February 22, 2026 · Cycle 2</div>
+        </div>
+      </div>
+      <div class="journey-row">
+        <div class="journey-stage">
+          <div class="journey-dot dot-amber"></div>
+          <div class="journey-stage-name">TR-1</div>
+        </div>
+        <div class="journey-content">
+          <div class="journey-result" style="color:var(--amber);">Medium Hire</div>
+          <div class="journey-detail">February 26, 2026 · Interviewer: Keerthi · Score: 60 / 100 · Needs more coding practice and DSA depth. Answered one theory question well.</div>
+        </div>
+      </div>
+      <div class="journey-row">
+        <div class="journey-stage">
+          <div class="journey-dot dot-red"></div>
+          <div class="journey-stage-name">TR-2</div>
+        </div>
+        <div class="journey-content">
+          <div class="journey-result" style="color:var(--red);">Rejected</div>
+          <div class="journey-detail">Did not progress further in current cycle. Final status updated February 27, 2026.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TR-1 -->
+  <section class="section">
+    <div class="section-label">Section 03</div>
+    <div class="section-title">Technical Round 1 (TR-1)</div>
+    <div class="round-card">
+      <div class="round-header">
+        <div class="round-header-left">
+          <div class="round-icon round-icon-amber">⚡</div>
+          <div>
+            <div class="round-name">TR-1 — DSA &amp; Problem Solving</div>
+            <div class="round-meta">Interviewer: Keerthi &nbsp;·&nbsp; Date: February 26, 2026 &nbsp;·&nbsp; Result: <span style="color:var(--amber);font-weight:600;">Medium Hire</span></div>
+          </div>
+        </div>
+        <span class="badge badge-amber">Medium Hire</span>
+      </div>
+
+      <div class="round-body">
+
+        <div class="qa-block">
+          <div class="qa-label">Rapid Fire</div>
+          <div class="qa-item">
+            <div class="qa-q">Add two numbers without using the plus sign.</div>
+            <div class="qa-a">
+              · Re-stated the + operator initially<br>
+              · Guessed "maybe bitwise operators" but could not name XOR-based addition<br>
+              · No valid approach arrived at
+              <span class="qa-verdict verdict-bad">✗ Not answered — XOR bitwise trick not known</span>
+            </div>
+          </div>
+          <div class="qa-item">
+            <div class="qa-q">Check for balanced parentheses.</div>
+            <div class="qa-a">
+              · Described stack-based approach correctly: push on open, pop on close, match check<br>
+              · Correctly gave O(n) time and O(n) space with reasoning
+              <span class="qa-verdict verdict-good">✓ Correct — approach and complexity both right</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">Coding Problem 1 — <a href="https://leetcode.com/problems/construct-k-palindrome-strings/description/" target="_blank" style="color:var(--blue-mid);text-decoration:none;border-bottom:1px solid var(--blue-light);">Construct K Palindrome Strings ↗</a></div>
+          <div class="qa-item">
+            <div class="qa-a">
+              · Understood the problem and explained the example correctly<br>
+              · Proposed two-pointer + hashmap approach, gave O(n) complexity<br>
+              · Only a few test cases passed — bug: only considered substrings from index 0<br>
+              · Suggested two loops or sliding window as a fix but could not implement it in time
+              <span class="qa-verdict verdict-bad">✗ Not accepted — correct direction, implementation incomplete</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">Coding Problem 2 — <a href="https://leetcode.com/problems/deepest-leaves-sum/description/" target="_blank" style="color:var(--blue-mid);text-decoration:none;border-bottom:1px solid var(--blue-light);">Deepest Leaves Sum ↗</a></div>
+          <div class="qa-item">
+            <div class="qa-a">
+              · Correctly identified: find tree height, then sum leaves at that height<br>
+              · Used recursive helper with pre-order traversal<br>
+              · Initial complexity confusion (O(height) → corrected to O(n))<br>
+              · All test cases passed — solution accepted
+              <span class="qa-verdict verdict-good">✓ Accepted — minor complexity articulation issue only</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="round-remarks">
+        <strong>Interviewer Feedback:</strong> "You need to practise a little more on the coding part. You were able to answer one theory question. You need to practise more in DSA." Score: 60 / 100 (Interviewer). Communication rated 3/5 — work on being more confident.
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TR-2 -->
+  <section class="section">
+    <div class="section-label">Section 04</div>
+    <div class="section-title">Technical Round 2 (TR-2)</div>
+    <div class="round-card">
+      <div class="round-header">
+        <div class="round-header-left">
+          <div class="round-icon round-icon-red">🔴</div>
+          <div>
+            <div class="round-name">TR-2 — Full Stack &amp; CS Fundamentals</div>
+            <div class="round-meta">Result: <span style="color:var(--red);font-weight:600;">Rejected</span></div>
+          </div>
+        </div>
+        <span class="badge badge-red">Rejected</span>
+      </div>
+
+      <div class="round-body">
+
+        <div class="qa-block">
+          <div class="qa-label">HTML &amp; CSS</div>
+          <div class="qa-item">
+            <div class="qa-q">Checkboxes; semantic HTML; CSS box model; z-index.</div>
+            <div class="qa-a">
+              · Single checkbox with <code>&lt;input type="checkbox"&gt;</code> — correct<br>
+              · Multi-checkbox grouping via <code>name</code> attribute — not understood; confused <code>for</code> attribute with grouping<br>
+              · Semantic HTML — confused with self-closing/void tags (e.g., <code>&lt;input&gt;</code>)<br>
+              · CSS box model — started with flexbox; only mentioned padding and margin; definition imprecise<br>
+              · z-index — not known
+              <span class="qa-verdict verdict-bad">✗ Mostly incorrect or incomplete</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">JavaScript</div>
+          <div class="qa-item">
+            <div class="qa-q">var / let / const; toggle using closures; hoisting.</div>
+            <div class="qa-a">
+              · <code>const</code> immutability demonstrated correctly with example<br>
+              · var vs let — described var as "deprecated", could not explain scope or hoisting differences<br>
+              · Closures — not known; implemented toggle with a global variable instead<br>
+              · Hoisting — not able to answer
+              <span class="qa-verdict verdict-mid">~ const correct; var/let scope, closures, and hoisting not understood</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">React</div>
+          <div class="qa-item">
+            <div class="qa-q">Fragments; useReducer; props vs state; loading/error state management.</div>
+            <div class="qa-a">
+              · React fragments — correct: wraps multiple elements without extra DOM nodes<br>
+              · Props vs state — correct: props are read-only from parent; state is mutable via useState<br>
+              · useReducer — confused with React Router/navigation; actual purpose not known<br>
+              · Data fetching (3 endpoints) — answered from backend routing perspective; did not address useState-based loading/error flags or Promise.all
+              <span class="qa-verdict verdict-mid">~ Basics correct; hooks depth and async state handling not demonstrated</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">Node.js &amp; Express</div>
+          <div class="qa-item">
+            <div class="qa-q">Build GET /hello endpoint; role of Express; require(); middleware chaining.</div>
+            <div class="qa-a">
+              · GET /hello endpoint — knew conceptual steps but could not write working syntax; no implementation produced<br>
+              · Express purpose — correct: reduces boilerplate, enables modular routing<br>
+              · require() — correct: CommonJS import; noted ES6 <code>import</code> as the modern alternative<br>
+              · Middleware chaining — conflated with JWT auth; pipeline concept (next() calls, order of execution) not explained
+              <span class="qa-verdict verdict-mid">~ Theory mostly correct; practical implementation absent</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">MongoDB &amp; API Design</div>
+          <div class="qa-item">
+            <div class="qa-q">SQL vs NoSQL; vector DBs; MongoDB query; REST API design; CORS.</div>
+            <div class="qa-a">
+              · SQL vs NoSQL — correct: table-based vs schema-less document store; embedding and aggregations mentioned<br>
+              · Vector databases — guessed "nonlinear data"; not known<br>
+              · MongoDB query ($all operator) — knew find() exists but could not write correct syntax<br>
+              · REST CRUD design — GET/POST/PUT/DELETE with id, name, status, priority fields — sound; API versioning (v1/v2) not known<br>
+              · CORS — concept understood; fix via cors npm package / Access-Control headers not mentioned
+              <span class="qa-verdict verdict-mid">~ SQL/NoSQL and CRUD correct; MongoDB operators, versioning, and CORS fix are gaps</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qa-block">
+          <div class="qa-label">Core CS Fundamentals</div>
+          <div class="qa-item">
+            <div class="qa-q">TCP vs UDP; process vs thread; deadlock.</div>
+            <div class="qa-a">
+              · TCP vs UDP — correct: connection-oriented/reliable vs connectionless/low-latency<br>
+              · Process vs thread — correct: process has own memory; thread is lightweight and shares memory<br>
+              · Deadlock — correct: all four conditions named (mutual exclusion, hold &amp; wait, no preemption, circular wait)
+              <span class="qa-verdict verdict-good">✓ All three answered correctly and confidently</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="round-remarks">
+        <strong>TR-2 Remarks:</strong> You were able to explain your projects and AWS Cloud Practitioner certification but have not integrated AWS services into actual project work. You struggled with several fundamental frontend questions (z-index, var/let/const differences, semantic HTML, useReducer). The JavaScript toggle task was achieved but without closures. Backend concepts were mostly theoretical — you could not implement a basic Express endpoint. MongoDB query syntax was not known. Overall, your frontend understanding is partial and backend fundamentals need significant hands-on practice.
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. OVERALL COMMENTS & RECOMMENDATION -->
+  <section class="section">
+    <div class="section-label">Section 05</div>
+    <div class="section-title">Overall Comments &amp; 1-Month Action Plan</div>
+
+    <div class="score-box" style="grid-template-columns:1fr;">
+      <div class="score-cell">
+        <div class="score-cell-label">TR-1 Interviewer Score</div>
+        <div class="score-big" style="color:var(--amber);">60<span> / 100</span></div>
+      </div>
+    </div>
+
+    <div class="overall-card">
+      <div class="overall-summary">
+        You cleared the Offline Assessment and reached TR-2 via a Medium Hire in TR-1. You have strong project exposure (e-commerce ML prediction, Fintra fullstack app, meeting summariser) and solid core CS fundamentals (TCP/UDP, processes/threads, deadlock). However, your frontend, JavaScript, and backend practical knowledge is uneven — you solved the binary tree problem in TR-1 but struggled significantly across TR-2's breadth of full-stack questions.
+      </div>
+
+      <div class="overall-block">
+        <div class="overall-block-title title-green">Strengths</div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-green"></div>
+            <div><span class="bullet-label">Core CS: </span><span class="bullet-text">Strong on OS concepts — TCP/UDP, process vs thread, deadlock conditions all answered correctly and confidently.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-green"></div>
+            <div><span class="bullet-label">DSA (Trees): </span><span class="bullet-text">You correctly solved Deepest Leaves Sum in TR-1 with a recursive approach — all test cases passed.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-green"></div>
+            <div><span class="bullet-label">Project Depth: </span><span class="bullet-text">You led a team ML project (e-commerce shipping prediction), built Fintra (MERN fullstack with JWT auth), and a meeting summariser. You hold an AWS Certified Cloud Practitioner certification.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-green"></div>
+            <div><span class="bullet-label">Database Theory: </span><span class="bullet-text">You clearly differentiated SQL vs NoSQL and explained MongoDB document structure, embedding, and aggregation concepts.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-green"></div>
+            <div><span class="bullet-label">React Basics: </span><span class="bullet-text">Props vs state and React fragments — answered correctly.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overall-block">
+        <div class="overall-block-title title-red">Areas for Improvement</div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">JavaScript Fundamentals: </span><span class="bullet-text">You need to cover var/let scope differences, closures, and hoisting thoroughly — these were not understood in TR-2.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">HTML/CSS Concepts: </span><span class="bullet-text">You confused semantic HTML with self-closing tags; z-index is not known; the CSS box model was only partially described. You need structured revision here.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">React Hooks: </span><span class="bullet-text">You confused useReducer with routing. You need to study useReducer, useEffect, and data-fetching patterns with loading/error state management.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">Backend / Node.js: </span><span class="bullet-text">You could not write a basic Express endpoint. You need to understand middleware chaining as a pipeline and how to resolve CORS using the cors package / Access-Control headers.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">MongoDB Queries: </span><span class="bullet-text">You need to practise writing filtered find() queries and learn operators like $all, $in, $match, $lookup, and the aggregation pipeline.</span></div>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-dot bdot-red"></div>
+            <div><span class="bullet-label">DSA Coding Speed: </span><span class="bullet-text">The palindrome strings problem was not solved in TR-1. You need more practice on string manipulation and sliding window patterns.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1-Month Plan -->
+      <div class="overall-block">
+        <div class="overall-block-title title-blue">Your 1-Month Action Plan</div>
+        <div style="font-size:13px;color:var(--ink-soft);margin-bottom:18px;">Here is a week-by-week plan to close your gaps and prepare for a re-attempt. Follow it consistently — your project portfolio and core CS depth are already strong assets to build on.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+
+          <div style="background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;">
+            <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Week 01</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:16px;color:var(--blue-deep);margin-bottom:10px;">JavaScript Core</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Complete the JavaScript Essentials course and earn the certificate</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Master var / let / const — scope, hoisting, and re-declaration rules</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Study closures — understand lexical scoping with examples</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Learn the event loop, async/await, and Promise patterns</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Revise semantic HTML tags and the full CSS box model (content → padding → border → margin)</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Learn z-index, stacking contexts, and CSS positioning</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;">
+            <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Week 02</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:16px;color:var(--blue-deep);margin-bottom:10px;">React — Hooks &amp; State Patterns</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Progress your React JS course toward certification</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Build a component that uses useReducer for a shopping cart or form</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Learn useEffect for API calls — implement loading, success, and error states</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Handle multiple concurrent API calls using Promise.all</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Practice coding checkboxes with a <code>name</code> attribute grouped to a single state variable</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;">
+            <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Week 03</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:16px;color:var(--blue-deep);margin-bottom:10px;">Node.js, Express &amp; MongoDB</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Progress your Node JS course toward certification</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Build 5 Express CRUD APIs from scratch — GET, POST, PUT, DELETE</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Write custom middleware — logging, auth guard, error handler — and understand the next() pipeline</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Fix CORS errors using the <code>cors</code> npm package and Access-Control headers</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Practise MongoDB queries: $all, $in, $match, $lookup, $group, aggregation pipeline</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Learn API versioning (v1/v2 URL strategy) and how to avoid breaking clients on changes</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;">
+            <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Week 04</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:16px;color:var(--blue-deep);margin-bottom:10px;">DSA &amp; Mock Interviews</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Complete Phase 1 DSA course (currently 47.7%) — earn the certificate</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Solve 2–3 LeetCode problems daily — focus on strings, sliding window, and two-pointer patterns</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Re-attempt the Construct K Palindrome Strings problem — understand the odd-frequency character key insight</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Learn XOR-based bitwise addition (add two numbers without + sign)</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Do 3 timed mock interviews — practice explaining your Fintra project and your approach under pressure</li>
+              <li style="font-size:13px;color:var(--ink-soft);padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">→</span>Your project portfolio and AWS certification are genuine strengths — lead with them confidently in your next attempt</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="report-footer">
+  Report generated by NxtWave Interview Evaluation System &nbsp;·&nbsp; Cycle 2 &nbsp;·&nbsp; Final Status: Rejected · February 27, 2026
+</footer>
+
+</body>
+</html>

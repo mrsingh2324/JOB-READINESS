@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mingari Vinay — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--amber-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Mingari Vinay</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Mingari Vinay</div></div>
+    <div class="info-cell"><div class="label">Year of Graduation</div><div class="value">2026</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">22 March 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">mingarivinay@gmail.com</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">22 Mar 2026</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">NxtMock — AI Interview</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">Cleared prior to TR-1</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result amber">~ Not Qualified · NxtWave Score 17 / 100</div>
+        <div class="journey-detail">28 Apr 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">28 Apr 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">17</div>
+        <div class="round-score-label">/ 100 · NxtWave Score</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">3/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">DSA Theory</div></div>
+        <div class="score-cell"><div class="snum snum-green">4/5</div><div class="slabel">Core CS</div></div>
+        <div class="score-cell"><div class="snum snum-red">0/5</div><div class="slabel">Avg Problem Solving</div></div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>Final year BTech CSE student — 2026 batch</span>
+            <span>Passionate about coding and advanced technologies; studying through NxtWave's learning portal</span>
+            <span>NxtMock cleared prior to TR-1</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Brief Introduction — Genuine passion for coding noted; the XOR answer (4/5) in the rapid fire validates that some strong preparation has happened; now extend that depth into stack-based and DP patterns</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA &amp; Core CS Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Return the majority element — appearing more than ⌊N/2⌋ times — in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Proposed: iterate array, add each element to a map, track counts, return element where count exceeds N/2 — O(N) time but O(N) space due to the map</span>
+            <span>When told O(1) space is required: acknowledged "I only knew the hashmap approach" — honest and self-aware</span>
+            <span>Could not arrive at Boyer-Moore Voting Algorithm</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Hashmap direction correct for time; O(1) space constraint not met; Boyer-Moore not known (Rating: 2/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Boyer-Moore Voting:</strong> <code>candidate = None, count = 0</code>. For each element: if count == 0 → set candidate. If element == candidate → count += 1. Else → count -= 1. Return candidate.</span>
+            <span>You already know XOR cancels duplicates (a^a=0). Boyer-Moore uses the same logic conceptually: the majority element "cancels" all minority elements and still survives. Time: O(N), Space: O(1). These two patterns are a natural pair — learn them together.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Every number appears exactly twice except one. Find that number in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Correctly identified XOR — "XOR for example a gives us zero, so all elements except single go back to zero; for zero it gives a"</span>
+            <span>Correctly stated: <code>a ^ a = 0</code> and <code>a ^ 0 = a</code> — all duplicate pairs cancel, leaving the single element</span>
+            <span>Correctly stated: O(N) time, O(1) space — full understanding demonstrated</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Excellent — XOR solution correctly and clearly explained with full reasoning (Rating: 4/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/daily-temperatures/description/" target="_blank">Daily Temperatures ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood: for each day's temperature, return how many days until a warmer temperature; 0 if none</span>
+            <span>Correctly traced the example: 73→74 is 1 day, 75 must wait 4 days for 76</span>
+            <span>Initial approach: if <code>arr[i] &lt; arr[i+1]</code> → put 1 in answer; if <code>arr[i] &gt; prev</code> → iterate and count — brute force O(N²); self-acknowledged when asked "is that N²?"</span>
+            <span>With hint "use a stack": proposed pushing all elements into the stack first, then checking while popping — fundamentally incorrect order; the stack should process elements one at a time as you traverse, not push everything first</span>
+            <span>Interviewer confirmed the approach was wrong; no further ideas offered; no code produced</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Problem and examples correctly understood; brute force identified; monotonic stack pattern not reached even with hint (Rating: 1/5 PS)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Monotonic Decreasing Stack:</strong> push indices (not temperatures). For each index i: while stack not empty and <code>temp[i] &gt; temp[stack.top()]</code>: pop j, set <code>result[j] = i - j</code>. Push i. Return result.</span>
+            <span>The critical insight: you never push all elements first. You process one element at a time — each new element resolves any previous unresolved days that are now warmer. Push indices (not values) because you need the gap <code>i - j</code>. Study this pattern until you can implement it without reference: it is one of the most common medium-level patterns.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/maximum-number-of-jumps-to-reach-the-last-index/description/" target="_blank">Maximum Number of Jumps to Reach Last Index ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Initially misunderstood: thought "target" referred to the last index position rather than the jump constraint value</span>
+            <span>After clarification: correctly understood the condition — from index i to j, can jump only if <code>|nums[j] - nums[i]| ≤ target</code>; find maximum jumps to reach the last index</span>
+            <span>Gave up — "no idea but solve this question" — did not attempt any approach</span>
+            <span>Interviewer confirmed: this is a DP question; candidate acknowledged having done "somewhat" DP</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Attempted — Problem eventually understood; gave up without any approach; DP not studied sufficiently (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>1D DP:</strong> <code>dp[i]</code> = max jumps to reach index i. Init <code>dp[0] = 0</code>, all others = -1. For each i from 1 to n-1: for each j from 0 to i-1: if <code>abs(nums[i] - nums[j]) &lt;= target</code> and <code>dp[j] != -1</code>: <code>dp[i] = max(dp[i], dp[j] + 1)</code>. Return <code>dp[n-1]</code>.</span>
+            <span>Time: O(N²), Space: O(N). The DP state is simple: maximum jumps to reach each index. If a valid jump exists from j to i and j was reachable, extend. Study Climbing Stairs and House Robber first to build DP intuition before attempting this problem.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> Communication 3/5 — Can improve. &nbsp;·&nbsp; Your XOR explanation was genuinely good — it showed clear reasoning, not just a memorised answer. Apply that same depth to the monotonic stack and DP patterns: understand them completely, then they become as natural to explain as XOR already is for you.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>The most revealing moment in this interview was your XOR answer — you didn't just give the formula, you explained why it works: <code>a ^ a = 0</code>, all pairs cancel, the single element survives. That is the level of understanding TR-1 requires for every topic. The problem is that this depth exists only for XOR right now. For the majority element, you knew hashmap but not Boyer-Moore. For Daily Temperatures, you knew the brute force but not the monotonic stack — and even with a stack hint, the application was wrong. For the DP problem, you gave up without an attempt. The gap is clear and specific: Boyer-Moore, monotonic stack, and DP foundations. All three are learnable in one month with the kind of depth you already showed for XOR. Your own question at the end of the interview — asking why it finished early — shows you wanted to do more. Prepare so that next time, you have the tools to fill that time.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>XOR — Full Understanding (4/5):</strong> You explained not just the formula but the reasoning — <code>a ^ a = 0</code>, all duplicates cancel, the single element remains via <code>a ^ 0 = a</code>. This is the standard of depth needed across all topics.</li>
+        <li><strong>Brute Force Identification:</strong> You correctly identified the O(N²) approach for Daily Temperatures and self-acknowledged it when the interviewer asked — showing you understand time complexity and are honest about limitations.</li>
+        <li><strong>Problem Comprehension:</strong> You correctly understood and traced both coding problems once the statements were clear — reading and reasoning ability is solid.</li>
+        <li><strong>Curiosity:</strong> Asking the interviewer why the session ended early reflects genuine engagement — channel that into preparation.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Boyer-Moore — Complete the Pair:</strong> You know XOR cancels duplicates in O(1) space. Boyer-Moore does the same for majority element: candidate + count, increment on match, decrement on mismatch — the majority always survives. Study both as a pair; they are conceptually similar.</li>
+        <li><strong>Monotonic Stack — The Core Pattern You Missed:</strong> For Daily Temperatures, the key insight is: process one element at a time (never push everything first), push indices, pop when a warmer element is found, compute gap as <code>i - j</code>. The "push all then pop" approach you proposed is the opposite of how it works.</li>
+        <li><strong>Dynamic Programming — Must Not Give Up:</strong> "No idea" is not acceptable as a final answer for a DP problem when you have studied DP. Build the habit: if unsure, state the brute force (try all jump paths recursively), then work toward memoisation. Any attempt is better than none.</li>
+        <li><strong>Stack Push Order:</strong> The mistake in Daily Temperatures was pushing all elements first. In all stack-based problems, the stack processes elements as you encounter them — never buffer the entire array into the stack before processing. Fix this mental model before moving on.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">Boyer-Moore &amp; Monotonic Stack</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study Boyer-Moore alongside your XOR knowledge — they are conceptually parallel; implement Majority Element (LeetCode 169) from scratch until you can write it without reference</li>
+            <li>Study monotonic stack: the correct order is process-one-at-a-time; implement Daily Temperatures (LeetCode 739) — push indices, pop when warmer found, gap = i-j</li>
+            <li>Solve Next Greater Element I &amp; II, Next Smaller Element — all use the same monotonic stack pattern; implement all three</li>
+            <li>Rule to memorise: never push entire array into a stack before processing — the stack processes elements as you traverse</li>
+            <li>After each implementation: dry-run on the given examples on paper before submitting</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">DP Foundations</div></div>
+          <div class="week-card-body"><ul>
+            <li>Start 1D DP from scratch: Climbing Stairs, House Robber, Min Cost Climbing Stairs — state, transition, base case for each; trace DP array on paper first</li>
+            <li>Study Coin Change and Longest Increasing Subsequence — different transition shapes; both are direct precursors to the interview's DP problem</li>
+            <li>Implement Maximum Number of Jumps to Reach Last Index (LeetCode 2770) — the problem from this interview; O(N²) DP with validity condition</li>
+            <li>Rule to build: if you have no DP idea, always start with "try all possibilities recursively" — write that first, then add memoisation. Never give up without at least attempting the recursive solution.</li>
+            <li>Solve 8 DP problems at easy-medium level — trace for each before coding</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Arrays, Hashmaps &amp; BFS</div></div>
+          <div class="week-card-body"><ul>
+            <li>Extend hashmap knowledge: Two Sum, Subarray Sum Equals K (prefix sum + hashmap), Group Anagrams, Longest Consecutive Sequence</li>
+            <li>Study BFS for shortest paths: Number of Islands, Word Ladder, Rotting Oranges — "minimum steps to reach target" → BFS</li>
+            <li>Study two-pointer patterns on sorted arrays: 3Sum, Container With Most Water, Valid Palindrome</li>
+            <li>Solve 10 medium problems across these patterns — identify pattern before coding every time</li>
+            <li>Verify: can you explain Boyer-Moore at the same depth as your XOR explanation? If not, keep reviewing Week 1</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Mixed Practice &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Solve 15 medium problems randomly — no topic filters; identify pattern within 5 minutes of reading</li>
+            <li>Study binary search on answer: Koko Eating Bananas, Minimum Time to Complete Trips</li>
+            <li>Review all 4 weeks: re-implement Daily Temperatures and Maximum Number of Jumps from memory — these are the exact two problems that failed</li>
+            <li>Take 2 full timed mock interviews (60 min each) — rapid fire + 2 coding questions; camera on, no hints</li>
+            <li>Target: explain every solution at the same depth as your XOR answer — the goal is that quality of reasoning for every pattern, not just one</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 28 April 2026</div>
+</body>
+</html>

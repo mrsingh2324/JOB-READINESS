@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sinaz Afrin H — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--amber-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Sinaz Afrin H</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Sinaz Afrin H</div></div>
+    <div class="info-cell"><div class="label">Year of Graduation</div><div class="value">2025</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">15 March 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">sinazafrin@gmail.com</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">15 Mar 2026</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">NxtMock — AI Interview</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">Cleared prior to TR-1</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result amber">~ Not Qualified · Score 20 / 100</div>
+        <div class="journey-detail">10 Apr 2026 · Score: 20</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">10 Apr 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f09090;">20</div>
+        <div class="round-score-label">/ 100</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">3/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-red">0/5</div><div class="slabel">DSA Theory</div></div>
+        <div class="score-cell"><div class="snum snum-red">0/5</div><div class="slabel">Core CS</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">Avg Problem Solving</div></div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>CSE graduate from Rifa Institute of Technology — CGPA 8.19, completed May 2025</span>
+            <span>Fullstack developer with hands-on experience in ReactJS and NodeJS</span>
+            <span>Frontend developer intern at Unified Mentor — active professional experience</span>
+            <span>1 year of NxtWave training — strengthening coding fundamentals; NxtMock cleared prior to TR-1</span>
+            <span>Seeking full-time opportunities as a software developer</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Decent Introduction — Frontend internship at Unified Mentor and fullstack background are meaningful; 1 year of NxtWave training should have built stronger DSA foundations before TR-1</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA &amp; Core CS Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Swap two numbers without using any extra variable or temporary storage.</div>
+          <div class="qa-a">
+            <span>Could not provide any approach — no answer given after extended time</span>
+            <span>This is a foundational problem with two standard solutions: XOR swap and arithmetic swap — neither was recalled</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Answered — No approach offered; both XOR and arithmetic solutions not known (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>XOR Swap (O(1), no extra space):</strong> <code>a ^= b; b ^= a; a ^= b</code>. Uses XOR properties: <code>a ^ a = 0</code> and <code>a ^ 0 = a</code>. Each step encodes both values into a single variable.</span>
+            <span><strong>Arithmetic Swap:</strong> <code>a = a + b; b = a - b; a = a - b</code>. After step 1, a holds the sum. Step 2 recovers original a as sum - b. Step 3 recovers original b. Both work in O(1) time and space with no temp variable.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: How do you find the median from a stream of integers?</div>
+          <div class="qa-a">
+            <span>Initial answer: "using low and high binary search" — not applicable to a stream since elements arrive one at a time in unknown order</span>
+            <span>When pushed for more detail: "no idea ma'am" — complete unknown</span>
+            <span>The two-heap approach (max-heap for lower half, min-heap for upper half) was not known</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Answered — Binary search suggestion not applicable; two-heap approach not known (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Use two heaps: max-heap (left) stores the smaller half, min-heap (right) stores the larger half. Keep sizes balanced (differ by at most 1). On insert: add to max-heap, rebalance if needed. Median = top of max-heap (odd count) or average of both tops (even count). Insert: O(log N), Find median: O(1).</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/subarray-sum-equals-k/description/" target="_blank">Subarray Sum Equals K ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood subarrays as "nested small parts of the array" — contiguous elements</span>
+            <span>Proposed: "adding numbers and checking with K value" — brute force O(N²) direction, correct starting point</span>
+            <span>Implemented code using a prefix sum + hashmap structure — directionally the right O(N) approach</span>
+            <span>When asked to dry-run on example 2 (nums=[1,2,3], k=3): stated "current_sum - 3 = -2" — incorrect; could not trace prefix sum = 0 → 1 → 3 → 6 with hashmap lookup of (current_sum - k)</span>
+            <span>Could not explain why the code works despite multiple prompts from the interviewer</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Right approach used (prefix sum + hashmap); code written; but could not trace or explain the algorithm (Rating: 2/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Maintain <code>prefix_count = {0: 1}</code> and <code>current_sum = 0</code>. For each num: <code>current_sum += num</code>. If <code>current_sum - k</code> is in the map, add that count to result. Then <code>prefix_count[current_sum] += 1</code>.</span>
+            <span>Dry run (nums=[1,2,3], k=3): sum=0→map={0:1}; sum=1→lookup(-2)=0; sum=3→lookup(0)=1, result=1; sum=6→lookup(3)=1, result=2. Return 2. You must be able to trace this step by step — if you can't dry-run your own code, the solution is not yet understood.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/number-of-islands/description/" target="_blank">Number of Islands ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Initially described islands as "number of ones surrounded by zeros" — not quite right; islands can be multiple connected cells, not single ones enclosed by zeros</span>
+            <span>After interviewer's walkthrough of both examples: correctly understood — connected groups of 1s (horizontal/vertical) each count as one island</span>
+            <span>Correctly identified BFS as the traversal method and queue as the data structure</span>
+            <span>Described BFS as "level by level, Q-wise searching one row then another row" — shows conceptual awareness</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — BFS and queue correctly identified; island definition clarified with help; conceptual understanding present (Rating: 2/5 PS)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented code with: rows and columns from grid, island counter, queue, visited-node marking</span>
+            <span>When asked "how can you modify the grid?" for visited marking: could not explain the standard approach of setting visited cells from '1' to '0' or '2' in-place</span>
+            <span>Could not fully explain the code when prompted line by line — same "code without understanding" pattern as Problem 1</span>
+            <span>Session ended before verification or correction</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — BFS structure coded; visited marking not explained; line-by-line explanation not possible (Rating: 2/5 Code)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>For each unvisited '1': increment island count, BFS to mark all connected '1's as visited. Mark visited by setting <code>grid[r][c] = '0'</code> (or '2') in-place. Queue starts with the current cell; for each dequeued cell, enqueue valid neighbours (in-bounds, value '1').</span>
+            <span>Time: O(M×N), Space: O(min(M,N)) for the queue. The key insight for visited marking: modifying the input grid directly avoids a separate visited array. If modifying the input is not allowed, use a separate boolean grid.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Weak in DSA, doesn't know basics, can't explain her own code." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 3/5 — Can improve; the core issue is not language but depth — you wrote code for both problems but could not explain either. The interview consistently revealed the same pattern: implementation without understanding.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>You are a 2025 graduate with an active frontend internship and a fullstack background — these are real credentials. The interview showed a consistent and specific pattern: you could reach the right approach (prefix sum + hashmap for Problem 1, BFS for Problem 2) but could not explain, trace, or justify the code you wrote. This "implement without understanding" gap is the single most important thing to fix. In interviews, explaining your reasoning is evaluated as heavily as the code itself. Additionally, both rapid fire questions — swap without variable and median from stream — were completely unknown, showing gaps in foundational bit manipulation and heap knowledge. The month ahead should be focused on depth over breadth: for every algorithm you learn, ensure you can trace it on paper step by step before running it on a machine.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Approach Identification:</strong> You reached prefix sum + hashmap for Problem 1 and BFS + queue for Problem 2 — both correct tools for the respective problems. The instinct for the right data structure exists.</li>
+        <li><strong>Active Professional Experience:</strong> Frontend internship at Unified Mentor and fullstack skills (ReactJS, NodeJS) give you a strong foundation to build DSA depth on top of.</li>
+        <li><strong>Problem Comprehension:</strong> You correctly understood what subarrays are and correctly interpreted the Number of Islands problem after the walkthrough — reading and reasoning ability is present.</li>
+        <li><strong>NxtMock Cleared:</strong> Demonstrates structured assessment performance — bring that same preparation into TR-1 with deeper explanation practice.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Explain Before You Code — Always:</strong> The single most important habit to build. Before writing any line of code, state in plain language: what you are doing, why it works, and what the output will be for one example. If you cannot do this, you do not yet understand the algorithm.</li>
+        <li><strong>Dry-Run Every Solution:</strong> You could not trace prefix sum = 0 → 1 → 3 → 6 on a simple 3-element array. For every solution you write, trace through the smallest given example on paper before submitting — this is how you verify understanding.</li>
+        <li><strong>Swap Without Variable — Foundational Gap:</strong> XOR swap and arithmetic swap are basic bit/math operations that appear in interviews constantly. Study and memorise both with complete understanding of why they work.</li>
+        <li><strong>Two-Heap Median — Must Know:</strong> Median from stream using two heaps is a standard interview topic. Implement LeetCode 295 completely and be able to explain the balance logic and median extraction.</li>
+        <li><strong>Grid Modification for Visited Marking:</strong> In BFS/DFS on grids, the standard technique is to mark visited cells by changing their value in-place (<code>grid[r][c] = '0'</code>). Know this technique and understand when it is appropriate.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">Explain-First Habit &amp; Bit Basics</div></div>
+          <div class="week-card-body"><ul>
+            <li>Build the explain-first habit: for every problem this week, write a 3-sentence explanation before writing any code — what the algorithm does, why it works, and what it outputs on example 1</li>
+            <li>Study and implement both swap methods: XOR swap and arithmetic swap — trace each on paper with a=5, b=7 before coding</li>
+            <li>Re-do Subarray Sum Equals K: trace prefix sum + hashmap on nums=[1,2,3], k=3 step by step until you can do it from memory</li>
+            <li>Study XOR basics: single number, swap, check power of 2 — understand why <code>a ^ a = 0</code></li>
+            <li>Solve 8 easy array problems — for each, trace the solution on paper before running it</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">BFS/DFS — From Code to Explanation</div></div>
+          <div class="week-card-body"><ul>
+            <li>Re-implement Number of Islands — this time, explain every line before writing: "I mark the cell as visited by setting grid[r][c]='0' so future traversals skip it"</li>
+            <li>Study BFS and DFS on grids: Flood Fill, 01 Matrix, Pacific Atlantic Water Flow — implement and explain all in-place marking techniques</li>
+            <li>Practice the "how can you modify the grid?" question — know the answer cold: setting visited cells to '0' or a sentinel value is standard</li>
+            <li>Implement two-heap median: LeetCode 295 — understand balance maintenance and median extraction logic before submitting</li>
+            <li>Solve 6 BFS/DFS problems — for each, draw the traversal path before coding</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Prefix Sums, Hashmaps &amp; Two Pointers</div></div>
+          <div class="week-card-body"><ul>
+            <li>Deepen prefix sum mastery: Range Sum Query, Product of Array Except Self, Maximum Subarray (Kadane's)</li>
+            <li>Deepen hashmap patterns: Two Sum (O(N)), Group Anagrams, First Unique Character, Majority Element</li>
+            <li>Study two-pointer patterns: Valid Palindrome, Container With Most Water, 3Sum</li>
+            <li>Solve 10 medium problems — for every solution, write a 3-sentence explanation of why it works after completing it</li>
+            <li>Take one timed mock (45 min) — explain every line of code out loud as you write it</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Mixed Practice &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Solve 15 medium problems randomly — no topic filters; identify pattern, explain approach, trace on paper, then code</li>
+            <li>Study 1D DP basics: Climbing Stairs, House Robber, Coin Change — state + transition + base case for each</li>
+            <li>Study monotonic stack: Daily Temperatures, Next Greater Element — understand push index / pop on condition</li>
+            <li>Take 2 full timed mock interviews (60 min each) — camera on, explain every algorithm step out loud</li>
+            <li>Verify: can you dry-run prefix sum hashmap from memory? Can you explain BFS visited marking? These are the two things that failed — make sure they pass before re-attempt</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 10 April 2026</div>
+</body>
+</html>

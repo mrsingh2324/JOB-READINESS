@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>E Subash — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-red{background:var(--red-bg);color:var(--red);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .dot-red{background:#c0392b;border-color:#c0392b;}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);} .journey-result.red{color:var(--red);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--red-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>E Subash</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">E Subash</div></div>
+    <div class="info-cell"><div class="label">Year of Graduation</div><div class="value">2027</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">22 February 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">subashrakshitha18@gmail.com</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">22 Feb 2026</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result red">✗ Not Qualified · Score 0 / 100</div>
+        <div class="journey-detail">13 Apr 2026 · Score: 0</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🔴</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">13 Apr 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f09090;">0</div>
+        <div class="round-score-label">/ 100</div>
+        <div style="margin-top:6px;"><span class="badge badge-red" style="font-size:11px;">✗ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">DSA Theory</div></div>
+        <div class="score-cell"><div class="snum snum-red">1/5</div><div class="slabel">Core CS</div></div>
+        <div class="score-cell"><div class="snum snum-red">0/5</div><div class="slabel">Problem Solving</div></div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>3rd year CSE student at Savvita Engineering College — 2027 batch</span>
+            <span>Fullstack developer with backend focus — Java, C, Python; one fullstack project completed</span>
+            <span>NxtWave DSA fellow — studying data structures and algorithms as part of the programme</span>
+            <span>NxtMock not cleared; seeking internship or job opportunities to showcase skills</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Decent Introduction — Backend focus and DSA study noted; NxtMock not yet cleared indicates preparation gap entering TR-1</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA &amp; Core CS Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: How do you detect a cycle in a linked list?</div>
+          <div class="qa-a">
+            <span>Correctly identified the slow-fast pointer approach (Floyd's algorithm) — two pointers, slow moves one step, fast moves two steps</span>
+            <span>Correctly stated: if there is no cycle, the fast pointer will reach null</span>
+            <span>For the cycle case: said "fast pointer stays inside the cycle" — directionally correct but incomplete; the key point is that they will eventually meet at the same node</span>
+            <span>Explanation was fragmented and unclear — the concept is partially understood but not articulated precisely</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Floyd's algorithm identified; null termination for no-cycle correct; meeting point logic not clearly stated (Rating: 2/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Use two pointers: slow moves 1 step, fast moves 2 steps. If fast reaches null (or fast.next is null) → no cycle. If slow == fast at any point → cycle detected. Why they meet: in a cycle, the fast pointer closes the gap by 1 each iteration — they must eventually be at the same node. Time: O(N), Space: O(1).</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: How would you design a system to find the median from a stream of integers?</div>
+          <div class="qa-a">
+            <span>Correctly identified both data structures needed: max-heap stores the smaller half, min-heap stores the larger half — the right approach</span>
+            <span>Could not complete the explanation — got confused when describing the ordering and ended up asking to skip to the next question</span>
+            <span>The two-heap insight was present but the balance maintenance and median extraction logic was not explained</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct data structures (max-heap + min-heap) identified; balance logic and median extraction not explained (Rating: 1/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Max-heap (left): stores the smaller half. Min-heap (right): stores the larger half. Keep sizes equal or differ by 1. On insert: add to max-heap, then rebalance. Median: if sizes equal → average of both tops; if left is larger → top of max-heap. Insert: O(log N), Find median: O(1).</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/subarray-sum-equals-k/description/" target="_blank">Subarray Sum Equals K ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Problem Comprehension</div>
+          <div class="qa-a">
+            <span>Initial misunderstanding: treated K as an index or a count of elements rather than the target sum value</span>
+            <span>After interviewer correction and re-reading: correctly understood subarrays = contiguous elements from the original array</span>
+            <span>Correctly enumerated all 6 subarrays for both examples when writing them on screen — demonstrating that once understood, manual enumeration was accurate</span>
+            <span>Correctly identified which subarrays in each example sum to K — the comprehension gap was in reading the problem statement, not in reasoning once it was understood</span>
+            <span>Confusion between "return the subarrays" vs "return the count of subarrays" — corrected after interviewer clarified</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Eventually Understood — 15 minutes to reach correct understanding; once there, enumeration and identification were accurate</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Proposed: "check all arrays, use if statement — if sum equals K, count it" — brute force O(N²) direction, correct</span>
+            <span>Could not proceed to implementation — asked to end session and come back after studying</span>
+            <span>Closing statement: "Let me take time to revise and study, and next meeting we will do it" — honest acknowledgement of the gap</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Coded — Brute force direction identified after comprehension; implementation not attempted; session ended voluntarily (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>O(N) — Prefix Sum + Hashmap:</strong> maintain a running prefix sum and a hashmap of <code>{prefix_sum: count}</code>. At each index, check if <code>prefix_sum - k</code> exists in the map — if yes, add that count to result. Then add current prefix sum to the map.</span>
+            <span><strong>Why it works:</strong> a subarray from index i to j has sum k iff <code>prefix[j] - prefix[i-1] = k</code>. The hashmap lets you check this in O(1) for all previous i. Time: O(N), Space: O(N). The O(N²) brute force (two nested loops computing all subarray sums) is also valid as a starting point — learn it first, then the prefix sum optimisation.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "He was cheating and stopped after multiple warnings, then he couldn't understand the question and gave up." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 2/5 — Needs significant improvement; fragmented explanations, difficulty articulating algorithm logic, and extended time spent on problem comprehension. Your own closing words — "Let me take time to revise and study, and next meeting we will do it" — are the right mindset to carry into structured re-preparation.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>The interview showed that your knowledge is in its early stages — you have the right instincts in some areas (slow-fast pointers, two-heap design for median) but cannot yet articulate them completely or build on them under time pressure. The most significant challenge in Problem 1 was not the algorithm — it was spending 15 minutes understanding what a subarray is. Before any TR-1 re-attempt, you must build the habit of reading problem statements carefully and testing your understanding on the given examples before thinking about an approach. The good news is that your closing statement — "let me study and come back" — shows self-awareness. Make sure that study time is structured and systematic, not just passive reading. NxtMock should also be cleared before TR-1 is reattempted.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Floyd's Algorithm Known:</strong> You correctly named slow-fast pointers and identified the null termination case — the algorithm is in your vocabulary. Completing the explanation (they meet when a cycle exists) is one step away.</li>
+        <li><strong>Two-Heap Insight:</strong> You correctly identified that max-heap stores the smaller half and min-heap stores the larger half for the median problem — the core insight of the two-heap approach. The balance and extraction logic needs to be added.</li>
+        <li><strong>Accurate Enumeration:</strong> Once you understood what subarrays are, you correctly enumerated all of them and identified the ones summing to K — your reasoning ability is intact when the problem is understood.</li>
+        <li><strong>Self-Awareness:</strong> You chose to end the session and study rather than guess your way through. That honesty, when followed by real preparation, is a valuable trait.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Problem Reading Discipline:</strong> Spending 15 minutes understanding what a subarray is cost the entire session. Before every problem: read the definition, trace through all given examples manually, verify your understanding matches the expected output — all before thinking about an approach.</li>
+        <li><strong>Complete Floyd's Algorithm:</strong> You know the setup but not the conclusion — when slow and fast are equal, a cycle exists. Practise stating the full algorithm in one clean paragraph from memory.</li>
+        <li><strong>Complete the Two-Heap Median Design:</strong> You know max-heap left, min-heap right. Now learn: how to rebalance after each insert, and how to extract the median. Implement LeetCode 295 (Find Median from Data Stream) completely.</li>
+        <li><strong>Prefix Sums — The Key Pattern for Subarray Sums:</strong> The brute force O(N²) for Subarray Sum = K is a starting point — but the O(N) prefix sum + hashmap solution is what interviews expect. Study this pattern: it appears in many problems.</li>
+        <li><strong>Clear NxtMock Before TR-1:</strong> NxtMock was not cleared before this interview. Clear it first — it is structured practice that will improve both your confidence and your communication of algorithm ideas.</li>
+        <li><strong>Communication Clarity:</strong> Practice explaining algorithms out loud every day — explain Floyd's algorithm to yourself in 4 sentences. Articulating ideas clearly is as important as knowing them.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">Problem Reading &amp; Linked Lists</div></div>
+          <div class="week-card-body"><ul>
+            <li>Build problem reading discipline: for every LeetCode problem, trace all given examples manually before attempting an approach</li>
+            <li>Study subarrays vs subsets vs subsequences — understand the difference with 3 examples each; never spend 15 minutes on this again</li>
+            <li>Complete Floyd's algorithm: add the meeting-point conclusion; implement Linked List Cycle (LeetCode 141) and Middle of Linked List (LeetCode 876)</li>
+            <li>Study linked list operations: reverse, merge two sorted lists, find middle, detect and remove cycle</li>
+            <li>Daily habit: explain one DSA concept verbally for 2 minutes before coding — this builds the communication clarity needed in TR-1</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">Arrays, Prefix Sums &amp; Hashmaps</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study prefix sum pattern: Range Sum Query, Subarray Sum Equals K (O(N²) first, then O(N) with hashmap)</li>
+            <li>Implement Subarray Sum Equals K from this interview — start with brute force, then add the prefix sum + hashmap optimisation</li>
+            <li>Study hashmap patterns: Two Sum, First Unique Character, Majority Element, Group Anagrams</li>
+            <li>Solve 10 easy-medium array problems — time each at 20 minutes; trace examples before coding every time</li>
+            <li>Clear NxtMock during this week — structured mock practice builds both speed and communication</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Heaps, Stacks &amp; Two-Heap Median</div></div>
+          <div class="week-card-body"><ul>
+            <li>Complete the two-heap median design: implement rebalancing (pop from one heap, push to other when sizes differ by 2) and median extraction</li>
+            <li>Submit Find Median from Data Stream (LeetCode 295) — implement completely and verify</li>
+            <li>Study monotonic stack: Daily Temperatures, Next Greater Element I &amp; II</li>
+            <li>Study heap basics: insert, extract-min/max, heapify — implement a min-heap from scratch</li>
+            <li>Solve 8 stack and heap problems — easy to medium; for each, explain the approach verbally before coding</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Mixed Practice &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Solve 12 medium problems randomly across all topics from Weeks 1–3 — no topic labels; identify pattern within 5 minutes</li>
+            <li>Study BFS/DFS basics: Number of Islands, Flood Fill, Jump Game III — add graph traversal to your toolkit</li>
+            <li>Study 1D DP basics: Climbing Stairs, House Robber, Coin Change — state + transition + base case</li>
+            <li>Take 2 full timed mock interviews (60 min each) — camera on, rapid fire + 2 coding questions, strict timing</li>
+            <li>After each mock: could you explain every algorithm in 4 sentences? If not, practise verbal explanation daily until re-attempt</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 13 April 2026</div>
+</body>
+</html>

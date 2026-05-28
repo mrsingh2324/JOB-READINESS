@@ -12,6 +12,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, 'data');
 const STUDENTS_FILE = path.join(DATA_DIR, 'students.json');
 const CONFIG_FILE = path.join(DATA_DIR, 'configs.json');
+const REPORTS_FILE = path.join(__dirname, 'reports.json');
+const PUBLIC_DIR = path.join(__dirname, 'public');
 
 const PORT = process.env.PORT || 3001;
 const ADMIN_KEY = process.env.ADMIN_KEY || 'change-me';
@@ -121,6 +123,11 @@ async function ensureDataFiles() {
     } catch {
       await fs.writeFile(file, file.endsWith('students.json') ? '[]' : '{}');
     }
+  }
+  try {
+    await fs.access(REPORTS_FILE);
+  } catch {
+    await fs.writeFile(REPORTS_FILE, '[]');
   }
 }
 
@@ -240,6 +247,21 @@ function pick(row, ...keys) {
     if (v !== undefined && v !== '') return v;
   }
   return undefined;
+}
+
+function normalizePhone(v) {
+  return String(v ?? '').replace(/\D+/g, '');
+}
+
+async function findReport(identifier) {
+  const key = String(identifier || '').trim();
+  const phone = normalizePhone(key);
+  const reports = await readJson(REPORTS_FILE);
+  return (
+    reports.find((r) => String(r.uid || '').trim() === key) ||
+    reports.find((r) => phone && normalizePhone(r.phone) === phone) ||
+    null
+  );
 }
 
 function toNum(v) {
@@ -393,6 +415,11 @@ function rowToBucketAssignment(rowRaw) {
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
+app.use('/reports', express.static(path.join(PUBLIC_DIR, 'reports'), {
+  setHeaders(res) {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+  },
+}));
 
 function requireAdmin(req, res, next) {
   const key = req.body?.adminKey || req.query?.adminKey;
@@ -401,6 +428,31 @@ function requireAdmin(req, res, next) {
 }
 
 app.get('/', (_req, res) => res.json({ status: 'ok', storage: useMongo ? 'mongo' : 'json' }));
+
+app.get('/api/lookup/:identifier', async (req, res) => {
+  try {
+    const identifier = req.params.identifier.trim();
+    const report = await findReport(identifier);
+    if (report?.url) {
+      return res.json({
+        type: 'report',
+        report: {
+          uid: report.uid,
+          name: report.name,
+          phone: report.phone,
+          url: report.url,
+        },
+      });
+    }
+
+    const student = await store.getStudent(identifier);
+    if (student) return res.json({ type: 'student', student });
+
+    res.status(404).json({ error: 'No student or report found for this mobile number.' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 app.get('/api/student/:uid', async (req, res) => {
   try {

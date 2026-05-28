@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Krishna Prasad Bolasani — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f4f1eb; --card-bg: #faf8f4; --primary: #1a3a52; --accent: #c8873f;
+    --green: #1a5c3a; --green-bg: #e6f4ed; --amber: #7a4f10; --amber-bg: #fef3d8;
+    --red: #8b1c1c; --red-bg: #fde8e8; --border: #d8d0c4;
+    --blue-mid: #1e5a9e; --blue-bg: #f0f7ff; --blue-border: #c0d8f0;
+    --text: #2c2c2c; --muted: #6b6560;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.65; }
+  .report-header { background: var(--primary); color: #fff; padding: 52px 40px 44px; text-align: center; }
+  .report-header .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+  .report-header h1 { font-family: 'DM Serif Display', serif; font-size: 42px; font-weight: 400; letter-spacing: -.5px; color: #fff; margin-bottom: 8px; }
+  .report-header .subtitle { font-size: 14px; color: rgba(255,255,255,.6); font-weight: 300; }
+  .body-wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
+  .info-cell { background: var(--card-bg); padding: 18px 22px; }
+  .info-cell .label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .info-cell .value { font-weight: 600; font-size: 15px; color: var(--primary); }
+  .info-cell.full { grid-column: 1 / -1; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; letter-spacing: .04em; }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-red { background: var(--red-bg); color: var(--red); }
+  .journey { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; }
+  .journey-row { display: flex; align-items: flex-start; gap: 20px; position: relative; padding-bottom: 28px; }
+  .journey-row:last-child { padding-bottom: 0; }
+  .journey-col-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 16px; }
+  .journey-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; border: 3px solid; box-shadow: 0 0 0 3px var(--bg); }
+  .dot-green { background: var(--green); border-color: var(--green); }
+  .dot-red   { background: #c0392b; border-color: #c0392b; }
+  .journey-line { width: 2px; flex: 1; background: var(--border); min-height: 30px; margin-top: 4px; }
+  .journey-content { flex: 1; }
+  .journey-stage { font-weight: 700; font-size: 14px; color: var(--primary); margin-bottom: 3px; }
+  .journey-result { font-size: 12.5px; font-weight: 600; margin-bottom: 3px; }
+  .journey-result.green { color: var(--green); }
+  .journey-result.red   { color: var(--red); }
+  .journey-detail { font-size: 12.5px; color: var(--muted); font-family: 'DM Mono', monospace; }
+  .journey-detail a { color: var(--accent); text-decoration: none; }
+  .round-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .round-header { background: var(--primary); color: #fff; padding: 22px 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .round-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .icon-red { background: var(--red-bg); }
+  .round-title-group { flex: 1; }
+  .round-name { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; color: #fff; margin-bottom: 3px; }
+  .round-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,.55); }
+  .round-meta a { color: var(--accent); text-decoration: none; }
+  .round-score-box { text-align: right; flex-shrink: 0; }
+  .round-score-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: #fff; line-height: 1; }
+  .round-score-label { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .1em; }
+  .round-body { padding: 28px; }
+  .score-breakdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+  .score-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .score-cell .snum { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1; margin-bottom: 4px; }
+  .score-cell .slabel { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .snum-amber { color: var(--amber); } .snum-red { color: var(--red); }
+  .qa-block { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .qa-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .qa-block-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--primary); font-weight: 500; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+  .qa-item { margin-bottom: 18px; }
+  .qa-item:last-child { margin-bottom: 0; }
+  .qa-q { font-weight: 600; color: var(--primary); margin-bottom: 7px; font-size: 14px; }
+  .qa-a { color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 9px; }
+  .qa-a span { display: block; padding-left: 12px; position: relative; }
+  .qa-a span::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
+  .qa-verdict { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; }
+  .verdict-mid  { background: var(--amber-bg); color: var(--amber); }
+  .verdict-bad  { background: var(--red-bg); color: var(--red); }
+  .model-answer { background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 8px; padding: 14px 18px; margin-top: 10px; font-size: 13px; line-height: 1.65; }
+  .model-answer .model-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-mid); font-weight: 500; margin-bottom: 7px; }
+  .model-answer span { display: block; padding-left: 14px; position: relative; color: #1a3a6e; }
+  .model-answer span::before { content: '→'; position: absolute; left: 0; color: var(--blue-mid); }
+  .round-remarks { background: var(--amber-bg); border-top: 1px solid var(--border); padding: 18px 28px; font-style: italic; font-size: 13.5px; color: var(--amber); }
+  .round-remarks strong { font-style: normal; font-weight: 600; color: var(--primary); }
+  .overall-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .overall-block { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .overall-block:last-child { border-bottom: none; }
+  .overall-block p { font-size: 14.5px; line-height: 1.75; color: var(--text); }
+  .title-green { color: var(--green); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-red { color: var(--red); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-blue { color: var(--blue-mid); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 16px; }
+  .strength-list, .improve-list { list-style: none; }
+  .strength-list li, .improve-list li { padding: 8px 0 8px 14px; border-bottom: 1px dashed var(--border); position: relative; font-size: 14px; color: var(--text); }
+  .strength-list li:last-child, .improve-list li:last-child { border-bottom: none; }
+  .strength-list li::before { content: '·'; position: absolute; left: 0; color: var(--green); font-size: 18px; line-height: 1; top: 8px; }
+  .improve-list li::before { content: '·'; position: absolute; left: 0; color: var(--red); font-size: 18px; line-height: 1; top: 8px; }
+  .week-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .week-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg); }
+  .week-card-header { background: var(--primary); padding: 12px 16px; }
+  .week-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .week-title { font-family: 'DM Serif Display', serif; font-size: 16px; color: #fff; font-weight: 400; }
+  .week-card-body { padding: 14px 16px; }
+  .week-card-body ul { list-style: none; }
+  .week-card-body li { font-size: 13px; color: var(--text); padding: 4px 0 4px 18px; position: relative; line-height: 1.5; }
+  .week-card-body li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 6px; }
+  .report-footer { border-top: 1px solid var(--border); padding: 18px 24px; text-align: center; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); max-width: 860px; margin: 0 auto; }
+  a { color: var(--accent); }
+  code { font-family: 'DM Mono', monospace; font-size: 12.5px; background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Krishna Prasad Bolasani</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="label">Candidate Name</div>
+      <div class="value">Krishna Prasad Bolasani</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Year of Graduation</div>
+      <div class="value">2026</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Offline Assessment Date</div>
+      <div class="value">8 February 2026 · Cycle 1</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Email</div>
+      <div class="value">krishnaprasadbolasani@gmail.com</div>
+    </div>
+    <div class="info-cell full">
+      <div class="label">Final Status</div>
+      <div class="value" style="margin-top:6px;">
+        <span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared</div>
+        <div class="journey-detail">8 Feb 2026 · Cycle 1</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result red">✗ Not Qualified · Score 0 / 100</div>
+        <div class="journey-detail">12 Feb 2026 ·
+          <a href="https://drive.google.com/file/d/1qEorJA_rngTnztqo5UDT8io8RoSr2s0k/view" target="_blank">Recording Part 1 ↗</a> &nbsp;·&nbsp;
+          <a href="https://drive.google.com/file/d/16gFqnYFuDA-rkl3v1tsSLJAd1J5db0P7/view" target="_blank">Recording Part 2 ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-red">🔴</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">12 Feb 2026 ·
+          <a href="https://drive.google.com/file/d/1qEorJA_rngTnztqo5UDT8io8RoSr2s0k/view" target="_blank">Recording Part 1 ↗</a> &nbsp;·&nbsp;
+          <a href="https://drive.google.com/file/d/16gFqnYFuDA-rkl3v1tsSLJAd1J5db0P7/view" target="_blank">Part 2 ↗</a>
+        </div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f09090;">0</div>
+        <div class="round-score-label">/ 100</div>
+        <div style="margin-top:6px;"><span class="badge badge-red" style="font-size:11px;">✗ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <div class="score-breakdown">
+        <div class="score-cell">
+          <div class="snum snum-amber">3/5</div>
+          <div class="slabel">Communication</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-red">0/5</div>
+          <div class="slabel">DSA Theory</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-red">0/5</div>
+          <div class="slabel">Core CS</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-red">0/5</div>
+          <div class="slabel">Avg Problem Solving</div>
+        </div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>Pursuing BTech in CSE (AI/ML specialisation) at CMR Institute of Technology, 2026 batch</span>
+            <span>Project 1: DoConnect — a Q&amp;A forum platform for asking questions, posting answers, and secure collaboration, built with Java and Spring Boot</span>
+            <span>Project 2: Chatbot Recommendation System — detects a person's mood and recommends songs, built with Python and external API integration</span>
+            <span>Technical skills: Python, Java, Spring Boot, backend and full stack development</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Decent Introduction — Meaningful projects in Java/Spring Boot and Python; AI/ML specialisation noted; however DSA preparation does not yet match the project-building capability</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Return the majority element — the element appearing more than ⌊N/2⌋ times — in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Initial approach: single for loop counting each element against N/2 — interviewer correctly noted this is O(N²) for all elements, not O(N)</span>
+            <span>Second attempt: storing qualified elements in an empty list and removing processed elements — violates O(1) space constraint</span>
+            <span>Third attempt: dictionary-based frequency count — correct logic but O(N) space, again violating the constraint</span>
+            <span>Despite the interviewer repeatedly clarifying "constant space, no extra space", could not identify the Boyer-Moore Voting algorithm in any of the attempts</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — Multiple attempts all violated the O(1) space constraint; Boyer-Moore voting algorithm not known (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Boyer-Moore Voting Algorithm:</strong> maintain <code>candidate = None</code> and <code>count = 0</code>. For each element: if count = 0, set candidate = element. If element == candidate, increment count; else decrement count.</span>
+            <span>Return candidate. <strong>Why it works:</strong> the majority element always outnumbers all others combined, so it survives all "cancellations". Time: O(N), Space: O(1). This is a must-know classic — memorise and understand it thoroughly.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Every number appears exactly twice except one. Find that number in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Proposed a list to store elements appearing twice, then check the remaining — O(N) space, violates constraint</span>
+            <span>Second attempt: two lists (one for doubles, one for singles) — still O(N) space</span>
+            <span>Interviewer repeatedly emphasised "no extra space" — candidate could not move beyond list/dictionary-based approaches</span>
+            <span>XOR solution was never surfaced despite extended discussion</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — All proposed solutions use O(N) space; XOR approach not known (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>XOR all elements: <code>result = 0; for num in arr: result ^= num; return result</code></span>
+            <span><code>a ^ a = 0</code> (pairs cancel out) and <code>a ^ 0 = a</code> (identity). All duplicate pairs cancel, leaving only the unique element. Time: O(N), Space: O(1). This appears alongside Boyer-Moore in almost every interview — know both cold.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/maximum-sum-of-three-numbers-divisible-by-three/description/" target="_blank">Maximum Sum of Three Numbers Divisible by Three ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Correctly understood the problem: pick exactly three numbers from the array such that their sum is divisible by 3 and the sum is maximised</span>
+            <span>Identified the brute force O(N³) approach: check all triplets using three nested loops — correct but far too slow for the constraints</span>
+            <span>Attempted to "optimise" by using two variables i and j with a single while loop iterating k — but this still effectively enumerates all triplets and does not reduce complexity</span>
+            <span>Spent nearly 30 minutes on this problem without arriving at a correct optimised approach; could not move past the brute force thinking pattern</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Brute Force Only — Problem understood; O(N³) approach identified; optimised O(N) solution not reached in 30 minutes (Rating: 1/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Sort the array in descending order. Use the modular arithmetic insight: every number's remainder when divided by 3 is 0, 1, or 2. The sum of three numbers is divisible by 3 if their remainders sum to 0 mod 3 — i.e., (0,0,0), (1,1,1), (2,2,2), or (0,1,2).</span>
+            <span>After sorting descending, greedily pick the three largest numbers satisfying one of these remainder combinations. Time: O(N log N) for sorting + O(1) for selection. This problem requires combining sorting with modular arithmetic — a pattern worth practising.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Wrote code attempting the single-while-loop optimisation — the logic for updating i and j was incorrect and did not correctly enumerate all valid triplets</span>
+            <span>Code produced wrong outputs on test cases — interviewer confirmed the approach was not correct</span>
+            <span>Could not debug or fix the code within the remaining time</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incorrect — Code written but produced wrong results; logic for iterating triplets was flawed (Rating: 0/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/maximum-width-of-binary-tree/description/" target="_blank">Maximum Width of Binary Tree ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Immediately said: "I don't have enough knowledge on Trees, currently working on linked lists and graphs" — did not read or engage with the question</span>
+            <span>No approach attempted — not even a brute force verbal description was offered</span>
+            <span>Interviewer offered additional time on Problem 1 instead; entire remaining session spent revisiting Problem 1 without progress</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Attempted — Trees not studied; no approach offered (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Use BFS (level order traversal). Assign each node an index: root = 1, left child of node i = 2i, right child = 2i+1. At each level, the width = last node index - first node index + 1. Track the minimum index at each level to avoid integer overflow (normalise by subtracting the level's first index).</span>
+            <span>Time: O(N), Space: O(N) for the queue. The key insight is using array-index-based node numbering to compute width without storing null nodes explicitly.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Very weak candidate, does not know much DSA." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 3/5 — Able to express thoughts in English with some effort; tendency to describe approaches in circular terms without converging on a clear solution; communication improves significantly when the concepts being discussed are familiar.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>You have built real projects — a Java/Spring Boot forum platform and a Python-based mood-detection chatbot — which shows you can learn and apply technology meaningfully. However, your TR-1 score of 0 reflects a fundamental gap in algorithmic problem-solving. You could not solve any of the four questions asked, all rapid fire solutions violated the given complexity constraints, and Problem 2 was abandoned the moment Trees were mentioned. The same pattern appeared repeatedly: you gravitated toward list and dictionary-based solutions when O(1) space was required, and you spent 30 minutes on a single medium problem without moving past brute force. The good news is that this is not about intelligence — it is about preparation. The problems asked are standard, well-known patterns. With dedicated daily practice over the next month, starting from the exact topics that appeared in this interview, you can make substantial progress before your re-attempt.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Project-Building Ability:</strong> DoConnect (Java/Spring Boot) and the chatbot system (Python/API) show you can build end-to-end technical systems — this practical capability is a real asset that distinguishes you from candidates who have only studied theory.</li>
+        <li><strong>Problem Comprehension:</strong> You correctly understood both coding problems from the problem statement alone — reading and interpreting questions accurately is a foundational skill that you already have.</li>
+        <li><strong>Persistence:</strong> You stayed engaged for nearly 30 minutes on Problem 1, kept trying different variations, and did not give up mid-interview — this tenacity, directed at structured preparation, will serve you well.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>O(1) Space Constraint Awareness:</strong> Every rapid fire attempt used lists or dictionaries, directly violating the given constraint. You must immediately recognise when O(1) space is required and know which techniques apply — bit manipulation (XOR), voting algorithms (Boyer-Moore), two pointers.</li>
+        <li><strong>Boyer-Moore &amp; XOR — Must-Know Patterns:</strong> Both appeared in this interview and both were unanswered. These are among the most frequently tested DSA patterns — study and memorise them with full understanding before any re-attempt.</li>
+        <li><strong>Trees — Non-Negotiable Topic:</strong> Abandoning a question because Trees are unfamiliar is not an option in TR-1. BFS, DFS, level-order traversal, and tree properties must be studied from scratch and practiced thoroughly.</li>
+        <li><strong>Moving Past Brute Force:</strong> You identified O(N³) for Problem 1 but spent 30 minutes without improving it. You need to practise the discipline of recognising brute force, stating its complexity, and then explicitly asking "what pattern can reduce this?" — sorting + greedy, prefix sums, hashmaps, monotonic stack, etc.</li>
+        <li><strong>Modular Arithmetic:</strong> Problem 1 required recognising that remainders mod 3 determine divisibility — a classic number theory insight. Practice problems involving modular arithmetic to build this pattern recognition.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 01</div>
+            <div class="week-title">O(1) Space Patterns &amp; Bit Manipulation</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study and memorise Boyer-Moore Voting: Majority Element I &amp; II — implement from scratch, explain in your own words</li>
+              <li>Study and memorise XOR trick: Single Number I, II, III — Missing Number, Find the Difference, XOR Queries</li>
+              <li>Study two-pointer technique (another O(1) space pattern): Two Sum II, 3Sum, Remove Duplicates, Valid Palindrome</li>
+              <li>Solve 10 easy array problems with strict complexity constraints — state time and space for every solution before submitting</li>
+              <li>Daily habit: after each problem, write one sentence explaining why your solution meets the space constraint</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 02</div>
+            <div class="week-title">Trees — From Zero to Confident</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study tree fundamentals: nodes, root, leaf, height, parent/child relationships — draw trees on paper before coding</li>
+              <li>Implement BFS (level order) and DFS (pre/in/post-order) from scratch in Python and Java</li>
+              <li>Solve: Binary Tree Level Order Traversal, Maximum Depth, Invert Binary Tree, Symmetric Tree, Path Sum</li>
+              <li>Solve Maximum Width of Binary Tree from this interview — implement BFS with index-based width calculation</li>
+              <li>Aim for 8–10 tree problems by end of week — easy to medium; trees must no longer be an unknown territory</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 03</div>
+            <div class="week-title">Sorting, Modular Arithmetic &amp; Greedy</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study modular arithmetic: divisibility rules, remainder patterns — practice problems involving mod 3, mod 2, mod k</li>
+              <li>Re-attempt Maximum Sum of Three Numbers Divisible by Three — implement the sort + remainder grouping approach</li>
+              <li>Study greedy pattern: when can you make locally optimal choices? Assign Cookies, Jump Game, Partition Labels</li>
+              <li>Study sorting as preprocessing: always ask "does order matter?" before coding — Merge Intervals, Meeting Rooms, 3Sum</li>
+              <li>Solve 10 medium problems combining sorting, greedy, and modular arithmetic — time each at 25 minutes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 04</div>
+            <div class="week-title">Hashmaps, Stacks &amp; Full Mock Interviews</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study hashmap patterns: Two Sum (O(N)), Group Anagrams, First Unique Character, Longest Consecutive Sequence</li>
+              <li>Study stack patterns: Valid Parentheses, Daily Temperatures, Next Greater Element, Min Stack</li>
+              <li>Solve 10 problems across hashmaps and stacks — mix easy and medium</li>
+              <li>Take 2 full timed mock interviews (60 min each) — simulate TR-1 exactly: rapid fire + 2 coding questions, camera on, strict timing</li>
+              <li>For every mock interview: debrief immediately — list what you got right, what you got wrong, and one specific thing to fix before the next mock</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">
+  Report generated by NxtWave Interview Evaluation System · Cycle 1 · 12 February 2026
+</div>
+
+</body>
+</html>

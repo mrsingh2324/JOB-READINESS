@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Panduri Saikiran — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-red{background:var(--red-bg);color:var(--red);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-red{background:#c0392b;border-color:#c0392b;}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.red{color:var(--red);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--red-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Panduri Saikiran</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Panduri Saikiran</div></div>
+    <div class="info-cell"><div class="label">Year of Graduation</div><div class="value">2026</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">19 April 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">savithri.kristipati@nxtwave.co.in</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">19 Apr 2026</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">NxtMock — AI Interview</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">Cleared prior to TR-1</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result red">✗ Not Qualified · Score 15 / 100</div>
+        <div class="journey-detail">2 May 2026 · Score: 15</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🔴</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">2 May 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f09090;">15</div>
+        <div class="round-score-label">/ 100</div>
+        <div style="margin-top:6px;"><span class="badge badge-red" style="font-size:11px;">✗ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-green">4/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-amber">3/5</div><div class="slabel">DSA Theory</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">Core CS</div></div>
+        <div class="score-cell"><div class="snum snum-red">1/5</div><div class="slabel">Avg Problem Solving</div></div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction &amp; Background</div>
+          <div class="qa-a">
+            <span>Final year BTech student in AI &amp; ML at Saga School of Engineering, Chennai — 2026 batch</span>
+            <span>Projects: Personal Productivity App, Parkinson Disease Detection using ML, Electricity Theft Detection in Smart Grids using ML</span>
+            <span>Strong interest in data analytics and data science; describes himself as a quick learner with good time management</span>
+            <span>Technical stack: Python, HTML, CSS, JavaScript; NxtMock cleared prior to TR-1</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Decent Introduction — Three meaningful ML projects show real technical depth; the challenge is bridging ML expertise into algorithmic DSA problem solving</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA &amp; Core CS Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Count the trailing zeros in the factorial of N. What is the optimal time complexity?</div>
+          <div class="qa-a">
+            <span>Approach: calculate the factorial of N, convert the result to a string, iterate and count zeros at the end — correct direction but impossible for large N</span>
+            <span>When told large factorials cannot be stored in any integer type, offered to use a "big number" data structure — still misses the mathematical insight</span>
+            <span>Interviewer hinted: "think about multiples of 10" — candidate responded that factorial of 50 would have around 5 trailing zeros (directionally correct) but could not derive the formula</span>
+            <span>The key insight — that trailing zeros = factors of 5 in N! — was never independently reached</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Brute force approach identified; optimal O(log N) formula not reached despite hints (Rating: 3/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Trailing zeros in N! come only from factors of 10 = 2 × 5. Since factors of 2 always outnumber factors of 5 in a factorial, only count factors of 5.</span>
+            <span>Formula: <code>count = ⌊N/5⌋ + ⌊N/25⌋ + ⌊N/125⌋ + ...</code> — each term counts numbers contributing that many factors of 5 (e.g., 25 contributes two). Time: O(log N), Space: O(1). Never compute the factorial itself.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Check if a number is a power of 2 in O(1) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Proposed left shift operators, <code>n**5</code> (incorrect), and floor division — none are the correct O(1) bit manipulation approach</span>
+            <span>Reached the idea of the AND operator after interviewer explained bit representations of powers of 2 (only one bit set in binary)</span>
+            <span>Could not independently complete the <code>(n &amp; (n-1)) == 0</code> solution — the interviewer demonstrated the full logic</span>
+            <span>Recognised the solution after it was shown: when you subtract 1 from a power of 2, all lower bits flip and AND with original gives 0</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Reached AND operator concept with heavy guidance; O(1) bit solution not independently derived (Rating: 2/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Powers of 2 in binary: 2=10, 4=100, 8=1000, 16=10000 — exactly one bit set. Subtracting 1 flips all lower bits: 8-1 = 0111. Therefore <code>(n &amp; (n-1)) == 0</code> and <code>n &gt; 0</code> gives the answer.</span>
+            <span>Time: O(1), Space: O(1). This is one of the most common bit manipulation patterns in interviews — also know: count set bits (<code>n &amp; (n-1)</code> repeated), check kth bit (<code>n &amp; (1 &lt;&lt; k)</code>), XOR for single element.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — <a href="https://leetcode.com/problems/minimum-time-to-complete-trips/description/" target="_blank">Minimum Time to Complete Trips ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Understood: given an array of bus trip times and a target total trips, find the minimum time T such that total trips completed ≥ target (bus i completes ⌊T/time[i]⌋ trips at time T)</span>
+            <span>Initial answer: "the answer is the maximum element in the time array" — incorrect; conflated maximum bus time with minimum total time needed</span>
+            <span>After interviewer walked through the simulation (at time T=3: bus1 completes 3, bus2 completes 1, bus3 completes 1 = total 5): understood the counting mechanism</span>
+            <span>Proposed unordered_map + iteration — not a coherent algorithm; did not identify that the function "total trips at time T" is monotonically increasing, which enables binary search</span>
+            <span>Never reached the key insight: binary search on time T, checking if total trips ≥ target at each midpoint</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — Problem understood after explanation; binary search on answer pattern not identified; no working approach proposed (Rating: 2/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Binary Search on Answer:</strong> the answer T lies between 1 and min(time) × totalTrips. The function <code>f(T) = sum(T // time[i])</code> is monotonically non-decreasing — so binary search applies.</span>
+            <span>Binary search: if <code>f(mid) &gt;= totalTrips</code>, answer could be mid or smaller → <code>high = mid</code>. Else <code>low = mid + 1</code>. Time: O(N log(min(time) × totalTrips)), Space: O(1). This pattern — "binary search on the answer when the check function is monotone" — is a fundamental medium-hard technique to master.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>No code produced — could not establish a clear approach to implement</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ No Code — Approach not reached; implementation not attempted (Rating: 0/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — <a href="https://leetcode.com/problems/minimum-jumps-to-reach-home/description/" target="_blank">Minimum Jumps to Reach Home ↗</a></div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Understood the problem: starting at position 0, can jump forward by a or backward by b; certain positions are forbidden; find minimum jumps to reach position x</span>
+            <span>Key constraint correctly noted: cannot visit any forbidden position</span>
+            <span>Proposed a single for loop iterating over the forbidden array, incrementing by a — this iterates over forbidden positions rather than exploring reachable positions, which is fundamentally incorrect</span>
+            <span>Spent extended time trying to make the loop-based approach work — kept refining an incorrect algorithm without stepping back to reconsider the problem structure</span>
+            <span>Interviewer confirmed at the end: "it's a BFS question" — the correct approach was never reached independently</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — Problem understood; BFS graph traversal pattern not identified; loop-based approach was structurally wrong (Rating: 1/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>BFS:</strong> treat each position as a node. From position p, edges go to p+a (if not forbidden and within bounds) and p-b (if not forbidden and &gt;= 0 and we haven't used too many backward jumps). Use a visited set to avoid cycles.</span>
+            <span>BFS guarantees the shortest path (minimum jumps). The key upper bound for search: positions beyond <code>max(forbidden) + a + b</code> never need to be visited. Time: O((max_pos) × 2), Space: O(max_pos). Recognising this as a shortest-path on an implicit graph is the critical pattern — any "minimum steps to reach target" problem with valid/invalid states is almost always BFS.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>No working code produced — incorrect loop-based approach was attempted but could not produce valid output</span>
+            <span>Session ended with interviewer confirming BFS as the correct approach</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ No Code — Incorrect approach attempted; BFS implementation not reached (Rating: 0/5)</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Weak candidate." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 4/5 — Good communicator throughout; expressed partial ideas clearly and engaged constructively with every hint. The gap is in algorithmic pattern recognition, not in the ability to communicate.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>You communicate well and your ML project work (Parkinson detection, electricity theft detection in smart grids) demonstrates genuine technical depth. But TR-1 exposed a specific and bridgeable gap: you do not yet recognise the standard algorithmic patterns that unlock medium-level DSA problems. Both coding questions required identifying a non-obvious framework — binary search on the answer for Problem 1, and BFS for Problem 2. Without knowing these patterns, even a well-understood problem cannot be solved in an interview setting. The good news is that these are learnable, finite patterns — not indefinite skill gaps. A focused month of pattern-based LeetCode practice, starting from the exact topics that appeared here, will put you in a strong position for your re-attempt.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Communication:</strong> 4/5 — You expressed ideas clearly throughout, engaged with hints, and described your thinking step by step. This is a real interview strength that will serve you well once your algorithmic knowledge catches up.</li>
+        <li><strong>Problem Comprehension:</strong> You correctly understood both coding problems after the interviewer's explanation — reading and interpreting complex problem statements is a skill you already have.</li>
+        <li><strong>Bit Manipulation Awareness:</strong> You reached the idea of using the AND operator for the power-of-2 problem — even if you couldn't complete the solution independently, recognising that bit manipulation is relevant shows pattern awareness developing.</li>
+        <li><strong>Strong ML Background:</strong> Three applied ML projects and NxtMock cleared indicate a capable learner who can build on feedback — apply that same capacity to DSA preparation.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Binary Search on Answer — Must Learn:</strong> Problem 1 (Minimum Time to Complete Trips) requires this pattern. Whenever a problem asks "find the minimum value of X such that condition C(X) is satisfied" and C is monotone, binary search on X applies. This is a medium-hard pattern that appears very frequently — dedicate a full week to it.</li>
+        <li><strong>BFS for Shortest Path / Minimum Steps:</strong> Problem 2 is a classic BFS problem. Any question asking "minimum jumps / steps / moves to reach a target" with valid/invalid states is almost always BFS. Memorise this trigger: minimum steps on a graph → BFS.</li>
+        <li><strong>Bit Manipulation:</strong> You reached AND but couldn't complete <code>(n &amp; (n-1)) == 0</code>. Study the 5 core bit tricks: power of 2 check, count set bits, XOR for single element, set/clear/toggle a bit, check kth bit. These are O(1) solutions to common problems.</li>
+        <li><strong>Trailing Zeros Formula:</strong> The factors-of-5 counting approach is a must-know mathematical insight. Study why only factors of 5 are counted and implement it for all values of N.</li>
+        <li><strong>Avoid Iterating Forbidden Arrays:</strong> In Problem 2, you iterated over the forbidden array to find reachable positions — these are fundamentally different things. Always ask: "am I exploring the state space (reachable positions) or the constraints (forbidden positions)?" Explore the state space, check constraints.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">Bit Manipulation &amp; Math Patterns</div></div>
+          <div class="week-card-body"><ul>
+            <li>Master the 5 core bit tricks: power of 2 (<code>n &amp; (n-1)</code>), count set bits, XOR single element, set/clear/toggle kth bit, check kth bit</li>
+            <li>Implement trailing zeros formula from scratch — submit LeetCode 172 (Factorial Trailing Zeros) and verify</li>
+            <li>Solve bit manipulation problems: Single Number I &amp; II, Number of 1 Bits, Reverse Bits, Missing Number</li>
+            <li>Solve math pattern problems: Happy Number, Power of Three, Power of Four, Reverse Integer</li>
+            <li>For each problem: state time and space complexity before submitting; aim for O(1) wherever possible</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">BFS — Graph &amp; Grid Traversal</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study BFS deeply: when to use it — shortest path, minimum steps, level-by-level traversal, implicit graphs</li>
+            <li>Memorise the trigger: "minimum jumps/moves/steps to reach target with valid/invalid states" → BFS</li>
+            <li>Re-implement Minimum Jumps to Reach Home using BFS — trace the queue state on paper first, then code</li>
+            <li>Solve BFS problems: Word Ladder, Jump Game III, Rotting Oranges, 01 Matrix, Minimum Knight Moves</li>
+            <li>For each BFS problem: draw the implicit graph first — what are the nodes? what are the edges? what is forbidden?</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Binary Search on Answer</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study "binary search on answer" pattern: identify when the feasibility function is monotone → binary search applies</li>
+            <li>Re-implement Minimum Time to Complete Trips — implement the check function and binary search wrapper separately</li>
+            <li>Solve: Koko Eating Bananas, Capacity to Ship Packages, Minimum Number of Days to Make Bouquets, Split Array Largest Sum</li>
+            <li>Template to memorise: <code>lo=1, hi=max_possible; while lo &lt; hi: mid=(lo+hi)//2; if feasible(mid): hi=mid; else: lo=mid+1</code></li>
+            <li>Solve 6 binary search on answer problems — time each at 30 minutes maximum</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Mixed Patterns &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Solve 15 medium problems randomly across bit manipulation, BFS, and binary search on answer — no topic labels</li>
+            <li>Before each problem: identify the pattern category first (BFS? binary search? greedy? DP?) — do not start coding until the category is identified</li>
+            <li>Study additional patterns: two pointers, sliding window, prefix sums — these fill the gaps between the three focus areas</li>
+            <li>Take 2 full timed mock interviews (60 min each) — rapid fire + 2 coding problems, no hints, camera on</li>
+            <li>After each mock: could you identify the pattern category within 5 minutes? If not, that is what to practise before re-attempt</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 2 May 2026</div>
+</body>
+</html>

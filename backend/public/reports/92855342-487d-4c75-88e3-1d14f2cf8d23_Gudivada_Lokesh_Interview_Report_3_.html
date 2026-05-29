@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gudivada Lokesh — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-red{background:var(--red-bg);color:var(--red);}
+  .badge-green{background:var(--green-bg);color:var(--green);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .dot-red{background:#c0392b;border-color:#c0392b;}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);} .journey-result.red{color:var(--red);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:rgba(255,255,255,.12);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+  .audit-box{background:var(--red-bg);border:1px solid #f0c0c0;border-radius:10px;padding:20px 24px;margin-bottom:20px;}
+  .audit-box .audit-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px;font-weight:500;}
+  .audit-box span{display:block;padding-left:14px;position:relative;color:#5a1515;font-size:13.5px;margin-bottom:6px;}
+  .audit-box span::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;}
+  .bucket-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px;}
+  .bucket-cell{background:var(--red-bg);border:1px solid #f0c0c0;border-radius:8px;padding:16px;text-align:center;}
+  .bucket-cell .bc-label{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:6px;}
+  .bucket-cell .bc-icon{font-size:20px;margin-bottom:4px;}
+  .bucket-cell .bc-result{font-weight:700;color:var(--red);font-size:13px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <h1>Gudivada Lokesh</h1>
+  <div class="subtitle">Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Gudivada Lokesh</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">26 April 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">gudivadalokesh22124@gmail.com</div></div>
+    <div class="info-cell"><div class="label">Eligible Role</div><div class="value">Product Based SDE</div></div>
+    <div class="info-cell full"><div class="label">NxtMock Status</div><div class="value">Attempted · Cleared</div></div>
+    <div class="info-cell full"><div class="label">Final Placement Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Cleared — Re-attempt Required · TR-3 Not Cleared</span></div></div>
+  </div>
+
+  <!-- ══ SECTION 02 ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared</div>
+        <div class="journey-detail">26 Apr 2026 · Qualified for Product Based SDE track</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">NxtMock / AI Interview</div>
+        <div class="journey-result green">✓ Cleared</div>
+        <div class="journey-detail">Cleared prior to TR-1</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="journey-result green">✓ Cleared · Medium Hire</div>
+        <div class="journey-detail">7 May 2026 · P1 solved and submitted; P2 wrong approach</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 2 — Full Stack Interview</div>
+        <div class="journey-result amber">~ Not Cleared · Low Hire</div>
+        <div class="journey-detail">10 May 2026 · Basic knowledge across frontend and backend; no independent deployment</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Audit Review</div>
+        <div class="journey-result red">~ Not Cleared — All Buckets</div>
+        <div class="journey-detail">13 May 2026 · DSA strength noted; full stack depth insufficient</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 03 — TR-1 ══ -->
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">✅</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">7 May 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#7ed99e;">50</div>
+        <div class="round-score-label">/ 100 · Cleared</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Medium Hire</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Find the majority element (appears more than ⌊N/2⌋ times) in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>No answer given — Boyer-Moore Voting algorithm not known</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Unknown — Boyer-Moore Voting not studied (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Boyer-Moore Voting: maintain <code>candidate = None</code> and <code>count = 0</code>. For each element: if <code>count == 0</code> → set candidate. If element matches candidate → increment count. Otherwise → decrement count. Return candidate. Time: O(N), Space: O(1).</span>
+            <span>The majority element always survives because it outnumbers all others combined. Study this alongside XOR single element — both are O(1) space pattern questions that appear constantly in DSA rounds.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Every integer appears twice except one — find it in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Correctly proposed XOR all elements — <code>a ^ a = 0</code> cancels all pairs, leaving the unique element</span>
+            <span>Correctly stated time complexity O(N) and space complexity O(1)</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Optimal — XOR approach correctly explained (Rating: 5/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — Count Subarrays with Majority Element</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Proposed O(N²) nested loop approach — iterate over all subarrays, count frequency of majority element in each</span>
+            <span>Evaluator noted it can be done in O(N) but acknowledged this is a tricky optimisation</span>
+            <span>Approach is logically correct for the brute-force level</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Brute-force O(N²) approach correct; optimal O(N) approach not reached (Rating: 4/5)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Code written and submitted on LeetCode — accepted (all test cases passed)</span>
+            <span>Demonstrates ability to translate a brute-force approach into working, submittable code under interview conditions</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Submitted — LeetCode AC (Rating: 5/5)</span>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — Maximum Subarray Sum with One Deletion</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Proposed wrong approach — minimum-element-removal strategy; this does not correctly solve the problem</span>
+            <span>Kadane's DP variant (forward/backward pass or 2-state DP) not known</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Wrong Approach — Kadane's with one deletion not known (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Use two arrays: <code>fwd[i]</code> = max subarray ending at index i; <code>bwd[i]</code> = max subarray starting at index i. Answer is <code>max(fwd[i-1] + bwd[i+1])</code> for each i (deleting element i). Also consider no deletion: standard Kadane's. Time: O(N), Space: O(N).</span>
+            <span>This is a Kadane's variant — first fully master the base Kadane's (max subarray sum), then study this extension. LeetCode 1186.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>No code written — approach was incorrect so implementation was not attempted</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ No Code — Wrong approach; implementation not attempted (Rating: 0/5)</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>Evaluator Remarks:</strong> "Candidate still needs to practice more DSA." &nbsp;·&nbsp; Your communication was adequate. P1 showed genuine ability — you coded a working solution and submitted it under time pressure, which is a real interview skill. The gap is in DP-based optimisation patterns like Kadane's variants, which must be added to your preparation.
+    </div>
+  </div>
+
+  <!-- ══ SECTION 04 — TR-2 ══ -->
+  <div class="section-label">04 · Technical Round 2 — Full Stack Interview</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 2 — Full Stack Interview</div>
+        <div class="round-meta">10 May 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">44</div>
+        <div class="round-score-label">/ 100 · Not Cleared</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Low Hire</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">75</div><div class="slabel">Soft Skills &amp; Comm.</div></div>
+        <div class="score-cell"><div class="snum snum-amber">50</div><div class="slabel">Projects</div></div>
+        <div class="score-cell"><div class="snum snum-red">35</div><div class="slabel">Frontend Score</div></div>
+        <div class="score-cell"><div class="snum snum-red">15</div><div class="slabel">Backend Score</div></div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="qa-block">
+        <div class="qa-block-label">Soft Skills &amp; Communication</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Well-groomed and professional presentation — described as "looks like a native person, but well groomed"</span>
+            <span>Communication: confident and understandable with minor grammar changes — 75/100</span>
+            <span>Your introduction was strong — CGPA 8.89, Intermediate 91%, 500+ DSA problems across LeetCode, CodeChef, and Codeforces stated clearly</span>
+            <span>Proactively asked "where should I focus?" at the end — good self-awareness and initiative</span>
+            <span>Said "I don't know" clearly rather than guessing on unfamiliar topics — honest and professional</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Good — Confident, professional, and self-aware; clarity of technical explanation needs improvement (75/100)</span>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="qa-block">
+        <div class="qa-block-label">Projects</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Good Read Books — Book discovery platform with auth, search, and favourites</div>
+          <div class="qa-a">
+            <span>Features correctly described: user registration/login with JWT + bcrypt, book search by author/title, mark-as-favourite functionality</span>
+            <span>JWT implementation well explained: bcrypt on registration, compare on login, JWT sign with username payload + secret key, JWT verify in middleware for protected routes</span>
+            <span>Protected routes correctly described: without a valid JWT token, all routes redirect to the login page only</span>
+            <span>Gap: project is a NxtWave platform assignment — never deployed independently on a public server</span>
+            <span>Gap: book data is pre-seeded in the database — no data ingestion pipeline or admin onboarding panel built; you could not articulate how books would be added at scale</span>
+            <span>Gap: no independent project built outside of NxtWave assignments</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Auth flow and JWT well understood from implementation; project scope limited to NxtWave assignment; no independent deployment or data ingestion thinking (Score: 50/100)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Live Schema Design — Users, Books, Authors, Reviews tables</div>
+          <div class="qa-a">
+            <span>Correctly identified 4 required tables: User, Books, Authors, Reviews</span>
+            <span>Correctly identified fields: User (ID, name, password), Books (ID, book name, author ID), Authors (ID, name), Reviews (ID, book ID, comment)</span>
+            <span>Correctly labelled PK and FK relationships when prompted — author ID in Books is FK to Authors; book ID in Reviews is FK to Books</span>
+            <span>Missing field: username (unique login handle like an Instagram handle) not included in User table — identified only with prompting</span>
+            <span>Missing field: rating (1–5) not added to Reviews table — missed independently</span>
+            <span>Name uniqueness: initially marked user name as unique, then self-corrected — "there may be multiple people with the same name" — correct reasoning</span>
+            <span>Book ↔ Author relationship: correctly identified as many-to-many — "one author can write many books and two authors can write one book"</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Good — Core tables and FK relationships correct; missing fields (username, rating) found only with prompting; many-to-many relationship correctly reasoned</span>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Frontend — React &amp; JavaScript</div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is the Virtual DOM? What is the reconciliation process in React?</div>
+          <div class="qa-a">
+            <span>Described Virtual DOM as "a tree — root tag and sub-children" — structural awareness only; no explanation of its purpose or benefit</span>
+            <span>Reconciliation: not known; confused with routing — "when we load a page without loading the entire page from the start"</span>
+            <span>Diffing algorithm and how React compares old vs new trees not explained</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incomplete — Virtual DOM described structurally only; purpose and reconciliation/diffing not known</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Virtual DOM: a lightweight JavaScript object representation of the real DOM kept in memory. When state changes, React builds a new Virtual DOM tree, compares it with the previous one (diffing), and applies only the minimal changes to the real DOM. This avoids expensive full page re-renders.</span>
+            <span>Reconciliation: React's algorithm for comparing old and new Virtual DOM trees. Same element type → update props in place. Different type → unmount old component, mount new. Keys help React match list items efficiently across renders.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What are React components? How do components receive data?</div>
+          <div class="qa-a">
+            <span>Components correctly described as reusable units — "like functions, we can reuse without writing the same code multiple times" — correct analogy</span>
+            <span>When asked how components receive data, you described <code>useEffect</code> and API calls — this conflates fetching external data with receiving data from a parent component (props)</span>
+            <span>Props as the primary inter-component data mechanism was not mentioned</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Reusability concept correct; props not articulated; confused with API fetching via useEffect</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Components receive data from parent components via <strong>props</strong> — read-only values passed down the component tree. Example: <code>&lt;BookCard title="Dune" author="Herbert" /&gt;</code>. Inside BookCard, <code>props.title</code> and <code>props.author</code> are accessible.</span>
+            <span><code>useEffect</code> is for side effects like API calls after render — not for receiving data from parents. Props and useEffect are separate concepts.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What are pure components in React? What are pure functions in JavaScript?</div>
+          <div class="qa-a">
+            <span>Pure components — no answer; topic not studied</span>
+            <span>Pure functions — no answer; topic not studied</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Unknown — Both pure components (React.memo) and pure functions not studied</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Pure function: always returns the same output for the same input and has no side effects (no modifying external state, no API calls, no DOM mutations). Example: <code>const add = (a, b) =&gt; a + b</code> is pure; <code>const log = (x) =&gt; { console.log(x); return x; }</code> is impure.</span>
+            <span>Pure component (<code>React.memo</code> for functional components): only re-renders when its props change. Prevents unnecessary re-renders when a parent re-renders but the child's props are the same. Equivalent to <code>shouldComponentUpdate</code> with a shallow prop comparison in class components.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Is JavaScript pass by value or pass by reference?</div>
+          <div class="qa-a">
+            <span>Initial answer: "It does not have pointers so it is pass by value" — incorrect generalisation</span>
+            <span>When asked specifically about objects: "object is a reference" — partially correct but not fully articulated</span>
+            <span>The complete rule (primitives by value, objects/arrays by reference copy) was not stated</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Object reference identified; initial answer incorrect; complete distinction not clearly stated</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Primitives (number, string, boolean, null, undefined) are passed by value — a copy of the value is made; changes inside the function don't affect the original.</span>
+            <span>Objects and arrays are passed by reference — the reference (memory address) is copied, so mutations inside the function affect the original object. Reassigning the parameter itself, however, does not affect the original.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is the purpose of the &lt;span&gt; tag? What are iframes in HTML?</div>
+          <div class="qa-a">
+            <span><code>&lt;span&gt;</code>: correctly explained — "if a sentence has the same colour but I want to give a certain word a different colour, I use span" — inline styling of partial content, correct</span>
+            <span>iframes: no answer — topic not studied</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — span correctly explained; iframes not known</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>An <code>&lt;iframe&gt;</code> (inline frame) embeds another HTML document inside the current page. Common uses: embedding YouTube videos, Google Maps, or third-party widgets. Key attributes: <code>src</code> (URL of embedded document), <code>width</code>, <code>height</code>, <code>allowfullscreen</code>, <code>title</code> (for accessibility).</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Backend — Node.js, Express &amp; APIs</div>
+
+        <div class="qa-item">
+          <div class="qa-q">What HTTP response codes have you encountered? List the main ones.</div>
+          <div class="qa-a">
+            <span>200 — success: correct</span>
+            <span>400 — said "unauthorized I think" — incorrect; 400 is Bad Request; 401 is Unauthorized</span>
+            <span>500 — server error: correct</span>
+            <span>201, 404, 403, 301, 204 not mentioned — key codes missing</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — 200 and 500 correct; 400 vs 401 confused; most common codes not known</span>
+          <div class="model-answer">
+            <div class="model-label">📚 Must-Know HTTP Status Codes</div>
+            <span>2xx Success: 200 OK, 201 Created, 204 No Content</span>
+            <span>3xx Redirect: 301 Moved Permanently, 302 Found</span>
+            <span>4xx Client Error: 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 429 Too Many Requests</span>
+            <span>5xx Server Error: 500 Internal Server Error, 503 Service Unavailable</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">How do JWTs help in securing API calls?</div>
+          <div class="qa-a">
+            <span>Correctly explained: middleware function checks the JWT token on every protected request</span>
+            <span>If JWT verify fails in middleware, the request does not proceed to the route handler</span>
+            <span>JWT sign with payload (username) and secret key correctly described from project experience</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — JWT middleware security correctly explained from practical implementation (strongest backend answer)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is API rate throttling? What is MySQL indexing?</div>
+          <div class="qa-a">
+            <span>Rate throttling: no answer — topic not studied</span>
+            <span>MySQL indexing: answered "storing the dataset while storing data through a hash function" — incorrect definition</span>
+            <span>Indexing is a data structure (typically B-tree) that speeds up SELECT queries on specific columns — this was not known</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Known — Rate throttling unknown; indexing definition incorrect; significant backend theory gaps</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Indexing: a data structure (typically B-tree) built on one or more columns so the database can find rows without scanning the full table. Speeds up SELECT/WHERE queries; adds minor overhead to INSERT/UPDATE. Example: <code>CREATE INDEX idx_author ON books(author_id)</code>.</span>
+            <span>Rate throttling: limiting how many API requests a client can make in a time window (e.g. 100 requests/minute) to prevent abuse and server overload. In Express: use the <code>express-rate-limit</code> middleware package.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bonus DSA in TR-2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Bonus — Single Element in Sorted Array (O(log N))</div>
+        <div class="qa-item">
+          <div class="qa-q">Find the single non-duplicate in a sorted array in better than O(N) time.</div>
+          <div class="qa-a">
+            <span>Immediately offered XOR approach — correct O(N) solution; evaluator acknowledged this works but asked for O(log N)</span>
+            <span>Correctly identified the index-parity insight: before the unique element, pairs end at (even, odd) indices; after it, pairs shift to (odd, even) — this is the right observation</span>
+            <span>Attempted to write binary search logic based on this parity check — direction was correct</span>
+            <span>Missing piece: the parity check must be relative to the current search boundaries <code>[i, j]</code>, not absolute indices from the full array — evaluator explained this gap</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — XOR O(N) correct; binary search parity insight correct; search space narrowing condition missing from final logic</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Key insight: in a sorted array where all duplicates appear as pairs, if <code>mid</code> is even and <code>arr[mid] == arr[mid+1]</code>, the unique element is to the right (search right half). If they differ, search left half (or mid is the answer). Adjust <code>i</code> and <code>j</code> boundaries accordingly — not absolute indices. LeetCode 540.</span>
+            <span>Your parity observation was exactly correct — you just needed to frame the binary decision relative to your current <code>[i, j]</code> search window, not the whole array.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>Evaluator Remarks:</strong> "Candidate has no proper full stack project. Candidate has very basic knowledge of each topic. He needs to work on his skills." &nbsp;·&nbsp; Closing advice from evaluator: "Pick one platform — LeetCode. Do 400–500 problems using Striver's sheet. For full stack: build something on your own and deploy it — that gives you deep understanding of multiple things."
+    </div>
+  </div>
+
+  <!-- ══ SECTION 05 — AUDIT ══ -->
+  <div class="section-label">05 · Audit Review</div>
+  <div class="round-card">
+    <div class="round-header" style="background:#5a1a1a;">
+      <div class="round-icon">📋</div>
+      <div class="round-title-group">
+        <div class="round-name">Audit Review — NxtWave Team</div>
+        <div class="round-meta">13 May 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">⚠ Not Cleared — All Buckets</span></div>
+      </div>
+    </div>
+    <div class="round-body">
+      <div class="audit-box">
+        <div class="audit-label">📋 Audit Findings — NxtWave Team</div>
+        <span>You demonstrate good interest in DSA and consistent problem-solving practice across multiple platforms — this is a positive indicator and your strongest area</span>
+        <span>Compared to full stack knowledge, DSA is clearly the most developed skillset; 500+ problems across platforms reflects genuine commitment</span>
+        <span>Full stack knowledge is at a basic level across all areas — no independently built or deployed project was found</span>
+        <span>Frontend: core React concepts (Virtual DOM, reconciliation, pure components) not understood beyond structural awareness</span>
+        <span>Backend: significant gaps in indexing, rate throttling, and HTTP status codes; JWT practical knowledge is a notable exception</span>
+        <span>No internship or real-work experience; all projects are platform assignments without independent deployment</span>
+      </div>
+      <div class="bucket-grid">
+        <div class="bucket-cell">
+          <div class="bc-label">Frontend Bucket</div>
+          <div class="bc-icon">✗</div>
+          <div class="bc-result">Not Cleared</div>
+        </div>
+        <div class="bucket-cell">
+          <div class="bc-label">Backend Bucket</div>
+          <div class="bc-icon">✗</div>
+          <div class="bc-result">Not Cleared</div>
+        </div>
+        <div class="bucket-cell">
+          <div class="bc-label">Full Stack Bucket</div>
+          <div class="bc-icon">✗</div>
+          <div class="bc-result">Not Cleared</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 06 — OVERALL ══ -->
+  <div class="section-label">06 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>Your TR-1 clearance and 500+ DSA problem count show you have the discipline and commitment that this track demands — that is not nothing. The full stack layer, however, has not received the same attention. React internals, backend theory, and independent deployment are all at a surface level, which is what the TR-2 outcome reflects. The evaluator's closing advice was direct and accurate: build something yourself, deploy it, and keep doing LeetCode. That is exactly the right plan. The gap is not in your ability — it is in where your preparation time has been focused. Redistribute it.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>500+ DSA Problems:</strong> Consistent, multi-platform practice across LeetCode, CodeChef, and Codeforces — this is the foundation every SDE role needs. Keep the volume up.</li>
+        <li><strong>XOR Pattern (TR-1 &amp; TR-2):</strong> XOR single element was answered perfectly in TR-1 and correctly offered again in TR-2. This pattern is fully internalised — a reliable score anchor.</li>
+        <li><strong>JWT Auth Flow:</strong> The strongest backend answer in TR-2 — bcrypt hashing, JWT sign/verify with payload, middleware protection, and cookie storage all correctly described from hands-on project experience.</li>
+        <li><strong>Schema Design:</strong> Core tables (User, Books, Authors, Reviews), PK/FK relationships, and many-to-many reasoning (Book ↔ Author) all correctly identified — good relational thinking.</li>
+        <li><strong>Binary Search Parity Insight:</strong> The index-parity observation for the sorted unique element problem was correct and non-trivial — one logic step away from a working O(log N) solution.</li>
+        <li><strong>Self-Awareness:</strong> You said "I don't know" clearly instead of guessing, and proactively asked for improvement direction — both professional qualities that serve well in interviews and in work.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Build and Deploy an Independent Project:</strong> Every project you have is a NxtWave assignment on the NxtWave platform. You must build something yourself — choose a domain, design the database, write the API, build the frontend, deploy it publicly. This is the single most important action item.</li>
+        <li><strong>Virtual DOM &amp; Reconciliation:</strong> You described the Virtual DOM as a tree structure only. You must understand its purpose (efficient DOM updates), the diffing algorithm, and how React decides what to re-render. These appear in nearly every React interview.</li>
+        <li><strong>Pure Functions &amp; Pure Components (React.memo):</strong> Both completely unknown. These are foundational JavaScript and React concepts — study them this week.</li>
+        <li><strong>HTTP Status Codes:</strong> You confused 400 (Bad Request) with 401 (Unauthorized). Memorise all key codes — 200, 201, 204, 301, 400, 401, 403, 404, 429, 500 — until they are automatic.</li>
+        <li><strong>MySQL Indexing &amp; Rate Throttling:</strong> Both unknown at the theoretical level. Indexing is asked in nearly every backend interview — you must be able to explain what it is, why it matters, and when to use it.</li>
+        <li><strong>Boyer-Moore Voting Algorithm:</strong> Unknown in TR-1. Add this to your DSA study list alongside XOR patterns — both are O(1) space questions that appear frequently as rapid-fire problems.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">React Internals &amp; JS Depth</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study Virtual DOM: draw old tree → new tree → diff → patch on paper; build a demo with and without React.memo to see re-render difference</li>
+            <li>Study reconciliation: element type comparison, key-based list matching — read the React docs section on reconciliation</li>
+            <li>Study pure functions: write 5 pure and 5 impure examples — label each side effect explicitly</li>
+            <li>Study React.memo and useMemo: build a parent component that re-renders frequently and protect a child with React.memo</li>
+            <li>Study props vs state: build a 3-level component tree where data flows down via props and events bubble up via callbacks</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">Backend Theory &amp; HTTP</div></div>
+          <div class="week-card-body"><ul>
+            <li>Memorise all HTTP status codes: 200, 201, 204, 301, 400, 401, 403, 404, 429, 500 — write from memory daily until automatic</li>
+            <li>Study MySQL indexing: create a test table with 10,000 rows; benchmark the same query with and without an index using EXPLAIN</li>
+            <li>Study API rate throttling: implement <code>express-rate-limit</code> in your Good Read Books backend — test it with Postman</li>
+            <li>Study pass-by-value vs pass-by-reference completely: write 5 examples of each; test mutation of objects inside functions</li>
+            <li>Study iframes: embed a YouTube video and a Google Map in a plain HTML page — understand src, allowfullscreen, sandbox attributes</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Independent Project &amp; Deployment</div></div>
+          <div class="week-card-body"><ul>
+            <li>Build a new project entirely on your own — not a NxtWave assignment; design the schema yourself from scratch with at least 3 related tables</li>
+            <li>Include: JWT auth, a React frontend, Node/Express backend, SQL or MongoDB database — add a book onboarding admin panel as a starting point</li>
+            <li>Deploy it: Vercel (frontend) + Render or Railway (backend) + PlanetScale or Supabase (database) — get it live on a public URL</li>
+            <li>Add the rating field to your Reviews table and migrate the live database — practice schema changes on a deployed system</li>
+            <li>Write the data ingestion flow the evaluator asked about: an admin panel where books can be added, edited, and deleted</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">DSA Gaps &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study Boyer-Moore Voting Algorithm: implement majority element (LeetCode 169) from scratch — 3 steps: count=0 → set candidate, match → +1, mismatch → -1</li>
+            <li>Study Kadane's variants: implement Maximum Subarray (LC 53) first, then Maximum Subarray Sum with One Deletion (LC 1186)</li>
+            <li>Study Single Element in Sorted Array (LC 540): implement the binary search parity approach — complete the logic you were one step away from in TR-2</li>
+            <li>Take 2 full mock TR-2 interviews (45 min each): projects + React internals + backend theory + one coding problem — no notes during mocks</li>
+            <li>After each mock: answer cold from memory — Virtual DOM, reconciliation, pure functions, HTTP codes, indexing. If you can't answer, add it to next day's study list</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · May 2026</div>
+</body>
+</html>

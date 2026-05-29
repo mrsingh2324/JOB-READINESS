@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reddipalli Phani Koushik — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-green{background:var(--green-bg);color:var(--green);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .dot-red{background:#c0392b;border-color:#c0392b;}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);} .journey-result.red{color:var(--red);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:rgba(255,255,255,.12);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .integrity-flag{background:#fff8f0;border:1px solid #e8c080;border-left:4px solid #c8873f;border-radius:8px;padding:16px 20px;margin-bottom:20px;}
+  .integrity-flag .flag-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:500;}
+  .integrity-flag p{font-size:13.5px;color:#5a3a00;line-height:1.65;}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <h1>Reddipalli Phani Koushik</h1>
+  <div class="subtitle">Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Reddipalli Phani Koushik</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">15 March 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">phanikoushik2006@gmail.com</div></div>
+    <div class="info-cell"><div class="label">Eligible Role</div><div class="value">Product Based SDE</div></div>
+    <div class="info-cell full"><div class="label">NxtMock Status</div><div class="value">Attempted · Score 7.8 / 10 · <span class="badge badge-green" style="font-size:11px;">✓ Cleared</span></div></div>
+    <div class="info-cell full"><div class="label">Final Placement Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Cleared — Re-attempt Required · TR-3 Not Cleared</span></div></div>
+  </div>
+
+  <!-- ══ SECTION 02 ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared</div>
+        <div class="journey-detail">15 Mar 2026 · Qualified for Product Based SDE track</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">NxtMock / AI Interview</div>
+        <div class="journey-result green">✓ Cleared · Score 7.8 / 10</div>
+        <div class="journey-detail">Cleared prior to TR-1</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 — Full Stack Interview</div>
+        <div class="journey-result green">✓ Cleared · Medium Hire</div>
+        <div class="journey-detail">REST APIs, SQL, indexing, and HTTP codes handled well; localStorage/sessionStorage and JWT not known</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 2 — DSA Interview</div>
+        <div class="journey-result amber">~ Not Cleared</div>
+        <div class="journey-detail">Heap and sliding window approached with guidance; implementation bugs not self-debugged</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 3 — Full Stack Interview (Re-attempt)</div>
+        <div class="journey-result amber">~ Not Cleared</div>
+        <div class="journey-detail">Frontend and database gaps persist; coding problem solved with prefix sum approach; integrity flag raised</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 03 — TR-3 ══ -->
+  <div class="section-label">03 · Technical Round 3 — Full Stack Interview (Re-attempt)</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 3 — Full Stack Interview</div>
+        <div class="round-meta">Re-attempt · Second full stack evaluation</div>
+      </div>
+      <div class="round-score-box">
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Integrity Flag -->
+      <div class="integrity-flag">
+        <div class="flag-label">⚠ Academic Integrity — Flagged by Evaluator</div>
+        <p>The evaluator observed that the solution submitted for the coding problem (Count Subarrays with Sum = K) closely resembled an optimised prefix sum + hashmap approach that was unlikely to have been arrived at independently within the session, given the candidate's stated complexity explanations were initially inconsistent. The evaluator directly asked: "Are you sure you have written this code?" and "Are you sure you are not taking any external help?" This has been recorded in the evaluation file. All solutions must be written independently during the interview without the use of external resources or AI tools.</p>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="qa-block">
+        <div class="qa-block-label">Soft Skills &amp; Communication</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Introduced yourself confidently — CGPA 9.06 at SRM IST, echo voice project (CNN-based waste classification, 85% accuracy), health risk prediction (SVM + Random Forest) — clear and structured</span>
+            <span>Acknowledged preparation since TR-1 and TR-2: "with my previous interview I have more focused on how to be in dry run, I practiced in that way also" — positive self-awareness</span>
+            <span>Said "I have heard but I am not sure" on rate limiting rather than bluffing — honest approach</span>
+            <span>Communication adequate but technical explanations were sometimes circular — needed prompting to reach the correct answer on several topics</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Adequate — Confident introduction and honest on knowledge limits; technical depth of verbal explanation still needs improvement</span>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="qa-block">
+        <div class="qa-block-label">Projects — Echo Voice &amp; ML Background</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Explain the Echo Voice project and your choice of CNN for image classification.</div>
+          <div class="qa-a">
+            <span>Echo Voice: classifies waste based on text input, image input, and voice input — aligned with SDG 11 and 12 (sustainable cities, waste management)</span>
+            <span>CNN used for image classification — described as "very accurate for image type classification" because dataset consists largely of image data</span>
+            <span>85% accuracy achieved on the image classification component</span>
+            <span>Web Speech API integrated for text-to-speech and speech-to-text — correctly described as third-party integration, not a built API</span>
+            <span>GPT-4 integrated into the project as an LLM component</span>
+            <span>Evaluator asked: "Why CNN specifically over other models?" — answer was primarily "because I have image data" without explaining CNN's spatial feature extraction advantage (convolutions, pooling)</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Project scope and implementation clearly described; CNN justification was "image data = CNN" without explaining the architectural advantage that makes CNN optimal for spatial data</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Complete CNN Justification Looks Like</div>
+            <span>CNN is optimal for image data because convolutional layers learn spatial hierarchies of features — edges → shapes → objects — automatically through learned filters. Pooling layers add spatial invariance. Alternative models like MLPs would require flattening the image and lose spatial structure entirely, massively increasing parameters. For image classification, CNN is the architectural choice because of these inductive biases, not just because the data happens to be images.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Frontend — JavaScript, React &amp; HTML</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Should API calls from the frontend be synchronous or asynchronous? When would you use synchronous?</div>
+          <div class="qa-a">
+            <span>Initially said "I will be in asynchronous only" — correct as a general principle</span>
+            <span>When the evaluator presented a scenario (loading a product list taking 10 seconds), you did not independently explain why synchronous would cause a blocked UI</span>
+            <span>After the evaluator explained that synchronous blocks the user, you agreed and then said "it will be more in synchronous only in some cases" — this reversed your correct answer</span>
+            <span>You did not volunteer the correct phrasing: 95%+ of cases should be asynchronous (using <code>async/await</code> or Promises); synchronous is reserved only for specific cases like blocking payment confirmation</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Initial answer correct (async); walked back the answer after evaluator explanation rather than holding the correct position; practical rationale not articulated</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Almost all API calls should be asynchronous — use <code>fetch()</code> with <code>async/await</code> or Promises. Asynchronous calls allow the browser to remain responsive while waiting for the response — the user can still interact with the UI. A synchronous call would block the entire JavaScript thread, freezing the UI until the response arrives.</span>
+            <span>Synchronous is only appropriate in very limited scenarios (e.g. certain <code>beforeunload</code> events). In React, always use <code>useEffect</code> + <code>async/await</code> or a data-fetching library like React Query.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is API rate limiting?</div>
+          <div class="qa-a">
+            <span>Said "I have heard but I am not sure — I think it will be like controlling the request from users"</span>
+            <span>Directionally correct — rate limiting does control request frequency — but the definition was vague and incomplete</span>
+            <span>Evaluator then explained: third-party APIs allow a maximum number of requests per time window (e.g. 5 requests per minute)</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Directionally correct (request control) but definition incomplete; required evaluator explanation to confirm (same gap as TR-1)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Rate limiting restricts the number of API requests a client can make within a given time window (e.g. 100 requests/minute). It prevents abuse, protects server resources, and is enforced by the API provider. Response when exceeded: HTTP 429 Too Many Requests. On the server side, implement using middleware like <code>express-rate-limit</code>.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is the difference between local storage and session storage?</div>
+          <div class="qa-a">
+            <span>Initially confused: said "local storage will be permanent storage and session storage will be temporary" — this is the opposite of the correct behaviour</span>
+            <span>When the evaluator corrected this, acknowledged the correction but the original answer was inverted</span>
+            <span>Note: this exact same gap appeared in TR-1 — the definitions are still reversed after the previous round</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incorrect — Local and session storage definitions reversed (same error as TR-1); this gap has not been addressed between rounds</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>localStorage</strong>: persists indefinitely even after closing and reopening the browser tab. Data remains until explicitly deleted via JavaScript or the user clears browser data. Use for: user preferences, theme settings, cached data.</span>
+            <span><strong>sessionStorage</strong>: cleared as soon as the browser tab is closed. Each tab has its own sessionStorage — data is not shared across tabs. Use for: temporary state within a single session, form wizard progress.</span>
+            <span>Both are browser-side storage (no server involved). Neither is suitable for sensitive data — use HTTP-only cookies for auth tokens.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Do you know what a JWT login API flow looks like?</div>
+          <div class="qa-a">
+            <span>Said "I have heard about it but I am not very sure"</span>
+            <span>Mentioned planning to integrate authentication in an event management system but has not implemented it yet</span>
+            <span>JWT implementation remains unknown — same gap as TR-1</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Unknown — JWT auth flow not studied; same gap as TR-1; this must be addressed before re-attempting</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>1. User sends credentials (username + password) to <code>POST /login</code>. 2. Server verifies password using bcrypt compare. 3. If valid, server signs a JWT: <code>jwt.sign({userId}, SECRET, {expiresIn: '1d'})</code> and returns it. 4. Client stores the token (localStorage or HTTP-only cookie). 5. On subsequent requests, client sends <code>Authorization: Bearer &lt;token&gt;</code> in the header. 6. Server middleware verifies the token with <code>jwt.verify(token, SECRET)</code> — if valid, allows the request through; if invalid, returns 401.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is a meta tag in HTML and why is it used?</div>
+          <div class="qa-a">
+            <span>Correctly explained: meta tags provide metadata of a website to search engines for SEO and better search visibility</span>
+            <span>Placed in the <code>&lt;head&gt;</code> section — correct</span>
+            <span>Good answer — confident and accurate</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — Meta tags explained well; SEO purpose and head placement correctly identified</span>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Backend — REST APIs &amp; HTTP</div>
+
+        <div class="qa-item">
+          <div class="qa-q">What do you know about REST APIs? Are they stateful or stateless?</div>
+          <div class="qa-a">
+            <span>Correctly expanded REST: Representational State Transfer — communicated via HTTP protocols using client-server architecture</span>
+            <span>Correctly identified REST APIs as stateless</span>
+            <span>When asked to define "state": answered "requesting requests sir" — vague; could not define statelessness independently</span>
+            <span>Evaluator explained: stateless means every request must include an identifier (user ID, token) because the server holds no session state between calls</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — REST definition and stateless identification correct; could not define statelessness or contrast with stateful (WebSocket) independently</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Stateless: each HTTP request is independent — the server stores no client session between requests. Every request must carry all necessary context (e.g. user ID, auth token). This enables horizontal scaling — any server instance can handle any request.</span>
+            <span>Stateful (e.g. WebSockets): the server maintains an open connection and remembers context across messages. The identifier is implied by the connection — you don't resend it each time.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is the difference between PUT and POST? What is PATCH?</div>
+          <div class="qa-a">
+            <span>PUT: for updating data — correct</span>
+            <span>POST: for creating data — correct</span>
+            <span>PATCH: "if we want to update some small segments like that we can use patch" — partially correct; PATCH is for partial updates (only specific fields), while PUT replaces the entire resource</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — PUT, POST, and PATCH correctly distinguished; PATCH definition adequate</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What does the 5xx range of HTTP status codes signify?</div>
+          <div class="qa-a">
+            <span>Correctly identified: 5xx = internal server error — server-side issues</span>
+            <span>500 = Internal Server Error — correct</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — 5xx range correctly identified as server-side errors</span>
+        </div>
+      </div>
+
+      <!-- Database -->
+      <div class="qa-block">
+        <div class="qa-block-label">Database — SQL &amp; MySQL</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Can a foreign key be NULL in MySQL?</div>
+          <div class="qa-a">
+            <span>Correctly stated: foreign key can be NULL; primary key cannot be NULL</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — FK nullable, PK non-nullable correctly stated</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is the difference between TRUNCATE and DROP?</div>
+          <div class="qa-a">
+            <span>DROP: removes the entire table structure and data — correct</span>
+            <span>TRUNCATE: removes all records from a table but keeps the table structure — correct</span>
+            <span>Wording was slightly confused initially ("removing some records") but the final explanation was correct</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — TRUNCATE vs DROP distinction correctly explained</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">SQL Task — Find total order amount per customer from a customers table (ID, name, order_id, amount).</div>
+          <div class="qa-a">
+            <span>Wrote: <code>SELECT ID, name, SUM(amount) AS total_sale FROM customers GROUP BY ID, name</code></span>
+            <span>Evaluator confirmed: correct</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — GROUP BY + SUM aggregation written correctly</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is indexing in MySQL? What operations are slowed by adding an index?</div>
+          <div class="qa-a">
+            <span>Indexing correctly described as a technique that speeds up data retrieval</span>
+            <span>Correctly identified that INSERT, DELETE, and UPDATE are slowed by indexes</span>
+            <span>When asked why — answered: "the database will be re-updating more and more, every time the index is also updated" — correct reasoning, though imprecise in wording</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — Indexing purpose, read/write trade-off, and reason for write slowdown correctly explained</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What do you know about vector databases? What is a vector?</div>
+          <div class="qa-a">
+            <span>Vector databases not used — only MySQL and Supabase (PostgreSQL) used to date</span>
+            <span>On vectors: "our data will be converted to some vectors like 0, 1 like that — vector embeddings" — directionally correct but binary description (0/1) is more bit-level than embedding-level</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Honest about not using vector DBs; embedding concept roughly correct but description too basic for an ML background</span>
+        </div>
+      </div>
+
+      <!-- Coding -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem — Count Subarrays with Sum = K</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Given an array and K, count all subarrays whose sum equals K. Example: arr=[1,2,3], K=3 → answer is 2 ([1,2] and [3]).</div>
+          <div class="qa-a">
+            <span>Arrived at a prefix sum + hashmap solution — correctly using a running prefix sum and a count hashmap to find subarrays summing to K in O(N) time</span>
+            <span>Code submitted and executed correctly in the compiler</span>
+            <span>Evaluator directly asked: "Are you sure you have written this code?" and "Are you sure you are not taking any external help or something?" — integrity concern raised</span>
+            <span>When asked for time complexity: initially said "constant time" — incorrect for an O(N) solution; when pressed said "O(N) because only one for loop" — this correction came after questioning</span>
+            <span>When asked for space complexity: said "O(N) because only one extra array" — partially correct (it is O(N) for the hashmap) but described as "one extra array" rather than a hashmap, which was the actual data structure used in the solution</span>
+            <span>The inconsistency between the sophistication of the solution and the initial complexity explanation raised the integrity concern noted above</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Flagged — Code produced a correct output; complexity explanations were inconsistent with the solution sophistication; integrity concern recorded by evaluator</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Full Explanation Looks Like</div>
+            <span>Approach: maintain a running prefix sum and a hashmap <code>{prefix_sum: count}</code> initialised with <code>{0: 1}</code>. For each element: add it to <code>prefix_sum</code>. Check if <code>prefix_sum - K</code> exists in the hashmap — if yes, add its count to the result. Then increment <code>hashmap[prefix_sum]</code>. This works because any subarray sum equalling K corresponds to two prefix sums whose difference is K.</span>
+            <span>Time: O(N) — single pass through the array. Space: O(N) — hashmap stores at most N distinct prefix sums. You must be able to explain this fully and independently in the re-attempt.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>Evaluator Remarks:</strong> Adequate communication and clear project introduction. SQL, HTTP methods, indexing, TRUNCATE vs DROP, and meta tags were all handled correctly — these are consistent strengths. However, localStorage vs sessionStorage remains reversed (same error as TR-1), JWT auth flow is still unknown, and the complexity explanation for the coding problem was inconsistent with the solution submitted. The evaluator raised an integrity concern regarding the coding problem and this has been recorded. All future solutions must be written independently.
+    </div>
+  </div>
+
+  <!-- ══ SECTION 04 — OVERALL ══ -->
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>Across three technical rounds, a consistent picture has emerged. Your strengths are real and durable — SQL aggregation, HTTP methods, REST API theory, indexing trade-offs, and your ML project experience (CNN, SVM, Random Forest) all hold up across evaluations. The gaps that failed TR-1 have not been fully closed: localStorage vs sessionStorage is still reversed, and JWT remains unstudied after TR-3. These are the two frontend gaps you must fix before re-attempting. Additionally, the evaluator raised an integrity concern regarding the coding problem in TR-3. Going into any re-attempt, you must be able to write solutions independently and explain every line, including time and space complexity, without inconsistency.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>SQL Proficiency:</strong> GROUP BY + SUM aggregation written correctly and confidently in TR-3; TRUNCATE vs DROP, FK nullability, and indexing trade-offs all correctly explained across rounds — consistent SQL strength.</li>
+        <li><strong>HTTP Methods &amp; Status Codes:</strong> PUT, POST, PATCH correctly distinguished; 5xx server error range correctly identified — reliable across TR-1 and TR-3.</li>
+        <li><strong>REST API Theory:</strong> Correctly expanded the acronym, identified stateless behaviour, and communicated client-server architecture.</li>
+        <li><strong>ML Project Depth:</strong> Echo Voice (CNN, 85% accuracy, Web Speech API + GPT-4 integration) and Health Risk Prediction (SVM + Random Forest) demonstrate genuine multi-domain experience that stands out in full stack interviews.</li>
+        <li><strong>Meta Tags:</strong> Correctly explained purpose (metadata for SEO and search engines) and placement (head section) — clear and confident answer.</li>
+        <li><strong>Honest Self-Assessment:</strong> Consistently said "I have heard but I am not sure" rather than bluffing — a professional quality that builds evaluator trust.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>localStorage vs sessionStorage — Must Fix Now:</strong> This definition has been reversed in both TR-1 and TR-3. localStorage persists across sessions; sessionStorage is cleared when the tab closes. Memorise this before re-attempting — it is a basic frontend question that will be asked again.</li>
+        <li><strong>JWT Authentication Flow — Must Study:</strong> JWT was unknown in TR-1 and still unknown in TR-3 after two attempts. You must implement JWT login end-to-end (bcrypt + jwt.sign + middleware + jwt.verify) in your event management project before the re-attempt.</li>
+        <li><strong>Coding Independence &amp; Complexity Explanation:</strong> In TR-3, an integrity concern was raised because your complexity explanation was inconsistent with your solution. In every future session you must write solutions independently, explain the approach step by step before coding, and articulate time and space complexity correctly and immediately after submitting.</li>
+        <li><strong>Async/Await Rationale:</strong> You gave the correct answer (async) but reversed it after evaluator questioning. Study and be able to explain why async API calls are standard: they keep the JavaScript thread unblocked, ensuring a responsive UI. Hold your correct answers under pressure.</li>
+        <li><strong>CNN Architecture Justification:</strong> "Image data = CNN" is not a complete answer. Be ready to explain: convolutional layers learn spatial feature hierarchies, pooling adds invariance, and flattening for an MLP loses spatial structure. This will be asked again given your ML background.</li>
+        <li><strong>Statelessness Definition:</strong> You correctly identified REST as stateless but could not define what stateless means. Prepare: every request must carry all context (ID, token); the server holds no session state between calls. Be able to contrast with stateful (WebSocket).</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">Fix Frontend Gaps</div></div>
+          <div class="week-card-body"><ul>
+            <li>Memorise localStorage vs sessionStorage: write a one-page cheat sheet with the definition, lifespan, use case, and a code example for each — read it daily until automatic</li>
+            <li>Study JWT end-to-end: watch one tutorial, then implement login from scratch in your event management system — bcrypt, jwt.sign, middleware, jwt.verify, 401 response</li>
+            <li>Study async/await deeply: build a demo that makes 3 API calls — one synchronous (observe UI freeze), two async (observe non-blocking) — feel the difference</li>
+            <li>Study API rate limiting: implement <code>express-rate-limit</code> in your event management backend; test with Postman to hit the limit and observe 429 response</li>
+            <li>Practice explaining each concept aloud in 2 sentences — you must hold correct answers under evaluator questioning without reversing them</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">Coding Independence</div></div>
+          <div class="week-card-body"><ul>
+            <li>Solve LeetCode 560 (Subarray Sum Equals K) completely independently — write the prefix sum + hashmap approach from scratch, explain every line, then state time O(N) and space O(N) correctly before submitting</li>
+            <li>Rule for this week: for every problem, state the approach and complexity verbally before writing a single line of code — make this a non-negotiable habit</li>
+            <li>Solve 5 more prefix sum problems: LeetCode 523, 525, 974, 1248, 1074 — all using the same prefix + hashmap pattern</li>
+            <li>After each solution: close the editor and re-implement from memory — if you can't, you don't own it yet</li>
+            <li>Practice dry-run: for every solution, trace through the example input step by step on paper before running the code</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">ML Depth &amp; Backend Theory</div></div>
+          <div class="week-card-body"><ul>
+            <li>Deepen CNN justification: study convolutional layers (filters, feature maps), pooling (max/avg), and why flattening loses spatial structure — be ready to explain why CNN beats MLP for images in 4 sentences</li>
+            <li>Study stateless vs stateful APIs with examples: REST (stateless) vs WebSocket (stateful) — write a 5-point comparison you can recite under pressure</li>
+            <li>Deepen HTTP knowledge: memorise all key status codes (200, 201, 204, 301, 400, 401, 403, 404, 429, 500) and what triggers each one</li>
+            <li>Study vector embeddings more precisely: understand that embeddings are high-dimensional float vectors (e.g. 768 dimensions), not binary 0/1 — given your ML background this should be straightforward</li>
+            <li>Review SQL: practice JOIN queries, subqueries, and window functions — GROUP BY was strong; broaden the SQL base</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Full Mock Interviews</div></div>
+          <div class="week-card-body"><ul>
+            <li>Take 2 full mock TR interviews (45 min each) with a friend or peer as evaluator — cover: project explanation, localStorage vs sessionStorage, JWT flow, async/await, SQL, indexing, one coding problem</li>
+            <li>Coding mock rule: write every solution independently with no external resources — state approach and complexity before coding, dry-run after writing, explain line by line when asked</li>
+            <li>After each mock: identify one answer you reversed under questioning — study it until you can hold the correct answer even when challenged</li>
+            <li>Re-implement your event management system's JWT auth flow from memory — deploy it publicly so you can walk the evaluator through a live working system</li>
+            <li>Enter the re-attempt with these non-negotiables: localStorage/sessionStorage definitions correct, JWT flow implemented and explainable, all coding done independently with consistent complexity analysis</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · May 2026</div>
+</body>
+</html>

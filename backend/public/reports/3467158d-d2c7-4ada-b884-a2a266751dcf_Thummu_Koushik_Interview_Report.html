@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thummu Koushik — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-green{background:var(--green-bg);color:var(--green);}
+  .badge-red{background:var(--red-bg);color:var(--red);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .dot-red{background:#c0392b;border-color:#c0392b;}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);} .journey-result.red{color:var(--red);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:rgba(255,255,255,.12);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .audit-box{background:var(--red-bg);border:1px solid #f0c0c0;border-radius:10px;padding:20px 24px;margin-bottom:20px;}
+  .audit-box .audit-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px;font-weight:500;}
+  .audit-box span{display:block;padding-left:14px;position:relative;color:#5a1515;font-size:13.5px;margin-bottom:6px;}
+  .audit-box span::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;}
+  .bucket-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px;}
+  .bucket-cell{border:1px solid #f0c0c0;border-radius:8px;padding:16px;text-align:center;background:var(--red-bg);}
+  .bucket-cell .bc-label{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:6px;}
+  .bucket-cell .bc-icon{font-size:20px;margin-bottom:4px;}
+  .bucket-cell .bc-result{font-weight:700;font-size:13px;color:var(--red);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <h1>Thummu Koushik</h1>
+  <div class="subtitle">Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Thummu Koushik</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">22 February 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">koushikt33@gmail.com</div></div>
+    <div class="info-cell"><div class="label">Eligible Role</div><div class="value">Product Based SDE</div></div>
+    <div class="info-cell"><div class="label">NxtMock Status</div><div class="value">Not Attempted</div></div>
+    <div class="info-cell"><div class="label">Audit Completion Date</div><div class="value">7 March 2026</div></div>
+    <div class="info-cell full"><div class="label">Final Placement Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Cleared — Re-attempt Required</span></div></div>
+  </div>
+
+  <!-- ══ SECTION 02 ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared</div>
+        <div class="journey-detail">22 Feb 2026 · Qualified for Product Based SDE track</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="journey-result green">✓ Cleared · Score 65 / 100 · Medium Hire</div>
+        <div class="journey-detail">1 Mar 2026 · Decent problem solving; new concepts and implementation need more practice</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 2 — Full Stack Interview</div>
+        <div class="journey-result amber">~ Not Cleared · Score 70 / 100 · Medium Hire</div>
+        <div class="journey-detail">6 Mar 2026 · Strong projects; JS coding solved; backend endpoint and async concepts need work</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Audit Review</div>
+        <div class="journey-result red">~ Not Cleared — Frontend, Backend &amp; Full Stack</div>
+        <div class="journey-detail">7 Mar 2026 · Backend understanding gaps; JWT and indexing weak; not strong enough in frontend or backend</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 03 — TR-1 ══ -->
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">✅</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">1 March 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#7ed99e;">65</div>
+        <div class="round-score-label">/ 100 · Cleared</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Medium Hire</span></div>
+      </div>
+    </div>
+    <div class="round-body">
+      <div class="qa-block">
+        <div class="qa-block-label">TR-1 Summary</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Problem solving is decent — able to approach problems and arrive at reasonable solutions</span>
+            <span>Needs to work on newer DSA concepts beyond the basics — breadth of pattern knowledge needs to expand</span>
+            <span>Implementation needs more practice — translating correct approaches into clean, working code under time pressure needs strengthening</span>
+            <span>Cleared TR-1 — qualifies to attempt TR-2</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Cleared — Decent problem solving; new concepts and implementation consistency need improvement (Score: 65/100)</span>
+        </div>
+      </div>
+    </div>
+    <div class="round-remarks">
+      <strong>Evaluator Remarks:</strong> "The candidate is decent with problem solving, needs to work more on new concepts and solve more questions, and get good with implementation."
+    </div>
+  </div>
+
+  <!-- ══ SECTION 04 — TR-2 ══ -->
+  <div class="section-label">04 · Technical Round 2 — Full Stack Interview</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 2 — Full Stack Interview</div>
+        <div class="round-meta">6 March 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">70</div>
+        <div class="round-score-label">/ 100 · Not Cleared</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Medium Hire</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">75</div><div class="slabel">Soft Skills &amp; Comm.</div></div>
+        <div class="score-cell"><div class="snum snum-amber">75</div><div class="slabel">Projects</div></div>
+        <div class="score-cell"><div class="snum snum-amber">70</div><div class="slabel">Frontend Score</div></div>
+        <div class="score-cell"><div class="snum snum-red">58</div><div class="slabel">Backend Score</div></div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="qa-block">
+        <div class="qa-block-label">Soft Skills &amp; Communication</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Presentability: looks like a native person, well groomed — professional appearance</span>
+            <span>Communication: confident and understandable with minor grammar changes — 75/100</span>
+            <span>Overall communication and project rating: 75 — consistently strong throughout the round</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Good — Confident and professional; a reliable strength across both rounds (75/100)</span>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="qa-block">
+        <div class="qa-block-label">Projects</div>
+        <div class="qa-item">
+          <div class="qa-q">Project Explanation &amp; Integration</div>
+          <div class="qa-a">
+            <span>Projects type: Full Stack — good understanding with clear integration explanation (rated 75/100)</span>
+            <span>Explained projects clearly and demonstrated understanding of how the full stack components connect</span>
+            <span>This was the strongest technical area in the round — project ownership and explanation were both solid</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Good — Projects clearly explained with strong integration understanding; stack depth in theory questions is the gap (Score: 75/100)</span>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Frontend — HTML, CSS, JavaScript &amp; React</div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is the difference between localStorage, sessionStorage, and cookies?</div>
+          <div class="qa-a">
+            <span>Understands core concepts but misses depth — basic distinction between the three is known but precise details (lifespan, scope, server accessibility) not fully articulated</span>
+            <span>Was able to explain the general purpose of each but not the exact behavioural differences</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Core distinctions known; precise lifespan and scope differences not fully explained</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>localStorage</strong>: persists indefinitely even after closing and reopening the browser — cleared only via JavaScript or browser settings. Scoped to origin. Not sent to server. Max ~5MB.</span>
+            <span><strong>sessionStorage</strong>: cleared when the tab is closed. Each tab has its own sessionStorage — not shared across tabs. Not sent to server. Same ~5MB limit.</span>
+            <span><strong>Cookies</strong>: sent to the server automatically with every HTTP request (via <code>Cookie</code> header). Can be set with expiry, <code>HttpOnly</code> (not accessible via JS — safer for auth tokens), <code>Secure</code> (HTTPS only), and <code>SameSite</code> (CSRF protection). Max ~4KB.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is inline CSS? What is internal CSS (embedded stylesheet)?</div>
+          <div class="qa-a">
+            <span>Understands core concepts but misses depth — knows what inline and internal CSS are</span>
+            <span>Could not fully explain the specificity implications or when each should (and should not) be used</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Basic definitions known; specificity rules and best practices not explained</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Inline CSS</strong>: styles applied directly on an element via the <code>style</code> attribute — e.g. <code>&lt;p style="color:red"&gt;</code>. Highest specificity; overrides internal and external styles. Avoid in production — hard to maintain, not reusable.</span>
+            <span><strong>Internal CSS</strong>: styles defined inside a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code>. Scoped to that HTML page only. Useful for single-page styles; not reusable across pages. External CSS (separate <code>.css</code> file linked with <code>&lt;link&gt;</code>) is preferred for maintainability and caching.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What are Promises in JavaScript? What is asynchronous JavaScript?</div>
+          <div class="qa-a">
+            <span>Basic awareness of asynchronous JavaScript — knows that async operations exist and that they don't block execution</span>
+            <span>Explanation of Promises was weak — could not clearly explain the three states (pending, fulfilled, rejected), chaining with <code>.then()</code>/<code>.catch()</code>, or how Promises compare to callbacks</span>
+            <span>async/await syntax not fully explained — knows it is related to Promises but the relationship and usage pattern were not articulated clearly</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Weak — Async concept roughly known; Promises and async/await not understood with sufficient depth for a full stack interview</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A <strong>Promise</strong> is an object representing the eventual completion or failure of an async operation. Three states: <code>pending</code> (initial), <code>fulfilled</code> (resolved with a value), <code>rejected</code> (failed with a reason). Chain with <code>.then(value =&gt; ...)</code> for success and <code>.catch(err =&gt; ...)</code> for errors. Avoids callback hell.</span>
+            <span><strong>async/await</strong>: syntactic sugar over Promises. An <code>async</code> function always returns a Promise. <code>await</code> pauses execution inside the function until the Promise resolves — making async code read like synchronous code. Wrap in <code>try/catch</code> for error handling. Example: <code>const data = await fetch(url).then(r =&gt; r.json())</code>.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">JavaScript Coding Task (Medium Level)</div>
+          <div class="qa-a">
+            <span>Able to solve approximately 80% of the JavaScript coding problem — strong relative performance</span>
+            <span>Nearly complete implementation — only a small portion remained unfinished</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Strong — 80% of JS coding task solved; close to complete (Frontend Score: 70/100)</span>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Backend — Node.js, Express.js, APIs &amp; Database</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Node.js &amp; Express.js Theory</div>
+          <div class="qa-a">
+            <span>Good understanding with clear explanation — Node.js and Express.js concepts explained at a solid level</span>
+            <span>This was the strongest backend theory area in the round</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — Node.js and Express.js theory explained clearly and confidently</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">MongoDB Theory &amp; Query Discussion</div>
+          <div class="qa-a">
+            <span>Basic awareness but weak explanation — knows MongoDB exists and its general document-based nature</span>
+            <span>Query knowledge is limited — could not write or explain MongoDB queries with confidence</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Weak — MongoDB theory basic awareness only; query writing not demonstrated</span>
+          <div class="model-answer">
+            <div class="model-label">📚 Key MongoDB Concepts to Study</div>
+            <span>Core operators: <code>$eq</code>, <code>$gt</code>, <code>$lt</code>, <code>$in</code>, <code>$all</code>, <code>$elemMatch</code>. CRUD: <code>find()</code>, <code>insertOne()</code>, <code>updateOne({ $set })</code>, <code>deleteOne()</code>. Array operators: <code>$push</code>, <code>$pull</code>, <code>$addToSet</code>.</span>
+            <span>Schema design pattern for likes: store an array of user IDs in the Post document — <code>likes: [ObjectId]</code>. Count: <code>post.likes.length</code>. Check if liked: <code>post.likes.includes(userId)</code>. Toggle: <code>$addToSet</code> to add, <code>$pull</code> to remove.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Backend Architecture — Design RESTful API endpoints for a to-do list app with user authentication.</div>
+          <div class="qa-a">
+            <span>Good understanding with clear integration explanation — able to discuss the overall structure of an authenticated API</span>
+            <span>Understood how auth middleware fits into the route flow and how user-scoped data should work</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — REST API architecture for authenticated to-do app understood and explained clearly</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Backend Endpoint Implementation — Code a backend API endpoint (e.g. GET /tasks).</div>
+          <div class="qa-a">
+            <span>Able to solve approximately 50% of the backend coding task — partial implementation</span>
+            <span>Could not complete the full endpoint implementation — route handler, middleware integration, or database query not fully connected</span>
+            <span>Audit noted: "unable to implement a backend API endpoint (e.g. a GET API for tasks)"</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — 50% of backend coding task completed; full endpoint implementation not achieved (Backend Score: 58/100)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Complete GET /tasks Endpoint Looks Like</div>
+            <span>Route with auth middleware: <code>router.get('/tasks', verifyToken, async (req, res) =&gt; {'{'} try {'{'} const tasks = await Task.find({'{'} userId: req.user.id {'}'}); res.json(tasks); {'}'} catch (err) {'{'} res.status(500).json({'{'} message: 'Server error' {'}'}); {'}'} {'}'});</code></span>
+            <span>verifyToken middleware extracts userId from JWT and attaches to <code>req.user</code>. The query filters tasks by that userId so users only see their own tasks. Always wrap DB calls in try/catch and return appropriate status codes: 200 OK, 401 Unauthorized, 500 Server Error.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">JWT Authentication — How does JWT secure API calls?</div>
+          <div class="qa-a">
+            <span>JWT explanation was weak — audit noted this as a specific gap</span>
+            <span>General idea of JWT being an auth token is present but the flow (sign on login, send in header, verify in middleware) was not clearly explained</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Weak — JWT auth flow not clearly understood; sign/verify/middleware pattern not explained</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>1. User logs in → server verifies password with bcrypt → signs a JWT: <code>jwt.sign({'{'} userId {'}'}, SECRET, {'{'} expiresIn: '1d' {'}'})</code> → returns token to client.</span>
+            <span>2. Client stores token (localStorage or HTTP-only cookie). On each subsequent request: sends <code>Authorization: Bearer &lt;token&gt;</code> in header.</span>
+            <span>3. Server middleware calls <code>jwt.verify(token, SECRET)</code> — if valid, attaches decoded payload to <code>req.user</code> and calls <code>next()</code>. If invalid, returns 401 Unauthorized. This is how protected routes verify identity on every request without server-side sessions.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Database Indexing — What is indexing and what is the trade-off?</div>
+          <div class="qa-a">
+            <span>Explanation was weak — audit flagged database indexing as a specific gap</span>
+            <span>Could not clearly explain what an index is, what data structure it uses, or why write operations are slowed</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Weak — Indexing purpose and trade-off not clearly explained</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>An index is a data structure (typically B-tree in SQL, also B-tree in MongoDB) built on one or more fields so the database can find documents/rows without scanning the entire collection/table. Dramatically speeds up read queries (<code>SELECT WHERE</code>, <code>find()</code> with filters).</span>
+            <span>Trade-off: every INSERT, UPDATE, and DELETE must also update all indexes on that collection — adding overhead to write operations. Rule of thumb: index fields you query frequently; avoid over-indexing collections with heavy write loads. Example: <code>db.tasks.createIndex({'{'} userId: 1 {'}'})</code> speeds up all queries filtering by userId.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Schema Design — Design a "like" feature for posts: efficiently count likes and check if a user has liked a post.</div>
+          <div class="qa-a">
+            <span>Good understanding with clear integration explanation — able to think through the schema design</span>
+            <span>Understood the requirement and could discuss the design direction — stronger than the coding implementation</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — Like feature schema design understood and explained with clear integration thinking</span>
+        </div>
+      </div>
+
+      <!-- Internship -->
+      <div class="qa-block">
+        <div class="qa-block-label">Internship &amp; Practical Experience</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Internship: assisted in small modules — limited scope of individual contribution</span>
+            <span>Understands the flow of the internship work but misses key details when explaining specific technical tasks</span>
+            <span>Partial explanation with gaps — the overall picture was communicated but technical specifics were incomplete</span>
+            <span>Internship score: 38 — narrative clarity is present but technical depth of contribution is limited</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Moderate — Internship flow understood; small module contribution; technical detail of individual tasks partially explained (Score: 38/100)</span>
+        </div>
+      </div>
+
+      <!-- AI Knowledge -->
+      <div class="qa-block">
+        <div class="qa-block-label">AI Knowledge</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Good at using and aware of the latest AI tools — proactively uses AI tools in development workflow</span>
+            <span>Awareness of current AI landscape is a positive differentiator in this evaluation</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — Active AI tool user; aware of latest tools in the space</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>Evaluator Remarks:</strong> "Candidate did good projects and was able to explain them very clearly. He needs some more practice in the full stack domain. He was able to solve the JavaScript coding problem, but wasn't able to code the backend problem completely." &nbsp;·&nbsp; Communication was confident throughout. The critical gaps are in Promises and async/await depth, JWT auth flow implementation, MongoDB query writing, database indexing, and completing a backend endpoint under interview conditions.
+    </div>
+  </div>
+
+  <!-- ══ SECTION 05 — AUDIT ══ -->
+  <div class="section-label">05 · Audit Review</div>
+  <div class="round-card">
+    <div class="round-header" style="background:#5a1a1a;">
+      <div class="round-icon">📋</div>
+      <div class="round-title-group">
+        <div class="round-name">Audit Review — NxtWave Team</div>
+        <div class="round-meta">7 March 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">⚠ Not Cleared — All Buckets</span></div>
+      </div>
+    </div>
+    <div class="round-body">
+      <div class="audit-box">
+        <div class="audit-label">📋 Audit Findings — NxtWave Team</div>
+        <span>You were able to explain your projects clearly — a genuine strength that carries through both rounds</span>
+        <span>Backend understanding has gaps — during the coding task you were unable to implement a complete backend API endpoint (e.g. GET /tasks)</span>
+        <span>JWT and database indexing explanations were weak — these are core backend interview topics</span>
+        <span>HTML and CSS questions were answered adequately, but Promises and async/await were not explained properly</span>
+        <span>Overall assessment: not currently strong enough in frontend or backend for role eligibility at this time</span>
+      </div>
+      <div class="bucket-grid">
+        <div class="bucket-cell">
+          <div class="bc-label">Frontend Bucket</div>
+          <div class="bc-icon">✗</div>
+          <div class="bc-result">Not Cleared</div>
+        </div>
+        <div class="bucket-cell">
+          <div class="bc-label">Backend Bucket</div>
+          <div class="bc-icon">✗</div>
+          <div class="bc-result">Not Cleared</div>
+        </div>
+        <div class="bucket-cell">
+          <div class="bc-label">Full Stack Bucket</div>
+          <div class="bc-icon">✗</div>
+          <div class="bc-result">Not Cleared</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 06 — OVERALL ══ -->
+  <div class="section-label">06 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>You cleared TR-1 and came close in TR-2 — a score of 70/100 with strong project explanation, solid Node.js/Express theory, good REST API architecture thinking, and an 80% JS coding solve tells a clear story: the foundation is there. The gaps that matter most are all fixable: Promises and async/await at depth, JWT auth implementation end-to-end, MongoDB query writing, database indexing, and completing a full backend endpoint under interview conditions. These are specific, learnable topics — not broad capability gaps. Close them systematically and the TR-2 outcome changes.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Project Explanation (75/100):</strong> Projects were explained clearly with strong integration understanding — the evaluator noted this explicitly. Your ability to talk through what you built and how the stack connects is a real differentiator.</li>
+        <li><strong>Communication (75/100):</strong> Confident and professional across both rounds — consistent and reliable.</li>
+        <li><strong>JavaScript Coding (80% solved):</strong> Nearly complete JS coding solve in TR-2 — strong execution under interview conditions. This is significantly better than most candidates at this stage.</li>
+        <li><strong>Node.js &amp; Express Theory:</strong> Good understanding with clear explanation — backend framework theory is your strongest technical area.</li>
+        <li><strong>REST API Architecture:</strong> Understood the authenticated to-do app endpoint design — route structure, HTTP methods, and auth middleware placement correctly discussed.</li>
+        <li><strong>AI Tool Awareness:</strong> Good at using and aware of the latest AI tools — a practical differentiator in the current development landscape.</li>
+        <li><strong>DSA Foundation (TR-1 Cleared, 65/100):</strong> Decent problem solving cleared TR-1 — a base to build on with more consistent practice and broader pattern coverage.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Promises &amp; Async/Await — Must Master:</strong> This was flagged by both the evaluator and audit. You must be able to explain the three Promise states, <code>.then()</code>/<code>.catch()</code> chaining, and <code>async/await</code> with try/catch — and write them in code without reference.</li>
+        <li><strong>JWT Auth Flow — Must Implement:</strong> JWT was a specific audit gap. You must implement the full bcrypt + jwt.sign + middleware + jwt.verify flow in a real project and be able to explain every step independently.</li>
+        <li><strong>Backend Endpoint Implementation:</strong> You could not complete a GET /tasks endpoint under interview conditions. Build and practise writing complete route handlers — including middleware integration, DB query, and error handling — until it is automatic.</li>
+        <li><strong>Database Indexing:</strong> Flagged as weak in the audit. Understand what a B-tree index is, why it speeds up reads, why it slows writes, and when to create one — with a concrete example you can explain in 60 seconds.</li>
+        <li><strong>MongoDB Queries:</strong> Basic awareness only — query operators (<code>$all</code>, <code>$in</code>, <code>$elemMatch</code>, <code>$push</code>, <code>$pull</code>, <code>$addToSet</code>) not demonstrated. Write 20 real queries in MongoDB Compass against a collection you create.</li>
+        <li><strong>localStorage / sessionStorage / Cookies — Depth:</strong> Core distinction is present but precise lifespan, scope, and server-accessibility differences need to be memorised and explainable without hesitation.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">Async JavaScript &amp; Storage</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study Promises deeply: build a chain of 3 async operations using <code>.then()</code>/<code>.catch()</code> — fetch user, fetch their posts, fetch post comments; handle each rejection separately</li>
+            <li>Study async/await: rewrite the same chain using <code>async/await</code> with <code>try/catch</code> — see the code clarity difference firsthand</li>
+            <li>Build a demo: compare a synchronous loop (blocks UI) vs an async fetch (non-blocking) — observe and be able to explain the difference</li>
+            <li>Write a one-page cheat sheet for localStorage vs sessionStorage vs cookies: lifespan, scope, server access, security, use case — read it daily until automatic</li>
+            <li>Memorise CSS specificity order: inline &gt; internal &gt; external, and understand when to use each</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">JWT &amp; Backend Endpoints</div></div>
+          <div class="week-card-body"><ul>
+            <li>Implement JWT end-to-end: bcrypt password hashing on register, jwt.sign on login, verifyToken middleware, jwt.verify — do this from scratch in a new Express project without copying code</li>
+            <li>Build a complete to-do API: <code>POST /auth/register</code>, <code>POST /auth/login</code>, <code>GET /tasks</code>, <code>POST /tasks</code>, <code>PUT /tasks/:id</code>, <code>DELETE /tasks/:id</code> — all task routes protected by JWT middleware</li>
+            <li>Practice writing each route handler from memory: define the route, call the middleware, write the try/catch, query the DB, send the response with the correct status code</li>
+            <li>Study database indexing: create a collection with 10,000 documents; run a query with and without an index using <code>explain()</code> in MongoDB Compass — observe the difference in documents scanned</li>
+            <li>Be able to explain indexing in 60 seconds: what it is, why reads are faster, why writes are slower, and when to create one</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">MongoDB &amp; Full Stack Integration</div></div>
+          <div class="week-card-body"><ul>
+            <li>Write 20 MongoDB queries in Compass against a posts collection: use <code>$all</code>, <code>$in</code>, <code>$elemMatch</code>, <code>$push</code>, <code>$pull</code>, <code>$addToSet</code> — cover both reads and array mutations</li>
+            <li>Implement the like-feature: Post schema with <code>likes: [ObjectId]</code>, toggle endpoint using <code>$addToSet</code> and <code>$pull</code>, count via <code>likes.length</code>, check via <code>includes()</code></li>
+            <li>Connect the to-do API from Week 2 to a React frontend: login page, task dashboard (only current user's tasks), add/edit/delete tasks</li>
+            <li>Deploy the full stack app: Vercel (frontend) + Render (backend) + MongoDB Atlas — get a live public URL to demonstrate in interviews</li>
+            <li>Continue DSA: 5 problems/day expanding into sliding window and prefix sum patterns (LeetCode 3, 209, 560, 523)</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Mock Interviews &amp; Coding Drills</div></div>
+          <div class="week-card-body"><ul>
+            <li>Take 2 full mock TR-2 interviews (45 min each): projects, localStorage vs cookies, Promises/async/await, Node/Express, MongoDB query writing, JWT flow, indexing, one backend endpoint to code</li>
+            <li>Coding drill: write a complete GET /tasks Express endpoint from memory in under 5 minutes — route, middleware, try/catch, DB query, response — repeat until automatic</li>
+            <li>After each mock: identify the weakest answer and spend 30 minutes going deep on that concept before the next session</li>
+            <li>Practice explaining Promises and async/await aloud in 90 seconds each — be able to give the three Promise states and async/await syntax cold, without notes</li>
+            <li>Enter the re-attempt with these non-negotiables: JWT flow implemented and explainable, GET /tasks written from memory, indexing trade-off explained in 60 seconds, MongoDB array operators demonstrated</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · March 2026</div>
+</body>
+</html>

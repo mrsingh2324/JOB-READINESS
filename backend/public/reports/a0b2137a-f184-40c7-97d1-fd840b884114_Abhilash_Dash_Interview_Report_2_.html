@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abhilash Dash — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-red{background:var(--red-bg);color:var(--red);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .dot-red{background:#c0392b;border-color:#c0392b;}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);} .journey-result.red{color:var(--red);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--amber-bg);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  a{color:var(--accent);}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Technical Round 1 Report</div>
+  <h1>Abhilash Dash</h1>
+  <div class="subtitle">Software Development — DSA &amp; Problem Solving · Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Abhilash Dash</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">abhilash200428@gmail.com</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">8 February 2026 · Cycle 1</div></div>
+    <div class="info-cell"><div class="label">TR-1 Interview Date</div><div class="value">12 February 2026</div></div>
+    <div class="info-cell full"><div class="label">Final Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Qualified in TR-1 — Re-attempt Required</span></div></div>
+  </div>
+
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content"><div class="journey-stage">Offline Assessment</div><div class="journey-result green">✓ Cleared</div><div class="journey-detail">8 Feb 2026 · Cycle 1</div></div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result amber">~ Not Qualified · Score 20 / 100</div>
+        <div class="journey-detail">12 Feb 2026 · Interviewer: Mustafi Rahman</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">12 Feb 2026 · Interviewer: Mustafi Rahman (5 yrs industry exp, DE Shaw)</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">20</div>
+        <div class="round-score-label">/ 100 · TR-1 Score</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Qualified</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-green">4/5</div><div class="slabel">Communication</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">Rapid Fire Theory</div></div>
+        <div class="score-cell"><div class="snum snum-red">0/5</div><div class="slabel">Problem 1 (XOR Query)</div></div>
+        <div class="score-cell"><div class="snum snum-amber">2/5</div><div class="slabel">Problems 2 &amp; 3 (Easy)</div></div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="qa-block">
+        <div class="qa-block-label">Introduction &amp; Background</div>
+        <div class="qa-item">
+          <div class="qa-q">Self-Introduction</div>
+          <div class="qa-a">
+            <span>Final year student at MIT-ADT, Pune — 8th semester; 2026 batch</span>
+            <span>Part of NxtWave for approximately 3 years; completed Full Stack Development course</span>
+            <span>Chose Core specialisation over Data Analytics/AI to explore a wider tech base</span>
+            <span>Self-declared DSA experience: recently started, comfortable with strings and arrays; slight exposure to graphs (recently switched to BFS from brute force)</span>
+            <span>Acknowledged openly: "I have not done a lot of complex DSA"</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Honest Introduction — Clear self-awareness of DSA limitations; communication is fluent and confidence is adequate for this stage</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Given an array of integers and a target sum, find which two integers add up to the target. What is your approach?</div>
+          <div class="qa-a">
+            <span>Proposed two-pointer approach — one pointer at the front, one at the back, moving both toward the middle</span>
+            <span>Correctly stated this works on a sorted array; when asked about unsorted, said sorting first is an option but two pointers work regardless (partially correct reasoning)</span>
+            <span>Stated time complexity as O(N) and space as O(1) for the two-pointer approach — correct for the sorted case</span>
+            <span>Did not mention the optimal O(N) hashmap solution that avoids sorting altogether (which would be O(N log N) + O(1) for sorted two-pointer vs O(N) + O(N) for hashmap)</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Two-pointer on sorted array is valid but not the most optimal general solution; hashmap approach not mentioned (Rating: 2/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Complete Answer Looks Like</div>
+            <span>Optimal: use a hashmap. For each element <code>num</code>: check if <code>target - num</code> exists in the map. If yes, return the pair. If no, store <code>map[num] = index</code>. Time: O(N), Space: O(N) — no sorting needed.</span>
+            <span>Two-pointer is also valid if sorted: O(N log N) time, O(1) space. Both are acceptable answers — mentioning both and comparing trade-offs would have scored full marks.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Every integer appears twice except one. Find the singly occurring element in O(N) time and O(1) space.</div>
+          <div class="qa-a">
+            <span>Proposed creating a frequency dictionary (hashmap) — iterate through all key-value pairs, return the key with count 1</span>
+            <span>When the interviewer pointed out this costs O(N) extra space (not O(1)), could not find a way to optimise</span>
+            <span>Said explicitly: "I don't think I can optimise it in that way" — XOR approach not known</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incomplete — Hashmap approach logically correct but violates O(1) space constraint; XOR trick not known (Rating: 0/5 for optimal)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>XOR all elements: <code>result = 0; for num in arr: result ^= num; return result</code></span>
+            <span><code>a ^ a = 0</code> (duplicates cancel out), <code>a ^ 0 = a</code> (identity). All pairs cancel, leaving only the unique element. Time: O(N), Space: O(1). This is a must-know O(1) space trick for interviews.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 1 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — XOR Queries of a Subarray</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Understood the problem: given an array and a list of queries, each query specifies a subarray range; return the XOR of all elements in each subarray</span>
+            <span>Proposed a brute-force O(N·Q) approach: iterate through queries, extract each subarray, accumulate XOR — correctly identified as O(N³) initially, then corrected to O(N·Q)</span>
+            <span>Recognised this would exceed constraints when asked, but could not optimise further</span>
+            <span>Knew prefix sum concept but could not extend it to prefix XOR — said "I have implemented sum prefix arrays but I don't think I can implement it in this concept"</span>
+            <span>When the interviewer hinted at prefix XOR and explained that XOR of same elements cancels, partially acknowledged the idea but could not implement it</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Brute Force Only — Prefix XOR approach not reached despite prompting; problem left unsolved (Rating: 0/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Build prefix XOR array: <code>prefix[0] = 0; prefix[i] = prefix[i-1] ^ arr[i-1]</code>. For each query [L, R]: answer is <code>prefix[R+1] ^ prefix[L]</code>. Time: O(N + Q), Space: O(N).</span>
+            <span>You already knew prefix sums — the only leap needed is that XOR replaces addition. Since <code>a ^ a = 0</code>, the prefix XOR trick cancels the same way prefix sums do. Study prefix XOR immediately alongside prefix sums.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — First Unique Character in a String (Easy, Adjusted)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Interviewer adjusted to an easier problem after the medium-level P1 was not solved</span>
+            <span>Task: return the index of the first non-repeating character in a string</span>
+            <span>Initially proposed iterating through characters and creating a substring to check existence — vague approach</span>
+            <span>With prompting ("it is all about frequency"), switched to using Python's built-in <code>.count()</code> method to get frequency of each character</span>
+            <span>Correctly identified that the first character with count 1 is the answer</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct frequency-based approach reached with prompting; needed interviewer nudging to arrive at it</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation &amp; Complexity</div>
+          <div class="qa-a">
+            <span>Implemented using <code>.count()</code> inside a loop — code ran and produced correct output on submission</span>
+            <span>When asked for time complexity: initially said O(N), then self-corrected to O(N²) because <code>.count()</code> itself is O(N) called N times — correct reasoning</span>
+            <span>Space complexity: initially unsure, then concluded O(1) since no extra data structure created — correct</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Passed — Code correct and submitted; complexity analysis self-corrected to accurate O(N²) time, O(1) space (Rating: 2/5 — correct but suboptimal approach)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 Optimal Approach</div>
+            <span>Use a hashmap to count frequencies in one pass: O(N) time, O(1) space (fixed 26 letters). Second pass: return index of first character with count 1. This avoids the O(N²) of calling <code>.count()</code> repeatedly.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem 3 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 3 — Array Pairing (Easy, Adjusted)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Thought Process</div>
+          <div class="qa-a">
+            <span>Task: pair array elements to maximise a given objective (sort-based pairing problem)</span>
+            <span>Correctly identified that sorting the array first is the right move</span>
+            <span>Proposed iterating through the sorted array two elements at a time, using two pointers (Alice and Bob) — correct approach for this class of problem</span>
+            <span>Understood the output should be appended in the correct order based on pointer positions</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Correct Approach — Sort + two-pointer pairing identified independently (Rating: 2/5 PS)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Attempted implementation with a for loop iterating Alice pointer and a Bob pointer</span>
+            <span>Initial code had a runtime error — index out of range — because the logic did not correctly handle odd-length arrays</span>
+            <span>Correctly identified the bug: "I was solving for an even array instead of an odd array — the code breaks when the array is odd length"</span>
+            <span>Attempted to fix by adjusting the boundary condition (<code>&lt;=</code> vs <code>&lt;</code>) but continued to get index errors for edge cases (e.g. two identical inputs)</span>
+            <span>Could not fully debug within the session; interviewer suggested trying after the interview</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Fully Resolved — Correct approach and bug correctly identified; boundary condition fix attempted but edge cases not resolved before time ran out (Rating: 1/5 Code)</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Evaluator Remarks:</strong> "Candidate is not familiar much with DSA and problem solving and needs to learn medium to advanced level from scratch." &nbsp;·&nbsp;
+      <strong>Communication:</strong> 4/5 — Good with communication; expressed ideas clearly throughout, self-corrected complexity analysis accurately, and was honest about knowledge gaps. The technical gap is in DSA patterns and problem-solving depth, not communication.
+    </div>
+  </div>
+
+  <div class="section-label">04 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>The transcript reveals a candidate who is self-aware, communicates well, and is not afraid to admit what he doesn't know — all valuable interview qualities. The core gap is in DSA pattern knowledge: you know prefix sums but not prefix XOR; you know frequency maps but not the XOR single-element trick; you can identify two-pointer and sort-based approaches but struggle to implement them bug-free under pressure. Across three problems, the pattern was consistent — the right intuition was partially there, but the knowledge to complete it was not. This is a preparation gap, not a capability gap. With structured pattern-by-pattern practice, the TR-1 re-attempt outcome can be very different.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Communication (4/5):</strong> Fluent, confident, and honest throughout — you articulated partial ideas clearly, self-corrected your complexity analysis (O(N) → O(N²) for the <code>.count()</code> approach), and never became flustered. This is a real differentiator.</li>
+        <li><strong>Self-Awareness:</strong> You openly stated your DSA level — "recently started," "brute forced through a lot." This kind of honesty is rare and useful: you know exactly what needs to change.</li>
+        <li><strong>Prefix Sum Foundation:</strong> You've implemented prefix sum arrays before — the bridge to prefix XOR is one concept away. You were close to connecting the dots when the interviewer hinted.</li>
+        <li><strong>Sort + Two-Pointer Instinct:</strong> You independently identified sorting and two-pointer pairing for Problem 3 — the correct approach. The failure was in clean implementation, not in approach identification.</li>
+        <li><strong>Correct Bug Diagnosis:</strong> You correctly identified the odd-length array edge case causing your runtime error — "I was solving for an even array." Diagnosing the bug is the first step; fixing it under pressure is the skill to build.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>XOR Patterns — Must Learn:</strong> XOR appeared in both the rapid fire (single number) and Problem 1 (XOR queries). You had no O(1) space approach for either. XOR is a foundational interview pattern — it must be in your toolkit before re-attempting TR-1.</li>
+        <li><strong>Prefix XOR:</strong> You knew prefix sums but couldn't extend to prefix XOR. These are the same concept with XOR replacing addition. Study them together — once understood, XOR range query problems become trivial.</li>
+        <li><strong>Hashmap for Two Sum:</strong> Your two-pointer answer for Two Sum is valid but not optimal for unsorted input. The O(N) hashmap solution should be your primary answer with two-pointer mentioned as an alternative for sorted arrays.</li>
+        <li><strong>Edge Case Discipline:</strong> Your P3 code broke on odd-length arrays and duplicate inputs — both predictable edge cases. Before submitting any code, always test: empty input, single element, all-same elements, odd vs even length.</li>
+        <li><strong>Medium-Level Problem Solving:</strong> You have not solved medium problems systematically. The interviewer adjusted to easy problems twice. Before re-attempting, you need consistent exposure to and practice with medium-difficulty problems across key patterns.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">XOR Patterns &amp; Prefix Arrays</div></div>
+          <div class="week-card-body"><ul>
+            <li>Master XOR single number: implement Single Number I from scratch — understand why <code>a ^ a = 0</code> cancels pairs</li>
+            <li>Build prefix XOR array: implement XOR Queries of a Subarray (the exact TR-1 problem) — connect to your existing prefix sum knowledge</li>
+            <li>Solve: Single Number II, Find the Duplicate Number (XOR variant), Subarray XOR problems</li>
+            <li>Upgrade Two Sum answer: implement hashmap solution and be able to compare it with two-pointer trade-offs</li>
+            <li>Rule: for every XOR problem this week, write out why <code>a ^ a = 0</code> cancels before coding — build the mental model first</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">Hashmaps, Strings &amp; Frequency Patterns</div></div>
+          <div class="week-card-body"><ul>
+            <li>Re-implement First Unique Character using a hashmap (O(N) time) — replace the <code>.count()</code> O(N²) solution you used in TR-1</li>
+            <li>Solve: Valid Anagram, Group Anagrams, Longest Substring Without Repeating Characters, Top K Frequent Elements</li>
+            <li>Practice complexity analysis for every solution: write time and space before submitting, not after</li>
+            <li>Edge case checklist: for every coding problem, test empty input, single element, all-same elements before submitting</li>
+            <li>Solve 8–10 easy-medium hashmap/string problems — aim for clean, bug-free first submissions</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">Sorting, Two Pointers &amp; Arrays</div></div>
+          <div class="week-card-body"><ul>
+            <li>Re-implement the P3 pairing problem cleanly — fix the odd-length and duplicate-input edge cases you couldn't resolve in TR-1</li>
+            <li>Study two-pointer patterns: Container With Most Water, 3Sum, Remove Duplicates from Sorted Array, Merge Sorted Array</li>
+            <li>For every implementation involving index pointers: write out the boundary conditions on paper before coding — <code>&lt;</code> vs <code>&lt;=</code>, what happens at last index</li>
+            <li>Solve 10 medium problems across arrays, sorting, and two pointers this week</li>
+            <li>After each problem: explain the solution aloud in 2 sentences — this is the TR-1 verbal explanation skill</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Mixed Practice &amp; Full Mocks</div></div>
+          <div class="week-card-body"><ul>
+            <li>Solve 15 medium problems with no topic filter — practice identifying the pattern (XOR? prefix? two-pointer? hashmap?) before coding</li>
+            <li>Re-implement from memory: XOR single number, prefix XOR range query, first unique character (hashmap), two-pointer pairing — all without looking at notes</li>
+            <li>Take 2 full timed mock interviews (45 min each): rapid fire theory (XOR, prefix, two sum) + 2 coding problems under time pressure</li>
+            <li>Boundary condition drill: for each mock, explicitly write edge case tests before running code — build this as a pre-submission habit</li>
+            <li>Enter TR-1 re-attempt knowing: XOR patterns, prefix XOR, hashmap frequency, and clean two-pointer implementation</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · 12 February 2026</div>
+</body>
+</html>

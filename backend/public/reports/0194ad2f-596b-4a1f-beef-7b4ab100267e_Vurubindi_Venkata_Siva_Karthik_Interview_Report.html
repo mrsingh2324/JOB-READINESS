@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vurubindi Venkata Siva Karthik — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-green{background:var(--green-bg);color:var(--green);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:rgba(255,255,255,.12);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .round-format-note{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-bottom:24px;}
+  .round-format-note .note-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .round-format-note p{font-size:13.5px;color:#1a3a6e;line-height:1.65;}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <h1>Vurubindi Venkata Siva Karthik</h1>
+  <div class="subtitle">Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Vurubindi Venkata Siva Karthik</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">22 February 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">vurubindivskarthiksarma@gmail.com</div></div>
+    <div class="info-cell"><div class="label">Eligible Role</div><div class="value">Product Based SDE</div></div>
+    <div class="info-cell"><div class="label">NxtMock Status</div><div class="value">Not Attempted</div></div>
+    <div class="info-cell"><div class="label">Audit Completion Date</div><div class="value">11 May 2026</div></div>
+    <div class="info-cell full"><div class="label">Final Placement Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-green">✓ Shortlisted — Product Based SDE</span></div></div>
+  </div>
+
+  <!-- ══ SECTION 02 ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared</div>
+        <div class="journey-detail">22 Feb 2026 · Qualified for Product Based SDE track</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="journey-result green">✓ Cleared · Score 55 / 100 · Medium Hire</div>
+        <div class="journey-detail">28 Feb 2026 · Decent problem solving with hints; implementation needs more practice</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 2 — Full Stack Interview</div>
+        <div class="journey-result green">✓ Cleared · Score 64 / 100 · Medium Hire</div>
+        <div class="journey-detail">2 May 2026 · Fair explanation of projects and tech; minor gaps; session limited by incorrect help doc</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Audit Review</div>
+        <div class="journey-result green">✓ Shortlisted — Product Based SDE</div>
+        <div class="journey-detail">11 May 2026 · Strong backend and internship scores; frontend depth to be improved</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 03 — TR-1 ══ -->
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">✅</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">28 February 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#7ed99e;">55</div>
+        <div class="round-score-label">/ 100 · Cleared</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Medium Hire</span></div>
+      </div>
+    </div>
+    <div class="round-body">
+      <div class="qa-block">
+        <div class="qa-block-label">TR-1 Summary</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Decent approach to problem solving — able to arrive at a solution when given hints from the evaluator</span>
+            <span>Independent problem decomposition needs strengthening — approaching problems cold without guidance is the gap to close</span>
+            <span>Implementation skills need more practice — translating correct approaches to working code under timed conditions needs to be more consistent</span>
+            <span>Cleared TR-1 and qualified for TR-2</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Cleared — Decent problem solving with hints; implementation and independent approach need more practice (Score: 55/100)</span>
+        </div>
+      </div>
+    </div>
+    <div class="round-remarks">
+      <strong>Evaluator Remarks:</strong> "The candidate is decent with problem solving, was able to approach the problem given hints, but needs to work on solving more problems and implementation skills."
+    </div>
+  </div>
+
+  <!-- ══ SECTION 04 — TR-2 ══ -->
+  <div class="section-label">04 · Technical Round 2 — Full Stack Interview</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">✅</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 2 — Full Stack Interview</div>
+        <div class="round-meta">2 May 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#7ed99e;">64</div>
+        <div class="round-score-label">/ 100 · Cleared</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Medium Hire</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <div class="round-format-note">
+        <div class="note-label">📌 Session Note</div>
+        <p>The evaluator noted that an incorrect help documentation link was provided for reference during this session, which limited how deep the discussion could go on certain topics. Scores and feedback are based on what was covered in the available time. The evaluator explicitly stated: "We couldn't go much deeper because I was given a wrong help documentation to refer."</p>
+      </div>
+
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-amber">75</div><div class="slabel">Soft Skills &amp; Comm.</div></div>
+        <div class="score-cell"><div class="snum snum-amber">50</div><div class="slabel">Projects</div></div>
+        <div class="score-cell"><div class="snum snum-amber">55</div><div class="slabel">Frontend Score</div></div>
+        <div class="score-cell"><div class="snum snum-amber">77</div><div class="slabel">Backend Score</div></div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="qa-block">
+        <div class="qa-block-label">Soft Skills &amp; Communication</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Presentability: looks like a native person, well groomed — professional appearance</span>
+            <span>Communication: confident and understandable with minor grammar changes — 75/100</span>
+            <span>Acknowledged stack change honestly mid-interview ("I have changed the stack so I have a bit of discrepancy, I could revise it within a week") — professional self-awareness</span>
+            <span>Asked for feedback at the end and engaged constructively throughout — positive interview conduct</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Good — Confident, professional, and self-aware; minor gaps in technical explanation depth (75/100)</span>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="qa-block">
+        <div class="qa-block-label">Projects</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Interview Prep AI — Gemini API integration for role-based interview question generation</div>
+          <div class="qa-a">
+            <span>Project: user inputs their role and details → sent to Gemini API with a defined system context → returns top 10 curated interview questions for that role</span>
+            <span>Understands the flow but misses key details — correctly explained the prompt engineering / system context approach but could not go deeper on the API integration mechanics</span>
+            <span>When asked how to handle increased load, suggested load balancer first — evaluator correctly pushed back (no multiple instances running, so no need for load balancer)</span>
+            <span>Self-corrected to better answers: rate limiting, caching repeated requests, and switching to a lower-cost model with higher token limits — all valid and correct</span>
+            <span>Gap: load balancer was proposed without understanding that it requires multiple server instances to be meaningful</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Project flow and Gemini integration clearly explained; scalability thinking partially correct; load balancer misconception identified and self-corrected (Score: 50/100)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Complete Scalability Answer Looks Like</div>
+            <span>For a single-server app with heavy API usage: (1) Rate limiting — throttle requests per user (e.g. 10 req/min) using middleware. (2) Caching — store results for identical prompts in Redis; avoid repeat API calls. (3) Model selection — use a lighter/cheaper model for less complex prompts. (4) Queue — add a job queue (e.g. BullMQ) for burst traffic. Load balancing only applies when you have multiple server instances running behind a reverse proxy (e.g. Nginx). Mention load balancing only after establishing that you have horizontal scaling.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Chat/Streaming Application — Language exchange platform with video calls, friend connections, real-time messaging (MERN + Stream SDK + WebRTC)</div>
+          <div class="qa-a">
+            <span>Project: WhatsApp/LinkedIn-style app — users connect, chat, and make video calls; friend recommendation shows second-degree connections</span>
+            <span>WebRTC usage correctly explained: maintains a persistent connection for the session duration so the browser does not need to repeatedly request the server — lower latency for real-time video/audio</span>
+            <span>Stream SDK used internally over WebRTC — correctly identified as a third-party abstraction over WebRTC</span>
+            <span>Features implemented: authentication/authorisation, friend request system with first and second-degree connections, real-time chat, video calls</span>
+            <span>When asked about how frontend and backend interact in this project, the explanation was partial — could not detail specific API endpoints or data flow clearly</span>
+            <span>REST endpoints described when prompted: POST /api/v1/users (create user), GET /api/v1/users/:id (fetch user) — correct structure and method usage</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Project features and WebRTC rationale well explained; frontend-backend data flow explanation had gaps; REST endpoint structure correct when prompted</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">EPAM Internship — Mentor Effort Tracking System (in progress)</div>
+          <div class="qa-a">
+            <span>Currently in sprint zero — requirements gathered, development not yet started</span>
+            <span>Training period: 2.5 months covering C#, ASP.NET Web API, Entity Framework Core, Radio.NET, and Angular</span>
+            <span>Working within the operations team at EPAM — project involves tracking and rewarding mentors who allocate time to interns/trainees</span>
+            <span>EPAM internship completion certificate expected in June</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — Internship context and tech stack clearly explained; development not yet started (sprint zero); certificate incoming</span>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Frontend — HTML, CSS &amp; React</div>
+
+        <div class="qa-item">
+          <div class="qa-q">How do you create a table in HTML? Ordered vs unordered list? What is the br tag? What is the title tag?</div>
+          <div class="qa-a">
+            <span>HTML table: correctly described — <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code> (row), <code>&lt;td&gt;</code> (cell) structure</span>
+            <span>Ordered vs unordered list: correctly explained — ordered list displays items with numbers/letters (1, 2, 3 or A, B, C); unordered uses bullet points without order</span>
+            <span><code>&lt;br&gt;</code> tag: correctly identified as a line break</span>
+            <span>Title tag: correctly explained — makes the title appear in the browser tab</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Correct — All basic HTML questions answered accurately and confidently</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Explain the CSS box model.</div>
+          <div class="qa-a">
+            <span>Correctly identified box model as defining padding, margin, and spacing around elements</span>
+            <span>Layer order: initially said margin → padding (skipped border); when prompted, self-corrected to the correct order: margin → border → padding → content</span>
+            <span>Could not clearly articulate the practical purpose beyond "defining spacing" — why developers use box-sizing and how it affects layout calculations was not covered</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Layer order self-corrected to correct sequence after prompt; practical application and box-sizing not articulated</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>The CSS box model describes the four layers around every element (outside to inside): <strong>Margin</strong> (space outside the border, transparent) → <strong>Border</strong> (visible boundary around the element) → <strong>Padding</strong> (space between border and content, inherits background) → <strong>Content</strong> (text, images).</span>
+            <span>Key practical point: by default, <code>width</code> applies to the content box only — border and padding are added on top. Setting <code>box-sizing: border-box</code> includes border and padding within the declared width, making layouts predictable. This is why most CSS resets include <code>* { box-sizing: border-box }</code>.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What are props and hooks in React? How does event handling work?</div>
+          <div class="qa-a">
+            <span>Props: correctly identified as data passed from parent to child component — read-only in the child</span>
+            <span>When asked about immutability of props: correctly stated "read only" and explained that it ensures unidirectional data flow from parent to child</span>
+            <span>Hooks: described as "state management of the object" — partially correct but imprecise; confused hooks with state mutation rather than explaining them as React's mechanism for using state and lifecycle features in functional components</span>
+            <span>Event handling: confused with <code>useEffect</code> — said "for event handling we could use useEffect"; could not recall the correct pattern (<code>onClick</code>, <code>onChange</code> with handler functions)</span>
+            <span>Acknowledged the gap honestly: "I have changed the stack, I could revise it in a week"</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Props correctly defined and immutability correctly explained; hooks definition imprecise; event handling confused with useEffect (Frontend Score: 55/100)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Hooks</strong> are functions that let functional components use React state and lifecycle features. Core hooks: <code>useState</code> (local state), <code>useEffect</code> (side effects — API calls, subscriptions, timers), <code>useContext</code> (consume context), <code>useRef</code> (mutable ref without re-render), <code>useMemo</code>/<code>useCallback</code> (performance).</span>
+            <span><strong>Event handling</strong>: attach handlers directly on JSX elements — <code>&lt;button onClick={handleClick}&gt;</code>, <code>&lt;input onChange={e =&gt; setValue(e.target.value)}&gt;</code>. <code>useEffect</code> is for side effects after render, not for event handling. Handlers are just functions passed as props to elements.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What are pure and impure functions in JavaScript? Call by value vs call by reference?</div>
+          <div class="qa-a">
+            <span>Call by value vs reference: correctly explained — primitives create a copy (value), objects pass a reference so mutations reflect in the original</span>
+            <span>Pure functions: defined as "functions which don't call another functions" — incorrect definition; the correct definition is about determinism and side-effect freedom</span>
+            <span>Impure functions: said "can have function calls to another functions" — also incorrect</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Call by value/reference correctly explained; pure/impure function definitions incorrect</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Pure function</strong>: always returns the same output for the same inputs AND has no side effects (no modifying external state, no API calls, no DOM mutations, no logging). Example: <code>const add = (a, b) =&gt; a + b</code> — calling it 1,000 times with (2,3) always returns 5.</span>
+            <span><strong>Impure function</strong>: either depends on external state (so output varies for same inputs) or produces side effects. Example: <code>let count = 0; const increment = () =&gt; ++count</code> — modifies external state. Functions that call other functions can be pure or impure — the distinction is about side effects and determinism, not nesting.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">JavaScript / React Coding Task (Medium Level)</div>
+          <div class="qa-a">
+            <span>Able to solve approximately 50% of the frontend coding task</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — 50% of JS/React coding task solved</span>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Backend — Node.js, Express.js, MongoDB &amp; APIs</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Why MongoDB? When would you choose SQL over MongoDB?</div>
+          <div class="qa-a">
+            <span>MongoDB chosen for its schemaless / NoSQL nature — flexible document structure for a dynamic application</span>
+            <span>Correctly identified: SQL is better when the data structure is fixed and won't change; MongoDB is better when the structure is dynamic and scalability is needed</span>
+            <span>When evaluator challenged — "can't you add a column dynamically in SQL?" — correctly answered: you can add a column but existing rows get NULL; if the column has a NOT NULL constraint you need a default value specified at creation time</span>
+            <span>SQL injection comparison was raised — evaluator correctly pointed out MongoDB has its own vulnerability class (NoSQL injection / query injection); acknowledged this</span>
+            <span>Aggregation comparison: claimed aggregation in MongoDB is simpler than SQL queries — partially debated by evaluator; acknowledged the complexity difference depends on the use case</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — SQL vs MongoDB trade-offs discussed with good understanding; NOT NULL constraint and column addition nuance correctly handled</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">MongoDB query knowledge and Node.js/Express integration in your projects.</div>
+          <div class="qa-a">
+            <span>MongoDB query discussion: good understanding with clear query discussion — confident with basic MongoDB operations</span>
+            <span>Node.js/Express integration: good understanding with clear integration explanation — how the backend connects to MongoDB is clear at the conceptual level</span>
+            <span>When asked to detail specific features of the chat application backend, acknowledged uncertainty due to recent stack change</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — MongoDB query knowledge and Express integration both at a solid level for the stage of experience</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is the difference between POST, PUT, and PATCH? Can PUT create and POST update?</div>
+          <div class="qa-a">
+            <span>POST: create a resource — correct</span>
+            <span>PUT: update a resource (full replacement) — correct</span>
+            <span>PATCH: update a specific section of a resource (partial update) — correct</span>
+            <span>When asked if PUT can create and POST can update: initially answered reversed ("post will be updating, put will be creating") — then caught by the evaluator</span>
+            <span>Final answer: confirmed it is technically possible — HTTP spec allows PUT to create if the resource doesn't exist, and POST can update — correct acknowledgement</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — POST/PUT/PATCH correctly defined; temporarily reversed roles under questioning; correct final answer reached</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Backend Coding Task — Implement a backend API endpoint (e.g. GET /tasks).</div>
+          <div class="qa-a">
+            <span>Able to solve approximately 80% of the backend coding task — strong relative to the frontend coding performance</span>
+            <span>Could not complete the full implementation within the session</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Strong — 80% of backend coding task solved; close to complete (Backend Score: 77/100)</span>
+        </div>
+      </div>
+
+      <!-- OOP -->
+      <div class="qa-block">
+        <div class="qa-block-label">CS Fundamentals — OOP</div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is an abstract class? Can it have non-abstract methods? What are interfaces?</div>
+          <div class="qa-a">
+            <span>Abstract class: correctly defined — must contain at least one abstract method (method with declaration but no body); can have non-abstract methods — correct</span>
+            <span>Abstract method definition: "has the definition but not the body" — note: correctly meant declaration (signature) but not implementation; the wording is slightly imprecise but the concept is right</span>
+            <span>Interface: correctly described as a stricter form — contains only abstract methods (in traditional Java definition)</span>
+            <span>Multiple inheritance via interfaces in Java: correctly identified — <code>implements</code> keyword vs <code>extends</code> for abstract classes; creating an object requires implementing the interface rather than subclassing</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — Abstract class, abstract methods, interface, and multiple inheritance correctly explained; minor wording imprecision only</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire / DSA in TR-2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA Theory (Asked in TR-2)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q1: Find the singly occurring element in an array where every other element appears twice — most efficient approach.</div>
+          <div class="qa-a">
+            <span>Correctly answered: XOR all elements — <code>a ^ a = 0</code> cancels all pairs, leaving the unique element</span>
+            <span>Correctly stated time complexity O(N) and space complexity O(1)</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Optimal — XOR approach correctly explained with time O(N) and space O(1)</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Q2: Find the top K elements from a stream of numbers — most efficient approach.</div>
+          <div class="qa-a">
+            <span>Brute force: sort descending and take top K — correct</span>
+            <span>Optimal: min-heap of size K — correctly identified; stated "if you use min heap it takes N, if you use max heap it takes K log N" — the reasoning on min-heap time complexity needed more precision</span>
+            <span>Also mentioned quickselect algorithm as an option — correct; average O(N) for finding kth largest</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Min-heap and quickselect correctly identified; time complexity explanation for heap approach needed more precision</span>
+          <div class="model-answer">
+            <div class="model-label">📚 Correct Complexity Explanation</div>
+            <span>Min-heap of size K: insert each element — if heap size exceeds K, pop the minimum. Final heap contains the top K elements. Time: O(N log K) — each of N elements may trigger a heap operation costing O(log K). Space: O(K). This is better than sorting all N elements (O(N log N)) when K is small.</span>
+            <span>Quickselect: average O(N) time, O(1) space — finds the Kth largest in one pass on average but O(N²) worst case.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Coding Problem — Minimum Time to Complete Trips (Binary Search on Answer)</div>
+          <div class="qa-a">
+            <span>Correctly identified binary search on the answer space — search space is from minimum element to maximum element in the time array</span>
+            <span>Correctly identified a check function is needed: for a given time T, calculate the total trips each bus can complete and verify if it meets or exceeds totalTrips</span>
+            <span>Started implementing in C++ — wrote the check function logic and began the binary search structure</span>
+            <span>Partially completed — could not fully connect the binary search loop with the correct update conditions before time ran out</span>
+            <span>Evaluator confirmed the direction was correct: "binary search on the answer range — this is what you required to handle"</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct approach (binary search on answer) independently identified; check function logic correct; binary search loop not fully completed within the time limit</span>
+          <div class="model-answer">
+            <div class="model-label">📚 Complete Approach</div>
+            <span>Search space: <code>lo = 1</code>, <code>hi = max(time) * totalTrips</code>. Binary search: for each <code>mid</code>, call <code>check(mid)</code> — computes <code>sum(mid / time[i])</code> for all buses. If sum &gt;= totalTrips, <code>mid</code> is a valid answer — try smaller (<code>hi = mid</code>). Else try larger (<code>lo = mid + 1</code>). Return <code>lo</code>. Time: O(N log(max_time * totalTrips)), Space: O(1).</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Internship -->
+      <div class="qa-block">
+        <div class="qa-block-label">Internship &amp; Practical Experience</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>EPAM Systems — Software Engineer intern; training on C#, ASP.NET Web API, Entity Framework Core, Radio.NET, Angular for first 2.5 months</span>
+            <span>Now in project-based phase — working on Mentor Effort Tracking System (sprint zero completed, development starting)</span>
+            <span>Independently handled tasks during training phase — good individual contribution level</span>
+            <span>Explanation: clear with some details — structured and confident; strong relative to other areas</span>
+            <span>Strong certificate with proper assessment expected — EPAM completion certificate in June</span>
+            <span>Also pursuing Anthropic Claude Architect certification independently</span>
+            <span>Internship score: 56 — solid; independently handled tasks and clear explanation are genuine positives</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — Internship tasks independently handled; clear explanation; strong EPAM certificate incoming; additional Anthropic certification in progress (Score: 56/100)</span>
+        </div>
+      </div>
+
+      <!-- AI Knowledge -->
+      <div class="qa-block">
+        <div class="qa-block-label">AI Knowledge</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Moderately aware of AI tools — used Gemini API in the Interview Prep AI project with system context engineering</span>
+            <span>Pursuing Anthropic Claude Architect certification independently — shows active interest in the AI space</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Moderate — Gemini API used in project; Claude Architect certification in progress; awareness is practical and growing</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>Evaluator Remarks:</strong> "Candidate has a fair idea on the tech he has worked. Can explain the majority of the stuff with minor gaps." &nbsp;·&nbsp; Note: the session was limited by an incorrect help documentation link provided to the evaluator. The evaluator acknowledged this directly. Scores reflect what was covered in the available time. Feedback: "Improve your project's explanation part" — specifically around how the frontend and backend interact in your projects, and how specific features were implemented end-to-end.
+    </div>
+  </div>
+
+  <!-- ══ SECTION 05 — OVERALL ══ -->
+  <div class="section-label">05 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>You cleared both TR-1 and TR-2 and have been shortlisted — that is a result to be proud of, built on real strengths: a strong EPAM internship, a genuine MERN full stack project with WebRTC, correct DSA instincts (XOR pattern, binary search on answer space), solid OOP and MongoDB trade-off knowledge, and a professional interview presence. The gaps are specific: pure/impure function definitions, React hooks beyond useState, event handling in React, frontend coding execution, and project explanation depth around the specific API and data flow choices you made. These are all closable in a short focused period — and closing them will make the next interview significantly stronger.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>DSA — XOR Pattern (✓ Optimal):</strong> XOR single element answered correctly and independently — time O(N), space O(1). This is a reliable strength.</li>
+        <li><strong>Binary Search on Answer Space:</strong> Independently identified the correct approach for the Minimum Trips problem — binary search on the answer range with a check function. The direction was fully correct; only the loop completion was incomplete.</li>
+        <li><strong>Backend Coding (80% solved):</strong> Near-complete backend endpoint implementation under interview conditions — the strongest coding result across all areas.</li>
+        <li><strong>OOP Fundamentals:</strong> Abstract class, interface, multiple inheritance via interfaces in Java — all correctly explained with confidence.</li>
+        <li><strong>MongoDB Trade-offs:</strong> SQL vs MongoDB discussion handled well — schema flexibility, NOT NULL constraint nuance, and the column addition scenario all correctly reasoned.</li>
+        <li><strong>EPAM Internship (Score: 56):</strong> Independently handled tasks, clear structured explanation, strong certificate incoming — a genuine professional differentiator.</li>
+        <li><strong>Communication (75/100):</strong> Confident and professional throughout; honest about stack change; asked for feedback constructively — all positive interview behaviours.</li>
+        <li><strong>WebRTC Rationale:</strong> Correctly explained why WebRTC is needed for persistent real-time video connections vs repeated server polling — good technical depth on a non-trivial topic.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Pure &amp; Impure Functions — Must Fix:</strong> Defined as "functions that don't call other functions" — completely incorrect. Study the correct definition: pure = same output for same inputs + no side effects. This will appear again.</li>
+        <li><strong>React Hooks Depth:</strong> Hooks were partially described as "state management" — you need to be able to explain useState, useEffect, useContext, useRef, useMemo, and useCallback clearly and distinguish them from each other.</li>
+        <li><strong>Event Handling in React:</strong> Confused with useEffect. You must know: events are handled via inline handlers (<code>onClick</code>, <code>onChange</code>) attached directly to JSX elements — this is completely separate from useEffect.</li>
+        <li><strong>Frontend Coding (50% solved):</strong> Backend coding was at 80% — bring frontend coding to the same level through consistent daily JS/React practice.</li>
+        <li><strong>Project Explanation Depth:</strong> The evaluator specifically flagged this. You need to be able to walk through exactly how your frontend calls your backend API, what the request/response looks like, and how MongoDB stores and retrieves the data — for every major feature of your projects.</li>
+        <li><strong>Scalability Thinking:</strong> Load balancer was proposed before establishing multiple instances exist. Always structure scalability answers: cache → rate limit → queue → horizontal scale → load balance (in that order of applicability).</li>
+        <li><strong>Min-Heap Complexity:</strong> Time complexity for top-K with a min-heap of size K is O(N log K), not O(N). Study this until it is automatic.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">React Depth &amp; JS Fundamentals</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study pure vs impure functions: write 5 examples of each — for each impure one, identify the specific side effect or external dependency. Be able to define both in one sentence each</li>
+            <li>Study all core hooks: build a mini-app that uses useState, useEffect, useContext, useRef, useMemo, useCallback — one component demonstrating each hook's distinct purpose</li>
+            <li>Study React event handling: build a form with onClick, onChange, onSubmit, onKeyDown — all with handler functions. Write it without using useEffect anywhere</li>
+            <li>Deepen CSS box model: implement a card layout that demonstrates margin, border, padding, and content explicitly — then add <code>box-sizing: border-box</code> and observe the difference</li>
+            <li>Practice call by value vs reference with objects: write 5 examples where an object is mutated inside a function and verify the original changes — and 5 where a primitive is not changed</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">Project Explanation Depth</div></div>
+          <div class="week-card-body"><ul>
+            <li>For the chat application: draw the full data flow on paper — client request → Express route → middleware → MongoDB query → response. Be able to explain this for every feature (auth, friend request, chat message, video call)</li>
+            <li>Write out all your API endpoints from memory: method, path, auth required, request body, response body, status codes. Be able to recite 5 endpoints cold without notes</li>
+            <li>For the Interview Prep AI project: prepare a 2-minute explanation of the Gemini integration — what goes into the system context, what comes back, how rate limiting is applied</li>
+            <li>Practice scalability answer structure: cache → rate limit → queue → horizontal scale → load balance. Explain when each step applies and why</li>
+            <li>Study the Stream SDK + WebRTC integration more deeply: be ready to explain what Stream SDK abstracts away and what you would need to implement manually if you used raw WebRTC</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">DSA Consolidation</div></div>
+          <div class="week-card-body"><ul>
+            <li>Complete the Minimum Trips binary search problem (LeetCode 2187) — finish the implementation you started; ensure the binary search loop conditions and update logic are correct</li>
+            <li>Study heap complexity precisely: min-heap of size K for top-K problems is O(N log K) — write this out and practise stating it immediately after solving heap problems</li>
+            <li>Solve 5 binary search on answer problems: LeetCode 875 (Koko Eating Bananas), 1011 (Ship Packages), 410 (Split Array Largest Sum), 1283 (Smallest Divisor), 2064 (Minimum Time)</li>
+            <li>Solve 5 heap problems: LeetCode 215 (Kth Largest), 347 (Top K Frequent), 692 (Top K Frequent Words), 703 (Kth Largest in Stream), 1046 (Last Stone Weight)</li>
+            <li>Frontend coding drill: solve LeetCode easy/medium JS problems daily — target 5 problems/day; bring JS coding to the same 80% completion level as backend coding</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Full Mocks &amp; Stack Consolidation</div></div>
+          <div class="week-card-body"><ul>
+            <li>Take 2 full mock TR-2 interviews (45 min each): projects deep-dive, pure/impure functions, React hooks, event handling, MongoDB trade-offs, POST/PUT/PATCH, one DSA problem</li>
+            <li>Stack consolidation: revisit MERN stack thoroughly since you changed stacks — re-implement one complete feature of the chat app (e.g. friend request flow) from scratch in Node/Express/MongoDB</li>
+            <li>After each mock: identify one question you reversed under questioning and study it until you can hold the correct answer even when challenged</li>
+            <li>EPAM project prep: as development starts, keep notes on every technical decision — what schema you designed, what endpoints you wrote, what challenges you faced. This becomes interview content</li>
+            <li>Continue Anthropic Claude certification — leverage your AI project experience to speak confidently about LLM integration patterns, prompt engineering, and rate limiting in interviews</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · May 2026</div>
+</body>
+</html>

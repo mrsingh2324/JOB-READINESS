@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Varshni Amrutha — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f4f1eb;--card-bg:#faf8f4;--primary:#1a3a52;--accent:#c8873f;--green:#1a5c3a;--green-bg:#e6f4ed;--amber:#7a4f10;--amber-bg:#fef3d8;--red:#8b1c1c;--red-bg:#fde8e8;--border:#d8d0c4;--blue-mid:#1e5a9e;--blue-bg:#f0f7ff;--blue-border:#c0d8f0;--text:#2c2c2c;--muted:#6b6560;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;}
+  .report-header{background:var(--primary);color:#fff;padding:52px 40px 44px;text-align:center;}
+  .report-header .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
+  .report-header h1{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;letter-spacing:-.5px;color:#fff;margin-bottom:8px;}
+  .report-header .subtitle{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;}
+  .body-wrap{max-width:860px;margin:0 auto;padding:40px 24px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:40px;}
+  .info-cell{background:var(--card-bg);padding:18px 22px;}
+  .info-cell .label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .info-cell .value{font-weight:600;font-size:15px;color:var(--primary);}
+  .info-cell.full{grid-column:1/-1;}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+  .badge-amber{background:var(--amber-bg);color:var(--amber);}
+  .badge-green{background:var(--green-bg);color:var(--green);}
+  .journey{display:flex;flex-direction:column;gap:0;margin-bottom:40px;}
+  .journey-row{display:flex;align-items:flex-start;gap:20px;position:relative;padding-bottom:28px;}
+  .journey-row:last-child{padding-bottom:0;}
+  .journey-col-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:16px;}
+  .journey-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:3px;border:3px solid;box-shadow:0 0 0 3px var(--bg);}
+  .dot-green{background:var(--green);border-color:var(--green);}
+  .dot-amber{background:var(--amber);border-color:var(--amber);}
+  .dot-red{background:#c0392b;border-color:#c0392b;}
+  .journey-line{width:2px;flex:1;background:var(--border);min-height:30px;margin-top:4px;}
+  .journey-content{flex:1;}
+  .journey-stage{font-weight:700;font-size:14px;color:var(--primary);margin-bottom:3px;}
+  .journey-result{font-size:12.5px;font-weight:600;margin-bottom:3px;}
+  .journey-result.green{color:var(--green);} .journey-result.amber{color:var(--amber);} .journey-result.red{color:var(--red);}
+  .journey-detail{font-size:12.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .round-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .round-header{background:var(--primary);color:#fff;padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .round-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:rgba(255,255,255,.12);}
+  .round-title-group{flex:1;}
+  .round-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:3px;}
+  .round-meta{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.55);}
+  .round-score-box{text-align:right;flex-shrink:0;}
+  .round-score-num{font-family:'DM Serif Display',serif;font-size:36px;color:#fff;line-height:1;}
+  .round-score-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+  .round-body{padding:28px;}
+  .score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .score-cell{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-align:center;}
+  .score-cell .snum{font-family:'DM Serif Display',serif;font-size:22px;line-height:1;margin-bottom:4px;}
+  .score-cell .slabel{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .snum-green{color:var(--green);} .snum-amber{color:var(--amber);} .snum-red{color:var(--red);}
+  .qa-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .qa-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .qa-block-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block;}
+  .qa-item{margin-bottom:18px;}
+  .qa-item:last-child{margin-bottom:0;}
+  .qa-q{font-weight:600;color:var(--primary);margin-bottom:7px;font-size:14px;}
+  .qa-a{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:9px;}
+  .qa-a span{display:block;padding-left:12px;position:relative;}
+  .qa-a span::before{content:'·';position:absolute;left:0;color:var(--accent);}
+  .qa-verdict{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;font-family:'DM Mono',monospace;}
+  .verdict-good{background:var(--green-bg);color:var(--green);}
+  .verdict-mid{background:var(--amber-bg);color:var(--amber);}
+  .verdict-bad{background:var(--red-bg);color:var(--red);}
+  .model-answer{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;line-height:1.65;}
+  .model-answer .model-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);font-weight:500;margin-bottom:7px;}
+  .model-answer span{display:block;padding-left:14px;position:relative;color:#1a3a6e;}
+  .model-answer span::before{content:'→';position:absolute;left:0;color:var(--blue-mid);}
+  .round-remarks{background:var(--amber-bg);border-top:1px solid var(--border);padding:18px 28px;font-style:italic;font-size:13.5px;color:var(--amber);}
+  .round-remarks strong{font-style:normal;font-weight:600;color:var(--primary);}
+  .audit-box{background:var(--red-bg);border:1px solid #f0c0c0;border-radius:10px;padding:20px 24px;margin-bottom:20px;}
+  .audit-box .audit-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px;font-weight:500;}
+  .audit-box span{display:block;padding-left:14px;position:relative;color:#5a1515;font-size:13.5px;margin-bottom:6px;}
+  .audit-box span::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;}
+  .bucket-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px;}
+  .bucket-cell{border:1px solid #f0c0c0;border-radius:8px;padding:16px;text-align:center;background:var(--red-bg);}
+  .bucket-cell .bc-label{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:6px;}
+  .bucket-cell .bc-icon{font-size:20px;margin-bottom:4px;}
+  .bucket-cell .bc-result{font-weight:700;font-size:13px;color:var(--red);}
+  .overall-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:40px;}
+  .overall-block{padding:24px 28px;border-bottom:1px solid var(--border);}
+  .overall-block:last-child{border-bottom:none;}
+  .overall-block p{font-size:14.5px;line-height:1.75;color:var(--text);}
+  .title-green{color:var(--green);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-red{color:var(--red);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:14px;}
+  .title-blue{color:var(--blue-mid);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:16px;}
+  .strength-list,.improve-list{list-style:none;}
+  .strength-list li,.improve-list li{padding:8px 0 8px 14px;border-bottom:1px dashed var(--border);position:relative;font-size:14px;color:var(--text);}
+  .strength-list li:last-child,.improve-list li:last-child{border-bottom:none;}
+  .strength-list li::before{content:'·';position:absolute;left:0;color:var(--green);font-size:18px;line-height:1;top:8px;}
+  .improve-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:18px;line-height:1;top:8px;}
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .week-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);}
+  .week-card-header{background:var(--primary);padding:12px 16px;}
+  .week-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .week-title{font-family:'DM Serif Display',serif;font-size:16px;color:#fff;font-weight:400;}
+  .week-card-body{padding:14px 16px;}
+  .week-card-body ul{list-style:none;}
+  .week-card-body li{font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.5;}
+  .week-card-body li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:6px;}
+  .report-footer{border-top:1px solid var(--border);padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);max-width:860px;margin:0 auto;}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <h1>Varshni Amrutha</h1>
+  <div class="subtitle">Product Based SDE</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell"><div class="label">Candidate Name</div><div class="value">Varshni Amrutha</div></div>
+    <div class="info-cell"><div class="label">Offline Assessment Date</div><div class="value">22 February 2026</div></div>
+    <div class="info-cell"><div class="label">Email</div><div class="value">pknakshaya@gmail.com</div></div>
+    <div class="info-cell"><div class="label">Eligible Role</div><div class="value">Product Based SDE</div></div>
+    <div class="info-cell"><div class="label">NxtMock Status</div><div class="value">Not Attempted</div></div>
+    <div class="info-cell"><div class="label">Audit Completion Date</div><div class="value">4 March 2026</div></div>
+    <div class="info-cell full"><div class="label">Final Placement Status</div><div class="value" style="margin-top:6px;"><span class="badge badge-amber">⚠ Not Cleared — Re-attempt Required</span></div></div>
+  </div>
+
+  <!-- ══ SECTION 02 ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared</div>
+        <div class="journey-detail">22 Feb 2026 · Qualified for Product Based SDE track</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="journey-result green">✓ Cleared · Score 70 / 100 · Medium Hire</div>
+        <div class="journey-detail">26 Feb 2026 · Good DSA knowledge; communication and problem solving speed to improve</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 2 — Full Stack Interview</div>
+        <div class="journey-result red">~ Not Cleared · Score 48 / 100 · Low Hire</div>
+        <div class="journey-detail">28 Feb 2026 · Frontend strong; backend vague; DSA problems not solved despite extensive hints</div>
+      </div>
+    </div>
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-red"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Audit Review</div>
+        <div class="journey-result red">~ Not Cleared — Frontend, Backend &amp; Full Stack</div>
+        <div class="journey-detail">4 Mar 2026 · Frontend theoretical knowledge present; backend and practical problem solving insufficient</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 03 — TR-1 ══ -->
+  <div class="section-label">03 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">✅</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">26 February 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#7ed99e;">70</div>
+        <div class="round-score-label">/ 100 · Cleared</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Medium Hire</span></div>
+      </div>
+    </div>
+    <div class="round-body">
+      <div class="qa-block">
+        <div class="qa-block-label">TR-1 Summary</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Good foundational DSA knowledge — able to work through problems at the required level</span>
+            <span>Communication skills need improvement — expressing approaches and reasoning more clearly under interview conditions is the gap</span>
+            <span>Can still practice more DSA problems — consistency and breadth across problem types needs to continue growing</span>
+            <span>Cleared TR-1 at 70/100 — qualified for TR-2</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Cleared — Good DSA knowledge; communication clarity and problem volume to improve (Score: 70/100)</span>
+        </div>
+      </div>
+    </div>
+    <div class="round-remarks" style="background:var(--green-bg);color:var(--green);">
+      <strong style="color:var(--primary);">Evaluator Remarks:</strong> "The candidate has good knowledge on DSA, she can still practice more. Can improve on communication skills too."
+    </div>
+  </div>
+
+  <!-- ══ SECTION 04 — TR-2 ══ -->
+  <div class="section-label">04 · Technical Round 2 — Full Stack Interview</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 2 — Full Stack Interview</div>
+        <div class="round-meta">28 February 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">48</div>
+        <div class="round-score-label">/ 100 · Not Cleared</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Low Hire</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+      <div class="score-breakdown">
+        <div class="score-cell"><div class="snum snum-green">90</div><div class="slabel">Soft Skills &amp; Comm.</div></div>
+        <div class="score-cell"><div class="snum snum-amber">50</div><div class="slabel">Projects</div></div>
+        <div class="score-cell"><div class="snum snum-red">30</div><div class="slabel">Frontend Score</div></div>
+        <div class="score-cell"><div class="snum snum-red">23</div><div class="slabel">Backend Score</div></div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="qa-block">
+        <div class="qa-block-label">Soft Skills &amp; Communication</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Presentability: looks highly professional and well groomed — one of the strongest presentation ratings in the cohort</span>
+            <span>Communication: confident and understandable with minor grammar changes — 90/100</span>
+            <span>Highest soft skills score in the round — a genuine and durable strength</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Excellent — Highly professional presentation and confident communication; clear differentiator (90/100)</span>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="qa-block">
+        <div class="qa-block-label">Projects</div>
+        <div class="qa-item">
+          <div class="qa-q">Project Explanation &amp; Type</div>
+          <div class="qa-a">
+            <span>Projects type: Frontend — understands the flow but misses key details (rated 50/100)</span>
+            <span>Able to describe the project and its purpose at a high level</span>
+            <span>Integration details — how the frontend connects to APIs or the backend data layer — were partially missing</span>
+            <span>Internship: basic tasks / training only — limited independent technical contribution</span>
+            <span>Internship explanation: clear with some details — structured delivery but limited technical depth</span>
+            <span>Certificates: good certificate with some learning — recognised achievement though not the strongest tier</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Project flow described; integration depth missing; internship at training level; certificates noted (Score: 50/100)</span>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Frontend — HTML, CSS, JavaScript &amp; React</div>
+
+        <div class="qa-item">
+          <div class="qa-q">HTML, CSS &amp; JavaScript Theory Questions</div>
+          <div class="qa-a">
+            <span>Understands core concepts but misses depth — foundational knowledge is present; detailed or nuanced questions exposed gaps</span>
+            <span>Evaluator noted you were "really strong in the frontend domain and able to answer most questions with strong reasoning" — this is a clear and significant strength</span>
+            <span>Basic awareness but confused explanation on some frontend concepts — particularly when pressed on depth or edge cases</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Good with Gaps — Strong frontend reasoning on most questions; depth and precision missing on some concepts</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">React Advanced &amp; Frontend Architecture</div>
+          <div class="qa-a">
+            <span>Basic awareness but confused explanation — knows React concepts exist but explanations became unclear under detailed questioning</span>
+            <span>Core concepts understood at a surface level; architectural depth (reconciliation, memoisation, state management patterns) not demonstrated</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — React basics present; advanced concepts and architectural depth confused under questioning</span>
+          <div class="model-answer">
+            <div class="model-label">📚 Key React Concepts to Deepen</div>
+            <span>Virtual DOM &amp; reconciliation: React diffs old vs new Virtual DOM trees and applies minimal real DOM changes — study the diffing algorithm and what triggers a re-render.</span>
+            <span>React.memo / useMemo / useCallback: prevent unnecessary re-renders — build a demo where you add React.memo to a child component and observe the render count drop.</span>
+            <span>State management patterns: lifting state up vs useContext vs external stores (Zustand, Redux) — know when to use each and the trade-offs.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">JavaScript / React Coding Task (Medium Level)</div>
+          <div class="qa-a">
+            <span>Understood the question but unable to tell the approach — comprehension was present; translation to code strategy was not</span>
+            <span>Could not produce a working solution for the frontend coding task</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — Question understood; approach not identified; no working solution (Frontend Score: 30/100)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What to Practice</div>
+            <span>The gap between understanding a problem and knowing how to solve it is closed through daily coding practice — not reading solutions. Solve 3–5 LeetCode easy/medium problems every day. For each: state the approach before writing a single line, code it, test edge cases, state complexity. Do this until "understanding a problem" and "knowing the approach" happen simultaneously.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Backend — Node.js, Express.js &amp; MongoDB</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Node.js &amp; Express.js Theory</div>
+          <div class="qa-a">
+            <span>Basic awareness but confused explanation — knows Node.js and Express exist; explanations of how they work were not clear or precise</span>
+            <span>Could not explain key concepts like middleware, event loop, non-blocking I/O, or routing with confidence</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Weak — Basic Node.js/Express awareness only; core theory not understood clearly</span>
+          <div class="model-answer">
+            <div class="model-label">📚 Core Backend Concepts to Study</div>
+            <span>Node.js event loop: single-threaded, non-blocking I/O — async operations (DB queries, API calls) are offloaded and callbacks fire when done. This is why Node can handle many concurrent requests without multiple threads.</span>
+            <span>Express middleware: functions that run in sequence before the route handler — <code>app.use((req, res, next) =&gt; {'{'} /* do something */ next(); {'}'})</code>. Used for auth checking, logging, JSON parsing, error handling.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">MongoDB Theory &amp; Query Discussion</div>
+          <div class="qa-a">
+            <span>Basic awareness, weak explanation — MongoDB as a NoSQL document database is known at a surface level</span>
+            <span>Query operators, aggregation, and indexing not clearly understood or explained</span>
+            <span>Audit specifically flagged: no proper understanding of indexing</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Weak — MongoDB theory surface level only; indexing not understood; query operators not demonstrated</span>
+          <div class="model-answer">
+            <div class="model-label">📚 Indexing — What a Good Answer Looks Like</div>
+            <span>An index is a data structure (B-tree) built on one or more fields so MongoDB can find documents without scanning the full collection. Speeds up read queries dramatically. Trade-off: every write (insert/update/delete) must also update the index — so write-heavy collections should not be over-indexed. Example: <code>db.users.createIndex({'{'} email: 1 {'}'})</code> makes all queries filtering by email much faster.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Backend Architecture — Scenario-based questions on full stack integration.</div>
+          <div class="qa-a">
+            <span>Unable to approach or explain the scenario — could not think through how the backend should be structured for a given use case</span>
+            <span>Understood the question when read — comprehension is present; architectural reasoning is the gap</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Unable to Approach — Scenario understood; backend design and integration thinking not yet developed</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Backend Endpoint Implementation — Code a backend API endpoint.</div>
+          <div class="qa-a">
+            <span>Understood the question but unable to tell the approach — same pattern as the frontend coding task: comprehension without execution strategy</span>
+            <span>No working endpoint produced</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — Understood the task; could not identify approach or implement the endpoint (Backend Score: 23/100)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Basic Express Endpoint Looks Like</div>
+            <span>A GET /tasks endpoint: <code>router.get('/tasks', verifyToken, async (req, res) =&gt; {'{'} try {'{'} const tasks = await Task.find({'{'} userId: req.user.id {'}'}); res.status(200).json(tasks); {'}'} catch (err) {'{'} res.status(500).json({'{'} message: 'Server error' {'}'}); {'}'} {'}'});</code> — route definition, auth middleware, DB query, response with status code, error handling. Build this from memory before re-attempting.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DSA in TR-2 -->
+      <div class="qa-block">
+        <div class="qa-block-label">DSA Problem — Product of Array Except Self</div>
+        <div class="qa-item">
+          <div class="qa-q">Given an array, return an output array where each element is the product of all other elements except itself — without using division.</div>
+          <div class="qa-a">
+            <span>Could not solve the problem despite extensive hints from the evaluator — this was a significant gap given the TR-1 DSA score of 70</span>
+            <span>Evaluator provided multiple progressive hints: "pre-compute the products on the left and right side of the element you are at" and "try prefix and suffix products" — still could not arrive at the approach</span>
+            <span>The evaluator noted: "these questions were fairly easier than round 1 questions — which shows that she hasn't built a strong foundation in basic stack and queue data structures"</span>
+            <span>This suggests TR-1 performance may reflect pattern familiarity in specific topics rather than broad, deeply-rooted DSA understanding</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not Solved — Could not identify prefix/suffix product approach even after extensive hints from evaluator; evaluator noted a foundation gap in basic data structures</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like — Product of Array Except Self (LeetCode 238)</div>
+            <span>Build two arrays: <code>prefix[i]</code> = product of all elements to the left of i; <code>suffix[i]</code> = product of all elements to the right of i. Answer for each index: <code>prefix[i] * suffix[i]</code>. Optimise to O(1) space by computing prefix in the output array, then multiplying suffix in a second pass using a running variable. Time: O(N), Space: O(1) extra.</span>
+            <span>This problem tests whether you can think in terms of pre-computation and passes — the same mental model used in prefix sum, sliding window, and two-pointer problems. Study it fully: understand why division is excluded and why two passes solve it cleanly.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Internship & AI -->
+      <div class="qa-block">
+        <div class="qa-block-label">Internship &amp; AI Knowledge</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Internship: basic tasks / training only — limited scope of independent contribution</span>
+            <span>Internship explanation: clear with some details — delivery was structured; technical depth of specific tasks was partial</span>
+            <span>Certificates: good certificate with some learning — recognised achievement</span>
+            <span>AI knowledge: no knowledge of AI tools — this is a growing area in full stack interviews; worth exploring</span>
+            <span>Internship score: 39.4 — moderate; explanation clarity is better than technical depth of contribution</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Moderate — Internship at training level; certificate noted; no AI tool awareness (Score: 39.4/100)</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>Evaluator Remarks:</strong> "The candidate was really strong in the frontend domain and was able to answer most of the questions with strong reasoning. Unfortunately, she couldn't answer any questions from backend or DSA with conviction. Her answers to backend questions would either be incorrect or highly vague, and she couldn't solve a single DSA problem even though these questions were fairly easier than round 1 questions — which shows that she hasn't built a strong foundation in basic stack and queue data structures. In my opinion, she's not yet ready." &nbsp;·&nbsp; The evaluator also noted: "I had to literally tell her to pre-compute the products on the left and right side — tried so hard to hint on prefix and suffix products — and still she couldn't think of the approach."
+    </div>
+  </div>
+
+  <!-- ══ SECTION 05 — AUDIT ══ -->
+  <div class="section-label">05 · Audit Review</div>
+  <div class="round-card">
+    <div class="round-header" style="background:#5a1a1a;">
+      <div class="round-icon">📋</div>
+      <div class="round-title-group">
+        <div class="round-name">Audit Review — NxtWave Team</div>
+        <div class="round-meta">4 March 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">⚠ Not Cleared — All Buckets</span></div>
+      </div>
+    </div>
+    <div class="round-body">
+      <div class="audit-box">
+        <div class="audit-label">📋 Audit Findings — NxtWave Team</div>
+        <span>You were able to answer most frontend-related questions — a genuine and recognised strength</span>
+        <span>Backend scenario-based questions were not answered clearly — struggle to provide structured reasoning on backend design</span>
+        <span>No proper understanding of indexing — a core backend concept flagged specifically</span>
+        <span>Attempted the backend problem but was not able to solve it effectively</span>
+        <span>Overall: more theoretical knowledge than practical problem-solving ability — the practical gap needs to be closed before re-attempting</span>
+      </div>
+      <div class="bucket-grid">
+        <div class="bucket-cell">
+          <div class="bc-label">Frontend Bucket</div>
+          <div class="bc-icon">✗</div>
+          <div class="bc-result">Not Cleared</div>
+        </div>
+        <div class="bucket-cell">
+          <div class="bc-label">Backend Bucket</div>
+          <div class="bc-icon">✗</div>
+          <div class="bc-result">Not Cleared</div>
+        </div>
+        <div class="bucket-cell">
+          <div class="bc-label">Full Stack Bucket</div>
+          <div class="bc-icon">✗</div>
+          <div class="bc-result">Not Cleared</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 06 — OVERALL ══ -->
+  <div class="section-label">06 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+
+    <div class="overall-block">
+      <p>You enter this process with two real, durable strengths: a 90/100 communication and presentation score — exceptional — and genuine frontend theoretical knowledge that the evaluator explicitly praised. These are not small things. The gap that determined the TR-2 outcome is the distance between knowing and doing: you could understand questions on the backend and in the DSA section, but could not translate that understanding into approaches or working code. This theory-to-execution gap is the single most important thing to close before re-attempting. The evaluator's note about the prefix/suffix product problem is a signal: the problem was manageable, but the approach-finding muscle was not there. Build it through daily, disciplined coding practice — not reading, coding.</p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Communication &amp; Presentation (90/100):</strong> Highest score in soft skills — highly professional, well groomed, confident and clear. This is an exceptional differentiator that will serve you across every interview and in your career. Maintain it.</li>
+        <li><strong>Frontend Theory:</strong> Explicitly praised by the evaluator — "really strong in the frontend domain, able to answer most questions with strong reasoning." This is a foundation you can build backend depth on top of.</li>
+        <li><strong>DSA Foundation (TR-1 Cleared, 70/100):</strong> You cleared TR-1 — problem-solving capacity is present. The TR-2 DSA failure points to a gap in applying that knowledge to unfamiliar problems, not an absence of DSA foundation.</li>
+        <li><strong>Problem Comprehension:</strong> You understood both the coding tasks and the DSA problem when they were explained — comprehension is not the gap. Approach identification and execution are what need to be built.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>Theory to Execution Gap — Most Critical:</strong> You understood questions but could not identify approaches or write solutions. This is the defining gap from TR-2. Close it by solving 5 problems daily and verifying you can state the approach before writing any code — not after.</li>
+        <li><strong>Prefix/Suffix Pre-computation Pattern:</strong> The evaluator gave extensive hints on this and you still could not arrive at it. Study LeetCode 238 (Product of Array Except Self) until you can solve it cold, explain it in 60 seconds, and extend the same pre-computation thinking to sliding window and prefix sum problems.</li>
+        <li><strong>Stack &amp; Queue Fundamentals:</strong> The evaluator noted a foundation gap in basic stack and queue data structures. These are simpler than trees, graphs, and DP — they must be solid before re-attempting. Study: stack (push/pop/peek), queue (enqueue/dequeue), monotonic stack, and implement each from scratch.</li>
+        <li><strong>Backend Theory Depth — Indexing:</strong> Specifically flagged in the audit. You must understand what a B-tree index is, why reads are faster, why writes are slower, and when to create one — and explain it in 60 seconds without notes.</li>
+        <li><strong>Node.js &amp; Express.js:</strong> Theory was vague. Study the event loop, non-blocking I/O, middleware, routing, and error handling — then build a complete REST API from scratch so the theory becomes lived experience.</li>
+        <li><strong>Backend Endpoint Implementation:</strong> Could not write an endpoint under interview conditions. Build and practise writing complete route handlers — middleware, DB query, status code, error handling — until it is automatic in under 5 minutes.</li>
+        <li><strong>AI Tools:</strong> No knowledge noted. This is increasingly part of full stack evaluations — explore and be able to speak to how AI tools fit into a development workflow.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">📅 1-Month Action Plan</div>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 01</div><div class="week-title">DSA Foundations — Stacks, Queues &amp; Pre-computation</div></div>
+          <div class="week-card-body"><ul>
+            <li>Implement stack from scratch using an array: push, pop, peek, isEmpty — no library; write it in 10 minutes from memory</li>
+            <li>Implement queue from scratch: enqueue, dequeue, front, isEmpty — then implement a circular queue</li>
+            <li>Study monotonic stack: Daily Temperatures (LC 739), Next Greater Element I &amp; II (LC 496, 503) — understand the pattern of pushing indices and popping when condition met</li>
+            <li>Solve Product of Array Except Self (LC 238) — study prefix/suffix product approach until you can explain it in 60 seconds and code it cold without any reference</li>
+            <li>Solve 5 prefix sum problems: LC 303 (Range Sum Query), 560 (Subarray Sum Equals K), 525 (Contiguous Array), 1248, 974 — connect the pre-computation mental model across all of them</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 02</div><div class="week-title">Backend Theory &amp; Endpoint Practice</div></div>
+          <div class="week-card-body"><ul>
+            <li>Study MongoDB indexing: create a collection with 10,000 documents, run a query with and without an index using <code>explain()</code> — observe the documents scanned drop from N to 1. Write the indexing explanation from memory in 60 seconds</li>
+            <li>Study Node.js event loop: draw the call stack + event queue + callback queue on paper — understand why non-blocking I/O allows concurrency on a single thread</li>
+            <li>Study Express middleware: write 3 custom middleware functions — a request logger, a JWT verifier, and a 404 handler</li>
+            <li>Build a complete to-do API from scratch: <code>POST /auth/register</code>, <code>POST /auth/login</code>, <code>GET /tasks</code>, <code>POST /tasks</code>, <code>PUT /tasks/:id</code>, <code>DELETE /tasks/:id</code> — all with JWT middleware</li>
+            <li>Practice writing GET /tasks from memory in under 5 minutes: route, middleware, try/catch, DB query, status code — repeat until automatic</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 03</div><div class="week-title">DSA Execution — Approach to Code</div></div>
+          <div class="week-card-body"><ul>
+            <li>Daily rule: for every problem, state the approach and complexity verbally before writing a single line of code — make this non-negotiable. This is the exact habit that was missing in TR-2</li>
+            <li>Solve 5 medium problems daily across arrays, two pointers, sliding window, and stack — track approach identification time (target: under 3 minutes to identify the right pattern)</li>
+            <li>Study sliding window: LC 3 (Longest Substring Without Repeating Characters), 209 (Minimum Size Subarray Sum), 76 (Minimum Window Substring)</li>
+            <li>Deepen React: build a component that demonstrates virtual DOM benefit — measure re-renders with React DevTools; add React.memo and observe the change</li>
+            <li>After each DSA session: write down which pattern you used and why — build a personal pattern-recognition reference you can review before the next interview</li>
+          </ul></div>
+        </div>
+        <div class="week-card">
+          <div class="week-card-header"><div class="week-num">WEEK 04</div><div class="week-title">Full Mock Interviews</div></div>
+          <div class="week-card-body"><ul>
+            <li>Take 2 full mock TR-2 interviews (45 min each): frontend theory, React internals, Node/Express, MongoDB indexing, backend endpoint to code, one DSA problem — state approach before coding every time</li>
+            <li>For each mock DSA problem: if you cannot identify the approach in 3 minutes independently, that pattern goes on your study list for the following day — do not rely on hints</li>
+            <li>Connect your to-do API to a React frontend — deploy the full stack app publicly on Vercel + Render + MongoDB Atlas so you can walk an evaluator through a live working system</li>
+            <li>Explore 2 AI tools used in development (GitHub Copilot, Claude, or ChatGPT) — be able to explain what each does, when you would use it, and what its limitations are</li>
+            <li>Enter the re-attempt with these non-negotiables: prefix/suffix product approach explainable in 60 seconds, MongoDB indexing explainable in 60 seconds, GET /tasks written from memory in under 5 minutes, approach stated before every coding attempt</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="report-footer">Report generated by NxtWave Interview Evaluation System · March 2026</div>
+</body>
+</html>
